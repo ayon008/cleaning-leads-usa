@@ -62,7 +62,7 @@ const Navbar = () => {
           <ul className={`${poppins.className} flex items-center gap-8`}>
             <li className="text-sm font-semibold">Support</li>
             <li className="text-sm font-semibold">Careers</li>
-            <li className="text-sm font-semibold">Faq's</li>
+            <li className="text-sm font-semibold">Faq&apos;s</li>
           </ul>
           <div className="flex items-center gap-8">
             <PrimaryBtn text="Book an Appointment" />
