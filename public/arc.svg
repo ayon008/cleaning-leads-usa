@@ -1,0 +1,14 @@
+<svg width="0" className="bg-green-50" height="0" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="arcClip" clipPathUnits="userSpaceOnUse">
+      <path d="M 0,0 
+               L 0,208 
+               L 205,208 
+               C 220,208 256,160 256,145 
+               L 256,0 
+               L 0,0 Z" />
+    </clipPath>
+  </defs>
+</svg>
+
+

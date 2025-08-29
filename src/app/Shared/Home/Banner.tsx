@@ -1,5 +1,5 @@
 "use client";
-import React, { ReactNode, useState } from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
@@ -52,15 +52,40 @@ const Banner = () => {
     description: string;
   }) => {
     return (
-      <div className={`${barlow.className} p-8 bg-white relative flex-1 card`}>
-        <div className="">
-          <p className="text-3xl font-semibold">{title}</p>
-          <Icon size={"3rem"} className="text-secondary my-6" />
+      <div className="w-64">
+        <div
+          className={`${barlow.className} p-8 bg-white relative flex-1 card h-52 rounded-md overflow-hidden group`}
+        >
+          <svg
+            width="256"
+            className="absolute top-0 left-0 z-10"
+            height="208"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M 0,0 
+           L 0,208 
+           L 205,208 
+           C 220,208 256,160 256,145 
+           L 256,0 
+           L 0,0 Z"
+              className="fill-[#F8FCF8] group-hover:fill-secondary transition-colors duration-300"
+            />
+          </svg>
+          <div className="relative z-20">
+            <p className="text-3xl font-semibold group-hover:text-white">
+              {title}
+            </p>
+            <Icon
+              size={"3rem"}
+              className="text-secondary my-6 group-hover:text-white"
+            />
+          </div>
+          <span className="text-6xl font-semibold opacity-10 group-hover:opacity-100 text-white text-stroke group-hover:text-secondary duration-150 transition-all z-30 absolute right-6 bottom-6">
+            0{index}
+          </span>
         </div>
-        <p>{description}</p>
-        <span className="text-6xl font-semibold opacity-10 text-stroke text-white absolute right-6 bottom-6">
-          0{index}
-        </span>
+        <p className="mt-6 text-sm text-gray-500">{description}</p>
       </div>
     );
   };
@@ -133,7 +158,7 @@ const Banner = () => {
       <div className="-mt-10 relative z-10">
         <div className="">
           <div className="container pb-20">
-            <div className="flex items-stretch justify-between gap-x-10">
+            <div className="flex items-stretch justify-between">
               <Card
                 description="Our expert agents engage targeted prospects, introducing your
           janitorial solutions to key decision-makers and securing genuine
