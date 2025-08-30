@@ -18,27 +18,33 @@ import { LucideIcon } from "lucide-react";
 const Banner = () => {
   const [index, setIndex] = useState<number>(0);
   useGSAP(() => {
-    gsap.from(".banner-subtext", {
+    const t1 = gsap.timeline();
+    t1.from(".banner-subtext", {
       xPercent: -50,
       opacity: 0,
       duration: 0.5,
       ease: "none",
-      delay: 1,
-    });
-    gsap.from(".banner-headline", {
-      xPercent: 10,
-      opacity: 0,
-      duration: 0.5,
-      ease: "none",
-      delay: 1,
-    });
-    gsap.from(".banner-btn", {
-      yPercent: 50,
-      opacity: 0,
-      duration: 0.5,
-      ease: "none",
-      delay: 1,
-    });
+    })
+      .from(
+        ".banner-headline",
+        {
+          xPercent: 10,
+          opacity: 0,
+          duration: 0.5,
+          ease: "none",
+        },
+        "-=0.3"
+      )
+      .from(
+        ".banner-btn",
+        {
+          yPercent: 50,
+          opacity: 0,
+          duration: 0.5,
+          ease: "none",
+        },
+        "=+0.2"
+      );
   }, [index]);
   const Card = ({
     title,
@@ -106,6 +112,7 @@ const Banner = () => {
           onSlideChange={(swiper) => {
             const latestIndex = (index + swiper.activeIndex) % 2;
             setIndex(latestIndex);
+            return;
           }}
         >
           <SwiperSlide className="h-full w-full relative">
