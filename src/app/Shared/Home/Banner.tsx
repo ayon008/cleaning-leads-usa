@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
@@ -17,35 +17,44 @@ import { Globe, Headphones, Mail, Share2 } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 const Banner = () => {
   const [index, setIndex] = useState<number>(0);
-  useGSAP(() => {
-    const t1 = gsap.timeline();
-    t1.from(".banner-subtext", {
-      xPercent: -50,
-      opacity: 0,
-      duration: 0.5,
-      ease: "none",
-    })
-      .from(
-        ".banner-headline",
-        {
-          xPercent: 10,
-          opacity: 0,
-          duration: 0.5,
-          ease: "none",
-        },
-        "-=0.3"
-      )
-      .from(
-        ".banner-btn",
-        {
-          yPercent: 50,
-          opacity: 0,
-          duration: 0.5,
-          ease: "none",
-        },
-        "=+0.2"
-      );
-  }, [index]);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  useGSAP(
+    () => {
+      const t1 = gsap.timeline();
+      t1.from(".banner-subtext", {
+        xPercent: -50,
+        opacity: 0,
+        duration: 0.5,
+        ease: "none",
+      })
+        .from(
+          ".banner-headline",
+          {
+            xPercent: 10,
+            opacity: 0,
+            duration: 0.5,
+            ease: "none",
+          },
+          "-=0.3"
+        )
+        .from(
+          ".banner-btn",
+          {
+            yPercent: 50,
+            opacity: 0,
+            duration: 0.5,
+            ease: "none",
+          },
+          "=+0.2"
+        );
+    },
+    { dependencies: [index], scope: containerRef, revertOnUpdate: true }
+  );
+
+  console.log(index, "index");
+
+  // card
   const Card = ({
     title,
     index,
@@ -98,7 +107,7 @@ const Banner = () => {
 
   return (
     <section className="bg-primary">
-      <div className="w-screen h-dvh -mt-8" id="banner">
+      <div className="w-screen h-dvh -mt-8" id="banner" ref={containerRef}>
         <Swiper
           modules={[Pagination, Autoplay, EffectFade]}
           fadeEffect={{ crossFade: true }}
@@ -110,9 +119,8 @@ const Banner = () => {
           loop={true}
           className="h-full"
           onSlideChange={(swiper) => {
-            const latestIndex = (index + swiper.activeIndex) % 2;
+            const latestIndex = swiper.realIndex;
             setIndex(latestIndex);
-            return;
           }}
         >
           <SwiperSlide className="h-full w-full relative">
@@ -164,7 +172,7 @@ const Banner = () => {
       </div>
       <div className="-mt-10 relative z-10">
         <div className="">
-          <div className="container pb-20">
+          <div className="container pb-36">
             <div className="flex items-stretch justify-between">
               <Card
                 description="Our expert agents engage targeted prospects, introducing your
@@ -195,7 +203,6 @@ const Banner = () => {
             </div>
           </div>
         </div>
-        <div className="hero"></div>
       </div>
     </section>
   );
