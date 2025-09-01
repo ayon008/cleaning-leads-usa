@@ -3,6 +3,7 @@ import React from "react";
 import professional_image from "@/../public/img-02-pqdux4fpkzdwtwa2kl3iel4e21mxbmmt1xxgvifrlo.jpg";
 import { barlow } from "@/app/fonts/Fonts";
 import { CheckCircle } from "lucide-react";
+import PrimaryBtn from "../Button/PrimaryBtn";
 
 const Professional = () => {
   return (
@@ -53,12 +54,7 @@ const Professional = () => {
                   </span>
                 </li>
               </ul>
-              <button
-                type="button"
-                className="bg-secondary w-fit px-6 rounded-md py-2 text-white"
-              >
-                Read More
-              </button>
+              <PrimaryBtn text="Read More" containerClass="rounded-md w-fit" />
             </div>
           </div>
         </div>

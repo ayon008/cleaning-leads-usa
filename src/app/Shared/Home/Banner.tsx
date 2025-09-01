@@ -117,7 +117,7 @@ const Banner = () => {
           effect="fade"
           slidesPerView={1}
           loop={true}
-          className="h-full"
+          className="h-full banner"
           onSlideChange={(swiper) => {
             const latestIndex = swiper.realIndex;
             setIndex(latestIndex);
