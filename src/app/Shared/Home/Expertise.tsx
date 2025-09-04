@@ -12,8 +12,8 @@ import { barlow } from "@/app/fonts/Fonts";
 
 const Card = () => {
   return (
-    <div className="rounded-md bg-white">
-      <div className="w-full h-[240px] overflow-hidden relative">
+    <div className="rounded-lg bg-white">
+      <div className="w-full h-[240px] overflow-hidden relative rounded-t-lg">
         <Image src={image} fill alt="" className="object-cover" />
       </div>
       <div className="p-8">

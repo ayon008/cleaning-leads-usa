@@ -1,5 +1,6 @@
 import Banner from "./Shared/Home/Banner";
 import Expertise from "./Shared/Home/Expertise";
+import OurDo from "./Shared/Home/OurDo";
 import Professional from "./Shared/Home/Professional";
 
 export default function Home() {
@@ -8,7 +9,8 @@ export default function Home() {
       <Banner />
       <Professional />
       <Expertise />
-      <div className="h-dvh w-screen bg-primary -mt-56 pb-56"></div>
+      <div className="w-screen bg-primary -mt-56 pb-56 h-fit"></div>
+      <OurDo />
     </>
   );
 }
