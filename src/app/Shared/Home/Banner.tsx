@@ -51,9 +51,6 @@ const Banner = () => {
     },
     { dependencies: [index], scope: containerRef, revertOnUpdate: true }
   );
-
-  console.log(index, "index");
-
   // card
   const Card = ({
     title,
@@ -67,7 +64,7 @@ const Banner = () => {
     description: string;
   }) => {
     return (
-      <div className="w-64">
+      <div className="w-64 md:mx-0 mx-auto">
         <div
           className={`${barlow.className} p-8 bg-white relative flex-1 card h-52 rounded-md overflow-hidden group`}
         >
@@ -107,7 +104,11 @@ const Banner = () => {
 
   return (
     <section className="bg-primary">
-      <div className="w-screen h-dvh -mt-8" id="banner" ref={containerRef}>
+      <div
+        className="w-screen h-dvh lg:-mt-8 mt-0"
+        id="banner"
+        ref={containerRef}
+      >
         <Swiper
           modules={[Pagination, Autoplay, EffectFade]}
           fadeEffect={{ crossFade: true }}
@@ -133,15 +134,14 @@ const Banner = () => {
             />
             <div className="!z-20 pt-8 relative container h-full flex flex-col justify-center">
               <div className={`${barlow.className} space-y-5`}>
-                <p className="text-secondary uppercase font-semibold text-lg tracking-widest banner-subtext w-fit">
-                  Are You Having
+                <p className="text-secondary uppercase font-semibold md:text-lg text-base tracking-widest banner-subtext w-fit">
+                  Grow Your Clients
                 </p>
-                <h1 className="text-white lg:text-5xl font-bold lg:w-1/2 tracking-wide leading-14 banner-headline">
-                  Delivering High Quality Commercial Cleaning Leads across all
-                  over USA
+                <h1 className="text-white md:text-5xl text-3xl font-bold lg:w-1/2 tracking-wide md:leading-14 banner-headline">
+                  Professional Janitorial Appointments That Actually Convert
                 </h1>
                 <div className="banner-btn">
-                  <PrimaryBtn text="Our Services" />
+                  <PrimaryBtn text="Request Consultation" />
                 </div>
               </div>
             </div>
@@ -156,24 +156,23 @@ const Banner = () => {
             <div className="!z-20 pt-8 relative container h-full flex flex-col justify-center">
               <div className={`${barlow.className} space-y-5`}>
                 <p className="text-secondary uppercase font-semibold text-lg tracking-widest banner-subtext w-fit">
-                  Are You Having
+                  Stress-Free Lead Generation
                 </p>
-                <h1 className="text-white lg:text-5xl font-bold lg:w-1/2 tracking-wide leading-14 banner-headline">
-                  Delivering High Quality Commercial Cleaning Leads across all
-                  over USA
+                <h1 className="text-white md:text-5xl text-3xl font-bold lg:w-1/2 tracking-wide md:leading-14 banner-headline">
+                  Local Commercial Cleaning Leads & Janitorial Appointments
                 </h1>
                 <div className="banner-btn">
-                  <PrimaryBtn text="Our Services" />
+                  <PrimaryBtn text="Our Service" />
                 </div>
               </div>
             </div>
           </SwiperSlide>
         </Swiper>
       </div>
-      <div className="-mt-10 relative z-10">
+      <div className="md:-mt-10 mt-20 relative z-10">
         <div className="">
           <div className="container pb-36">
-            <div className="flex items-stretch justify-between">
+            <div className="flex md:flex-row flex-col md:gap-y-0 gap-y-20 items-stretch justify-between">
               <Card
                 description="Our expert agents engage targeted prospects, introducing your
           janitorial solutions to key decision-makers and securing genuine

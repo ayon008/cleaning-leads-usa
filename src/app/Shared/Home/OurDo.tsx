@@ -2,8 +2,6 @@ import { barlow, poppins } from "@/app/fonts/Fonts";
 import React from "react";
 import Progress from "../Progress/Progress";
 import PrimaryBtn from "../Button/PrimaryBtn";
-import image from "../../../../public/img-n-01.jpg";
-import Image from "next/image";
 
 const OurDo = () => {
   return (

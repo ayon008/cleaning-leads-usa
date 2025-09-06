@@ -7,10 +7,10 @@ export default function Home() {
   return (
     <>
       <Banner />
-      <Professional />
+      {/* <Professional />
       <Expertise />
       <div className="w-screen bg-primary -mt-56 pb-56 h-fit"></div>
-      <OurDo />
+      <OurDo /> */}
     </>
   );
 }
