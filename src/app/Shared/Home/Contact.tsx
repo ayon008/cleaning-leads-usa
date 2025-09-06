@@ -14,7 +14,7 @@ const Contact = () => {
           <h1
             className={`text-white ${barlow.className} text-5xl font-bold mt-2 mb-5`}
           >
-            Let's Grow Your Cleaning Business
+            Let&apos;s Grow Your Cleaning Business
           </h1>
           <p className={`${poppins.className} text-base text-white`}>
             Contact CleaningLeadsUSA now to discover how our proven lead
