@@ -105,7 +105,7 @@ const Banner = () => {
   return (
     <section className="bg-primary">
       <div
-        className="w-screen md:h-dvh h-[500px] lg:-mt-8 mt-0"
+        className="w-full md:h-dvh h-[500px] lg:-mt-8 mt-0"
         id="banner"
         ref={containerRef}
       >

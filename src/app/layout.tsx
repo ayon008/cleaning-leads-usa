@@ -15,11 +15,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${poppins.className} antialiased overflow-x-hidden h-[300vh]`}
-      >
-        <Navbar />
-        {children}
+      <body className={`${poppins.className} antialiased`}>
+        <div className="overflow-x-hidden">
+          <Navbar />
+          {children}
+        </div>
       </body>
     </html>
   );

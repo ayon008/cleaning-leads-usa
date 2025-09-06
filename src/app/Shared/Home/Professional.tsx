@@ -9,52 +9,61 @@ const Professional = () => {
   return (
     <section className="" id="">
       <div className="container">
-        <div className="flex items-stretch gap-6">
+        <div className="flex gap-6">
           <div className="flex-1 -mt-14">
             <div className="rounded-md overflow-hidden w-fit">
               <div className="h-14 bg-secondary flex items-center justify-center">
                 <p
                   className={`text-white font-bold tracking-wider text-xl ${barlow.className}`}
                 >
-                  World wide 200+ countries
+                  Nationwide Coverage Available
                 </p>
               </div>
-              <Image src={professional_image} width={520} height={550} alt="" />
+              <Image
+                src={professional_image}
+                width={520}
+                height={550}
+                alt="Professional janitorial lead generation service"
+              />
             </div>
           </div>
           <div className="flex-1">
-            <div className="py-10 h-full flex flex-col justify-between">
-              <p className="text-secondary font-semibold">There are Many</p>
+            <div className="pt-10 space-y-6">
+              <p className="text-secondary font-semibold">Get Quality</p>
               <h1 className={`${barlow.className} text-6xl font-semibold`}>
-                Professional Call Center Support Services
+                Commercial Cleaning Leads & Janitorial Appointments
               </h1>
               <p className="text-gray-400">
-                It is a long established fact that a reader will be distracted
-                by the readable content of a page when looking at its layout.
-                The point of using Lorem Ipsum is that it has a more-or-less
-                normal distribution of letters
+                Stop wasting time on cold calls and door-to-door sales. Our
+                proven lead generation system connects you with pre-qualified
+                commercial cleaning prospects who are actively looking for
+                janitorial services. Get high-converting leads delivered
+                directly to your business.
               </p>
               <ul className="professional-ul space-y-2">
                 <li className="flex items-center gap-4">
                   <CheckCircle className="text-secondary" />
                   <span className="text-black hover:text-secondary font-semibold text-base cursor-pointer duration-150 transition-all ease-linear">
-                    Trusted by customers across the world.
+                    Pre-qualified commercial cleaning prospects ready to buy.
                   </span>
                 </li>
                 <li className="flex items-center gap-4">
                   <CheckCircle className="text-secondary" />
                   <span className="text-black hover:text-secondary font-semibold text-base cursor-pointer duration-150 transition-all ease-linear">
-                    Quality Services and 100% Secure.
+                    Verified janitorial leads with high conversion rates.
                   </span>
                 </li>
                 <li className="flex items-center gap-4">
                   <CheckCircle className="text-secondary" />
                   <span className="text-black hover:text-secondary font-semibold text-base cursor-pointer duration-150 transition-all ease-linear">
-                    Reports and Analytics.
+                    Real-time lead delivery and appointment scheduling.
                   </span>
                 </li>
               </ul>
-              <PrimaryBtn text="Read More" containerClass="rounded-md w-fit" />
+              <PrimaryBtn
+                text="Get Leads Now"
+                containerClass="rounded-md w-fit"
+              />
             </div>
           </div>
         </div>

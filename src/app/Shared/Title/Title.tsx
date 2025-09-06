@@ -12,8 +12,10 @@ const Title = ({
 }) => {
   return (
     <div className={`${containerClass}`}>
-      <p className="text-secondary font-semibold">{subHeading}</p>
-      <h1 className={`${barlow.className} text-6xl mt-1 font-semibold`}>{headline}</h1>
+      <h1 className={`${barlow.className} text-6xl mb-4 font-semibold text-secondary`}>
+        {headline}
+      </h1>
+      <p className="font-medium text-base text-gray-500">{subHeading}</p>
     </div>
   );
 };

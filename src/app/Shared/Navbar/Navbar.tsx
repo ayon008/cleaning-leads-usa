@@ -4,7 +4,7 @@ import whatasapp from "../../../../public/WhatsApp.svg.webp";
 import { barlow, poppins } from "@/app/fonts/Fonts";
 import { Headphones, MapPin, Phone, ShoppingCart } from "lucide-react";
 import Image from "next/image";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import logo from "@/../public/Blue_and_White_Simple_Cleaning_Services_Logo-removebg-preview-1.avif";
 import Link from "next/link";
 import { useGSAP } from "@gsap/react";
@@ -83,7 +83,7 @@ const Navbar = () => {
     });
     gsap.to(".nav-mbl", {
       xPercent: isOpen ? 0 : 100,
-      opacity: !isOpen ? 0 : 100,
+      opacity: isOpen ? 100 : 0,
     });
     if (isOpen) {
       gsap.from(".nav-items", {
@@ -97,10 +97,18 @@ const Navbar = () => {
     }
   }, [isOpen]);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+  }, [isOpen]);
+
   console.log("open", isOpen);
 
   return (
-    <nav className="nav">
+    <nav className={`nav`}>
       {/* Nav top */}
       <div className="relative hidden lg:block">
         <div className="flex items-center justify-between container !pl-8 bg-primary nav-top rounded-tl-[50px] rounded-bl-[50px]">
@@ -246,7 +254,7 @@ const Navbar = () => {
             <div className="w-10 h-1 bg-black rounded origin-left line-3"></div>
           </button>
         </div>
-        <ul className="absolute h-screen w-screen top-0 left-0 text-white bg-black flex items-center justify-center flex-col gap-8 text-4xl !z-40 nav-mbl">
+        <ul className="fixed h-dvh w-full top-0 right-0 bottom-0 text-white bg-black flex items-center justify-center flex-col gap-8 text-4xl !z-40 nav-mbl opacity-0 !overflow-hidden">
           {navItems?.map((navItems, i) => {
             return (
               <li key={i}>
