@@ -64,14 +64,14 @@ const Banner = () => {
     description: string;
   }) => {
     return (
-      <div className="w-64 md:mx-0 mx-auto">
+      <div className="md:w-64 w-full md:mx-0 mx-auto">
         <div
           className={`${barlow.className} p-8 bg-white relative flex-1 card h-52 rounded-md overflow-hidden group`}
         >
           <svg
-            width="256"
-            className="absolute top-0 left-0 z-10"
-            height="208"
+            width=""
+            className="absolute top-0 left-0 !right-0 bottom z-10"
+            height=""
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -105,7 +105,7 @@ const Banner = () => {
   return (
     <section className="bg-primary">
       <div
-        className="w-screen h-dvh lg:-mt-8 mt-0"
+        className="w-screen md:h-dvh h-[500px] lg:-mt-8 mt-0"
         id="banner"
         ref={containerRef}
       >
@@ -172,7 +172,7 @@ const Banner = () => {
       <div className="md:-mt-10 mt-20 relative z-10">
         <div className="">
           <div className="container pb-36">
-            <div className="flex md:flex-row flex-col md:gap-y-0 gap-y-20 items-stretch justify-between">
+            <div className="flex md:flex-row flex-col md:gap-6 gap-20 items-stretch justify-between">
               <Card
                 description="Our expert agents engage targeted prospects, introducing your
           janitorial solutions to key decision-makers and securing genuine
