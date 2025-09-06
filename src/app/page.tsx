@@ -9,10 +9,11 @@ export default function Home() {
     <>
       <Banner />
       <Professional />
+      <Contact />
       <Expertise />
       <div className="bg-primary -mt-56 pb-56 h-fit"></div>
+      {/*  */}
       <OurDo />
-      {/* <Contact /> */}
     </>
   );
 }
