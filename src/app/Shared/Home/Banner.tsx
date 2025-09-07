@@ -134,11 +134,11 @@ const Banner = () => {
             />
             <div className="!z-20 pt-8 relative container h-full flex flex-col justify-center">
               <div className={`${barlow.className} space-y-5`}>
-                <p className="text-secondary uppercase font-semibold md:text-lg text-base tracking-widest banner-subtext w-fit">
+                <p className="text-secondary uppercase font-semibold md:text-xl text-lg tracking-widest banner-subtext w-fit">
                   Grow Your Clients
                 </p>
-                <h1 className="text-white md:text-5xl text-3xl font-bold lg:w-1/2 tracking-wide md:leading-14 banner-headline">
-                  Professional Janitorial Appointments That Actually Convert
+                <h1 className="text-white md:text-7xl text-4xl font-bold lg:w-[70%] tracking-wide md:leading-20 banner-headline">
+                  Professional Janitorial Appointments That <span className="text-secondary">Actually Convert</span>
                 </h1>
                 <div className="banner-btn">
                   <PrimaryBtn text="Request Consultation" />
@@ -155,10 +155,10 @@ const Banner = () => {
             />
             <div className="!z-20 pt-8 relative container h-full flex flex-col justify-center">
               <div className={`${barlow.className} space-y-5`}>
-                <p className="text-secondary uppercase font-semibold text-lg tracking-widest banner-subtext w-fit">
+                <p className="text-secondary uppercase font-semibold md:text-xl text-lg tracking-widest banner-subtext w-fit">
                   Stress-Free Lead Generation
                 </p>
-                <h1 className="text-white md:text-5xl text-3xl font-bold lg:w-1/2 tracking-wide md:leading-14 banner-headline">
+                <h1 className="text-white md:text-7xl text-4xl font-bold lg:w-[70%] tracking-wide md:leading-20 banner-headline">
                   Local Commercial Cleaning Leads & Janitorial Appointments
                 </h1>
                 <div className="banner-btn">

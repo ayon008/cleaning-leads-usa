@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./Shared/Navbar/Navbar";
 import { poppins } from "./fonts/Fonts";
+import Footer from "./Shared/footer/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,6 +20,7 @@ export default function RootLayout({
         <div className="overflow-x-hidden">
           <Navbar />
           {children}
+          <Footer />
         </div>
       </body>
     </html>

@@ -12,11 +12,11 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PrimaryBtn from "../Button/PrimaryBtn";
 
-export const Logo = () => {
+export const Logo = ({ containerClass }: { containerClass?: string }) => {
   return (
     <Link href={"/"}>
       <div>
-        <div className="flex items-center gap-2">
+        <div className={`flex items-center gap-2 ${containerClass}`}>
           <Image src={logo} priority alt="Logo-image" width={40} height={40} />
           <h1 className={`${poppins.className} font-semibold text-lg`}>
             Cleaning <br />
