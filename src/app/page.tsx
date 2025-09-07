@@ -1,9 +1,11 @@
 import Banner from "./Shared/Home/Banner";
+import Blogs from "./Shared/Home/Blogs";
 import Contact from "./Shared/Home/Contact";
 import Expertise from "./Shared/Home/Expertise";
 import OurDo from "./Shared/Home/OurDo";
 import Professional from "./Shared/Home/Professional";
 import Testimonial from "./Shared/Home/Testimonial";
+import WhyUs from "./Shared/Home/WhyUs";
 
 export default function Home() {
   return (
@@ -16,6 +18,9 @@ export default function Home() {
       {/*  */}
       <OurDo />
       <Testimonial />
+      {/* Pricing */}
+      <WhyUs />
+      <Blogs />
     </>
   );
 }
