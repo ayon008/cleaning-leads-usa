@@ -12,8 +12,8 @@ import image from "../../../../public/service-n-01-600x400.jpg";
 import { barlow } from "@/app/fonts/Fonts";
 // import image2 from "../../../../public/service-n-02-600x400.jpg";
 import image3 from "../../../../public/service-n-03-600x400.jpg";
-import image5 from "../../../../public/service-n-04-600x400.jpg";
-import image4 from "../../../../public/team-nocoloco-w9jKH8ZnF7A-unsplash.jpg";
+import image5 from "@/../public/Unlock_Big_Savings_with_Your_Nicejob_Discount_Code-removebg-preview.png.bv_resized_ipad.png.bv.webp";
+import image4 from "@/../public/9274.jpg";
 
 const Card = ({
   image,
@@ -25,7 +25,7 @@ const Card = ({
   text: string;
 }) => {
   return (
-    <div className="rounded-lg bg-white h-[520px]">
+    <div className="rounded-lg bg-white h-[535px]">
       <div className="w-full h-[240px] overflow-hidden relative rounded-t-lg">
         <Image src={image} fill alt="" className="object-cover" />
       </div>
@@ -60,7 +60,7 @@ const Expertise = () => {
             loop={true}
             speed={1000}
             className="expertise relative"
-            autoplay={{ delay: 2000, disableOnInteraction: false }}
+            autoplay={{ delay: 4000, disableOnInteraction: true }}
           >
             <SwiperSlide>
               <Card

@@ -3,6 +3,7 @@ import Contact from "./Shared/Home/Contact";
 import Expertise from "./Shared/Home/Expertise";
 import OurDo from "./Shared/Home/OurDo";
 import Professional from "./Shared/Home/Professional";
+import Testimonial from "./Shared/Home/Testimonial";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <div className="bg-primary -mt-56 pb-56 h-fit"></div>
       {/*  */}
       <OurDo />
+      <Testimonial />
     </>
   );
 }

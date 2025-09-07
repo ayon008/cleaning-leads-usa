@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import professional_image from "@/../public/img-02-pqdux4fpkzdwtwa2kl3iel4e21mxbmmt1xxgvifrlo.jpg";
+import professional_image from "@/../public/52068.jpg";
 import { barlow } from "@/app/fonts/Fonts";
 import { CheckCircle } from "lucide-react";
 import PrimaryBtn from "../Button/PrimaryBtn";
@@ -11,7 +11,7 @@ const Professional = () => {
       <div className="container">
         <div className="flex gap-6">
           <div className="flex-1 -mt-14">
-            <div className="rounded-md overflow-hidden w-fit">
+            <div className="rounded-md overflow-hidden w-fit shadow-xl">
               <div className="h-14 bg-secondary flex items-center justify-center">
                 <p
                   className={`text-white font-bold tracking-wider text-xl ${barlow.className}`}
