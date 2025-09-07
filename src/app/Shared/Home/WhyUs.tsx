@@ -30,7 +30,7 @@ const WhyUs = () => {
                 facility managers, you can confidently visit their location,
                 assess their cleaning needs, and present competitive proposals.
                 We guarantee appointments with authorized personnel, ensuring
-                you're speaking directly with the people who have purchasing
+                you&apos;re speaking directly with the people who have purchasing
                 power for commercial cleaning services.
               </p>
               <PrimaryBtn text="Our Packages" containerClass="mt-8" />
@@ -159,7 +159,7 @@ const WhyUs = () => {
                 <p>
                   Pay only for verified office cleaning appointments that you
                   actually visit and quote. No charges for unqualified leads,
-                  missed appointments, or prospects who don't meet - guaranteed
+                  missed appointments, or prospects who don&apos;t meet - guaranteed
                   fair pricing for real opportunities only.
                 </p>
               </div>
@@ -173,7 +173,7 @@ const WhyUs = () => {
                   Industry-Leading 40%-50% Conversion Rates
                 </h3>
                 <p>
-                  CleaningLeadsUSA's commercial cleaning leads achieve
+                  CleaningLeadsUSA&apos;s commercial cleaning leads achieve
                   exceptional 40%-50% close rates. Our experienced appointment
                   setting team ensures you meet with qualified decision-makers
                   who have budget and authority to hire cleaning contractors.

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, { ReactNode } from "react";
 import image from "@/../public/slider-a-01.jpg";
 import PrimaryBtn from "../Button/PrimaryBtn";
 
@@ -10,7 +10,7 @@ const Hero = ({
 }: {
   title: string;
   headline: string;
-  des: HTMLAnchorElement;
+  des: ReactNode;
 }) => {
   return (
     <section id="hero" className="lg:-mt-8 mt-0">

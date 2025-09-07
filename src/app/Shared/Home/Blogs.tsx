@@ -1,6 +1,6 @@
 import React from "react";
 import Title from "../Title/Title";
-import BlogCard from "./BlogCard";
+// import BlogCard from "./BlogCard";
 import { getPosts } from "@/app/lib/Wp";
 
 const Blogs = async() => {
