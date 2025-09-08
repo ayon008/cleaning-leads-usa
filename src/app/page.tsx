@@ -6,6 +6,7 @@ import OurDo from "./Shared/Home/OurDo";
 import Professional from "./Shared/Home/Professional";
 import Testimonial from "./Shared/Home/Testimonial";
 import WhyUs from "./Shared/Home/WhyUs";
+import Pricing from "./Shared/Pricing/Pricing";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <OurDo />
       <Testimonial />
       {/* Pricing */}
+      <Pricing />
       <WhyUs />
       <Blogs />
     </>

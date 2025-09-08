@@ -9,43 +9,7 @@ import image2 from "../../../../public/Disinfection.webp";
 const WhyUs = () => {
   return (
     <>
-      <section id="why-us" className="">
-        <div className="container">
-          <Title
-            headline="Generate Office Cleaning Leads Every Month - Grow Your Commercial Cleaning Business"
-            subHeading=""
-            containerClass="text-center"
-          />
-          <div className="mt-10 flex items-stretch justify-between gap-10">
-            <div className="flex-1">
-              <p className="text-gray-700">
-                CleaningLeadsUSA delivers premium commercial office cleaning
-                leads through targeted outreach to businesses actively seeking
-                janitorial services.
-              </p>
-              <p className="mt-8 text-gray-700">
-                Our experienced lead generation and appointment setting team
-                converts prospects into long-term cleaning contracts. When you
-                receive our pre-qualified appointments with decision-makers and
-                facility managers, you can confidently visit their location,
-                assess their cleaning needs, and present competitive proposals.
-                We guarantee appointments with authorized personnel, ensuring
-                you&apos;re speaking directly with the people who have purchasing
-                power for commercial cleaning services.
-              </p>
-              <PrimaryBtn text="Our Packages" containerClass="mt-8" />
-            </div>
-            <div className="relative flex-1 w-full h-full">
-              <Image
-                src={image}
-                className="w-full h-full object-cover"
-                alt="office-cleaning"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="contractors" className="py-10 mt-10 bg-primary">
+      <section id="contractors" className="py-10 bg-primary">
         <div className="container">
           <Title
             headline="Leads Generation For Contractors"
@@ -87,6 +51,42 @@ const WhyUs = () => {
                 service is proven to accelerate business growth for cleaning
                 contractors nationwide.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="why-us" className="mt-10 mb-20">
+        <div className="container">
+          <Title
+            headline="Generate Office Cleaning Leads Every Month - Grow Your Commercial Cleaning Business"
+            subHeading=""
+            containerClass="text-center"
+          />
+          <div className="mt-10 flex items-stretch justify-between gap-10">
+            <div className="flex-1">
+              <p className="text-gray-700">
+                CleaningLeadsUSA delivers premium commercial office cleaning
+                leads through targeted outreach to businesses actively seeking
+                janitorial services.
+              </p>
+              <p className="mt-8 text-gray-700">
+                Our experienced lead generation and appointment setting team
+                converts prospects into long-term cleaning contracts. When you
+                receive our pre-qualified appointments with decision-makers and
+                facility managers, you can confidently visit their location,
+                assess their cleaning needs, and present competitive proposals.
+                We guarantee appointments with authorized personnel, ensuring
+                you&apos;re speaking directly with the people who have purchasing
+                power for commercial cleaning services.
+              </p>
+              <PrimaryBtn text="Our Packages" containerClass="mt-8" />
+            </div>
+            <div className="relative flex-1 w-full h-full">
+              <Image
+                src={image}
+                className="w-full h-full object-cover"
+                alt="office-cleaning"
+              />
             </div>
           </div>
         </div>
