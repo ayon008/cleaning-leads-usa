@@ -37,7 +37,7 @@ const navItems = [
   { name: "Contact Us", href: "/contact" },
   { name: "About Us", href: "/about" },
   { name: "Appointments", href: "/appointments" },
-  { name: "Leads", href: "/leads" },
+  { name: "Services", href: "/services" },
   { name: "Blogs", href: "/blogs" },
 ];
 
@@ -62,6 +62,7 @@ const Navbar = () => {
       duration: 0.5,
       ease: "power1.inOut",
       backgroundColor: "#4DAC4D",
+      boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.4)",
     });
     t1.to(ctaRef.current, {
       duration: 0,
@@ -69,33 +70,36 @@ const Navbar = () => {
     });
   }, []);
 
-  useGSAP(() => {
-    gsap.to(".line-1", {
-      rotate: isOpen ? 45 : 0,
-      backgroundColor: isOpen ? "white" : "black",
-    });
-    gsap.to(".line-3", {
-      rotate: isOpen ? -45 : 0,
-      backgroundColor: isOpen ? "white" : "black",
-    });
-    gsap.to(".line-2", {
-      opacity: !isOpen ? 1 : 0,
-    });
-    gsap.to(".nav-mbl", {
-      xPercent: isOpen ? 0 : 100,
-      opacity: isOpen ? 100 : 0,
-    });
-    if (isOpen) {
-      gsap.from(".nav-items", {
-        opacity: 0,
-        yPercent: 100,
-        duration: 1,
-        stagger: 0.3,
-        delay: 0.2, // Wait for menu to appear
-        ease: "power1.inOut",
+  useGSAP(
+    () => {
+      gsap.to(".line-1", {
+        rotate: isOpen ? 45 : 0,
+        backgroundColor: isOpen ? "white" : "black",
       });
-    }
-  }, [isOpen]);
+      gsap.to(".line-3", {
+        rotate: isOpen ? -45 : 0,
+        backgroundColor: isOpen ? "white" : "black",
+      });
+      gsap.to(".line-2", {
+        opacity: !isOpen ? 1 : 0,
+      });
+      gsap.to(".nav-mbl", {
+        xPercent: isOpen ? 0 : 100,
+        opacity: isOpen ? 100 : 0,
+      });
+      if (isOpen) {
+        gsap.from(".nav-items", {
+          opacity: 0,
+          yPercent: 100,
+          duration: 1,
+          stagger: 0.1,
+          delay: 0.2, // Wait for menu to appear
+          ease: "power1.inOut",
+        });
+      }
+    },
+    { dependencies: [isOpen], revertOnUpdate: true }
+  );
 
   useEffect(() => {
     if (isOpen) {
@@ -201,7 +205,7 @@ const Navbar = () => {
       </div>
       {/* Nav Part */}
       <div
-        className="relative z-[100] hidden lg:block shadow-2xl"
+        className="relative z-[100] hidden lg:block"
         id="nav-part"
         ref={ref}
       >
@@ -211,7 +215,7 @@ const Navbar = () => {
               return (
                 <li key={i}>
                   <Link
-                    href={"/"}
+                    href={navItems.href}
                     className="text-white font-semibold text-base"
                   >
                     {navItems.name}

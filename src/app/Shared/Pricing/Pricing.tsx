@@ -87,9 +87,10 @@ const Pricing = () => {
                       return (
                         <li
                           key={i}
-                          className="mt-2 text-black before:content-['✓'] before:text-secondary before:mr-2 mr-4"
+                          className="mt-2 text-black flex items-center gap-4"
                         >
-                          {feature}
+                          <span className="text-secondary">{`✓`}</span>
+                          <span>{feature}</span>
                         </li>
                       );
                     })}
