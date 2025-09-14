@@ -2,7 +2,6 @@ import Banner from "./Shared/Home/Banner";
 import Blogs from "./Shared/Home/Blogs";
 import Contact from "./Shared/Home/Contact";
 import Expertise from "./Shared/Home/Expertise";
-import OurDo from "./Shared/Home/OurDo";
 import Professional from "./Shared/Home/Professional";
 import Testimonial from "./Shared/Home/Testimonial";
 import WhyUs from "./Shared/Home/WhyUs";
@@ -13,16 +12,22 @@ export default function Home() {
     <>
       <Banner />
       <Professional />
-      <Contact />
       <Expertise />
+      <Contact />
       <div className="bg-primary -mt-56 pb-56 h-fit"></div>
-      {/*  */}
-      <OurDo />
       <Testimonial />
-      {/* Pricing */}
       <Pricing />
       <WhyUs />
-      <Blogs />
+      {/* 
+       */}
+      {/*  */}
+      {/*  */}
+      {/* <OurDo /> */}
+      {/*  */}
+      {/* Pricing */}
+      {/* 
+      
+      <Blogs /> */}
     </>
   );
 }

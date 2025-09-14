@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "./Shared/Navbar/Navbar";
 import { poppins } from "./fonts/Fonts";
 import Footer from "./Shared/footer/Footer";
+import TopButton from "./Shared/Button/TopButton";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,9 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.className} antialiased`}>
-        <div className="overflow-x-hidden">
+        <div className="overflow-x-hidden" id="root-layout">
           <Navbar />
           {children}
+          <TopButton />
           <Footer />
         </div>
       </body>

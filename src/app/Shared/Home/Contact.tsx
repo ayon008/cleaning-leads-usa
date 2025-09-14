@@ -6,9 +6,10 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="bg-[url('/slider-02-b.jpg')] bg-cover bg-no-repeat bg-center h-dvh max-h-[834px] w-full relative mt-20"
+      className="bg-[url('/professional-cleaning-services-clip.jpg')] bg-cover bg-no-repeat h-dvh max-h-[834px] w-full mt-20 relative"
     >
-      <div className="container h-full flex items-center justify-between gap-20">
+      <div className="inset-0 absolute bg-tertiary opacity-80 z-10"></div>
+      <div className="container h-full flex items-center justify-between gap-20 relative z-20">
         <div className="">
           <p className="text-secondary font-semibold">Contact Us Today</p>
           <h1
@@ -17,16 +18,16 @@ const Contact = () => {
             Let&apos;s Grow Your Cleaning Business
           </h1>
           <p className={`${poppins.className} text-base text-white`}>
-            Contact CleaningLeadsUSA now to discover how our proven lead
-            generation system can help you secure more commercial cleaning
-            contracts and scale your business faster.
+            To find out how our tried-and-true lead generation system can help
+            you land more commercial cleaning jobs and grow your company more
+            quickly, get in touch with CleaningLeadsUSA right now.
           </p>
           <div className="flex items-center gap-10">
             <div
-              className="flex items-center gap-2 bg-tertiary mt-6 py-2 px-4 rounded-4xl w-fit"
+              className="flex items-center gap-2 bg-secondary mt-6 py-2 px-4 rounded-4xl w-fit"
               id="cta"
             >
-              <Headphones className="text-secondary" size={"2rem"} />
+              <Headphones className="text-tertiary" size={"2rem"} />
               <a href="tel:+12344500123">
                 <div>
                   <p className="text-base text-white font-semibold">

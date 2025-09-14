@@ -1,6 +1,6 @@
 "use client";
-import facebook from "../../../../public/2023_Facebook_icon.svg.png";
-import whatasapp from "../../../../public/WhatsApp.svg.webp";
+import facebook from "@/../public/2023_Facebook_icon.svg.png";
+import whatasapp from "@/../public/WhatsApp.svg.webp";
 import { barlow, poppins } from "@/app/fonts/Fonts";
 import { Headphones, MapPin, Phone, ShoppingCart } from "lucide-react";
 import Image from "next/image";
@@ -11,13 +11,22 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PrimaryBtn from "../Button/PrimaryBtn";
+gsap.registerPlugin(ScrollTrigger);
 
 export const Logo = ({ containerClass }: { containerClass?: string }) => {
   return (
-    <Link href={"/"}>
+    <Link href={"/"} aria-label="Go to homepage">
       <div>
         <div className={`flex items-center gap-2 ${containerClass}`}>
-          <Image src={logo} priority alt="Logo-image" width={40} height={40} />
+          <Image
+            src={logo}
+            priority
+            alt="Company logo - Cleaning Leads USA"
+            title="Cleaning Leads USA Logo"
+            width={40}
+            height={40}
+            sizes="40px"
+          />
           <h1 className={`${poppins.className} font-semibold text-lg`}>
             Cleaning <br />
             Leads USA
@@ -27,7 +36,6 @@ export const Logo = ({ containerClass }: { containerClass?: string }) => {
     </Link>
   );
 };
-gsap.registerPlugin(ScrollTrigger);
 
 const navItems = [
   {
@@ -75,17 +83,25 @@ const Navbar = () => {
       gsap.to(".line-1", {
         rotate: isOpen ? 45 : 0,
         backgroundColor: isOpen ? "white" : "black",
+        duration: 0.5,
+        ease: "power1.inOut",
       });
       gsap.to(".line-3", {
         rotate: isOpen ? -45 : 0,
         backgroundColor: isOpen ? "white" : "black",
+        duration: 0.5,
+        ease: "power1.inOut",
       });
       gsap.to(".line-2", {
         opacity: !isOpen ? 1 : 0,
+        duration: 0.5,
+        ease: "power1.inOut",
       });
       gsap.to(".nav-mbl", {
-        xPercent: isOpen ? 0 : 100,
+        // width: isOpen ? 0 : 100,
         opacity: isOpen ? 100 : 0,
+        left: isOpen ? 0 : "100%",
+        duration: 0.5,
       });
       if (isOpen) {
         gsap.from(".nav-items", {
@@ -128,7 +144,7 @@ const Navbar = () => {
             </Link>
           </ul>
           <div className="flex items-center gap-8">
-            <Link href={"/book-an-appointment"}>
+            <Link href={"/appointments"}>
               <PrimaryBtn text="Book an Appointment" />
             </Link>
             <ShoppingCart />
@@ -157,7 +173,11 @@ const Navbar = () => {
             <p className="text-base text-gray-500 font-semibold">
               Contact Mail
             </p>
-            <a href="mailto:support@cleaningleadsusa.com">
+            <a
+              href="mailto:support@cleaningleadsusa.com"
+              aria-label="Email support at Cleaning Leads USA"
+              title="Contact Cleaning Leads USA Support"
+            >
               <h2 className={`${barlow.className} text-xl font-bold`}>
                 support@cleaningleadsusa.com
               </h2>
@@ -171,11 +191,13 @@ const Navbar = () => {
               href="https://www.facebook.com/YourPage"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Visit Cleaning Leads USA on Facebook"
+              title="Cleaning Leads USA Facebook Page"
             >
               <Image
                 src={facebook}
                 className="w-[30px] h-[30px] cursor-pointer"
-                alt="facebook"
+                alt="Cleaning Leads USA Facebook Page"
               />
             </a>
           </div>
@@ -186,11 +208,14 @@ const Navbar = () => {
               href="https://wa.me/1234567890"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Chat with Cleaning Leads USA on WhatsApp"
+              title="Chat with Cleaning Leads USA on WhatsApp"
             >
               <Image
                 src={whatasapp}
                 className="w-[40px] h-[40px] cursor-pointer"
-                alt="whatsapp"
+                alt="Cleaning Leads USA WhatsApp Contact"
+                sizes="40px"
               />
             </a>
           </div>
@@ -204,11 +229,7 @@ const Navbar = () => {
         </div>
       </div>
       {/* Nav Part */}
-      <div
-        className="relative z-[100] hidden lg:block"
-        id="nav-part"
-        ref={ref}
-      >
+      <div className="relative z-[100] hidden lg:block" id="nav-part" ref={ref}>
         <div className="flex items-center justify-between container nav-part">
           <ul className="flex items-center lg:w-2/3 gap-10">
             {navItems?.map((navItems, i) => {
@@ -258,7 +279,7 @@ const Navbar = () => {
             <div className="w-10 h-1 bg-black rounded origin-left line-3"></div>
           </button>
         </div>
-        <ul className="fixed h-dvh w-full top-0 right-0 bottom-0 text-white bg-black flex items-center justify-center flex-col gap-8 text-4xl !z-40 nav-mbl opacity-0 !overflow-hidden">
+        <ul className="fixed h-dvh top-0 right-0 bottom-0 text-white bg-black flex items-center justify-center flex-col gap-8 text-4xl !z-40 nav-mbl !overflow-hidden">
           {navItems?.map((navItems, i) => {
             return (
               <li key={i}>

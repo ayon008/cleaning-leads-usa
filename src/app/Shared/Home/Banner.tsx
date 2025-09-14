@@ -1,56 +1,10 @@
-"use client";
-import React, { useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import { Autoplay, EffectFade, Pagination } from "swiper/modules";
 import Image from "next/image";
 import heroImage1 from "@/../public/slider-a-01.jpg";
-import heroImage2 from "@/../public/slider-a-02-1.jpg";
-import "swiper/css/effect-fade";
 import { barlow } from "@/app/fonts/Fonts";
 import PrimaryBtn from "../Button/PrimaryBtn";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 import { Globe, Headphones, Mail, Share2 } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 const Banner = () => {
-  const [index, setIndex] = useState<number>(0);
-  const containerRef = useRef<HTMLDivElement | null>(null);
-
-  useGSAP(
-    () => {
-      const t1 = gsap.timeline();
-      t1.from(".banner-subtext", {
-        xPercent: -50,
-        opacity: 0,
-        duration: 0.5,
-        ease: "none",
-      })
-        .from(
-          ".banner-headline",
-          {
-            xPercent: 10,
-            opacity: 0,
-            duration: 0.5,
-            ease: "none",
-          },
-          "-=0.3"
-        )
-        .from(
-          ".banner-btn",
-          {
-            yPercent: 50,
-            opacity: 0,
-            duration: 0.5,
-            ease: "none",
-          },
-          "=+0.2"
-        );
-    },
-    { dependencies: [index], scope: containerRef, revertOnUpdate: true }
-  );
   // card
   const Card = ({
     title,
@@ -104,98 +58,58 @@ const Banner = () => {
 
   return (
     <section className="bg-primary">
-      <div
-        className="w-full md:h-dvh h-[500px] lg:-mt-8 mt-0"
-        id="banner"
-        ref={containerRef}
-      >
-        <Swiper
-          modules={[Pagination, Autoplay, EffectFade]}
-          fadeEffect={{ crossFade: true }}
-          pagination={{ clickable: true }}
-          speed={1000}
-          autoplay={{ delay: 4000, disableOnInteraction: false }}
-          effect="fade"
-          slidesPerView={1}
-          loop={true}
-          className="h-full banner"
-          onSlideChange={(swiper) => {
-            const latestIndex = swiper.realIndex;
-            setIndex(latestIndex);
-          }}
-        >
-          <SwiperSlide className="h-full w-full relative">
-            <Image
-              alt="hero-image-1"
-              src={heroImage1}
-              className="object-cover absolute inset-0 size-full !z-10"
-              fill
-              priority
-            />
-            <div className="!z-20 pt-8 relative container h-full flex flex-col justify-center">
-              <div className={`${barlow.className} space-y-5`}>
-                <p className="text-secondary uppercase font-semibold md:text-xl text-lg tracking-widest banner-subtext w-fit">
-                  Grow Your Clients
-                </p>
-                <h1 className="text-white md:text-7xl text-4xl font-bold lg:w-[70%] tracking-wide md:leading-20 banner-headline">
-                  Professional Janitorial Appointments That <span className="text-secondary">Actually Convert</span>
-                </h1>
-                <div className="banner-btn">
-                  <PrimaryBtn text="Request Consultation" />
-                </div>
+      <div className="w-full md:h-dvh h-[500px] lg:-mt-8 mt-0" id="banner">
+        <div className="w-full h-full relative overflow-hidden">
+          <Image
+            alt="Commercial janitorial team providing cleaning services"
+            title="Professional janitorial appointment services"
+            src={heroImage1}
+            className="object-cover absolute inset-0 size-full !z-10"
+            fill
+            priority
+            sizes="(max-width: 640px) 70vw, (max-width: 1024px) 80vw,(max-width: 1280px) 100vw,100vw"
+          />
+          <div className="!z-20 pt-8 relative container h-full flex flex-col justify-center">
+            <div className={`${barlow.className} space-y-5`}>
+              <p className="text-secondary uppercase font-semibold md:text-xl text-lg tracking-widest banner-subtext w-fit">
+                Expand Your Customer Base
+              </p>
+              <h1 className="text-white md:text-7xl text-4xl font-bold lg:w-[70%] tracking-wide md:leading-20 banner-headline">
+                Professional Janitorial Appointments That{" "}
+                <span className="text-secondary">Actually Convert</span>
+              </h1>
+              <div className="banner-btn">
+                <PrimaryBtn text="Request Consultation" />
               </div>
             </div>
-          </SwiperSlide>
-          <SwiperSlide className="h-full w-full relative">
-            <Image
-              alt="hero-image-2"
-              src={heroImage2}
-              className="object-cover"
-              fill
-            />
-            <div className="!z-20 pt-8 relative container h-full flex flex-col justify-center">
-              <div className={`${barlow.className} space-y-5`}>
-                <p className="text-secondary uppercase font-semibold md:text-xl text-lg tracking-widest banner-subtext w-fit">
-                  Stress-Free Lead Generation
-                </p>
-                <h1 className="text-white md:text-7xl text-4xl font-bold lg:w-[70%] tracking-wide md:leading-20 banner-headline">
-                  Local Commercial Cleaning Leads & Janitorial Appointments
-                </h1>
-                <div className="banner-btn">
-                  <PrimaryBtn text="Our Service" />
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-        </Swiper>
+          </div>
+        </div>
       </div>
       <div className="md:-mt-10 mt-20 relative z-10">
         <div className="">
           <div className="container pb-36">
             <div className="flex md:flex-row flex-col md:gap-6 gap-20 items-stretch justify-between">
               <Card
-                description="Our expert agents engage targeted prospects, introducing your
-          janitorial solutions to key decision-makers and securing genuine
-          appointments."
+                description="Our knowledgeable agents interact with specific prospects, securing real appointments and introducing your janitorial solutions to important decision-makers."
                 title="Cold Calling"
                 index={1}
                 Icon={Headphones}
               />
               <Card
-                description="We craft personalized email campaigns that engage businesses in need of cleaning services, nurturing them into qualified leads."
+                description="Businesses in need of cleaning services are reached by our customized email campaigns, which turn them into qualified leads."
                 title="Email Marketing"
                 index={2}
                 Icon={Mail}
               />
               <Card
                 title="Google PPC"
-                description="High-intent prospects searching for cleaning services are driven to custom landing pages through targeted Pay-Per-Click ads."
+                description="Targeted Pay-Per-Click advertisements direct high-intent prospects looking for cleaning services to personalized landing pages."
                 index={3}
                 Icon={Globe}
               />
               <Card
                 title="Social Media Marketing"
-                description="We engage businesses on Facebook, LinkedIn, and Instagram to showcase your janitorial services and generate quality leads."
+                description="We interact with companies on Instagram, LinkedIn, and Facebook to promote your cleaning services and produce high-quality leads"
                 index={4}
                 Icon={Share2}
               />

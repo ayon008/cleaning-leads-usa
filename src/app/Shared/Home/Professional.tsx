@@ -23,22 +23,27 @@ const Professional = () => {
                 src={professional_image}
                 width={520}
                 height={550}
-                alt="Professional janitorial lead generation service"
+                alt="Professional janitorial lead generation service by Cleaning Leads USA"
+                title="Cleaning Leads USA - Professional Janitorial Lead Generation Service"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 520px"
+                decoding="async"
+                loading="lazy"
+                placeholder="blur"
               />
             </div>
           </div>
           <div className="flex-1">
             <div className="pt-10 space-y-6">
               <p className="text-secondary font-semibold">Get Quality</p>
-              <h1 className={`${barlow.className} text-6xl font-semibold`}>
+              <h1 className={`${barlow.className} text-5xl font-semibold`}>
                 Commercial Cleaning Leads & Janitorial Appointments
               </h1>
-              <p className="text-gray-400">
-                Stop wasting time on cold calls and door-to-door sales. Our
-                proven lead generation system connects you with pre-qualified
-                commercial cleaning prospects who are actively looking for
-                janitorial services. Get high-converting leads delivered
-                directly to your business.
+              <p className="text-gray-600 text-base">
+                Give up wasting time on door-to-door sales and cold calling.
+                With the help of our tested lead generation system, you can get
+                in touch with pre-screened commercial cleaning prospects who are
+                actively searching for cleaning services. Receive
+                high-converting leads sent straight to your company.
               </p>
               <ul className="professional-ul space-y-2">
                 <li className="flex items-center gap-4">
@@ -50,13 +55,13 @@ const Professional = () => {
                 <li className="flex items-center gap-4">
                   <CheckCircle className="text-secondary" />
                   <span className="text-black hover:text-secondary font-semibold text-base cursor-pointer duration-150 transition-all ease-linear">
-                    Verified janitorial leads with high conversion rates.
+                    High conversion rates for verified janitorial leads.
                   </span>
                 </li>
                 <li className="flex items-center gap-4">
                   <CheckCircle className="text-secondary" />
                   <span className="text-black hover:text-secondary font-semibold text-base cursor-pointer duration-150 transition-all ease-linear">
-                    Real-time lead delivery and appointment scheduling.
+                    Lead delivery and appointment scheduling in real time.
                   </span>
                 </li>
               </ul>

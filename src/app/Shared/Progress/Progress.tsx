@@ -48,6 +48,7 @@ const Progress = ({
       tl.to(span, {
         left:`${percent}%`,
         duration: 1,
+        opacity:1,
       });
 
       tl.to(
@@ -58,7 +59,7 @@ const Progress = ({
         },
         0
       );
-    });
+    },container);
 
     return () => context.revert();
   }, [id, percent]);
@@ -76,7 +77,7 @@ const Progress = ({
           </h3>
           <span
             ref={spanRef}
-            className="ml-2 text-white w-fit absolute z-10 top-0 "
+            className="ml-2 text-white w-fit absolute z-10 top-0 opacity-0"
           >
             {percent}%
           </span>

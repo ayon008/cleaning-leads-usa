@@ -12,38 +12,39 @@ const WhyUs = () => {
       <section id="contractors" className="py-10 bg-primary">
         <div className="container">
           <Title
-            headline="Leads Generation For Contractors"
-            subHeading="We make it easy to find verified construction leads that boost your chances of keeping busy."
+            headline="Creating Leads for Contractors"
+            subHeading="Finding verified construction leads is made simple with our help, increasing your chances of staying busy."
             containerClass="text-center"
           />
           <div className="mt-10 flex items-center justify-center gap-x-20">
             <div className="space-y-4 text-center">
-              <h3 className="text-2xl font-bold">
-                Trusted Janitorial Contractor Lead Generation
+              <h3 className="text-xl font-semibold">
+                Reliable Lead Generation for Janitorial Contractors
               </h3>
               <p className="text-center">
-                CleaningLeadsUSA is the top choice for cleaning contractors
-                seeking consistent business growth. We provide verified
-                commercial cleaning leads, eliminate cold-calling stress, and
-                secure more profitable janitorial contracts for contractors like
-                you.
+                For cleaning contractors looking for steady business growth,
+                CleaningLeadsUSA is the best option. We remove the stress of
+                cold calling, offer verified commercial cleaning leads, and
+                Obtain more lucrative janitorial contracts for yourself and
+                other contractors.
               </p>
             </div>
             <div className="text-center space-y-4">
-              <h3 className="text-2xl font-bold">
-                Connect with Ready-to-Buy Commercial Cleaning Clients
+              <h3 className="text-xl font-semibold">
+                Make Contact with Commercial Cleaning Clients Who Are Ready to
+                Purchase
               </h3>
               <p>
-                Our commercial cleaning lead services connect you exclusively
-                with pre-qualified businesses actively seeking janitorial
-                services in your area. We provide proven appointment-setting
-                tools and strategies that maximize your contract conversion
+                Our commercial cleaning lead services put you in direct contact
+                with pre-screened companies in your area that are looking for
+                janitorial services. We offer tried-and-true appointment-setting
+                techniques and tools that optimize your contract conversion
                 rates.
               </p>
             </div>
             <div className="text-center space-y-4">
-              <h3 className="text-2xl font-bold">
-                Grow Your Commercial Cleaning Business
+              <h3 className="text-xl font-semibold">
+                Expand Your Business in Commercial Cleaning
               </h3>
               <p>
                 With a steady pipeline of commercial cleaning opportunities and
@@ -58,26 +59,18 @@ const WhyUs = () => {
       <section id="why-us" className="mt-10 mb-20">
         <div className="container">
           <Title
-            headline="Generate Office Cleaning Leads Every Month - Grow Your Commercial Cleaning Business"
+            headline="Create Monthly Office Cleaning Leads to Expand Your Commercial Cleaning Company"
             subHeading=""
             containerClass="text-center"
           />
           <div className="mt-10 flex items-stretch justify-between gap-10">
             <div className="flex-1">
               <p className="text-gray-700">
-                CleaningLeadsUSA delivers premium commercial office cleaning
-                leads through targeted outreach to businesses actively seeking
-                janitorial services.
+                Through focused outreach to companies actively looking for janitorial services, CleaningLeadsUSA provides premium commercial office cleaning leads.
               </p>
               <p className="mt-8 text-gray-700">
-                Our experienced lead generation and appointment setting team
-                converts prospects into long-term cleaning contracts. When you
-                receive our pre-qualified appointments with decision-makers and
-                facility managers, you can confidently visit their location,
-                assess their cleaning needs, and present competitive proposals.
-                We guarantee appointments with authorized personnel, ensuring
-                you&apos;re speaking directly with the people who have purchasing
-                power for commercial cleaning services.
+                Prospects are turned into long-term cleaning contracts by our skilled lead generation and appointment scheduling staff. As soon as you get our pre-arranged meetings with decision-makers andFacility managers, you can visit their location with confidence, determine their cleaning requirements, and make competitive offers.
+                We ensure that you are speaking with the people who have the purchasing power to pay for commercial cleaning services by guaranteeing appointments with authorized personnel.
               </p>
               <PrimaryBtn text="Our Packages" containerClass="mt-8" />
             </div>
@@ -100,7 +93,7 @@ const WhyUs = () => {
           />
           <div className="mt-10 flex items-center justify-center gap-x-20">
             <div className="space-y-4 text-center">
-              <h3 className="text-2xl font-bold">
+              <h3 className="text-xl font-semibold">
                 Healthcare Facility Cleaning Leads - Medical Office Contracts
               </h3>
               <p className="text-center">
@@ -113,7 +106,7 @@ const WhyUs = () => {
               </p>
             </div>
             <div className="text-center space-y-4">
-              <h3 className="text-2xl font-bold">
+              <h3 className="text-xl font-semibold">
                 Industrial Cleaning Leads - Manufacturing & Factory Contracts
               </h3>
               <p>
@@ -125,7 +118,7 @@ const WhyUs = () => {
               </p>
             </div>
             <div className="text-center space-y-4">
-              <h3 className="text-2xl font-bold">
+              <h3 className="text-xl font-semibold">
                 School Cleaning Leads - Educational Facility Contracts
               </h3>
               <p>
@@ -153,14 +146,14 @@ const WhyUs = () => {
                 <DollarSignIcon size={"5rem"} className="text-secondary" />
               </div>
               <div className="text-center space-y-4">
-                <h3 className="text-2xl font-bold">
+                <h3 className="text-xl font-semibold">
                   Performance-Based Lead Pricing
                 </h3>
                 <p>
                   Pay only for verified office cleaning appointments that you
                   actually visit and quote. No charges for unqualified leads,
-                  missed appointments, or prospects who don&apos;t meet - guaranteed
-                  fair pricing for real opportunities only.
+                  missed appointments, or prospects who don&apos;t meet -
+                  guaranteed fair pricing for real opportunities only.
                 </p>
               </div>
             </div>
@@ -169,7 +162,7 @@ const WhyUs = () => {
                 <Rocket size={"5rem"} className="text-secondary" />
               </div>
               <div className="text-center space-y-4">
-                <h3 className="text-2xl font-bold">
+                <h3 className="text-xl font-semibold">
                   Industry-Leading 40%-50% Conversion Rates
                 </h3>
                 <p>
@@ -185,7 +178,7 @@ const WhyUs = () => {
                 <ThumbsUp size={"5rem"} className="text-secondary" />
               </div>
               <div className="text-center space-y-4">
-                <h3 className="text-2xl font-bold">
+                <h3 className="text-xl font-semibold">
                   Exceptional Lead Quality Guaranteed
                 </h3>
                 <p>

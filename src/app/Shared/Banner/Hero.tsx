@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React, { ReactNode } from "react";
-import image from "@/../public/professional-cleaning-service-people-working-together-office.jpg";
+import image from "@/../public/professional-cleaning-services.jpg";
 import PrimaryBtn from "../Button/PrimaryBtn";
 
 const Hero = ({
@@ -21,6 +21,7 @@ const Hero = ({
           fill
           alt="Banner-image-commercial-cleaning-leads"
           className="w-full h-full object-cover absolute inset-0"
+          priority
         />
         <div className="relative container z-20 pt-10 h-full flex flex-col justify-center gap-4">
           <h1 className="text-white md:text-6xl font-semibold">{title}</h1>

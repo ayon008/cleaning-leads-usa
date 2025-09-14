@@ -37,40 +37,38 @@ const Testimonial = () => {
       <div className="container">
         <Title
           containerClass="text-center"
-          headline="Proven Results from Commercial Cleaning Companies"
+          headline="Verified Outcomes from Cleaning Companies"
           subHeading="Cleaning businesses nationwide rely on CleaningLeadsUSA to generate high-quality janitorial leads and fill their schedules. Discover how our verified commercial cleaning leads have helped clients secure more contracts, increase revenue, and achieve sustainable business growth."
         />
-        <div className="flex flex-wrap gap-10 mt-10 items-stretch justify-center">
+        <div className="flex flex-wrap gap-4 mt-10 items-stretch justify-center">
           <TestimonialCard
             rating={5}
             maxStars={5}
-            review="Amazing results! CleaningLeadsUSA delivered 15 qualified leads in our
-        first month. We closed 8 contracts worth over $45,000. Their appointment
-        setting team is professional and the leads are pre-screened perfectly."
+            review="Fantastic outcomes! In our first month, CleaningLeadsUSA provided 15 qualified leads. Eight contracts totalling more than $45,000 were closed. The leads are flawlessly pre-screened, and their appointment setting staff is professional."
             owner="Mike Johnson, Johnson Commercial Cleaning, Florida"
           />
           <TestimonialCard
             rating={5}
             maxStars={5}
-            review="Best investment we've made for our cleaning business. The leads are high-quality and the appointment scheduling saves us hours every week. We've doubled our revenue in 6 months thanks to CleaningLeadsUSA!"
+            review="The best money we've ever spent on our cleaning company. We save hours each week thanks to the appointment scheduling and the high-quality leads. CleaningLeadsUSA has helped us double our revenue in just six months!"
             owner="Sarah Martinez, Martinez Janitorial Services, Chatsworth, CA 91311"
           />
           <TestimonialCard
             rating={5}
             maxStars={5}
-            review="Finally found a lead generation service that actually works! The commercial cleaning leads are exactly what we need - hospitals, schools, and office buildings. Their team handles everything professionally."
+            review="I've at last discovered a lead generation service that is truly effective! We need the commercial cleaning leads for office buildings, schools, and hospitals. Everything is handled expertly by their staff."
             owner="David Chen, ProClean Solutions, P.O. Box 112 Rossford, OH 43460"
           />
           <TestimonialCard
             rating={4}
             maxStars={5}
-            review="Great service overall. The leads are qualified and their appointment setting is solid. Would like to see faster turnaround times, but the quality makes up for it. Definitely recommend for growing cleaning companies."
+            review="Overall, excellent service. Their appointment scheduling is sound, and the leads are qualified. Although I would prefer quicker turnaround times, the quality more than makes up for it. Strongly suggested for expanding cleaning businesses."
             owner="Lisa Thompson, Thompson Cleaning Co, 1011 West Ave, Rifle, CO 81650"
           />
           <TestimonialCard
             rating={5}
             maxStars={5}
-            review="CleaningLeadsUSA helped us land 3 major hospital contracts this quarter. The leads are legitimate and the pricing is fair. Customer service responds quickly to any questions."
+            review="This quarter, CleaningLeadsUSA assisted us in securing three significant hospital contracts. The pricing is reasonable and the leads are authentic. Any questions are promptly answered by customer service."
             owner="Robert Williams, Elite Facility Services, Rancho Cucamonga, CA 91730"
           />
         </div>
