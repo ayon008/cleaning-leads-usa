@@ -1,6 +1,5 @@
 import Image from "next/image";
 import heroImage1 from "@/../public/slider-a-01.jpg";
-import { barlow } from "@/app/fonts/Fonts";
 import PrimaryBtn from "../Button/PrimaryBtn";
 import { Globe, Headphones, Mail, Share2 } from "lucide-react";
 import { LucideIcon } from "lucide-react";
@@ -20,7 +19,7 @@ const Banner = () => {
     return (
       <div className="md:w-64 w-full md:mx-0 mx-auto">
         <div
-          className={`${barlow.className} p-8 bg-white relative flex-1 card h-52 rounded-md overflow-hidden group`}
+          className={`p-8 bg-white relative flex-1 card h-52 rounded-md overflow-hidden group`}
         >
           <svg
             width=""
@@ -39,7 +38,7 @@ const Banner = () => {
             />
           </svg>
           <div className="relative z-20">
-            <p className="text-3xl font-semibold group-hover:text-white">
+            <p className="text-2xl font-semibold group-hover:text-white">
               {title}
             </p>
             <Icon
@@ -70,14 +69,15 @@ const Banner = () => {
             sizes="(max-width: 640px) 70vw, (max-width: 1024px) 80vw,(max-width: 1280px) 100vw,100vw"
           />
           <div className="!z-20 pt-8 relative container h-full flex flex-col justify-center">
-            <div className={`${barlow.className} space-y-5`}>
-              <p className="text-secondary uppercase font-semibold md:text-xl text-lg tracking-widest banner-subtext w-fit">
-                Expand Your Customer Base
-              </p>
-              <h1 className="text-white md:text-7xl text-4xl font-bold lg:w-[70%] tracking-wide md:leading-20 banner-headline">
-                Professional Janitorial Appointments That{" "}
-                <span className="text-secondary">Actually Convert</span>
+            <div className={`space-y-5`}>
+              <h1 className="text-white md:text-5xl md:leading-16 font-extrabold">
+                Professional Janitorial Appointments <br /> Thats
+                <span className="text-secondary"> Actually Convert</span>
               </h1>
+              <p className="text-white text-base font-semibold">
+                The only reliable source for janitorial jobs is this <br />{" "}
+                stress-free appointment scheduling service for janitors.
+              </p>
               <div className="banner-btn">
                 <PrimaryBtn text="Request Consultation" />
               </div>

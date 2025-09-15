@@ -14,7 +14,7 @@ const Professional = () => {
             <div className="rounded-md overflow-hidden w-fit shadow-xl">
               <div className="h-14 bg-secondary flex items-center justify-center">
                 <p
-                  className={`text-white font-bold tracking-wider text-xl ${barlow.className}`}
+                  className={`text-white font-bold text-base `}
                 >
                   Nationwide Coverage Available
                 </p>
@@ -35,7 +35,7 @@ const Professional = () => {
           <div className="flex-1">
             <div className="pt-10 space-y-6">
               <p className="text-secondary font-semibold">Get Quality</p>
-              <h1 className={`${barlow.className} text-5xl font-semibold`}>
+              <h1 className={`text-4xl font-semibold`}>
                 Commercial Cleaning Leads & Janitorial Appointments
               </h1>
               <p className="text-gray-600 text-base">

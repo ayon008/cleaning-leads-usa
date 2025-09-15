@@ -12,7 +12,7 @@ const Title = ({
 }) => {
   return (
     <div className={`${containerClass}`}>
-      <h1 className={`${barlow.className} text-6xl mb-4 font-semibold text-secondary`}>
+      <h1 className={`text-5xl mb-6 font-bold text-secondary`}>
         {headline}
       </h1>
       <p className="font-medium text-base text-gray-500">{subHeading}</p>

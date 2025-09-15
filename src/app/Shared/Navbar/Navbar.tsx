@@ -1,7 +1,6 @@
 "use client";
 import facebook from "@/../public/2023_Facebook_icon.svg.png";
 import whatasapp from "@/../public/WhatsApp.svg.webp";
-import { barlow, poppins } from "@/app/fonts/Fonts";
 import { Headphones, MapPin, Phone, ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
@@ -27,7 +26,7 @@ export const Logo = ({ containerClass }: { containerClass?: string }) => {
             height={40}
             sizes="40px"
           />
-          <h1 className={`${poppins.className} font-semibold text-lg`}>
+          <h1 className={`font-semibold text-lg`}>
             Cleaning <br />
             Leads USA
           </h1>
@@ -125,14 +124,12 @@ const Navbar = () => {
     }
   }, [isOpen]);
 
-  console.log("open", isOpen);
-
   return (
     <nav className={`nav`}>
       {/* Nav top */}
       <div className="relative hidden lg:block">
         <div className="flex items-center justify-between container !pl-8 bg-primary nav-top rounded-tl-[50px] rounded-bl-[50px]">
-          <ul className={`${poppins.className} flex items-center gap-8`}>
+          <ul className={`flex items-center gap-8`}>
             <Link href={"/support"}>
               <li className="text-sm font-semibold">Support</li>
             </Link>
@@ -159,28 +156,22 @@ const Navbar = () => {
         <div className="flex items-center gap-2">
           <MapPin className="text-secondary" size={"2rem"} />
           <div>
-            <p className="text-base text-gray-500 font-semibold">
+            <p className="text-sm text-gray-500 font-semibold">
               Office Address
             </p>
-            <h2 className={`${barlow.className} text-xl font-bold`}>
-              Envanto HQ, Australia
-            </h2>
+            <h2 className={`text-base font-bold`}>Envanto HQ, Australia</h2>
           </div>
         </div>
         <div className="flex items-center gap-2 mx-8">
           <MapPin className="text-secondary" size={"2rem"} />
           <div>
-            <p className="text-base text-gray-500 font-semibold">
-              Contact Mail
-            </p>
+            <p className="text-sm text-gray-500 font-semibold">Contact Mail</p>
             <a
               href="mailto:support@cleaningleadsusa.com"
-              aria-label="Email support at Cleaning Leads USA"
               title="Contact Cleaning Leads USA Support"
+              className="text-base font-bold"
             >
-              <h2 className={`${barlow.className} text-xl font-bold`}>
-                support@cleaningleadsusa.com
-              </h2>
+              <h2 className="text-base">support@cleaningleadsusa.com</h2>
             </a>
           </div>
         </div>
@@ -219,10 +210,14 @@ const Navbar = () => {
               />
             </a>
           </div>
-
           <div>
             {/* Phone */}
-            <a href="tel:+1234567890">
+            <a
+              href="tel:+1234567890"
+              aria-label="Call Cleaning Leads USA at +1 (234) 567-890"
+              title="Call Cleaning Leads USA"
+              className="inline-flex items-center justify-center"
+            >
               <Phone className="cursor-pointer" />
             </a>
           </div>
@@ -246,19 +241,17 @@ const Navbar = () => {
             })}
           </ul>
           <div
-            className="flex items-center gap-2 bg-tertiary py-2 px-4 rounded-4xl"
+            className="flex items-center gap-2 bg-tertiary py-3 px-4 rounded-4xl"
             id="cta"
             ref={ctaRef}
           >
             <Headphones className="text-secondary" size={"2rem"} />
             <a href="tel:+12344500123">
               <div>
-                <p className="text-base text-white font-semibold">
+                <p className="text-sm text-white font-semibold">
                   Phone Number
                 </p>
-                <h2
-                  className={`${barlow.className} text-white text-xl font-bold cursor-pointer`}
-                >
+                <h2 className={`text-white text-base font-bold cursor-pointer`}>
                   +1 (234) 450-0123
                 </h2>
               </div>

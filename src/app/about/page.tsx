@@ -49,13 +49,13 @@ const page = () => {
           </div>
         </div>
         <Testimonial />
-        <div className="lg:w-[60%] ml-auto md:w-[75%] ml-auto w-full my-10 space-y-5">
+        <div className="lg:w-[60%] ml-auto md:w-[75%] w-full my-10 space-y-5">
           <h1 className="text-3xl font-semibold leading-10">
             We Deliver Qualified Janitorial Appointments That Convert Every
             Time!
           </h1>
           <p>
-            CleanLeadsUSA is USA's premier commercial cleaning lead generation
+            CleanLeadsUSA is USA&apos;s premier commercial cleaning lead generation
             company specializing in qualified janitorial appointments. We
             connect commercial cleaning contractors directly with verified
             decision-makers actively seeking new janitorial services for their

@@ -11,44 +11,39 @@ const Contact = () => {
       <div className="inset-0 absolute bg-tertiary opacity-80 z-10"></div>
       <div className="container h-full flex items-center justify-between gap-20 relative z-20">
         <div className="">
-          <p className="text-secondary font-semibold">Contact Us Today</p>
-          <h1
-            className={`text-white ${barlow.className} text-5xl font-bold mt-2 mb-5`}
-          >
+          <p className="text-secondary font-semibold text-base">
+            Contact Us Today
+          </p>
+          <h1 className={`text-white text-4xl font-bold mt-2 mb-5`}>
             Let&apos;s Grow Your Cleaning Business
           </h1>
-          <p className={`${poppins.className} text-base text-white`}>
+          <p className={`text-base text-white`}>
             To find out how our tried-and-true lead generation system can help
             you land more commercial cleaning jobs and grow your company more
             quickly, get in touch with CleaningLeadsUSA right now.
           </p>
           <div className="flex items-center gap-10">
-            <div
-              className="flex items-center gap-2 bg-secondary mt-6 py-2 px-4 rounded-4xl w-fit"
+            <a
+              href="tel:+12344500123"
+              aria-label="Call Cleaning Leads USA at +1 (234) 450-0123"
+              title="Call Cleaning Leads USA"
+              className="flex items-center gap-2 bg-secondary py-3 px-4 rounded-4xl w-fit mt-6"
               id="cta"
             >
-              <Headphones className="text-tertiary" size={"2rem"} />
-              <a href="tel:+12344500123">
-                <div>
-                  <p className="text-base text-white font-semibold">
-                    Phone Number
-                  </p>
-                  <h2
-                    className={`${barlow.className} text-white text-xl font-bold cursor-pointer`}
-                  >
-                    +1 (234) 450-0123
-                  </h2>
-                </div>
-              </a>
-            </div>
+              <Headphones className="text-white" size="2rem" />
+              <div>
+                <p className="text-sm text-white font-semibold">Phone Number</p>
+                <p className="text-white text-base font-bold cursor-pointer">
+                  +1 (234) 450-0123
+                </p>
+              </div>
+            </a>
             <p className="text-white">Call Now Or</p>
           </div>
         </div>
         <div className="">
           <form className="bg-secondary rounded-md p-8" action="">
-            <h3
-              className={`${barlow.className} text-center text-white font-semibold text-2xl`}
-            >
+            <h3 className={`text-center text-white font-medium text-xl`}>
               Request a Call Back
             </h3>
             <div className="space-y-6 mt-6">

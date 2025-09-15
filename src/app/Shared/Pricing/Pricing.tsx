@@ -1,6 +1,6 @@
 import React from "react";
 import Title from "../Title/Title";
-import { barlow } from "@/app/fonts/Fonts";
+
 const pricingTiers = [
   {
     tier: "Bronze",
@@ -66,8 +66,8 @@ const Pricing = () => {
           subHeading="Get Qualified Janitorial Appointments & Commercial Cleaning Leads"
         />
         <div className="flex items-stretch mt-10 gap-2">
-          {pricingTiers.map((singlePrice, i) => {
-            const { tier, appointments, features, cta } = singlePrice;
+          {pricingTiers.map((singlePrice) => {
+            const { tier, appointments, features } = singlePrice;
             return (
               <div
                 key={appointments}
@@ -75,7 +75,7 @@ const Pricing = () => {
               >
                 <div>
                   <h3
-                    className={`${barlow.className} text-3xl font-semibold tracking-wide`}
+                    className={`text-2xl font-semibold tracking-wide`}
                   >
                     {tier}
                   </h3>

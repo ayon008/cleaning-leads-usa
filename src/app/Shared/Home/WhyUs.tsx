@@ -9,14 +9,59 @@ import image2 from "../../../../public/Disinfection.webp";
 const WhyUs = () => {
   return (
     <>
-      <section id="contractors" className="py-10 bg-primary">
+      <section id="why-us" className="mt-10 mb-10">
+        <div className="container">
+          <Title
+            headline="Get Monthly Leads for Office Cleaning to Grow Your Business"
+            subHeading=""
+            containerClass="text-center"
+          />
+          <div className="mt-10 flex items-stretch justify-between gap-10">
+            <div className="flex-1">
+              <p className="text-gray-700">
+                Through focused outreach to companies actively looking for
+                janitorial services, CleaningLeadsUSA provides premium
+                commercial office cleaning leads.
+              </p>
+              <p className="mt-8 text-gray-700">
+                Prospects are turned into long-term cleaning contracts by our
+                skilled lead generation and appointment scheduling staff. As
+                soon as you get our pre-arranged meetings with decision-makers
+                andFacility managers, you can visit their location with
+                confidence, determine their cleaning requirements, and make
+                competitive offers. We ensure that you are speaking with the
+                people who have the purchasing power to pay for commercial
+                cleaning services by guaranteeing appointments with authorized
+                personnel.
+              </p>
+              <PrimaryBtn text="Our Packages" containerClass="mt-8" />
+            </div>
+            <div className="relative flex-1 w-full h-full">
+              {/* This section */}
+              <Image
+                src={image}
+                width={800}
+                height={600}
+                className="w-full h-full object-cover"
+                alt="Professional office cleaning service for a spotless and hygienic workplace"
+                title="Expert commercial office cleaning services"
+                sizes="(max-width: 768px) 100vw,
+         (max-width: 1200px) 50vw,
+         33vw"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      {/*  */}
+      <section id="contractors" className="py-10">
         <div className="container">
           <Title
             headline="Creating Leads for Contractors"
             subHeading="Finding verified construction leads is made simple with our help, increasing your chances of staying busy."
             containerClass="text-center"
           />
-          <div className="mt-10 flex items-center justify-center gap-x-20">
+          <div className="mt-10 flex items-center justify-center gap-10">
             <div className="space-y-4 text-center">
               <h3 className="text-xl font-semibold">
                 Reliable Lead Generation for Janitorial Contractors
@@ -56,84 +101,7 @@ const WhyUs = () => {
           </div>
         </div>
       </section>
-      <section id="why-us" className="mt-10 mb-20">
-        <div className="container">
-          <Title
-            headline="Create Monthly Office Cleaning Leads to Expand Your Commercial Cleaning Company"
-            subHeading=""
-            containerClass="text-center"
-          />
-          <div className="mt-10 flex items-stretch justify-between gap-10">
-            <div className="flex-1">
-              <p className="text-gray-700">
-                Through focused outreach to companies actively looking for janitorial services, CleaningLeadsUSA provides premium commercial office cleaning leads.
-              </p>
-              <p className="mt-8 text-gray-700">
-                Prospects are turned into long-term cleaning contracts by our skilled lead generation and appointment scheduling staff. As soon as you get our pre-arranged meetings with decision-makers andFacility managers, you can visit their location with confidence, determine their cleaning requirements, and make competitive offers.
-                We ensure that you are speaking with the people who have the purchasing power to pay for commercial cleaning services by guaranteeing appointments with authorized personnel.
-              </p>
-              <PrimaryBtn text="Our Packages" containerClass="mt-8" />
-            </div>
-            <div className="relative flex-1 w-full h-full">
-              <Image
-                src={image}
-                className="w-full h-full object-cover"
-                alt="office-cleaning"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="" className="mt-10">
-        <div className="container">
-          <Title
-            headline="Deep Commercial Cleaning Industry Knowledge"
-            subHeading="After years of connecting cleaning contractors with small to mid-sized businesses and offices seeking reliable janitorial services, CleaningLeadsUSA has established itself as the leading commercial cleaning lead generation company."
-            containerClass="text-center"
-          />
-          <div className="mt-10 flex items-center justify-center gap-x-20">
-            <div className="space-y-4 text-center">
-              <h3 className="text-xl font-semibold">
-                Healthcare Facility Cleaning Leads - Medical Office Contracts
-              </h3>
-              <p className="text-center">
-                Hospitals, medical clinics, surgical centers, and healthcare
-                facilities need professional cleaning services that comply with
-                stringent medical industry standards and infection control
-                protocols. Connect with healthcare administrators and facility
-                managers seeking reliable medical cleaning specialists for
-                ongoing service agreements.
-              </p>
-            </div>
-            <div className="text-center space-y-4">
-              <h3 className="text-xl font-semibold">
-                Industrial Cleaning Leads - Manufacturing & Factory Contracts
-              </h3>
-              <p>
-                Manufacturing facilities, warehouses, and industrial plants
-                require specialized cleaning services for equipment, machinery,
-                and production areas. Connect with facility managers and plant
-                supervisors actively seeking experienced industrial cleaning
-                contractors for long-term maintenance contracts.
-              </p>
-            </div>
-            <div className="text-center space-y-4">
-              <h3 className="text-xl font-semibold">
-                School Cleaning Leads - Educational Facility Contracts
-              </h3>
-              <p>
-                Schools, universities, daycare centers, and educational
-                institutions require reliable cleaning services to maintain
-                safe, healthy learning environments. Connect with facility
-                managers, principals, and administrators actively seeking
-                professional janitorial contractors for ongoing cleaning
-                contracts.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="choose-us" className="mt-10 pt-10 pb-10 bg-primary">
+      <section id="choose-us" className="pt-10 pb-10 bg-primary">
         <div className="container">
           <Title
             containerClass="text-center"
@@ -192,6 +160,56 @@ const WhyUs = () => {
           </div>
         </div>
       </section>
+      <section id="" className="my-10">
+        <div className="container">
+          <Title
+            headline="Deep Commercial Cleaning Industry Knowledge"
+            subHeading="After years of connecting cleaning contractors with small to mid-sized businesses and offices seeking reliable janitorial services, CleaningLeadsUSA has established itself as the leading commercial cleaning lead generation company."
+            containerClass="text-center"
+          />
+          <div className="mt-10 flex items-center justify-center gap-x-20">
+            <div className="space-y-4 text-center">
+              <h3 className="text-xl font-semibold">
+                Healthcare Facility Cleaning Leads - Medical Office Contracts
+              </h3>
+              <p className="text-center">
+                Hospitals, medical clinics, surgical centers, and healthcare
+                facilities need professional cleaning services that comply with
+                stringent medical industry standards and infection control
+                protocols. Connect with healthcare administrators and facility
+                managers seeking reliable medical cleaning specialists for
+                ongoing service agreements.
+              </p>
+            </div>
+            <div className="text-center space-y-4">
+              <h3 className="text-xl font-semibold">
+                Industrial Cleaning Leads - Manufacturing & Factory Contracts
+              </h3>
+              <p>
+                Manufacturing facilities, warehouses, and industrial plants
+                require specialized cleaning services for equipment, machinery,
+                and production areas. Connect with facility managers and plant
+                supervisors actively seeking experienced industrial cleaning
+                contractors for long-term maintenance contracts.
+              </p>
+            </div>
+            <div className="text-center space-y-4">
+              <h3 className="text-xl font-semibold">
+                School Cleaning Leads - Educational Facility Contracts
+              </h3>
+              <p>
+                Schools, universities, daycare centers, and educational
+                institutions require reliable cleaning services to maintain
+                safe, healthy learning environments. Connect with facility
+                managers, principals, and administrators actively seeking
+                professional janitorial contractors for ongoing cleaning
+                contracts.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="cleaning-leads" className="mt-10 mb-10">
         <div className="container">
           <Title

@@ -1,4 +1,4 @@
-import { barlow, poppins } from "@/app/fonts/Fonts";
+import { barlow } from "@/app/fonts/Fonts";
 import React from "react";
 import Progress from "../Progress/Progress";
 import PrimaryBtn from "../Button/PrimaryBtn";
@@ -12,14 +12,16 @@ const Stats = () => {
           <div className="flex gap-x-20 items-stretch container opacity-100">
             <div className="flex-1 overflow-hidden pt-16">
               <div>
-                <p className="text-secondary font-semibold">Not just Numbers they are results</p>
+                <p className="text-secondary font-semibold">
+                  Not just Numbers they are results
+                </p>
                 <h1
                   className={`text-white ${barlow.className} text-5xl font-bold mt-2 mb-5`}
                 >
                   Delivering Qualified Commercial Cleaning Appointments
                 </h1>
                 <div className="mt-8 space-y-8">
-                   <Progress
+                  <Progress
                     id="client"
                     percent={90}
                     title="Client Retention Rate"
@@ -29,15 +31,15 @@ const Stats = () => {
                     percent={92}
                     title="Average Revenue Increase"
                   />
-                  <Progress 
-                    id="Partnerships" 
-                    percent={88} 
-                    title="Successful Partnerships" 
+                  <Progress
+                    id="Partnerships"
+                    percent={88}
+                    title="Successful Partnerships"
                   />
-                  <Progress 
-                    id="Contract" 
-                    percent={88} 
-                    title="Faster Contract Acquisition" 
+                  <Progress
+                    id="Contract"
+                    percent={88}
+                    title="Faster Contract Acquisition"
                   />
                 </div>
                 <PrimaryBtn text="Read More" containerClass="rounded-md mt-8" />

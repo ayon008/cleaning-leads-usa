@@ -1,13 +1,12 @@
 import React from "react";
 import Title from "../Title/Title";
-import { barlow } from "@/app/fonts/Fonts";
 
 const Card = ({ title, text }: { title: string; text: string }) => {
   return (
     <div className="rounded-lg bg-primary flex-1">
       <div className="p-6">
         <h2
-          className={`text-black text-2xl font-bold hover:text-secondary duration-200 transition-all text-center ${barlow.className}`}
+          className={`text-black text-xl font-bold hover:text-secondary duration-200 transition-all text-center`}
         >
           {title}
         </h2>
@@ -24,10 +23,10 @@ const Expertise = () => {
       <div className="container">
         <Title
           containerClass="text-center"
-          subHeading="CleaningLeadsUSA links cleaning businesses with offices, schools, hospitals, and commercial facilities across the US. To gain exclusive access to premium janitorial leads and expert appointment-setting services, register right away."
+          subHeading="CleaningLeadsUSA connects cleaning companies with commercial buildings, schools, hospitals, and offices throughout the United States. Contact Us now to receive special access to high-quality janitorial leads and professional appointment-setting services."
           headline="Do You Need High-Quality Leads for Commercial Cleaning?"
         />
-        <div className="mt-10 flex items-stretch justify-center flex-wrap gap-20">
+        <div className="mt-10 flex items-stretch justify-center flex-wrap gap-10">
           <Card
             title="Quality Standards for Leads"
             text="You will receive the most up-to-date and precise commercial cleaning leads that are customized to meet your unique needs thanks to our double verification process."
