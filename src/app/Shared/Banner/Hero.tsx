@@ -15,18 +15,24 @@ const Hero = ({
   return (
     <section id="hero" className="lg:-mt-8 mt-0 h-fit">
       <div className="h-[500px] w-full relative">
-        <div className="inset-0 absolute bg-tertiary opacity-60 z-10"></div>
+        <div className="inset-0 absolute bg-gradient-to-r from-black/75 to-black/10 z-10"></div>
         <Image
           src={image}
+          alt="Commercial cleaning leads banner showcasing professional janitorial services"
+          title="Commercial Cleaning Leads – Professional Janitorial Marketing Banner"
           fill
-          alt="Banner-image-commercial-cleaning-leads"
-          className="w-full h-full object-cover absolute inset-0"
           priority
+          className="object-cover"
+          sizes="(max-width: 768px) 480px,   /* Mobile: load smaller version */
+         (max-width: 1200px) 100vw,  /* Tablet: full width */
+         100vw" /* Desktop: full width */
         />
         <div className="relative container z-20 pt-10 h-full flex flex-col justify-center gap-4">
-          <h1 className="text-white md:text-6xl font-semibold">{title}</h1>
-          <p className="text-white text-lg">{headline}</p>
-          <p className="text-sm text-white">{des}</p>
+          <h1 className="text-white md:text-5xl md:leading-16 font-extrabold">
+            {title}
+          </h1>
+          <p className="text-white text-lg font-semibold">{headline}</p>
+          <p className="text-base text-white">{des}</p>
           <PrimaryBtn text="Get A Quote" containerClass="rounded-md w-fit" />
         </div>
       </div>
