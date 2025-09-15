@@ -1,7 +1,7 @@
 import React from "react";
 import Title from "../Title/Title";
 import Image from "next/image";
-import image from "../../../../public/Cleaning-service-Customizable-Flat-Illustrations-_-Rafiki-Style.jpeg.bv_resized_ipad.jpeg.bv.webp";
+import image from "@/../public/Cleaning-service-Customizable-Flat-Illustrations-_-Rafiki-Style.jpeg.bv_resized_ipad.jpeg.bv.webp";
 import PrimaryBtn from "../Button/PrimaryBtn";
 import { DollarSignIcon, Rocket, ThumbsUp } from "lucide-react";
 import image2 from "../../../../public/Disinfection.webp";
@@ -9,14 +9,14 @@ import image2 from "../../../../public/Disinfection.webp";
 const WhyUs = () => {
   return (
     <>
-      <section id="why-us" className="mt-10 mb-10">
+      <section id="get-monthly-cleaning-leads" className="mt-10 mb-10">
         <div className="container">
           <Title
             headline="Get Monthly Leads for Office Cleaning to Grow Your Business"
             subHeading=""
             containerClass="text-center"
           />
-          <div className="mt-10 flex items-stretch justify-between gap-10">
+          <div className="mt-20 flex items-stretch justify-between gap-10">
             <div className="flex-1">
               <p className="text-gray-700">
                 Through focused outreach to companies actively looking for
@@ -54,14 +54,14 @@ const WhyUs = () => {
         </div>
       </section>
       {/*  */}
-      <section id="contractors" className="py-10">
+      <section id="contractors" className="py-20">
         <div className="container">
           <Title
             headline="Creating Leads for Contractors"
-            subHeading="Finding verified construction leads is made simple with our help, increasing your chances of staying busy."
+            subHeading="Do you need trustworthy leads for commercial construction? In order to help you land more contracts, our CleaningLeadsUSA team links you with verified opportunities in retail establishments, office buildings, and large-scale developments."
             containerClass="text-center"
           />
-          <div className="mt-10 flex items-center justify-center gap-10">
+          <div className="mt-20 flex items-center justify-center gap-10">
             <div className="space-y-4 text-center">
               <h3 className="text-xl font-semibold">
                 Reliable Lead Generation for Janitorial Contractors
@@ -101,14 +101,14 @@ const WhyUs = () => {
           </div>
         </div>
       </section>
-      <section id="choose-us" className="pt-10 pb-10 bg-primary">
+      <section id="choose-us" className="py-20 bg-primary">
         <div className="container">
           <Title
             containerClass="text-center"
-            headline="Why Choose CleaningLeadsUSA for Office Cleaning Leads?"
+            headline="Why Pick CleaningLeadsUSA for Office Cleaning Leads?"
             subHeading="The most reliable source for consistent, high-quality commercial office cleaning leads and verified janitorial contract opportunities."
           />
-          <div className="mt-10 flex item-center justify-between gap-10">
+          <div className="mt-20 flex item-center justify-between gap-10">
             <div className="space-y-4">
               <div className="w-fit mx-auto">
                 <DollarSignIcon size={"5rem"} className="text-secondary" />
@@ -160,14 +160,14 @@ const WhyUs = () => {
           </div>
         </div>
       </section>
-      <section id="" className="my-10">
+      <section id="" className="my-20">
         <div className="container">
           <Title
             headline="Deep Commercial Cleaning Industry Knowledge"
             subHeading="After years of connecting cleaning contractors with small to mid-sized businesses and offices seeking reliable janitorial services, CleaningLeadsUSA has established itself as the leading commercial cleaning lead generation company."
             containerClass="text-center"
           />
-          <div className="mt-10 flex items-center justify-center gap-x-20">
+          <div className="mt-20 flex items-center justify-center gap-x-20">
             <div className="space-y-4 text-center">
               <h3 className="text-xl font-semibold">
                 Healthcare Facility Cleaning Leads - Medical Office Contracts
@@ -210,14 +210,14 @@ const WhyUs = () => {
         </div>
       </section>
 
-      <section id="cleaning-leads" className="mt-10 mb-10">
+      <section id="cleaning-leads" className="mt-10 mb-20">
         <div className="container">
           <Title
             containerClass="text-center"
             headline="CleaningLeadsUSA Fuels Growth of Your Commercial Cleaning Business"
             subHeading="THE TRUSTED COMMERCIAL CLEANING LEADS PROVIDER"
           />
-          <div className="mt-10 flex items-stretch justify-between gap-10">
+          <div className="mt-20 flex items-center justify-between gap-10">
             <div className="flex-1">
               <p className="text-gray-700">
                 Managing daily tasks like RFPs, cold calling, and website

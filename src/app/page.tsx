@@ -18,16 +18,7 @@ export default function Home() {
       <Testimonial />
       <Pricing />
       <WhyUs />
-      {/* 
-       */}
-      {/*  */}
-      {/*  */}
-      {/* <OurDo /> */}
-      {/*  */}
-      {/* Pricing */}
-      {/* 
-      
-      <Blogs /> */}
+      <Blogs />
     </>
   );
 }

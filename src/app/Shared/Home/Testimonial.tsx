@@ -25,22 +25,22 @@ const TestimonialCard = ({
           />
         ))}
       </div>
-      <p>{review}</p>
-      <p className="text-gray-500">{owner}</p>
+      <em>{review}</em>
+      <p className="text-gray-500 mt-4">{owner}</p>
     </div>
   );
 };
 
 const Testimonial = () => {
   return (
-    <section id="testimonial" className="my-20">
+    <section id="testimonial" className="mt-20 mb-10">
       <div className="container">
         <Title
           containerClass="text-center"
           headline="Verified Outcomes from Cleaning Companies"
           subHeading="Cleaning businesses nationwide rely on CleaningLeadsUSA to generate high-quality janitorial leads and fill their schedules. Discover how our verified commercial cleaning leads have helped clients secure more contracts, increase revenue, and achieve sustainable business growth."
         />
-        <div className="flex flex-wrap gap-4 mt-10 items-stretch justify-center">
+        <div className="flex flex-wrap gap-4 mt-20 items-stretch justify-center">
           <TestimonialCard
             rating={5}
             maxStars={5}

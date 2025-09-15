@@ -58,14 +58,14 @@ const pricingTiers = [
 
 const Pricing = () => {
   return (
-    <section id="pricing" className="mb-20">
+    <section id="pricing" className="mb-10 py-10">
       <div className="container">
         <Title
           headline="Exclusive Lead Generation Pricing"
           containerClass="text-center"
           subHeading="Get Qualified Janitorial Appointments & Commercial Cleaning Leads"
         />
-        <div className="flex items-stretch mt-10 gap-2">
+        <div className="flex items-stretch mt-20 gap-2">
           {pricingTiers.map((singlePrice) => {
             const { tier, appointments, features } = singlePrice;
             return (

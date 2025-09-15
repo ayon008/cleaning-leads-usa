@@ -1,4 +1,3 @@
-import { barlow, poppins } from "@/app/fonts/Fonts";
 import { Headphones } from "lucide-react";
 import React from "react";
 

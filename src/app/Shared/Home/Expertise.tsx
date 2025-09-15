@@ -26,7 +26,7 @@ const Expertise = () => {
           subHeading="CleaningLeadsUSA connects cleaning companies with commercial buildings, schools, hospitals, and offices throughout the United States. Contact Us now to receive special access to high-quality janitorial leads and professional appointment-setting services."
           headline="Do You Need High-Quality Leads for Commercial Cleaning?"
         />
-        <div className="mt-10 flex items-stretch justify-center flex-wrap gap-10">
+        <div className="mt-20 flex items-stretch justify-center flex-wrap gap-10">
           <Card
             title="Quality Standards for Leads"
             text="You will receive the most up-to-date and precise commercial cleaning leads that are customized to meet your unique needs thanks to our double verification process."
