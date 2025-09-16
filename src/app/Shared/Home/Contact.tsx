@@ -5,18 +5,18 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="bg-[url('/professional-cleaning-services-clip.jpg')] bg-cover bg-no-repeat h-dvh max-h-[834px] w-full mt-20 relative"
+      className="bg-[url('/professional-cleaning-services-clip.jpg')] bg-cover bg-no-repeat md:h-dvh md:max-h-[834px] w-full md:mt-20 mt-10 relative md:py-0 py-10"
     >
       <div className="inset-0 absolute bg-tertiary opacity-80 z-10"></div>
-      <div className="container h-full flex items-center justify-between gap-20 relative z-20">
+      <div className="container h-full flex md:flex-row flex-col items-center justify-between md:gap-20 gap-10 relative z-20">
         <div className="">
-          <p className="text-secondary font-semibold text-base">
+          <p className="text-secondary font-semibold md:text-base text-sm">
             Contact Us Today
           </p>
-          <h1 className={`text-white text-4xl font-bold mt-2 mb-5`}>
+          <h1 className={`text-white md:text-4xl text-3xl font-bold mt-2 mb-5`}>
             Let&apos;s Grow Your Cleaning Business
           </h1>
-          <p className={`text-base text-white`}>
+          <p className={`md:text-sm text-xs text-white`}>
             To find out how our tried-and-true lead generation system can help
             you land more commercial cleaning jobs and grow your company more
             quickly, get in touch with CleaningLeadsUSA right now.

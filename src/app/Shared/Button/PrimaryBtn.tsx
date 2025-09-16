@@ -10,7 +10,7 @@ const PrimaryBtn = ({
   return (
     <button
       type="button"
-      className={`bg-secondary text-white py-4 px-10 font-semibold hover:bg-tertiary duration-150 cursor-pointer transition-all ease-in uppercase ${containerClass}`}
+      className={`bg-secondary md:text-base text-[10px] text-white md:py-4 py-3 md:px-10 px-4 font-semibold hover:bg-tertiary duration-150 cursor-pointer transition-all ease-in uppercase ${containerClass}`}
     >
       {text}
     </button>

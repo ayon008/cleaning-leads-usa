@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React from "react";
 import professional_image from "@/../public/52068.jpg";
-import { barlow } from "@/app/fonts/Fonts";
 import { CheckCircle } from "lucide-react";
 import PrimaryBtn from "../Button/PrimaryBtn";
 
@@ -9,7 +8,7 @@ const Professional = () => {
   return (
     <section className="" id="">
       <div className="container">
-        <div className="flex gap-6">
+        <div className="flex md:flex-row flex-col gap-6">
           <div className="flex-1 -mt-14">
             <div className="rounded-md overflow-hidden w-fit shadow-xl">
               <div className="h-14 bg-secondary flex items-center justify-center">
@@ -35,10 +34,10 @@ const Professional = () => {
           <div className="flex-1">
             <div className="pt-10 space-y-6">
               <p className="text-secondary font-semibold">Get Quality</p>
-              <h1 className={`text-4xl font-semibold`}>
+              <h1 className={`md:text-4xl text-3xl font-semibold`}>
                 Commercial Cleaning Leads & Janitorial Appointments
               </h1>
-              <p className="text-gray-600 text-base">
+              <p className="text-gray-600 md:text-base text-sm">
                 Give up wasting time on door-to-door sales and cold calling.
                 With the help of our tested lead generation system, you can get
                 in touch with pre-screened commercial cleaning prospects who are

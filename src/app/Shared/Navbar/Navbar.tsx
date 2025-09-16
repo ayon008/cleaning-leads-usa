@@ -10,6 +10,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PrimaryBtn from "../Button/PrimaryBtn";
+import { usePathname } from "next/navigation";
 gsap.registerPlugin(ScrollTrigger);
 
 export const Logo = ({ containerClass }: { containerClass?: string }) => {
@@ -82,37 +83,69 @@ const Navbar = () => {
 
   useGSAP(
     () => {
-      gsap.to(".line-1", {
-        rotate: isOpen ? 45 : 0,
-        backgroundColor: isOpen ? "white" : "black",
-        duration: 0.5,
-        ease: "power1.inOut",
-      });
-      gsap.to(".line-3", {
-        rotate: isOpen ? -45 : 0,
-        backgroundColor: isOpen ? "white" : "black",
-        duration: 0.5,
-        ease: "power1.inOut",
-      });
-      gsap.to(".line-2", {
-        opacity: !isOpen ? 1 : 0,
-        duration: 0.5,
-        ease: "power1.inOut",
-      });
+      if (!mblNavRef.current) return;
 
-      if (isOpen) {
-        gsap.from(".nav-items", {
-          opacity: 0,
-          yPercent: 100,
-          duration: 1,
+      const tl = gsap.timeline();
+
+      // Hamburger icon animation
+      tl.to(
+        ".line-1",
+        {
+          rotate: isOpen ? 45 : 0,
+          backgroundColor: isOpen ? "white" : "black",
+          duration: 0.5,
+          transformOrigin: "left center",
+        },
+        0
+      )
+        .to(".line-2", { opacity: isOpen ? 0 : 1, duration: 0.5 }, 0)
+        .to(
+          ".line-3",
+          {
+            rotate: isOpen ? -45 : 0,
+            backgroundColor: isOpen ? "white" : "black",
+            duration: 0.5,
+            transformOrigin: "left center",
+          },
+          0
+        );
+
+      // Drawer animation using transform
+      tl.to(
+        mblNavRef.current,
+        {
+          x: isOpen ? "0%" : "100%", // smoother than left
+          opacity: isOpen ? 1 : 0,
+          duration: 0.5,
+          ease: "power2.inOut",
+        },
+        0
+      );
+
+      // Nav items stagger animation
+      tl.fromTo(
+        ".nav-items",
+        { opacity: isOpen ? 0 : 1, yPercent: isOpen ? 20 : 0 },
+        {
+          opacity: isOpen ? 1 : 0,
+          yPercent: isOpen ? 0 : 20,
+          duration: 0.6,
           stagger: 0.1,
-          delay: 0.2, // Wait for menu to appear
           ease: "power1.inOut",
-        });
-      }
+        }
+      );
+
+      return () => tl.kill();
     },
     { dependencies: [isOpen], revertOnUpdate: true }
   );
+
+  const pathName = usePathname();
+  useEffect(() => {
+    if (isOpen) {
+      setOpen(false);
+    }
+  }, [pathName]);
 
   useEffect(() => {
     if (isOpen) {
@@ -257,37 +290,31 @@ const Navbar = () => {
       </div>
       <div className="bg-primary lg:hidden flex items-center justify-between p-6 relative">
         <Logo />
-        <div className="rounded-md relative !z-50">
-          <button
-            type="button"
-            onClick={() => setOpen(!isOpen)}
-            className="w-10 h-8 flex flex-col justify-between z-50 relative"
-          >
-            <div className="w-10 h-1 bg-black rounded origin-left line-1"></div>
-            <div className="w-10 h-1 bg-black rounded line-2"></div>
-            <div className="w-10 h-1 bg-black rounded origin-left line-3"></div>
-          </button>
-        </div>
-        {/*  */}
-        {isOpen && (
-          <ul
-            ref={mblNavRef}
-            className="fixed h-dvh top-0 right-0 bottom-0 text-white bg-black flex items-center justify-center flex-col gap-8 text-4xl !z-40 nav-mbl !overflow-hidden w-full"
-          >
-            {navItems?.map((navItems, i) => {
-              return (
-                <li key={i}>
-                  <Link
-                    href={navItems.href}
-                    className="text-white font-semibold text-3xl nav-items"
-                  >
-                    {navItems.name}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        )}
+        <button
+          type="button"
+          onClick={() => setOpen(!isOpen)}
+          className="w-10 h-8 flex flex-col justify-between relative z-50"
+        >
+          <div className="w-10 h-1 bg-black rounded line-1"></div>
+          <div className="w-10 h-1 bg-black rounded line-2"></div>
+          <div className="w-10 h-1 bg-black rounded line-3"></div>
+        </button>
+
+        <ul
+          ref={mblNavRef}
+          className="fixed inset-0 bg-black text-white flex flex-col items-center justify-center gap-8 text-4xl nav-mbl transform translate-x-full opacity-0 z-40"
+        >
+          {navItems.map((item, i) => (
+            <li key={i}>
+              <Link
+                href={item.href}
+                className="nav-items text-white font-semibold text-3xl"
+              >
+                {item.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </nav>
   );

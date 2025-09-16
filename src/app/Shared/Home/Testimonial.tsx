@@ -33,14 +33,14 @@ const TestimonialCard = ({
 
 const Testimonial = () => {
   return (
-    <section id="testimonial" className="mt-20 mb-10">
+    <section id="testimonial" className="md:mt-20 mt-10 mb-10">
       <div className="container">
         <Title
           containerClass="text-center"
           headline="Verified Outcomes from Cleaning Companies"
           subHeading="Cleaning businesses nationwide rely on CleaningLeadsUSA to generate high-quality janitorial leads and fill their schedules. Discover how our verified commercial cleaning leads have helped clients secure more contracts, increase revenue, and achieve sustainable business growth."
         />
-        <div className="flex flex-wrap gap-4 mt-20 items-stretch justify-center">
+        <div className="flex flex-wrap gap-4 md:mt-20 mt-10 items-stretch justify-center">
           <TestimonialCard
             rating={5}
             maxStars={5}

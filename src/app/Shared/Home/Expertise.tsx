@@ -19,14 +19,14 @@ const Card = ({ title, text }: { title: string; text: string }) => {
 
 const Expertise = () => {
   return (
-    <section id="expertise" className="pt-24">
+    <section id="expertise" className="md:pt-24 pt-16">
       <div className="container">
         <Title
           containerClass="text-center"
           subHeading="CleaningLeadsUSA connects cleaning companies with commercial buildings, schools, hospitals, and offices throughout the United States. Contact Us now to receive special access to high-quality janitorial leads and professional appointment-setting services."
           headline="Do You Need High-Quality Leads for Commercial Cleaning?"
         />
-        <div className="mt-20 flex items-stretch justify-center flex-wrap gap-10">
+        <div className="md:mt-20 mt-10 flex items-stretch justify-center flex-wrap md:gap-10 md:flex-row flex-col gap-6">
           <Card
             title="Quality Standards for Leads"
             text="You will receive the most up-to-date and precise commercial cleaning leads that are customized to meet your unique needs thanks to our double verification process."

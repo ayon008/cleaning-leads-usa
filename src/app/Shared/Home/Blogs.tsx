@@ -8,7 +8,7 @@ const Blogs = async() => {
   console.log(blogPost);
   
   return (
-    <section id="blogs" className="mt-10 mb-20">
+    <section id="blogs" className="md:mt-10 md:mb-20 mb-10">
       <div className="container">
         <Title
           containerClass="text-center"

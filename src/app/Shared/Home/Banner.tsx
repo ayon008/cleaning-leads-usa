@@ -3,6 +3,7 @@ import heroImage1 from "@/../public/slider-a-01.jpg";
 import PrimaryBtn from "../Button/PrimaryBtn";
 import { Globe, Headphones, Mail, Share2 } from "lucide-react";
 import { LucideIcon } from "lucide-react";
+import Link from "next/link";
 const Banner = () => {
   // card
   const Card = ({
@@ -70,25 +71,25 @@ const Banner = () => {
           />
           <div className="!z-20 pt-8 relative container h-full flex flex-col justify-center">
             <div className={`space-y-5`}>
-              <h1 className="text-white md:text-5xl md:leading-16 font-extrabold">
+              <h1 className="text-white md:text-5xl text-3xl sm:text-4xl md:leading-16 font-extrabold">
                 Professional Janitorial Appointments <br /> Thats
                 <span className="text-secondary"> Actually Convert</span>
               </h1>
-              <p className="text-white text-base font-semibold">
+              <p className="text-white sm:text-base text-sm font-semibold">
                 The only reliable source for janitorial jobs is this <br />{" "}
                 stress-free appointment scheduling service for janitors.
               </p>
-              <div className="banner-btn">
+              <Link href={'/contact'}>
                 <PrimaryBtn text="Request Consultation" />
-              </div>
+              </Link>
             </div>
           </div>
         </div>
       </div>
-      <div className="md:-mt-10 mt-20 relative z-10">
+      <div className="md:-mt-10 mt-6 relative z-10">
         <div className="">
           <div className="container pb-36">
-            <div className="flex md:flex-row flex-col md:gap-6 gap-20 items-stretch justify-between">
+            <div className="flex md:flex-row flex-col md:gap-6 gap-10 items-stretch justify-between">
               <Card
                 description="Our knowledgeable agents interact with specific prospects, securing real appointments and introducing your janitorial solutions to important decision-makers."
                 title="Cold Calling"

@@ -6,6 +6,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { barlow } from "@/app/fonts/Fonts";
 import { Logo } from "../Navbar/Navbar";
 import Link from "next/link";
+import PrimaryBtn from "../Button/PrimaryBtn";
 
 const navItems = [
   {
@@ -23,7 +24,7 @@ const Footer = () => {
   return (
     <section id="footer">
       <div className="bg-[#212121]">
-        <div className="container flex items-center justify-between py-6">
+        <div className="container flex md:gap-0 gap-10 md:flex-row flex-col md:items-center items-start justify-between md:py-6 py-10">
           <div className="flex items-center gap-5">
             <div>
               {/* Facebook */}
@@ -62,7 +63,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          <div className="flex items-center justify-between gap-10">
+          <div className="flex md:items-center items-start flex-wrap justify-between gap-10">
             <div className="flex items-center gap-2">
               <Phone className="text-secondary" size={"2rem"} />
               <div>
@@ -106,8 +107,15 @@ const Footer = () => {
         </div>
       </div>
       <div className="bg-[url('/footer-dot-map1.png')] bg-[#252525] bg-no-repeat bg-center w-full">
-        <div className="container flex flex-wrap items-start justify-between py-10">
-          <Logo containerClass="text-white" />
+        <div className="container grid md:grid-cols-4 grid-cols-2 md:gap-0 gap-10 items-start justify-between py-10">
+          <div className="md:col-span-1 col-span-2">
+            <Logo containerClass="text-white" />
+            <div className="mt-4 space-y-4">
+              <h3 className="text-white text-2xl">Do you any query?</h3>
+              <p className="text-white text-sm">Our Customer Support is availabe 24/7</p>
+              <PrimaryBtn text="Call Us Now" />
+            </div>
+          </div>
           <div>
             <ul>
               {navItems?.map((item, index) => {
@@ -134,7 +142,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="text-white space-y-4 max-w-64">
+          <div className="text-white space-y-4 md:max-w-64 w-full md:col-span-1 col-span-2">
             <h3 className={`${barlow.className} text-2xl font-semibold`}>
               Our Newsletter
             </h3>
