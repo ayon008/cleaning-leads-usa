@@ -107,7 +107,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="bg-[url('/footer-dot-map1.png')] bg-[#252525] bg-no-repeat bg-center w-full">
-        <div className="container grid md:grid-cols-4 grid-cols-2 md:gap-0 gap-10 items-start justify-between py-10">
+        <div className="container grid md:grid-cols-4 grid-cols-2 gap-10 items-start justify-between py-10">
           <div className="md:col-span-1 col-span-2">
             <Logo containerClass="text-white" />
             <div className="mt-4 space-y-4">
