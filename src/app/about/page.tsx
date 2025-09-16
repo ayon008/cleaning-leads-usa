@@ -3,23 +3,23 @@ import Hero from "../Shared/Banner/Hero";
 import Title from "../Shared/Title/Title";
 import Testimonial from "../Shared/Home/Testimonial";
 import Stats from "../Shared/About/Service";
+import PrimaryBtn from "../Shared/Button/PrimaryBtn";
 
 const page = () => {
   return (
     <section id="about">
       <Hero
         title="About CleaningLeadsUSA"
-        headline="Driving Success in the Commercial Cleaning Industry"
+        headline="Boosting Success in Commercial Cleaning"
         des={
           <>
-            CleaningLeadsUSA has established itself as the premier lead
-            generation service, specializing <br /> in delivering high-quality
-            commercial cleaning leads, appointment setting,
-            <br /> and business growth solutions for janitorial companies across
-            the United States.
+            CleaningLeadsUSA delivers high-quality leads and growth solutions{" "}
+            <br />
+            for janitorial businesses across the U.S.
           </>
         }
       />
+
       <div className="container py-20">
         <Title
           containerClass="text-center"
@@ -48,6 +48,17 @@ const page = () => {
             </div>
           </div>
         </div>
+        <div className="mt-20 flex items-center py-6 rounded-md justify-between bg-amber-300 px-10">
+          <div>
+            <h1 className="text-3xl font-semibold">
+              Get your first appointment just at $99
+            </h1>
+            <p className="text-base mt-4">
+              Would you like to speak with our operations manager directly?
+            </p>
+          </div>
+          <PrimaryBtn text="Call Now" containerClass="" />
+        </div>
         <Testimonial />
         <div className="lg:w-[60%] ml-auto md:w-[75%] w-full my-10 space-y-5">
           <h1 className="text-3xl font-semibold leading-10">
@@ -55,11 +66,12 @@ const page = () => {
             Time!
           </h1>
           <p>
-            CleanLeadsUSA is USA&apos;s premier commercial cleaning lead generation
-            company specializing in qualified janitorial appointments. We
-            connect commercial cleaning contractors directly with verified
-            decision-makers actively seeking new janitorial services for their
-            office buildings, medical facilities, and commercial properties.
+            CleanLeadsUSA is USA&apos;s premier commercial cleaning lead
+            generation company specializing in qualified janitorial
+            appointments. We connect commercial cleaning contractors directly
+            with verified decision-makers actively seeking new janitorial
+            services for their office buildings, medical facilities, and
+            commercial properties.
           </p>
           <p>Our proven appointment setting system delivers:</p>
           <ul className="ml-10 list-disc space-y-2">

@@ -34,6 +34,17 @@ const page = () => {
                 Speak with a Professional Consultant
               </h1>
               <div className="flex items-center gap-4 mt-4">
+                <Phone className="" />
+                <a
+                  href="tel:+1234567890"
+                  aria-label="Call Cleaning Leads USA at +1 (234) 567-890"
+                  title="Call Cleaning Leads USA"
+                  className="inline-flex items-center justify-center"
+                >
+                  <p className="text-base font-bold">+1234567890</p>
+                </a>
+              </div>
+              <div className="flex items-center gap-4 mt-4">
                 <MapPin />
                 <p className="text-base font-bold">Envanto HQ, Australia</p>
               </div>
@@ -100,9 +111,11 @@ const page = () => {
                   Predicament and Get Professional Advice to Accelerate Your
                   Development.
                 </h1>
-                {/* <div className="bg-green-200 space-y-2 w-fit rounded-md p-3 mt-4">
-                  <p>Logan Whitman</p>
-                  <small>Senior Business Consultant</small>
+                <div className="bg-white space-y-2 w-fit rounded-md p-4 mt-4">
+                  <p className="text-2xl font-semibold">
+                    Logan Whitman <br />
+                    <small className="text-sm font-medium">Senior Business Consultant</small>
+                  </p>
                   <a
                     href="mailto:support@cleaningleadsusa.com"
                     title="Contact Cleaning Leads USA Support"
@@ -110,8 +123,10 @@ const page = () => {
                   >
                     <h2 className="text-base">logan@cleaningleadsusa.com</h2>
                   </a>
-                  <PrimaryBtn text="Find Me On Linkedin"/>
-                </div> */}
+                  <button type="button" className="bg-[#0072B1] px-3 py-1 rounded-md cursor-pointer mt-4 text-white">
+                    Get Me on LinkedIn
+                  </button>
+                </div>
               </div>
             </div>
             <div className="md:w-1/2 w-full">
