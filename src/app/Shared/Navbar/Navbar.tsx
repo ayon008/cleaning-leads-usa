@@ -52,6 +52,9 @@ const Navbar = () => {
   const ref = useRef<HTMLDivElement | null>(null);
   const ctaRef = useRef<HTMLDivElement | null>(null);
   const [isOpen, setOpen] = useState<boolean>(false);
+
+  const mblNavRef = useRef<HTMLUListElement | null>(null);
+
   useGSAP(() => {
     if (!ref.current || !ctaRef.current) return;
     const t1 = gsap.timeline({
@@ -96,12 +99,7 @@ const Navbar = () => {
         duration: 0.5,
         ease: "power1.inOut",
       });
-      gsap.to(".nav-mbl", {
-        // width: isOpen ? 0 : 100,
-        opacity: isOpen ? 100 : 0,
-        left: isOpen ? 0 : "100%",
-        duration: 0.5,
-      });
+
       if (isOpen) {
         gsap.from(".nav-items", {
           opacity: 0,
@@ -248,9 +246,7 @@ const Navbar = () => {
             <Headphones className="text-secondary" size={"2rem"} />
             <a href="tel:+12344500123">
               <div>
-                <p className="text-sm text-white font-semibold">
-                  Phone Number
-                </p>
+                <p className="text-sm text-white font-semibold">Phone Number</p>
                 <h2 className={`text-white text-base font-bold cursor-pointer`}>
                   +1 (234) 450-0123
                 </h2>
@@ -272,20 +268,26 @@ const Navbar = () => {
             <div className="w-10 h-1 bg-black rounded origin-left line-3"></div>
           </button>
         </div>
-        <ul className="fixed h-dvh top-0 right-0 bottom-0 text-white bg-black flex items-center justify-center flex-col gap-8 text-4xl !z-40 nav-mbl !overflow-hidden">
-          {navItems?.map((navItems, i) => {
-            return (
-              <li key={i}>
-                <Link
-                  href={"/"}
-                  className="text-white font-semibold text-3xl nav-items"
-                >
-                  {navItems.name}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+        {/*  */}
+        {isOpen && (
+          <ul
+            ref={mblNavRef}
+            className="fixed h-dvh top-0 right-0 bottom-0 text-white bg-black flex items-center justify-center flex-col gap-8 text-4xl !z-40 nav-mbl !overflow-hidden w-full"
+          >
+            {navItems?.map((navItems, i) => {
+              return (
+                <li key={i}>
+                  <Link
+                    href={navItems.href}
+                    className="text-white font-semibold text-3xl nav-items"
+                  >
+                    {navItems.name}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        )}
       </div>
     </nav>
   );

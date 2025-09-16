@@ -3,7 +3,7 @@ import Hero from "../Shared/Banner/Hero";
 
 const page = () => {
   return (
-    <section id="contact">
+    <section id="contact" className="bg-tertiary">
       <Hero
         title="Contact Us Today"
         headline="Connect with Our Lead Generation Experts"

@@ -110,10 +110,10 @@ const WhyUs = () => {
           />
           <div className="mt-20 flex item-center justify-between gap-10">
             <div className="space-y-4">
-              <div className="w-fit mx-auto">
+              <div className="w-fit mx-auto bg-red-500/20 flex items-center justify-center p-5 rounded-full">
                 <DollarSignIcon size={"5rem"} className="text-secondary" />
               </div>
-              <div className="text-center space-y-4">
+              <div className="text-center space-y-4 mt-10">
                 <h3 className="text-xl font-semibold">
                   Performance-Based Lead Pricing
                 </h3>
@@ -126,10 +126,10 @@ const WhyUs = () => {
               </div>
             </div>
             <div className="space-y-4">
-              <div className="w-fit mx-auto">
+              <div className="w-fit mx-auto bg-red-500/20 flex items-center justify-center p-5 rounded-full">
                 <Rocket size={"5rem"} className="text-secondary" />
               </div>
-              <div className="text-center space-y-4">
+              <div className="text-center space-y-4 mt-10">
                 <h3 className="text-xl font-semibold">
                   Industry-Leading 40%-50% Conversion Rates
                 </h3>
@@ -142,10 +142,10 @@ const WhyUs = () => {
               </div>
             </div>
             <div className="space-y-4">
-              <div className="w-fit mx-auto">
+              <div className="w-fit mx-auto bg-red-500/20 flex items-center justify-center p-5 rounded-full">
                 <ThumbsUp size={"5rem"} className="text-secondary" />
               </div>
-              <div className="text-center space-y-4">
+              <div className="text-center space-y-4 mt-10">
                 <h3 className="text-xl font-semibold">
                   Exceptional Lead Quality Guaranteed
                 </h3>
