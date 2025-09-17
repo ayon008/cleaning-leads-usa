@@ -28,11 +28,13 @@ const Hero = ({
          100vw" /* Desktop: full width */
         />
         <div className="relative container z-20 pt-10 h-full flex flex-col justify-center gap-4">
-          <h1 className="text-white md:text-5xl md:leading-16 font-extrabold">
+          <h1 className="text-white md:text-5xl text-3xl sm:text-4xl md:leading-16 font-extrabold">
             {title}
           </h1>
-          <p className="text-white text-lg font-semibold">{headline}</p>
-          <p className="text-base text-white">{des}</p>
+          <p className="text-white sm:text-base text-sm font-semibold">
+            {headline}
+          </p>
+          <p className="text-white sm:text-base text-sm font-semibold">{des}</p>
           <PrimaryBtn text="Get A Quote" containerClass="rounded-md w-fit" />
         </div>
       </div>

@@ -7,13 +7,15 @@ import { getPosts } from "../lib/Wp";
 import Link from "next/link";
 import moment from "moment";
 
-const BlogCard = ({ data }: { data: any }) => {
-  const { date } = data;
+export const BlogCard = ({ data }: { data: any }) => {
+  const { date } = data;  
+  const imageData =
+    data?._embedded?.["wp:featuredmedia"]?.[0]?.source_url || null;
   return (
-    <div className="border max-w-[345px] w-full rounded-md overflow-hidden">
+    <div className="border max-w-[345px] mx-auto w-full rounded-md overflow-hidden">
       <div className="w-[345px] h-[200px] relative">
         <Image
-          src={data?._embedded?.["wp:featuredmedia"]?.[0]?.source_url}
+          src={imageData}
           fill
           alt=""
           className="object-cover object-top"
@@ -24,8 +26,7 @@ const BlogCard = ({ data }: { data: any }) => {
         <div className="flex items-center gap-4">
           <small>{moment(date).format("MMMM Do YYYY")}</small>
           <small>
-            By{" "}
-            <strong>{data?._embedded?.author?.[0]?.name || "Unknown"}</strong>
+            By <strong>{data?._embedded?.author?.[0]?.name || null}</strong>
           </small>
         </div>
         <p className="text-sm text-gray-600 line-clamp-3">
@@ -34,16 +35,18 @@ const BlogCard = ({ data }: { data: any }) => {
             ?.slice(0, 150)}
           ...
         </p>
-        <Link href={`/blogs/${data?.slug}`}>
-          <PrimaryBtn containerClass="" text="Read More" />
-        </Link>
+        <div>
+          <Link href={`/blogs/${data?.slug}`}>
+            <PrimaryBtn containerClass="" text="Read More" />
+          </Link>
+        </div>
       </div>
     </div>
   );
 };
 
 const page = async () => {
-  const posts = await getPosts();
+  const { posts } = await getPosts();
   return (
     <section id="blog-page">
       <Hero
@@ -57,8 +60,8 @@ const page = async () => {
           </>
         }
       />
-      <div className="container grid md:grid-cols-3 grid-cols-1 gap-4 py-20">
-        {posts.map((singlePost:any) => {
+      <div className="container grid md:grid-cols-3 grid-cols-1 gap-4 md:py-20 py-10">
+        {posts.map((singlePost: any) => {
           const { id } = singlePost;
           return (
             <div key={id}>

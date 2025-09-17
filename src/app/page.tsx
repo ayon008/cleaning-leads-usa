@@ -6,8 +6,18 @@ import Professional from "./Shared/Home/Professional";
 import Testimonial from "./Shared/Home/Testimonial";
 import WhyUs from "./Shared/Home/WhyUs";
 import Pricing from "./Shared/Pricing/Pricing";
+interface SearchProps {
+  searchParams: {
+    q?: string;
+    category?: string;
+    page?: string;
+  };
+}
 
-export default function Home() {
+export default async function Home({ searchParams }: SearchProps) {
+  const { page } = await searchParams;
+  const currentPage = parseInt(page ?? "1", 10);
+  
   return (
     <>
       <Banner />
@@ -18,7 +28,7 @@ export default function Home() {
       <Testimonial />
       <Pricing />
       <WhyUs />
-      <Blogs />
+      <Blogs page={currentPage} />
     </>
   );
 }

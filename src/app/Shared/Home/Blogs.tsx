@@ -1,14 +1,15 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import Title from "../Title/Title";
-// import BlogCard from "./BlogCard";
 import { getPosts } from "@/app/lib/Wp";
+import Pagination from "../Pagination/Pagination";
+import { BlogCard } from "@/app/blogs/page";
 
-const Blogs = async() => {
-  const blogPost = await getPosts()
-  console.log(blogPost);
-  
+const Blogs = async ({ page }: { page: number }) => {
+  console.log(typeof page, "page");
+  const { posts: blogPost, totalPages } = await getPosts(page, 3);
   return (
-    <section id="blogs" className="md:mt-10 md:mb-20 mb-10">
+    <section id="blogs" className="mb-20">
       <div className="container">
         <Title
           containerClass="text-center"
@@ -16,8 +17,16 @@ const Blogs = async() => {
           subHeading="Read through our expert blog posts, where we regularly publish in-depth insights and strategies to help commercial cleaning contractors and janitorial businesses navigate the complexities of the cleaning industry and grow their operations."
         />
         <div>
-          {/* Blog Cards */}
-          {/* <BlogCard /> */}
+          <div className="grid md:grid-cols-3 gap-10 items-stretch my-10">
+            {blogPost?.map((singlePost: any, i: number) => {
+              return (
+                <BlogCard key={i} data={singlePost} />
+              );
+            })}
+          </div>
+          <div>
+            <Pagination totalPages={totalPages} />
+          </div>
         </div>
       </div>
     </section>

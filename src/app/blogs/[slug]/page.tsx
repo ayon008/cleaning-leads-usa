@@ -13,7 +13,7 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  const data = await getPosts();
+  const { posts: data } = await getPosts();
   return data.map((singlePost: any) => ({
     slug: singlePost?.slug,
   }));
@@ -21,7 +21,8 @@ export async function generateStaticParams() {
 
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: PageProps) {
-  const data = await getSinglePost(params.slug);
+  const { slug } = await params;
+  const data = await getSinglePost(slug);
   const post = data[0];
   const title = post?.yoast_head_json?.title || post?.title?.rendered;
   const description =
@@ -50,12 +51,11 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 const BlogPage = async ({ params }: PageProps) => {
-  const data = await getSinglePost(params.slug);
+  const { slug } = await params;
+  const data = await getSinglePost(slug);
   const post = data[0];
   const author = post._embedded?.author?.[0]?.name || "Unknown Author";
-  //   const featuredImage = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
-  // console.log(post);
-
+  
   return (
     <article className="container py-24">
       <h1 className="text-3xl text-center font-bold mb-2">
