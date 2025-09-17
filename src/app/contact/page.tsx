@@ -5,7 +5,6 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import facebook from "@/../public/2023_Facebook_icon.svg.png";
 import whatasapp from "@/../public/WhatsApp.svg.webp";
 import Image from "next/image";
-import PrimaryBtn from "../Shared/Button/PrimaryBtn";
 
 const page = () => {
   return (
@@ -107,7 +106,7 @@ const page = () => {
               </div>
               <div className="mt-4">
                 <h1>
-                  Request a Free Consultation. Explain Your Company's
+                  Request a Free Consultation. Explain Your Company&apos;s
                   Predicament and Get Professional Advice to Accelerate Your
                   Development.
                 </h1>

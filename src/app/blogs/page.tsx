@@ -1,16 +1,14 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import Hero from "../Shared/Banner/Hero";
 import Image from "next/image";
-import image from "../../../public/service-n-01-600x400.jpg";
 import PrimaryBtn from "../Shared/Button/PrimaryBtn";
-import { getPosts, WPPost } from "../lib/Wp";
+import { getPosts } from "../lib/Wp";
 import Link from "next/link";
 import moment from "moment";
 
-const BlogCard = ({ data }: { data: WPPost }) => {
-  console.log(data, "first");
-  // const { date, _links } = data;
-
+const BlogCard = ({ data }: { data: any }) => {
+  const { date } = data;
   return (
     <div className="border max-w-[345px] w-full rounded-md overflow-hidden">
       <div className="w-[345px] h-[200px] relative">
@@ -60,7 +58,7 @@ const page = async () => {
         }
       />
       <div className="container grid md:grid-cols-3 grid-cols-1 gap-4 py-20">
-        {posts.map((singlePost: WPPost) => {
+        {posts.map((singlePost:any) => {
           const { id } = singlePost;
           return (
             <div key={id}>

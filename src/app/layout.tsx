@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./Shared/Navbar/Navbar";
-import { poppins } from "./fonts/Fonts";
 import Footer from "./Shared/footer/Footer";
 import TopButton from "./Shared/Button/TopButton";
 import { Inter } from "next/font/google";

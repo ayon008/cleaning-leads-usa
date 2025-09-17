@@ -17,9 +17,8 @@ const nextConfig: NextConfig = {
 
   // Internationalization setup
   i18n: {
-    locales: ["en", "es", "fr", "de"], // Add supported languages here
+    locales: ["en", "es", "fr", "de"],
     defaultLocale: "en",
-    localeDetection: true,
   },
 
   // Image optimization

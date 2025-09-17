@@ -1,4 +1,3 @@
-import { barlow } from "@/app/fonts/Fonts";
 import React from "react";
 
 const Title = ({

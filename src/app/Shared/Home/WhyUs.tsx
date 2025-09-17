@@ -54,7 +54,7 @@ const WhyUs = () => {
         </div>
       </section>
       {/*  */}
-      <section id="contractors" className="md:py-20 md:pb-0 pb-10">
+      <section id="contractors" className="md:py-10 md:pb-0 pb-10">
         <div className="container">
           <Title
             headline="Creating Leads for Contractors"
