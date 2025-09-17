@@ -1,12 +1,22 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // app/blog/[slug]/page.tsx
-import { getSinglePost } from "@/app/lib/Wp";
+import { getPosts, getSinglePost } from "@/app/lib/Wp";
 import React from "react";
 import moment from "moment";
+
+export const revalidate = 3600;
 
 interface PageProps {
   params: {
     slug: string;
   };
+}
+
+export async function generateStaticParams() {
+  const data = await getPosts();
+  return data.map((singlePost: any) => ({
+    slug: singlePost?.slug,
+  }));
 }
 
 // Dynamic metadata for SEO

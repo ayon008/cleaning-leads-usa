@@ -10,8 +10,7 @@ export async function getPosts(page = 1, perPage = 10) {
 
 export async function getSinglePost(slug: string) {
     const res = await fetch(
-        `${wpDomain}/posts?slug=${slug}&_embed`,
-        { next: { revalidate: 3600 } }
+        `${wpDomain}/posts?slug=${slug}&_embed`
     );
     return res.json();
 }
