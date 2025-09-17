@@ -1,7 +1,7 @@
 "use client";
 import facebook from "@/../public/2023_Facebook_icon.svg.png";
 import whatasapp from "@/../public/WhatsApp.svg.webp";
-import { Headphones, MapPin, Phone, ShoppingCart } from "lucide-react";
+import { Headphones, Mail, MapPin, Phone, ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import logo from "@/../public/Blue_and_White_Simple_Cleaning_Services_Logo-removebg-preview-1.avif";
@@ -194,7 +194,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className="flex items-center gap-2 mx-8">
-          <MapPin className="text-secondary" size={"2rem"} />
+          <Mail className="text-secondary" size={"2rem"} />
           <div>
             <p className="text-sm text-gray-500 font-semibold">Contact Mail</p>
             <a

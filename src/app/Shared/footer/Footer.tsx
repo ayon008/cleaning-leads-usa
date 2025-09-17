@@ -64,41 +64,42 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex md:items-center items-start flex-wrap justify-between gap-10">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 mx-8">
               <Phone className="text-secondary" size={"2rem"} />
               <div>
-                <p className="text-base text-white font-semibold">
-                  Phone Number
-                </p>
-                <h2
-                  className={`${barlow.className} text-white text-xl font-bold`}
+                <p className="text-sm text-white font-semibold">Phone Number</p>
+                <a
+                  href="tel:+1234567890"
+                  aria-label="Call Cleaning Leads USA at +1 (234) 567-890"
+                  title="Call Cleaning Leads USA"
+                  className="inline-flex items-center justify-center text-white font-bold"
                 >
-                  +1 (234) 450-0123
-                </h2>
+                  +1 (234) 567-890
+                </a>
               </div>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 mx-8">
               <Mail className="text-secondary" size={"2rem"} />
               <div>
-                <p className="text-base text-white font-semibold">
-                  Contact Email
-                </p>
-                <h2
-                  className={`${barlow.className} text-white text-xl font-bold`}
+                <p className="text-sm text-white font-semibold">Contact Mail</p>
+                <a
+                  href="mailto:support@cleaningleadsusa.com"
+                  title="Contact Cleaning Leads USA Support"
+                  className="text-base font-bold"
                 >
-                  support@cleaningleadsusa.com
-                </h2>
+                  <h2 className="text-base text-white">
+                    support@cleaningleadsusa.com
+                  </h2>
+                </a>
               </div>
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="text-secondary" size={"2rem"} />
               <div>
-                <p className="text-base text-white font-semibold">
+                <p className="text-sm text-white font-semibold">
                   Office Address
                 </p>
-                <h2
-                  className={`${barlow.className} text-white text-xl font-bold`}
-                >
+                <h2 className={`text-base font-bold text-white`}>
                   Envanto HQ, Australia
                 </h2>
               </div>
@@ -112,7 +113,9 @@ const Footer = () => {
             <Logo containerClass="text-white" />
             <div className="mt-4 space-y-4">
               <h3 className="text-white text-2xl">Do you any query?</h3>
-              <p className="text-white text-sm">Our Customer Support is availabe 24/7</p>
+              <p className="text-white text-sm">
+                Our Customer Support is availabe 24/7
+              </p>
               <PrimaryBtn text="Call Us Now" />
             </div>
           </div>

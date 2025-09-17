@@ -3,27 +3,49 @@ import Hero from "../Shared/Banner/Hero";
 import Image from "next/image";
 import image from "../../../public/service-n-01-600x400.jpg";
 import PrimaryBtn from "../Shared/Button/PrimaryBtn";
+import { getPosts, WPPost } from "../lib/Wp";
+import Link from "next/link";
+import moment from "moment";
 
-const BlogCard = () => {
+const BlogCard = ({ data }: { data: WPPost }) => {
+  console.log(data, "first");
+  // const { date, _links } = data;
+
   return (
-    <div className="space-y-4 border max-w-[345px] w-full">
+    <div className="border max-w-[345px] w-full rounded-md overflow-hidden">
       <div className="w-[345px] h-[200px] relative">
-        <Image src={image} fill alt="" className="object-cover object-top" />
+        <Image
+          src={data?._embedded?.["wp:featuredmedia"]?.[0]?.source_url}
+          fill
+          alt=""
+          className="object-cover object-top"
+        />
       </div>
-      <div className="space-y-4 p-3">
-        <h2>Janitorial Appointments for everyone</h2>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident
-          officiis sit reprehenderit! Facilis quisquam consequuntur non illo ex
-          tempora voluptas.
+      <div className="space-y-2 p-2">
+        <h2 className="text-lg font-medium">{data?.title?.rendered}</h2>
+        <div className="flex items-center gap-4">
+          <small>{moment(date).format("MMMM Do YYYY")}</small>
+          <small>
+            By{" "}
+            <strong>{data?._embedded?.author?.[0]?.name || "Unknown"}</strong>
+          </small>
+        </div>
+        <p className="text-sm text-gray-600 line-clamp-3">
+          {data?.content?.rendered
+            ?.replace(/<[^>]+>/g, "") // remove HTML tags
+            ?.slice(0, 150)}
+          ...
         </p>
-        <PrimaryBtn containerClass="" text="Read More" />
+        <Link href={`/blogs/${data?.slug}`}>
+          <PrimaryBtn containerClass="" text="Read More" />
+        </Link>
       </div>
     </div>
   );
 };
 
-const page = () => {
+const page = async () => {
+  const posts = await getPosts();
   return (
     <section id="blog-page">
       <Hero
@@ -37,10 +59,15 @@ const page = () => {
           </>
         }
       />
-      <div className="container flex flex-wrap items-center justify-center gap-4 py-20">
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
+      <div className="container grid md:grid-cols-3 grid-cols-1 gap-4 py-20">
+        {posts.map((singlePost: WPPost) => {
+          const { id } = singlePost;
+          return (
+            <div key={id}>
+              <BlogCard data={singlePost} />
+            </div>
+          );
+        })}
       </div>
     </section>
   );

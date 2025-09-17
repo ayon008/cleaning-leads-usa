@@ -99,6 +99,31 @@ const page = () => {
         </div>
       </div>
       <Stats />
+      <div className="container py-20">
+        <div className="md:w-1/2 w-full">
+          <p>
+            Janitorial Appointments – Powered by CleaningLeadsUSA, we specialize
+            in connecting commercial cleaning companies with high-quality
+            janitorial leads across the United States. Through proven strategies
+            like email marketing, cold calling, social media campaigns, and
+            search engine outreach, we identify businesses that are actively
+            hiring janitorial services. Our mission is simple: help your
+            commercial cleaning business grow efficiently. While you focus on
+            delivering excellent cleaning services, we work on building your
+            brand presence and generating the right opportunities. Headquartered
+            in New York, we proudly partner with renowned offices, retail
+            centers, and commercial spaces nationwide that require janitorial
+            support throughout the year. With CleaningLeadsUSA, you can secure
+            exclusive cleaning leads, consistent contracts, and long-term
+            clients.
+          </p>
+          <br />
+          <strong>
+            Partner with us today and watch your cleaning business sales
+            skyrocket!
+          </strong>
+        </div>
+      </div>
     </section>
   );
 };

@@ -25,7 +25,7 @@ const nextConfig: NextConfig = {
   // Image optimization
   images: {
     formats: ["image/avif", "image/webp"], // Modern image formats
-    domains: ["example.com", "cdn.example.com"], // Whitelisted external domains
+    domains: ["cleaning-leads-usa.rf.gd", "cdn.example.com"], // Whitelisted external domains
     deviceSizes: [320, 420, 768, 1024, 1200], // Responsive breakpoints
     imageSizes: [16, 32, 48, 64, 96], // For small icons/thumbnails
   },
