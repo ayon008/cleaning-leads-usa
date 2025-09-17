@@ -47,7 +47,9 @@ const Pagination = ({
         type="button"
         onClick={() => changePage(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className="px-3 cursor-pointer shadow-xl py-1 flex items-center justify-center bg-secondary text-white font-semibold"
+        className={`px-3 shadow-xl py-1 flex items-center justify-center font-semibold ${
+          currentPage === totalPages ? "bg-primary text-black" : "cursor-pointer bg-secondary text-white"
+        }`}
       >
         <span>{">>"}</span>
       </button>
