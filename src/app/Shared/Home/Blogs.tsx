@@ -6,10 +6,9 @@ import Pagination from "../Pagination/Pagination";
 import { BlogCard } from "@/app/blogs/page";
 
 const Blogs = async ({ page }: { page: number }) => {
-  console.log(typeof page, "page");
   const { posts: blogPost, totalPages } = await getPosts(page, 3);
   return (
-    <section id="blogs" className="mb-20">
+    <section id="blogs" className="mb-10">
       <div className="container">
         <Title
           containerClass="text-center"
@@ -25,7 +24,7 @@ const Blogs = async ({ page }: { page: number }) => {
             })}
           </div>
           <div>
-            <Pagination totalPages={totalPages} />
+            <Pagination totalPages={totalPages} currentPage={page} />
           </div>
         </div>
       </div>
