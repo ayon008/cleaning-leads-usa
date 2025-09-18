@@ -1,9 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import Title from "../Title/Title";
-import { getPosts } from "@/app/lib/Wp";
 import Pagination from "../Pagination/Pagination";
-import { BlogCard } from "@/app/blogs/page";
+import { BlogCard, getPosts } from "@/app/blogs/page";
 
 const Blogs = async ({ page }: { page: number }) => {
   const { posts: blogPost, totalPages } = await getPosts(page, 3);

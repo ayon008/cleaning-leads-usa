@@ -1,8 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // app/blog/[slug]/page.tsx
-import { getPosts, getSinglePost } from "@/app/lib/Wp";
+// import { getPosts, getSinglePost } from "@/app/lib/Wp";
 import React from "react";
 import moment from "moment";
+import { getPosts } from "../page";
+import { WP_API_URL } from "@/app/lib/Wp";
 
 export const revalidate = 3600;
 
@@ -17,6 +19,11 @@ export async function generateStaticParams() {
   return data.map((singlePost: any) => ({
     slug: singlePost?.slug,
   }));
+}
+
+export async function getSinglePost(slug: string) {
+  const res = await fetch(`${WP_API_URL}/posts?slug=${slug}&_embed`);
+  return res.json();
 }
 
 // Dynamic metadata for SEO
@@ -54,10 +61,10 @@ const BlogPage = async ({ params }: PageProps) => {
   const { slug } = await params;
   const data = await getSinglePost(slug);
   console.log(data);
-  
+
   const post = data[0];
   const author = post._embedded?.author?.[0]?.name || "Unknown Author";
-  
+
   return (
     <article className="container py-24">
       <h1 className="text-3xl text-center font-bold mb-2">

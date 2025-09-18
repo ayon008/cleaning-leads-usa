@@ -3,11 +3,25 @@ import React from "react";
 import Hero from "../Shared/Banner/Hero";
 import Image from "next/image";
 import PrimaryBtn from "../Shared/Button/PrimaryBtn";
-import { getPosts } from "../lib/Wp";
 import Link from "next/link";
 import moment from "moment";
 import Pagination from "../Shared/Pagination/Pagination";
 import { SearchProps } from "../page";
+import { WP_API_URL } from "../lib/Wp";
+
+export async function getPosts(page = 1, perPage = 12) {
+  const res = await fetch(
+    `${WP_API_URL}/posts?_embed&per_page=${perPage}&page=${page}`,
+    { next: { revalidate: 3600 } }
+  );
+  if (!res.ok) {
+    throw new Error("Failed to fetch posts");
+  }
+
+  const posts = await res.json();
+  const totalPages = Number(res.headers.get("X-WP-TotalPages"));
+  return { posts, totalPages };
+}
 
 export const BlogCard = ({ data }: { data: any }) => {
   const { date } = data;
