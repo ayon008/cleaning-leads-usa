@@ -60,7 +60,7 @@ const page = async () => {
           </>
         }
       />
-      <div className="container grid md:grid-cols-3 grid-cols-1 gap-4 md:py-20 py-10">
+      <div className="container grid md:grid-cols-3 grid-cols-1 items-stretch gap-4 md:py-20 py-10">
         {posts.map((singlePost: any) => {
           const { id } = singlePost;
           return (
