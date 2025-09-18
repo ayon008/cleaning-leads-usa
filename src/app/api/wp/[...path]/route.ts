@@ -1,37 +1,42 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 const WP_API = "https://cleaning-leads-usa.rf.gd/wp-json/wp/v2";
 
 export async function GET(
-    req: Request,
+    req: NextRequest,
     { params }: { params: { path: string[] } }
 ) {
     try {
-        const search = new URL(req.url).search;
-        const target = `${WP_API}/${params.path.join("/")}${search}`;
+        if (!params.path || params.path.length === 0) {
+            return NextResponse.json({ error: "Missing path" }, { status: 400 });
+        }
 
-        const res = await fetch(target, {
+        const search = req.nextUrl.search; // preserves ?query=params
+        const targetUrl = `${WP_API}/${params.path.join("/")}${search}`;
+
+        console.log("Proxying to WP:", targetUrl);
+
+        const res = await fetch(targetUrl, {
             headers: { Accept: "application/json" },
             cache: "no-store",
         });
 
         if (!res.ok) {
-            return NextResponse.json(
-                { error: "Failed to fetch WP" },
-                { status: res.status }
-            );
+            const text = await res.text();
+            console.error("WP Fetch Error:", res.status, text);
+            return NextResponse.json({ error: text || "WP fetch failed" }, { status: res.status });
         }
 
-        // Pass headers like pagination
-        const totalPages = res.headers.get("X-WP-TotalPages");
         const data = await res.json();
+        const totalPages = res.headers.get("X-WP-TotalPages") || "0";
 
         return NextResponse.json(
             { data, totalPages },
-            { headers: { "X-WP-TotalPages": totalPages ?? "0" } }
+            { headers: { "X-WP-TotalPages": totalPages } }
         );
-    } catch (e: any) {
-        return NextResponse.json({ error: e.message }, { status: 500 });
+    } catch (err: any) {
+        console.error(err);
+        return NextResponse.json({ error: err.message }, { status: 500 });
     }
 }
