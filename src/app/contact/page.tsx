@@ -6,6 +6,7 @@ import facebook from "@/../public/2023_Facebook_icon.svg.png";
 import whatasapp from "@/../public/WhatsApp.svg.webp";
 import Image from "next/image";
 import Form from "../Shared/form/Form";
+import PrimaryBtn from "../Shared/Button/PrimaryBtn";
 
 const page = () => {
   return (
@@ -22,6 +23,17 @@ const page = () => {
       />
       <div className="bg-primary">
         <div className="container py-10">
+          <div className="flex items-center py-6 rounded-md justify-between bg-amber-300 px-10 my-10">
+            <div>
+              <h1 className="text-3xl font-semibold">
+                Get your first appointment just at $99
+              </h1>
+              <p className="text-base mt-4">
+                Would you like to speak with our operations manager directly?
+              </p>
+            </div>
+            <PrimaryBtn text="Call Now" containerClass="" />
+          </div>
           <Title
             containerClass="text-center"
             subHeading="Provide your info and our friendly agent will contact you within 12 hours to assist you."
@@ -136,6 +148,53 @@ const page = () => {
             </div>
             <div className="md:w-1/2 w-full">
               <Form />
+            </div>
+          </div>
+        </div>
+        <div className="container md:py-20">
+          <Title
+            headline="Contact us to get Commercial Cleaning Leads"
+            subHeading="After years of connecting cleaning contractors with small to mid-sized businesses and offices seeking reliable janitorial services, CleaningLeadsUSA has established itself as the leading commercial cleaning lead generation company."
+            containerClass="text-center"
+          />
+          <div className="md:mt-20 mt-10 md:flex-row flex-col flex items-center justify-center md:gap-20 gap-10">
+            <div className="space-y-4 text-center">
+              <h3 className="text-xl font-semibold">
+                Healthcare Facility Cleaning Leads - Medical Office Contracts
+              </h3>
+              <p className="text-center">
+                Hospitals, medical clinics, surgical centers, and healthcare
+                facilities need professional cleaning services that comply with
+                stringent medical industry standards and infection control
+                protocols. Connect with healthcare administrators and facility
+                managers seeking reliable medical cleaning specialists for
+                ongoing service agreements.
+              </p>
+            </div>
+            <div className="text-center space-y-4">
+              <h3 className="text-xl font-semibold">
+                Industrial Cleaning Leads - Manufacturing & Factory Contracts
+              </h3>
+              <p>
+                Manufacturing facilities, warehouses, and industrial plants
+                require specialized cleaning services for equipment, machinery,
+                and production areas. Connect with facility managers and plant
+                supervisors actively seeking experienced industrial cleaning
+                contractors for long-term maintenance contracts.
+              </p>
+            </div>
+            <div className="text-center space-y-4">
+              <h3 className="text-xl font-semibold">
+                School Cleaning Leads - Educational Facility Contracts
+              </h3>
+              <p>
+                Schools, universities, daycare centers, and educational
+                institutions require reliable cleaning services to maintain
+                safe, healthy learning environments. Connect with facility
+                managers, principals, and administrators actively seeking
+                professional janitorial contractors for ongoing cleaning
+                contracts.
+              </p>
             </div>
           </div>
         </div>

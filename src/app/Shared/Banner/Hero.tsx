@@ -15,7 +15,7 @@ const Hero = ({
   return (
     <section id="hero" className="lg:-mt-8 mt-0 h-fit">
       <div className="h-[500px] w-full relative">
-        <div className="inset-0 absolute bg-gradient-to-r from-black/75 to-black/10 z-10"></div>
+        <div className="inset-0 absolute bg-gradient-to-r from-black/85 to-black/10 z-10"></div>
         <Image
           src={image}
           alt="Commercial cleaning leads banner showcasing professional janitorial services"

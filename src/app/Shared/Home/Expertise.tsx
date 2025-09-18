@@ -1,7 +1,7 @@
 import React from "react";
 import Title from "../Title/Title";
 
-const Card = ({ title, text }: { title: string; text: string }) => {
+export const Card = ({ title, text }: { title: string; text: string }) => {
   return (
     <div className="rounded-lg bg-primary flex-1">
       <div className="p-6">
@@ -11,7 +11,9 @@ const Card = ({ title, text }: { title: string; text: string }) => {
           {title}
         </h2>
         <hr className="text-gray-300 my-3" />
-        <p className="text-gray-700 text-base tracking-wider text-center">{text}</p>
+        <p className="text-gray-700 text-base tracking-wider text-center">
+          {text}
+        </p>
       </div>
     </div>
   );
