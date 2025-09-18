@@ -18,9 +18,7 @@ const Blogs = async ({ page }: { page: number }) => {
         <div>
           <div className="grid md:grid-cols-3 gap-10 items-stretch my-10">
             {blogPost?.map((singlePost: any, i: number) => {
-              return (
-                <BlogCard key={i} data={singlePost} />
-              );
+              return <BlogCard key={i} data={singlePost} />;
             })}
           </div>
           <div>

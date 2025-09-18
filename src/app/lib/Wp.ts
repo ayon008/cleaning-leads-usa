@@ -2,8 +2,7 @@ export const wpDomain = `https://cleaning-leads-usa.rf.gd/wp-json/wp/v2`;
 
 export async function getPosts(page = 1, perPage = 12) {
     const res = await fetch(
-        `${wpDomain}/posts?_embed&per_page=${perPage}&page=${page}`,{cache:"no-cache"}
-    );
+        `${wpDomain}/posts?_embed&per_page=${perPage}&page=${page}`, { next: { revalidate: 3600 }, });
     if (!res.ok) {
         throw new Error("Failed to fetch posts");
     }
