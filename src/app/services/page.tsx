@@ -2,6 +2,8 @@ import React from "react";
 import Hero from "../Shared/Banner/Hero";
 import Title from "../Shared/Title/Title";
 import { Card } from "../Shared/Home/Expertise";
+import Contact from "../Shared/Home/Contact";
+import PrimaryBtn from "../Shared/Button/PrimaryBtn";
 
 const page = () => {
   return (
@@ -17,7 +19,7 @@ const page = () => {
           </>
         }
       />
-      <div className="container py-10">
+      <div className="container pt-10">
         <Title
           containerClass="text-center"
           headline="Our Commitment to Your Growth"
@@ -43,7 +45,51 @@ const page = () => {
             subHeading="At CleaningLeadsUSA, we help you win more business by setting up qualified appointments with decision-makers while you focus on delivering great service. Beyond appointment setting, we also grow your online presence with targeted digital marketing to keep new clients coming in."
             headline="Guaranteed Cleaning Appointments"
           />
+          <div className="mt-6">
+            <Title
+              containerClass="text-center"
+              headline="Why will you choose us"
+              subHeading=""
+            />
+            <div className="grid md:grid-cols-4 gap-4 mt-6">
+              <Card
+                title="Specialized Leads"
+                text="We deliver targeted leads tailored to your services—whether it’s disinfecting, deep cleaning, office cleaning, or any other cleaning job. CleaningLeadsUSA makes sure you reach the right clients every time."
+              />
+              <Card
+                title="Leads That Convert"
+                text="Our experienced team qualifies every cleaning lead with precise criteria, ensuring they’re genuine and ready to hire. This results in higher conversion rates compared to general, unfiltered leads."
+              />
+              <Card
+                title="Twice-Verified"
+                text="Our janitorial leads are double-checked for quality. After initial screening, we call each prospect to confirm their interest, ensuring you get only genuinely qualified leads."
+              />
+              <Card
+                title="Pay Only for Success"
+                text="You only pay for appointments that are successfully attended. If an appointment falls through, we either provide a refund or connect you with another qualified client, ensuring zero wasted spend."
+              />
+            </div>
+          </div>
+          <div className="mt-20 flex items-center py-6 rounded-md justify-between bg-amber-300 px-10">
+            <div>
+              <h1 className="text-3xl font-semibold">
+                Get your first appointment just at $99
+              </h1>
+              <p className="text-base mt-4">
+                Would you like to speak with our operations manager directly?
+              </p>
+            </div>
+            <PrimaryBtn text="Call Now" containerClass="" />
+          </div>
         </div>
+      </div>
+      <Contact />
+      <div className="bg-sky-100/60 h-dvh w-full">
+        <Title
+          containerClass="text-center mt-10"
+          headline="Complete Marketing Solutions for Janitorial Services"
+          subHeading=""
+        />
       </div>
     </section>
   );
