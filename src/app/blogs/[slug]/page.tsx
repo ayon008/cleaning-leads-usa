@@ -53,6 +53,8 @@ export async function generateMetadata({ params }: PageProps) {
 const BlogPage = async ({ params }: PageProps) => {
   const { slug } = await params;
   const data = await getSinglePost(slug);
+  console.log(data);
+  
   const post = data[0];
   const author = post._embedded?.author?.[0]?.name || "Unknown Author";
   

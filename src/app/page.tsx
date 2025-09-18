@@ -6,7 +6,7 @@ import Professional from "./Shared/Home/Professional";
 import Testimonial from "./Shared/Home/Testimonial";
 import WhyUs from "./Shared/Home/WhyUs";
 import Pricing from "./Shared/Pricing/Pricing";
-interface SearchProps {
+export interface SearchProps {
   searchParams: {
     q?: string;
     category?: string;

@@ -6,9 +6,11 @@ import PrimaryBtn from "../Shared/Button/PrimaryBtn";
 import { getPosts } from "../lib/Wp";
 import Link from "next/link";
 import moment from "moment";
+import Pagination from "../Shared/Pagination/Pagination";
+import { SearchProps } from "../page";
 
 export const BlogCard = ({ data }: { data: any }) => {
-  const { date } = data;  
+  const { date } = data;
   const imageData =
     data?._embedded?.["wp:featuredmedia"]?.[0]?.source_url || null;
   return (
@@ -45,8 +47,11 @@ export const BlogCard = ({ data }: { data: any }) => {
   );
 };
 
-const page = async () => {
-  const { posts } = await getPosts();
+const page = async ({ searchParams }: SearchProps) => {
+  const { page } = await searchParams;
+  const currentPage = parseInt(page ?? "1", 10);
+
+  const { posts, totalPages } = await getPosts(currentPage, 12);
   return (
     <section id="blog-page">
       <Hero
@@ -60,15 +65,14 @@ const page = async () => {
           </>
         }
       />
-      <div className="container grid md:grid-cols-3 grid-cols-1 items-stretch gap-4 md:py-20 py-10">
+      <div className="container grid md:grid-cols-3 grid-cols-1 items-stretch gap-4 py-10">
         {posts.map((singlePost: any) => {
           const { id } = singlePost;
-          return (
-            <div key={id}>
-              <BlogCard data={singlePost} />
-            </div>
-          );
+          return <BlogCard key={id} data={singlePost} />;
         })}
+      </div>
+      <div className="mb-10">
+        <Pagination totalPages={totalPages} currentPage={currentPage} />
       </div>
     </section>
   );
