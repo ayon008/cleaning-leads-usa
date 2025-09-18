@@ -1,20 +1,21 @@
-const apiDomain = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+export const wpDomain = `https://cleaning-leads-usa.rf.gd/wp-json/wp/v2`;
 
 export async function getPosts(page = 1, perPage = 12) {
     const res = await fetch(
-        `${apiDomain}/api/wp/posts?_embed&per_page=${perPage}&page=${page}`,
-        { cache: "no-cache" }
+        `${wpDomain}/posts?_embed&per_page=${perPage}&page=${page}`,{cache:"no-cache"}
     );
     if (!res.ok) {
         throw new Error("Failed to fetch posts");
     }
 
-    const { data, totalPages } = await res.json();
-    return { posts: data, totalPages: Number(totalPages) };
+    const posts = await res.json();
+    const totalPages = Number(res.headers.get("X-WP-TotalPages"));
+    return { posts, totalPages }
 }
 
 export async function getSinglePost(slug: string) {
-    const res = await fetch(`${apiDomain}/api/wp/posts?slug=${slug}&_embed`);
-    const { data } = await res.json();
-    return data;
+    const res = await fetch(
+        `${wpDomain}/posts?slug=${slug}&_embed`
+    );
+    return res.json();
 }
