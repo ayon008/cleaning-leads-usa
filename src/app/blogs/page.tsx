@@ -8,6 +8,7 @@ import moment from "moment";
 import Pagination from "../Shared/Pagination/Pagination";
 import { SearchProps } from "../page";
 import { WP_API_URL } from "../lib/Wp";
+import placeholderImage from "@/../public/istockphoto-1980276924-612x612.jpg"
 
 export async function getPosts(page = 1, perPage = 12) {
   const res = await fetch(
@@ -26,7 +27,7 @@ export async function getPosts(page = 1, perPage = 12) {
 export const BlogCard = ({ data }: { data: any }) => {
   const { date } = data;
   const imageData =
-    data?._embedded?.["wp:featuredmedia"]?.[0]?.source_url || null;
+    data?._embedded?.["wp:featuredmedia"]?.[0]?.source_url || placeholderImage;
   return (
     <div className="border max-w-[345px] mx-auto w-full rounded-md overflow-hidden">
       <div className="w-[345px] h-[200px] relative">

@@ -5,6 +5,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import facebook from "@/../public/2023_Facebook_icon.svg.png";
 import whatasapp from "@/../public/WhatsApp.svg.webp";
 import Image from "next/image";
+import Form from "../Shared/form/Form";
 
 const page = () => {
   return (
@@ -113,7 +114,9 @@ const page = () => {
                 <div className="bg-white space-y-2 w-fit rounded-md p-4 mt-4">
                   <p className="text-2xl font-semibold">
                     Logan Whitman <br />
-                    <small className="text-sm font-medium">Senior Business Consultant</small>
+                    <small className="text-sm font-medium">
+                      Senior Business Consultant
+                    </small>
                   </p>
                   <a
                     href="mailto:support@cleaningleadsusa.com"
@@ -122,74 +125,17 @@ const page = () => {
                   >
                     <h2 className="text-base">logan@cleaningleadsusa.com</h2>
                   </a>
-                  <button type="button" className="bg-[#0072B1] px-3 py-1 rounded-md cursor-pointer mt-4 text-white">
+                  <button
+                    type="button"
+                    className="bg-[#0072B1] px-3 py-1 rounded-md cursor-pointer mt-4 text-white"
+                  >
                     Get Me on LinkedIn
                   </button>
                 </div>
               </div>
             </div>
             <div className="md:w-1/2 w-full">
-              <form
-                className="bg-secondary rounded-md p-6 shadow-2xl"
-                action=""
-              >
-                <div className="space-y-4">
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Full Name"
-                    className="w-full bg-white p-3 rounded-md"
-                  />
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Your Business Email"
-                    className="w-full bg-white p-3 rounded-md"
-                  />
-                  <input
-                    type="text"
-                    name="phone number"
-                    placeholder="Phone Number"
-                    className="w-full bg-white p-3 rounded-md"
-                  />
-                  <input
-                    type="text"
-                    name="company-name"
-                    placeholder="Company Name"
-                    className="w-full bg-white p-3 rounded-md"
-                  />
-                  <input
-                    type="text"
-                    name="address"
-                    placeholder="Company Address"
-                    className="w-full bg-white p-3 rounded-md"
-                  />
-                  <input
-                    type="text"
-                    name="zip"
-                    placeholder="Service Zip"
-                    className="w-full bg-white p-3 rounded-md"
-                  />
-                  <input
-                    type="text"
-                    name="radius"
-                    placeholder="Service Radius"
-                    className="w-full bg-white p-3 rounded-md"
-                  />
-                  <textarea
-                    name="message"
-                    placeholder="Your Message"
-                    id=""
-                    className="px-3 py-5 w-full bg-white resize-none rounded-md"
-                  ></textarea>
-                  <button
-                    type="submit"
-                    className="w-full bg-tertiary text-white hover:bg-white hover:text-tertiary duration-200 transition-all ease-linear rounded-md text-base py-4 cursor-pointer"
-                  >
-                    Submit
-                  </button>
-                </div>
-              </form>
+              <Form />
             </div>
           </div>
         </div>
