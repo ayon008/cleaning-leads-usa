@@ -1,6 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-// app/blog/[slug]/page.tsx
-// import { getPosts, getSinglePost } from "@/app/lib/Wp";
 import React from "react";
 import moment from "moment";
 import { getPosts } from "../page";
