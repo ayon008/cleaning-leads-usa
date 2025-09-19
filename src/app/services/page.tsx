@@ -84,9 +84,9 @@ const page = () => {
         </div>
       </div>
       <Contact />
-      <div className="bg-sky-100/60 h-dvh w-full">
+      <div className="bg-sky-100/60 w-full py-10">
         <Title
-          containerClass="text-center mt-10"
+          containerClass="text-center"
           headline="Complete Marketing Solutions for Janitorial Services"
           subHeading=""
         />

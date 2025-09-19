@@ -47,7 +47,7 @@ const Form = () => {
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     console.log("Form submitted:", data);
-    localStorage.setItem("formData", JSON.stringify(data)); // Save to localStorage
+    localStorage.removeItem("homeFormData"); // Save to localStorage
     reset(data); // Keep the submitted data in the form
   };
 
