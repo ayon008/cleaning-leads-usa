@@ -4,6 +4,7 @@ import Navbar from "./Shared/Navbar/Navbar";
 import Footer from "./Shared/footer/Footer";
 import TopButton from "./Shared/Button/TopButton";
 import { Inter } from "next/font/google";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,12 +25,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
-        <div className="overflow-x-hidden" id="root-layout">
-          <Navbar />
-          {children}
-          <TopButton />
-          <Footer />
-        </div>
+        <Suspense
+          fallback={
+            <div className="h-dvh w-full justify-center flex items-center bg-white">
+              <p>Loading...</p>
+            </div>
+          }
+        >
+          <div className="overflow-x-hidden" id="root-layout">
+            <Navbar />
+            {children}
+            <TopButton />
+            <Footer />
+          </div>
+        </Suspense>
       </body>
     </html>
   );

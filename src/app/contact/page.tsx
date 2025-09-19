@@ -22,25 +22,24 @@ const page = () => {
         }
       />
       <div className="bg-primary">
-        <div className="container py-10">
-          <div className="flex items-center py-6 rounded-md justify-between bg-amber-300 px-10 my-10">
+        <div className="container md:py-10 py-6">
+          <div className="flex items-center md:flex-row flex-col md:py-6 py-6 rounded-md md:justify-between items-center bg-amber-300 md:px-10 px-6 md:my-10 gap-6">
             <div>
-              <h1 className="text-3xl font-semibold">
+              <h1 className="md:text-3xl text-xl md:text-left text-center font-semibold">
                 Get your first appointment just at $99
               </h1>
-              <p className="text-base mt-4">
+              <p className="text-base mt-4 md:text-left text-center">
                 Would you like to speak with our operations manager directly?
               </p>
             </div>
             <PrimaryBtn text="Call Now" containerClass="" />
           </div>
           <Title
-            containerClass="text-center"
+            containerClass="text-center mt-10"
             subHeading="Provide your info and our friendly agent will contact you within 12 hours to assist you."
             headline="Contact Us Today"
           />
-
-          <div className="flex items-center justify-between mt-10 gap-8">
+          <div className="flex items-center md:flex-row flex-col justify-between mt-10 gap-8">
             <div className="md:w-1/2 w-full">
               <h1 className="text-3xl font-semibold">
                 Speak with a Professional Consultant
@@ -151,7 +150,7 @@ const page = () => {
             </div>
           </div>
         </div>
-        <div className="container md:py-20">
+        <div className="container md:py-20 py-10">
           <Title
             headline="Contact us to get Commercial Cleaning Leads"
             subHeading="After years of connecting cleaning contractors with small to mid-sized businesses and offices seeking reliable janitorial services, CleaningLeadsUSA has established itself as the leading commercial cleaning lead generation company."
