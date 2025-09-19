@@ -2,7 +2,6 @@
 import React from "react";
 import moment from "moment";
 import { getPosts } from "../page";
-import { WP_API_URL } from "@/app/lib/Wp";
 
 export const revalidate = 3600;
 
@@ -11,6 +10,8 @@ interface PageProps {
     slug: string;
   };
 }
+
+const WP_API_URL = process.env.NEXT_PUBLIC_WP_API_URL;
 
 export async function generateStaticParams() {
   const { posts: data } = await getPosts();

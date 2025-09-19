@@ -7,8 +7,9 @@ import Link from "next/link";
 import moment from "moment";
 import Pagination from "../Shared/Pagination/Pagination";
 import { SearchProps } from "../page";
-import { WP_API_URL } from "../lib/Wp";
-import placeholderImage from "@/../public/istockphoto-1980276924-612x612.jpg"
+import placeholderImage from "@/../public/istockphoto-1980276924-612x612.jpg";
+
+const WP_API_URL = process.env.NEXT_PUBLIC_WP_API_URL;
 
 export async function getPosts(page = 1, perPage = 12) {
   const res = await fetch(
