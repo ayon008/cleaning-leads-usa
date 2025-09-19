@@ -27,7 +27,7 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased`}>
         <Suspense
           fallback={
-            <div className="h-dvh w-full justify-center flex items-center bg-white">
+            <div className="h-dvh !z-[1000] w-full justify-center flex items-center bg-white">
               <p>Loading...</p>
             </div>
           }
