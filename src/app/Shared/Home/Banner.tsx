@@ -20,24 +20,25 @@ const Banner = () => {
     return (
       <div className="md:w-64 w-full md:mx-0 mx-auto">
         <div
-          className={`p-8 bg-white relative flex-1 card h-52 rounded-md overflow-hidden group`}
+          className={`p-8 bg-white relative z-10 flex-1 card h-52 rounded-md overflow-hidden group`}
         >
           <svg
-            width=""
-            className="absolute top-0 left-0 !right-0 bottom z-10"
-            height=""
+            className="absolute inset-0 z-20 w-full h-full"
             xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 256 208"
+            preserveAspectRatio="none"
           >
             <path
               d="M 0,0 
-           L 0,208 
-           L 205,208 
-           C 220,208 256,160 256,145 
-           L 256,0 
-           L 0,0 Z"
+       L 0,208 
+       L 205,208 
+       C 220,208 256,160 256,145 
+       L 256,0 
+       L 0,0 Z"
               className="fill-[#F8FCF8] group-hover:fill-secondary transition-colors duration-300"
             />
           </svg>
+
           <div className="relative z-20">
             <p className="text-2xl font-semibold group-hover:text-white">
               {title}
@@ -47,7 +48,7 @@ const Banner = () => {
               className="text-secondary my-6 group-hover:text-white"
             />
           </div>
-          <span className="text-6xl font-semibold opacity-10 group-hover:opacity-100 text-white text-stroke group-hover:text-secondary duration-150 transition-all z-30 absolute right-6 bottom-6">
+          <span className="text-6xl font-semibold opacity-40 group-hover:opacity-100 text-white text-stroke group-hover:text-secondary duration-150 transition-all z-30 absolute right-6 bottom-6">
             0{index}
           </span>
         </div>
@@ -79,7 +80,7 @@ const Banner = () => {
                 The only reliable source for janitorial jobs is this <br />{" "}
                 stress-free appointment scheduling service for janitors.
               </p>
-              <Link href={'/contact'}>
+              <Link href={"/appointments"}>
                 <PrimaryBtn text="Request Consultation" />
               </Link>
             </div>
