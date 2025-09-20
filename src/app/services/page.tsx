@@ -157,8 +157,8 @@ const page = () => {
           />
           <Prospect
             image={promotion}
-            text="Every lead is fully verified before it reaches you. Once an appointment is scheduled, all you need to do is meet the prospect on time — the rest is up to you."
-            title={"Appointments"}
+            text="Our multilingual telemarketers reach out professionally to businesses, confirming appointments and connecting you with companies seeking reliable commercial cleaning services."
+            title={"Direct Outreach"}
           />
         </div>
       </div>
