@@ -90,19 +90,7 @@ html {
   bottom: 0px !important;
 }
 
-.image-box::after {
-  position: absolute;
-  content: "";
-  top: -40px;
-  right: 0;
-  bottom: 0;
-  left: 50%;
-  background-image: url('../../public/img-n-01.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  z-index: -1;
-  border-radius: 8px;
-}
+
 
 .nav-part::before {
   position: absolute;
@@ -138,6 +126,21 @@ html {
   }
 }
 
+@media screen and (min-width:1024px) {
+  .image-box::after {
+    position: absolute;
+    content: "";
+    top: -40px;
+    right: 0;
+    bottom: 0;
+    left: 50%;
+    background-image: url('../../public/img-n-01.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    border-radius: 8px;
+  }
+}
 
 body {
   background: var(--background);

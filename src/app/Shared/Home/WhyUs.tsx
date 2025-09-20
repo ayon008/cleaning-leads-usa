@@ -4,7 +4,10 @@ import Image from "next/image";
 import image from "@/../public/Cleaning-service-Customizable-Flat-Illustrations-_-Rafiki-Style.jpeg.bv_resized_ipad.jpeg.bv.webp";
 import PrimaryBtn from "../Button/PrimaryBtn";
 import { DollarSignIcon, Rocket, ThumbsUp } from "lucide-react";
-import image2 from "../../../../public/Disinfection.webp";
+import image2 from "@/../public/Disinfection.webp";
+import relability from "@/../public/istockphoto-1390310466-612x612.jpg";
+import contact from "@/../public/images.jpeg"
+import growth from  "@/../public/5679516-200.png"
 
 const WhyUs = () => {
   return (
@@ -61,8 +64,15 @@ const WhyUs = () => {
             subHeading="Do you need trustworthy leads for commercial construction? In order to help you land more contracts, our CleaningLeadsUSA team links you with verified opportunities in retail establishments, office buildings, and large-scale developments."
             containerClass="text-center"
           />
-          <div className="md:mt-20 mt-10 flex items-center md:flex-row flex-col justify-center md:gap-10 gap-16">
-            <div className="space-y-4 text-center">
+          <div className="mt-10 flex items-center md:flex-row flex-col justify-center md:gap-10 gap-16">
+            <div className="space-y-4 text-center flex-1">
+              <Image
+                src={relability}
+                alt=""
+                className="w-[120px] h-[120px] mx-auto"
+                width={120}
+                height={120}
+              />
               <h3 className="text-xl font-semibold">
                 Reliable Lead Generation for Janitorial Contractors
               </h3>
@@ -74,10 +84,16 @@ const WhyUs = () => {
                 other contractors.
               </p>
             </div>
-            <div className="text-center space-y-4">
+            <div className="text-center space-y-4 flex-1">
+              <Image
+                src={contact}
+                alt=""
+                className="w-[120px] h-[120px] mx-auto"
+                width={120}
+                height={120}
+              />
               <h3 className="text-xl font-semibold">
-                Make Contact with Commercial Cleaning Clients Who Are Ready to
-                Purchase
+                Win Commercial Cleaning Clients Ready to Purchase
               </h3>
               <p>
                 Our commercial cleaning lead services put you in direct contact
@@ -87,7 +103,14 @@ const WhyUs = () => {
                 rates.
               </p>
             </div>
-            <div className="text-center space-y-4">
+            <div className="text-center space-y-4 flex-1">
+              <Image
+                src={growth}
+                alt=""
+                className="w-[120px] h-[120px] mx-auto"
+                width={120}
+                height={120}
+              />
               <h3 className="text-xl font-semibold">
                 Expand Your Business in Commercial Cleaning
               </h3>

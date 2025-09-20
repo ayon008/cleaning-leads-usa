@@ -24,10 +24,9 @@ const Footer = () => {
   return (
     <section id="footer">
       <div className="bg-[#212121]">
-        <div className="container flex md:gap-0 gap-10 md:flex-row flex-col md:items-center items-start justify-between md:py-6 py-10">
+        <div className="grid md:grid-cols-4 grid-cols-1 justify-between items-center container md:py-6 py-10 md:gap-0 gap-10">
           <div className="flex items-center gap-5">
             <div>
-              {/* Facebook */}
               <a
                 href="https://www.facebook.com/YourPage"
                 target="_blank"
@@ -37,12 +36,13 @@ const Footer = () => {
                   src={facebook}
                   className="w-[30px] h-[30px] cursor-pointer"
                   alt="facebook"
+                  height={30}
+                  width={30}
                 />
               </a>
             </div>
 
             <div>
-              {/* WhatsApp */}
               <a
                 href="https://wa.me/1234567890"
                 target="_blank"
@@ -52,57 +52,53 @@ const Footer = () => {
                   src={whatasapp}
                   className="w-[40px] h-[40px] cursor-pointer"
                   alt="whatsapp"
+                  height={30}
+                  width={30}
                 />
               </a>
             </div>
-
             <div>
-              {/* Phone */}
               <a href="tel:+1234567890">
                 <Phone className="cursor-pointer text-white" />
               </a>
             </div>
           </div>
-          <div className="flex md:items-center items-start flex-wrap justify-between gap-10">
-            <div className="flex items-center gap-2 mx-8">
-              <Phone className="text-secondary" size={"2rem"} />
-              <div>
-                <p className="text-sm text-white font-semibold">Phone Number</p>
-                <a
-                  href="tel:+1234567890"
-                  aria-label="Call Cleaning Leads USA at +1 (234) 567-890"
-                  title="Call Cleaning Leads USA"
-                  className="inline-flex items-center justify-center text-white font-bold"
-                >
-                  +1 (234) 567-890
-                </a>
-              </div>
+          <div className="flex items-center gap-2">
+            <Phone className="text-secondary" size={"2rem"} />
+            <div>
+              <p className="text-sm text-white font-semibold">Phone Number</p>
+              <a
+                href="tel:+1234567890"
+                aria-label="Call Cleaning Leads USA at +1 (234) 567-890"
+                title="Call Cleaning Leads USA"
+                className="inline-flex items-center justify-center text-white font-bold"
+              >
+                +1 (234) 567-890
+              </a>
             </div>
-            <div className="flex items-center gap-2 mx-8">
-              <Mail className="text-secondary" size={"2rem"} />
-              <div>
-                <p className="text-sm text-white font-semibold">Contact Mail</p>
-                <a
-                  href="mailto:support@cleaningleadsusa.com"
-                  title="Contact Cleaning Leads USA Support"
-                  className="text-base font-bold"
-                >
-                  <h2 className="text-base text-white">
-                    support@cleaningleadsusa.com
-                  </h2>
-                </a>
-              </div>
-            </div>
-            <div className="flex items-center gap-2">
-              <MapPin className="text-secondary" size={"2rem"} />
-              <div>
-                <p className="text-sm text-white font-semibold">
-                  Office Address
-                </p>
-                <h2 className={`text-base font-bold text-white`}>
-                  Envanto HQ, Australia
+          </div>
+          <div className="flex items-center gap-2">
+            <Mail className="text-secondary" size={"2rem"} />
+            <div>
+              <p className="text-sm text-white font-semibold">Contact Mail</p>
+              <a
+                href="mailto:support@cleaningleadsusa.com"
+                title="Contact Cleaning Leads USA Support"
+                className="text-base font-bold"
+              >
+                <h2 className="text-sm text-white">
+                  support@cleaningleadsusa.com
                 </h2>
-              </div>
+              </a>
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <MapPin className="text-secondary" size={"2rem"} />
+            <div>
+              <p className="text-sm text-white font-semibold">Office Address</p>
+              <h2 className={`text-base font-bold text-white`}>
+                Envanto HQ, Australia
+              </h2>
             </div>
           </div>
         </div>

@@ -26,7 +26,7 @@ const page = () => {
           headline="A Few Things We're Excited to Share"
           subHeading="These are the moments that remind us why we love helping cleaning businesses grow"
         />
-        <div className="my-10 flex items-stretch justify-between gap-10">
+        <div className="my-10 flex md:flex-row flex-col items-stretch justify-between gap-10">
           <div className="bg-primary p-8 rounded-md flex-1 h-[180px]">
             <p className="mb-4 text-center text-base">
               Appointment Generated Per Months
@@ -48,12 +48,12 @@ const page = () => {
             </div>
           </div>
         </div>
-        <div className="mt-20 flex items-center py-6 rounded-md justify-between bg-amber-300 px-10">
+        <div className="flex items-center md:flex-row flex-col md:py-6 py-6 rounded-md md:justify-between items-center bg-amber-300 md:px-10 px-6 md:my-10 gap-6">
           <div>
-            <h1 className="text-3xl font-semibold">
+            <h1 className="md:text-3xl text-xl md:text-left text-center font-semibold">
               Get your first appointment just at $99
             </h1>
-            <p className="text-base mt-4">
+            <p className="text-base mt-4 md:text-left text-center">
               Would you like to speak with our operations manager directly?
             </p>
           </div>

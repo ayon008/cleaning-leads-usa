@@ -4,6 +4,28 @@ import Title from "../Shared/Title/Title";
 import { Card } from "../Shared/Home/Expertise";
 import Contact from "../Shared/Home/Contact";
 import PrimaryBtn from "../Shared/Button/PrimaryBtn";
+import Image, { StaticImageData } from "next/image";
+import { title } from "process";
+
+const Prospect = ({
+  image,
+  text,
+  alt = "",
+  title,
+}: {
+  image: StaticImageData;
+  text: string;
+  alt?: string;
+  title: string;
+}) => {
+  return (
+    <div className="bg-white rounded-md space-y-4 px-4 py-6">
+      {/* <Image src={image} alt={alt}/> */}
+      <h1 className="text-center text-2xl font-semibold">{title}</h1>
+      <p className="text-center">{text}</p>
+    </div>
+  );
+};
 
 const page = () => {
   return (
@@ -90,6 +112,12 @@ const page = () => {
           headline="Complete Marketing Solutions for Janitorial Services"
           subHeading=""
         />
+        <div className="mt-10 container grid md:grid-cols-4">
+          <Prospect
+            text="Connect with verified office cleaning prospects actively searching for janitorial services. Every lead is pre-qualified to match your criteria, so you can focus on closing deals, not chasing unqualified contacts."
+            title={"Verified Prospects"}
+          />
+        </div>
       </div>
     </section>
   );

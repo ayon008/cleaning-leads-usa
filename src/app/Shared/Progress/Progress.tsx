@@ -1,5 +1,4 @@
 "use client";
-import { barlow } from "@/app/fonts/Fonts";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -72,7 +71,7 @@ const Progress = ({
           ref={containerRef}
           className="flex relative items-center w-full mb-1"
         >
-          <h3 ref={textRef} className={`${textClassName} ${barlow.className}`}>
+          <h3 ref={textRef} className={`${textClassName} text-lg mb-2`}>
             {title}
           </h3>
           <span

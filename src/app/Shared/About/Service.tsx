@@ -1,26 +1,27 @@
-import { barlow } from "@/app/fonts/Fonts";
 import React from "react";
 import Progress from "../Progress/Progress";
 import PrimaryBtn from "../Button/PrimaryBtn";
+import Image from "next/image";
+import image from "@/../public/img-n-01.jpg";
 
 const Stats = () => {
   return (
     <section className="" id="stats">
-      <div className="ourDo w-screen h-[120vh] max-h-[734px] -scale-x-100 relative">
+      <div className="ourDo w-screen md:h-[105vh] md:max-h-[690px] -scale-x-100 relative">
         <div className="absolute bg-black inset-0 opacity-70"></div>
         <div className="relative -scale-x-100 z-20">
-          <div className="flex gap-x-20 items-stretch container opacity-100">
+          <div className="flex gap-20 md:flex-row flex-col items-stretch container opacity-100">
             <div className="flex-1 overflow-hidden pt-16">
               <div>
                 <p className="text-secondary font-semibold">
                   Not just Numbers they are results
                 </p>
                 <h1
-                  className={`text-white ${barlow.className} text-5xl font-bold mt-2 mb-5`}
+                  className={`text-white md:text-3xl text-2xl font-bold mt-2 mb-5`}
                 >
                   Delivering Qualified Commercial Cleaning Appointments
                 </h1>
-                <div className="mt-8 space-y-8">
+                <div className="mt-6 space-y-6">
                   <Progress
                     id="client"
                     percent={90}
@@ -45,7 +46,17 @@ const Stats = () => {
                 <PrimaryBtn text="Read More" containerClass="rounded-md mt-8" />
               </div>
             </div>
-            <div className="flex-1 image-box"></div>
+            <div className="flex-1 image-box md:pb-0 pb-16">
+              <Image
+                src={image}
+                width={382}
+                height={320}
+                className="w-full md:hidden block rounded-xl"
+                alt="states"
+                placeholder="blur"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </div>
