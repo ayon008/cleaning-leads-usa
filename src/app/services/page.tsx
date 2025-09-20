@@ -5,7 +5,10 @@ import { Card } from "../Shared/Home/Expertise";
 import Contact from "../Shared/Home/Contact";
 import PrimaryBtn from "../Shared/Button/PrimaryBtn";
 import Image, { StaticImageData } from "next/image";
-import { title } from "process";
+import propspect from "@/../public/search_11850312.png";
+import coldCall from "@/../public/customer-support_999104.png"
+import followUp from "@/../public/verified-file_11245163.png"
+import appointments from "../../../public/calendar_9948728.png"
 
 const Prospect = ({
   image,
@@ -20,9 +23,9 @@ const Prospect = ({
 }) => {
   return (
     <div className="bg-white rounded-md space-y-4 px-4 py-6">
-      {/* <Image src={image} alt={alt}/> */}
+      <Image src={image} alt={alt} className="w-[90px] h-[90px] mx-auto" />
       <h1 className="text-center text-2xl font-semibold">{title}</h1>
-      <p className="text-center">{text}</p>
+      <p className="text-center text-sm">{text}</p>
     </div>
   );
 };
@@ -106,16 +109,52 @@ const page = () => {
         </div>
       </div>
       <Contact />
-      <div className="bg-sky-100/60 w-full py-10">
+      <div className="bg-sky-100/60 w-full pt-10 md:pb-20 pb-10">
         <Title
           containerClass="text-center"
           headline="Complete Marketing Solutions for Janitorial Services"
           subHeading=""
         />
-        <div className="mt-10 container grid md:grid-cols-4">
+        <div className="mt-10 container grid md:grid-cols-4 grid-cols-1 gap-3">
           <Prospect
+            image={propspect}
             text="Connect with verified office cleaning prospects actively searching for janitorial services. Every lead is pre-qualified to match your criteria, so you can focus on closing deals, not chasing unqualified contacts."
             title={"Verified Prospects"}
+          />
+          <Prospect
+            image={coldCall}
+            text="Reach facility managers effortlessly with our year-round appointment service. Skilled telemarketers follow proven protocols to deliver only qualified leads, helping your cleaning business close more deals."
+            title={"Client Outreach"}
+          />
+          <Prospect
+            image={followUp}
+            text="Get instant updates on appointment changes and continuous connections to new janitorial jobs in your area."
+            title={"Real-Time Updates"}
+          />
+          <Prospect
+            image={appointments}
+            text="Every lead is fully verified before it reaches you. Once an appointment is scheduled, all you need to do is meet the prospect on time — the rest is up to you."
+            title={"Appointments"}
+          />
+          <Prospect
+            image={propspect}
+            text="Connect with verified office cleaning prospects actively searching for janitorial services. Every lead is pre-qualified to match your criteria, so you can focus on closing deals, not chasing unqualified contacts."
+            title={"Verified Prospects"}
+          />
+          <Prospect
+            image={coldCall}
+            text="Reach facility managers effortlessly with our year-round appointment service. Skilled telemarketers follow proven protocols to deliver only qualified leads, helping your cleaning business close more deals."
+            title={"Client Outreach"}
+          />
+          <Prospect
+            image={followUp}
+            text="Get instant updates on appointment changes and continuous connections to new janitorial jobs in your area."
+            title={"Real-Time Updates"}
+          />
+          <Prospect
+            image={propspect}
+            text="Every lead is fully verified before it reaches you. Once an appointment is scheduled, all you need to do is meet the prospect on time — the rest is up to you."
+            title={"Appointments"}
           />
         </div>
       </div>
