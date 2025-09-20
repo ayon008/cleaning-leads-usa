@@ -65,7 +65,7 @@ const Pricing = () => {
           containerClass="text-center"
           subHeading="Get Qualified Janitorial Appointments & Commercial Cleaning Leads"
         />
-        <div className="flex items-stretch md:flex-row flex-col md:mt-20 mt-10 md:gap-2 gap-6">
+        <div className="flex items-stretch md:flex-row flex-col mt-10 md:gap-2 gap-6">
           {pricingTiers.map((singlePrice) => {
             const { tier, appointments, features } = singlePrice;
             return (
