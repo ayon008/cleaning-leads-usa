@@ -23,7 +23,7 @@ const page = () => {
       />
       <div className="bg-primary">
         <div className="container md:py-10 py-6">
-          <div className="flex items-center md:flex-row flex-col md:py-6 py-6 rounded-md md:justify-between items-center bg-amber-300 md:px-10 px-6 md:my-10 gap-6">
+          <div className="flex items-center md:flex-row flex-col md:py-6 py-6 rounded-md md:justify-between bg-amber-300 md:px-10 px-6 md:my-10 gap-6">
             <div>
               <h1 className="md:text-3xl text-xl md:text-left text-center font-semibold">
                 Get your first appointment just at $99

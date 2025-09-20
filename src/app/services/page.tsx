@@ -9,6 +9,10 @@ import propspect from "@/../public/search_11850312.png";
 import coldCall from "@/../public/customer-support_999104.png"
 import followUp from "@/../public/verified-file_11245163.png"
 import appointments from "../../../public/calendar_9948728.png"
+import research from "@/../public/research_2082022.png"
+import email from "@/../public/email_2165378.png"
+import branding from "../../../public/advertising_3505054.png";
+import promotion from "../../../public/promotion_18578766.png"
 
 const Prospect = ({
   image,
@@ -137,22 +141,22 @@ const page = () => {
             title={"Appointments"}
           />
           <Prospect
-            image={propspect}
-            text="Connect with verified office cleaning prospects actively searching for janitorial services. Every lead is pre-qualified to match your criteria, so you can focus on closing deals, not chasing unqualified contacts."
-            title={"Verified Prospects"}
+            image={research}
+            text="We use SEO strategies to help your janitorial service rank on Google’s first page, making it easy for commercial centers and offices to find you."
+            title={"Google Ranking"}
           />
           <Prospect
-            image={coldCall}
-            text="Reach facility managers effortlessly with our year-round appointment service. Skilled telemarketers follow proven protocols to deliver only qualified leads, helping your cleaning business close more deals."
-            title={"Client Outreach"}
+            image={email}
+            text="Our expert team crafts targeted email campaigns to connect with businesses actively seeking cleaning services. We keep your brand visible, nurture leads, and drive more bookings."
+            title={"Email Marketing"}
           />
           <Prospect
-            image={followUp}
-            text="Get instant updates on appointment changes and continuous connections to new janitorial jobs in your area."
-            title={"Real-Time Updates"}
+            image={branding}
+            text="Our experienced marketers build a strong digital presence for your commercial cleaning business, helping you stand out and attract more clients online."
+            title={"Brand Visibility"}
           />
           <Prospect
-            image={propspect}
+            image={promotion}
             text="Every lead is fully verified before it reaches you. Once an appointment is scheduled, all you need to do is meet the prospect on time — the rest is up to you."
             title={"Appointments"}
           />

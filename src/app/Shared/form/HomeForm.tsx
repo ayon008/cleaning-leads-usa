@@ -24,7 +24,7 @@ const HomeForm = () => {
     localStorage.setItem("homeFormData", JSON.stringify(data));
     console.log("Saved to localStorage:", data);
     reset(); // Clear the form after submission
-    router.push("/contact");
+    router.push("/contact#contact-form");
   };
 
   return (

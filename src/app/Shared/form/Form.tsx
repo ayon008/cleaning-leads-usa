@@ -55,6 +55,7 @@ const Form = () => {
     <form
       className="bg-secondary rounded-md p-6 shadow-2xl"
       onSubmit={handleSubmit(onSubmit)}
+      id="contact-form"
     >
       <div className="space-y-4">
         <div>
