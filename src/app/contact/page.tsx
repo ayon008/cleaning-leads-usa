@@ -32,7 +32,9 @@ const page = () => {
                 Would you like to speak with our operations manager directly?
               </p>
             </div>
-            <PrimaryBtn text="Call Now" containerClass="" />
+            <a href="tel:+12344500123">
+              <PrimaryBtn text="Call Now" containerClass="" />
+            </a>
           </div>
           <Title
             containerClass="text-center mt-10"
@@ -145,7 +147,7 @@ const page = () => {
                 </div>
               </div>
             </div>
-            <div className="md:w-1/2 w-full">
+            <div className="md:w-1/2 w-full" id="form">
               <Form />
             </div>
           </div>

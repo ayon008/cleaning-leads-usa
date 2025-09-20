@@ -48,7 +48,7 @@ const page = () => {
             </div>
           </div>
         </div>
-        <div className="flex items-center md:flex-row flex-col md:py-6 py-6 rounded-md md:justify-between items-center bg-amber-300 md:px-10 px-6 md:my-10 gap-6">
+        <div className="flex items-center md:flex-row flex-col md:py-6 py-6 rounded-md md:justify-between bg-amber-300 md:px-10 px-6 md:my-10 gap-6">
           <div>
             <h1 className="md:text-3xl text-xl md:text-left text-center font-semibold">
               Get your first appointment just at $99
@@ -57,7 +57,9 @@ const page = () => {
               Would you like to speak with our operations manager directly?
             </p>
           </div>
-          <PrimaryBtn text="Call Now" containerClass="" />
+          <a href="tel:+12344500123">
+            <PrimaryBtn text="Call Now" containerClass="" />
+          </a>
         </div>
         <Testimonial />
         <div className="lg:w-[60%] ml-auto md:w-[75%] w-full my-10 space-y-5">

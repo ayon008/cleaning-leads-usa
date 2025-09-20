@@ -37,7 +37,9 @@ const page = () => {
               Would you like to speak with our operations manager directly?
             </p>
           </div>
-          <PrimaryBtn text="Call Now" containerClass="" />
+          <a href="tel:+12344500123">
+            <PrimaryBtn text="Call Now" containerClass="" />
+          </a>
         </div>
         <Title
           containerClass="text-center"
@@ -128,7 +130,7 @@ const page = () => {
                   Predicament and Get Professional Advice to Accelerate Your
                   Development.
                 </h1>
-                <div className="bg-white space-y-2 w-fit rounded-md p-4 mt-4">
+                <div className="bg-primary space-y-2 w-fit rounded-md p-4 mt-4">
                   <p className="text-2xl font-semibold">
                     Logan Whitman <br />
                     <small className="text-sm font-medium">

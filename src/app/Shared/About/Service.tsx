@@ -3,6 +3,7 @@ import Progress from "../Progress/Progress";
 import PrimaryBtn from "../Button/PrimaryBtn";
 import Image from "next/image";
 import image from "@/../public/img-n-01.jpg";
+import Link from "next/link";
 
 const Stats = () => {
   return (
@@ -43,7 +44,12 @@ const Stats = () => {
                     title="Faster Contract Acquisition"
                   />
                 </div>
-                <PrimaryBtn text="Read More" containerClass="rounded-md mt-8" />
+                <Link href={'/about'}>
+                  <PrimaryBtn
+                    text="Read More"
+                    containerClass="rounded-md mt-8"
+                  />
+                </Link>
               </div>
             </div>
             <div className="flex-1 image-box md:pb-0 pb-16">

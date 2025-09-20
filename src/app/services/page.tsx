@@ -6,13 +6,13 @@ import Contact from "../Shared/Home/Contact";
 import PrimaryBtn from "../Shared/Button/PrimaryBtn";
 import Image, { StaticImageData } from "next/image";
 import propspect from "@/../public/search_11850312.png";
-import coldCall from "@/../public/customer-support_999104.png"
-import followUp from "@/../public/verified-file_11245163.png"
-import appointments from "../../../public/calendar_9948728.png"
-import research from "@/../public/research_2082022.png"
-import email from "@/../public/email_2165378.png"
+import coldCall from "@/../public/customer-support_999104.png";
+import followUp from "@/../public/verified-file_11245163.png";
+import appointments from "../../../public/calendar_9948728.png";
+import research from "@/../public/research_2082022.png";
+import email from "@/../public/email_2165378.png";
 import branding from "../../../public/advertising_3505054.png";
-import promotion from "../../../public/promotion_18578766.png"
+import promotion from "../../../public/promotion_18578766.png";
 
 const Prospect = ({
   image,
@@ -108,7 +108,9 @@ const page = () => {
                 Would you like to speak with our operations manager directly?
               </p>
             </div>
-            <PrimaryBtn text="Call Now" containerClass="" />
+            <a href="tel:+12344500123">
+              <PrimaryBtn text="Call Now" containerClass="" />
+            </a>
           </div>
         </div>
       </div>

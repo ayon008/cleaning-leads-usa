@@ -6,8 +6,9 @@ import PrimaryBtn from "../Button/PrimaryBtn";
 import { DollarSignIcon, Rocket, ThumbsUp } from "lucide-react";
 import image2 from "@/../public/Disinfection.webp";
 import relability from "@/../public/istockphoto-1390310466-612x612.jpg";
-import contact from "@/../public/images.jpeg"
-import growth from  "@/../public/5679516-200.png"
+import contact from "@/../public/images.jpeg";
+import growth from "@/../public/5679516-200.png";
+import Link from "next/link";
 
 const WhyUs = () => {
   return (
@@ -37,7 +38,9 @@ const WhyUs = () => {
                 cleaning services by guaranteeing appointments with authorized
                 personnel.
               </p>
-              <PrimaryBtn text="Our Packages" containerClass="mt-8" />
+              <Link href={'/#pricing'}>
+                <PrimaryBtn text="Our Packages" containerClass="mt-8" />
+              </Link>
             </div>
             <div className="relative flex-1 w-full h-full">
               {/* This section */}
@@ -270,7 +273,9 @@ const WhyUs = () => {
             </div>
           </div>
           <div className="w-fit mx-auto">
-            <PrimaryBtn text="Our Packages" containerClass="mt-8" />
+            <Link href={"/#pricing"}>
+              <PrimaryBtn text="Our Packages" containerClass="mt-8" />
+            </Link>
           </div>
         </div>
       </section>

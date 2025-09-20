@@ -2,6 +2,7 @@ import Image from "next/image";
 import React, { ReactNode } from "react";
 import image from "@/../public/professional-cleaning-services.jpg";
 import PrimaryBtn from "../Button/PrimaryBtn";
+import Link from "next/link";
 
 const Hero = ({
   title,
@@ -35,7 +36,14 @@ const Hero = ({
             {headline}
           </p>
           <p className="text-white sm:text-base text-sm font-semibold">{des}</p>
-          <PrimaryBtn text="Get A Quote" containerClass="rounded-md w-fit" />
+          <div>
+            <Link href={'/contact#form'}>
+              <PrimaryBtn
+                text="Get A Quote"
+                containerClass="rounded-md w-fit"
+              />
+            </Link>
+          </div>
         </div>
       </div>
     </section>
