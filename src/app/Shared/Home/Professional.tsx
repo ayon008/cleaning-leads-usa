@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import professional_image from "@/../public/52068.jpg";
+import professional_image from "@/../public/cleaning-business-professionals.jpg";
 import { CheckCircle } from "lucide-react";
 import PrimaryBtn from "../Button/PrimaryBtn";
 import Link from "next/link";

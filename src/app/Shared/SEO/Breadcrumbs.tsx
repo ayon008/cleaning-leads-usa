@@ -30,7 +30,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
     ];
     
     let currentPath = '';
-    pathSegments.forEach((segment, index) => {
+    pathSegments.forEach((segment) => {
       currentPath += `/${segment}`;
       const name = segment
         .split('-')

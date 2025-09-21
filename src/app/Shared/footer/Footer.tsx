@@ -1,9 +1,8 @@
 import Image from "next/image";
 import React from "react";
-import facebook from "../../../../public/2023_Facebook_icon.svg.png";
-import whatasapp from "../../../../public/WhatsApp.svg.webp";
+import facebook from "../../../../public/facebook-icon.png";
+import whatasapp from "../../../../public/whatsapp-icon.webp";
 import { Mail, MapPin, Phone } from "lucide-react";
-import { barlow } from "@/app/fonts/Fonts";
 import { Logo } from "../Navbar/Navbar";
 import Link from "next/link";
 import PrimaryBtn from "../Button/PrimaryBtn";
@@ -35,9 +34,10 @@ const Footer = () => {
                 <Image
                   src={facebook}
                   className="w-[30px] h-[30px] cursor-pointer"
-                  alt="facebook"
+                  alt="Follow Cleaning Leads USA on Facebook for commercial cleaning lead generation tips"
                   height={30}
                   width={30}
+                  loading="lazy"
                 />
               </a>
             </div>
@@ -51,9 +51,10 @@ const Footer = () => {
                 <Image
                   src={whatasapp}
                   className="w-[40px] h-[40px] cursor-pointer"
-                  alt="whatsapp"
+                  alt="Chat with Cleaning Leads USA on WhatsApp for janitorial appointment booking"
                   height={30}
                   width={30}
+                  loading="lazy"
                 />
               </a>
             </div>

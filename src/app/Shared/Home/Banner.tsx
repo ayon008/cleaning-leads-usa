@@ -1,5 +1,5 @@
 import Image from "next/image";
-import heroImage1 from "@/../public/slider-a-01.jpg";
+import heroImage1 from "@/../public/janitorial-leads-hero-banner.jpg";
 import PrimaryBtn from "../Button/PrimaryBtn";
 import { Globe, Headphones, Mail, Share2 } from "lucide-react";
 import { LucideIcon } from "lucide-react";
@@ -62,7 +62,7 @@ const Banner = () => {
       <div className="w-full md:h-dvh h-[500px] lg:-mt-8 mt-0" id="banner">
         <div className="w-full h-full relative overflow-hidden">
           <Image
-            alt="Commercial janitorial team providing cleaning services"
+            alt="Professional janitorial team providing commercial cleaning services and appointment setting"
             title="Professional janitorial appointment services"
             src={heroImage1}
             className="object-cover absolute inset-0 size-full !z-10"

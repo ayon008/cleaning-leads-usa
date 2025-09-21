@@ -2,7 +2,7 @@ import React from "react";
 import Progress from "../Progress/Progress";
 import PrimaryBtn from "../Button/PrimaryBtn";
 import Image from "next/image";
-import image from "@/../public/img-n-01.jpg";
+import image from "@/../public/about-cleaning-leads-usa.jpg";
 import Link from "next/link";
 
 const Stats = () => {
@@ -58,7 +58,7 @@ const Stats = () => {
                 width={382}
                 height={320}
                 className="w-full md:hidden block rounded-xl"
-                alt="states"
+                alt="Cleaning Leads USA team delivering qualified commercial cleaning appointments nationwide"
                 placeholder="blur"
                 loading="lazy"
               />

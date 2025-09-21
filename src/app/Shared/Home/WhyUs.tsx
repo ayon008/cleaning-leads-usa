@@ -1,13 +1,13 @@
 import React from "react";
 import Title from "../Title/Title";
 import Image from "next/image";
-import image from "@/../public/Cleaning-service-Customizable-Flat-Illustrations-_-Rafiki-Style.jpeg.bv_resized_ipad.jpeg.bv.webp";
+import image from "@/../public/cleaning-service-illustration.webp";
 import PrimaryBtn from "../Button/PrimaryBtn";
 import { DollarSignIcon, Rocket, ThumbsUp } from "lucide-react";
-import image2 from "@/../public/Disinfection.webp";
-import relability from "@/../public/istockphoto-1390310466-612x612.jpg";
-import contact from "@/../public/images.jpeg";
-import growth from "@/../public/5679516-200.png";
+import image2 from "@/../public/disinfection-cleaning-service.webp";
+import relability from "@/../public/cleaning-business-reliability.jpg";
+import contact from "@/../public/cleaning-leads-contact.jpg";
+import growth from "@/../public/business-growth-icon.png";
 import Link from "next/link";
 
 const WhyUs = () => {
@@ -49,11 +49,12 @@ const WhyUs = () => {
                 width={800}
                 height={600}
                 className="w-full h-full object-cover"
-                alt="Professional office cleaning service for a spotless and hygienic workplace"
+                alt="Professional commercial cleaning service team providing janitorial services for office buildings"
                 title="Expert commercial office cleaning services"
                 sizes="(max-width: 768px) 100vw,
          (max-width: 1200px) 50vw,
          33vw"
+                loading="lazy"
               />
             </div>
           </div>
@@ -71,7 +72,7 @@ const WhyUs = () => {
             <div className="space-y-4 text-center flex-1">
               <Image
                 src={relability}
-                alt=""
+                alt="Disinfection cleaning services for commercial facilities and office buildings"
                 className="w-[120px] h-[120px] mx-auto"
                 width={120}
                 height={120}
@@ -90,7 +91,7 @@ const WhyUs = () => {
             <div className="text-center space-y-4 flex-1">
               <Image
                 src={contact}
-                alt=""
+                alt="Disinfection cleaning services for commercial facilities and office buildings"
                 className="w-[120px] h-[120px] mx-auto"
                 width={120}
                 height={120}
@@ -109,7 +110,7 @@ const WhyUs = () => {
             <div className="text-center space-y-4 flex-1">
               <Image
                 src={growth}
-                alt=""
+                alt="Disinfection cleaning services for commercial facilities and office buildings"
                 className="w-[120px] h-[120px] mx-auto"
                 width={120}
                 height={120}
@@ -268,7 +269,7 @@ const WhyUs = () => {
               <Image
                 src={image2}
                 className="w-full h-full object-cover"
-                alt="office-cleaning"
+                alt="Reliable commercial cleaning business with proven track record for janitorial services"
               />
             </div>
           </div>

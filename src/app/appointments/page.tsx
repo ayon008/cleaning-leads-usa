@@ -5,8 +5,8 @@ import PrimaryBtn from "../Shared/Button/PrimaryBtn";
 import Form from "../Shared/form/Form";
 import { Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
-import facebook from "@/../public/2023_Facebook_icon.svg.png";
-import whatasapp from "@/../public/WhatsApp.svg.webp";
+import facebook from "@/../public/facebook-icon.png";
+import whatasapp from "@/../public/whatsapp-icon.webp";
 import Pricing from "../Shared/Pricing/Pricing";
 
 const page = () => {

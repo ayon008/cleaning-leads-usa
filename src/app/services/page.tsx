@@ -5,14 +5,14 @@ import { Card } from "../Shared/Home/Expertise";
 import Contact from "../Shared/Home/Contact";
 import PrimaryBtn from "../Shared/Button/PrimaryBtn";
 import Image, { StaticImageData } from "next/image";
-import propspect from "@/../public/search_11850312.png";
-import coldCall from "@/../public/customer-support_999104.png";
-import followUp from "@/../public/verified-file_11245163.png";
-import appointments from "../../../public/calendar_9948728.png";
-import research from "@/../public/research_2082022.png";
-import email from "@/../public/email_2165378.png";
-import branding from "../../../public/advertising_3505054.png";
-import promotion from "../../../public/promotion_18578766.png";
+import propspect from "@/../public/verified-prospects-icon.png";
+import coldCall from "@/../public/client-outreach-icon.png";
+import followUp from "@/../public/real-time-updates-icon.png";
+import appointments from "../../../public/appointments-icon.png";
+import research from "@/../public/google-ranking-icon.png";
+import email from "@/../public/email-marketing-icon.png";
+import branding from "../../../public/brand-visibility-icon.png";
+import promotion from "../../../public/direct-outreach-icon.png";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -66,7 +66,7 @@ const Prospect = ({
 }) => {
   return (
     <div className="bg-white rounded-md space-y-4 px-4 py-6">
-      <Image src={image} alt={alt} className="w-[90px] h-[90px] mx-auto" />
+      <Image src={image} alt={alt || `${title} - Cleaning Leads USA service icon`} className="w-[90px] h-[90px] mx-auto" loading="lazy" />
       <h1 className="text-center text-2xl font-semibold">{title}</h1>
       <p className="text-center text-sm">{text}</p>
     </div>
@@ -165,41 +165,49 @@ const page = () => {
             image={propspect}
             text="Connect with verified office cleaning prospects actively searching for janitorial services. Every lead is pre-qualified to match your criteria, so you can focus on closing deals, not chasing unqualified contacts."
             title={"Verified Prospects"}
+            alt="Verified prospects icon - qualified janitorial leads for cleaning businesses"
           />
           <Prospect
             image={coldCall}
             text="Reach facility managers effortlessly with our year-round appointment service. Skilled telemarketers follow proven protocols to deliver only qualified leads, helping your cleaning business close more deals."
             title={"Client Outreach"}
+            alt="Client outreach icon - professional telemarketing for cleaning business leads"
           />
           <Prospect
             image={followUp}
             text="Get instant updates on appointment changes and continuous connections to new janitorial jobs in your area."
             title={"Real-Time Updates"}
+            alt="Real-time updates icon - instant janitorial appointment notifications"
           />
           <Prospect
             image={appointments}
             text="Every lead is fully verified before it reaches you. Once an appointment is scheduled, all you need to do is meet the prospect on time — the rest is up to you."
             title={"Appointments"}
+            alt="Appointments icon - verified commercial cleaning appointments"
           />
           <Prospect
             image={research}
-            text="We use SEO strategies to help your janitorial service rank on Google’s first page, making it easy for commercial centers and offices to find you."
+            text="We use SEO strategies to help your janitorial service rank on Google's first page, making it easy for commercial centers and offices to find you."
             title={"Google Ranking"}
+            alt="Google ranking icon - SEO optimization for cleaning businesses"
           />
           <Prospect
             image={email}
             text="Our expert team crafts targeted email campaigns to connect with businesses actively seeking cleaning services. We keep your brand visible, nurture leads, and drive more bookings."
             title={"Email Marketing"}
+            alt="Email marketing icon - targeted campaigns for janitorial leads"
           />
           <Prospect
             image={branding}
             text="Our experienced marketers build a strong digital presence for your commercial cleaning business, helping you stand out and attract more clients online."
             title={"Brand Visibility"}
+            alt="Brand visibility icon - digital marketing for cleaning companies"
           />
           <Prospect
             image={promotion}
             text="Our multilingual telemarketers reach out professionally to businesses, confirming appointments and connecting you with companies seeking reliable commercial cleaning services."
             title={"Direct Outreach"}
+            alt="Direct outreach icon - professional telemarketing for cleaning services"
           />
         </div>
       </div>

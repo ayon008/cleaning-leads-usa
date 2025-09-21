@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { JSX } from 'react';
 
 interface SemanticSectionProps {
   children: React.ReactNode;
@@ -10,13 +10,13 @@ interface SemanticSectionProps {
   role?: string;
 }
 
-export const Main: React.FC<SemanticSectionProps> = ({ 
-  children, 
-  className = '', 
+export const Main: React.FC<SemanticSectionProps> = ({
+  children,
+  className = '',
   id,
-  ariaLabel 
+  ariaLabel
 }) => (
-  <main 
+  <main
     id={id}
     className={className}
     aria-label={ariaLabel}
@@ -26,14 +26,14 @@ export const Main: React.FC<SemanticSectionProps> = ({
   </main>
 );
 
-export const Section: React.FC<SemanticSectionProps> = ({ 
-  children, 
-  className = '', 
+export const Section: React.FC<SemanticSectionProps> = ({
+  children,
+  className = '',
   id,
   ariaLabel,
-  role 
+  role
 }) => (
-  <section 
+  <section
     id={id}
     className={className}
     aria-label={ariaLabel}
@@ -43,13 +43,13 @@ export const Section: React.FC<SemanticSectionProps> = ({
   </section>
 );
 
-export const Article: React.FC<SemanticSectionProps> = ({ 
-  children, 
-  className = '', 
+export const Article: React.FC<SemanticSectionProps> = ({
+  children,
+  className = '',
   id,
-  ariaLabel 
+  ariaLabel
 }) => (
-  <article 
+  <article
     id={id}
     className={className}
     aria-label={ariaLabel}
@@ -58,14 +58,14 @@ export const Article: React.FC<SemanticSectionProps> = ({
   </article>
 );
 
-export const Aside: React.FC<SemanticSectionProps> = ({ 
-  children, 
-  className = '', 
+export const Aside: React.FC<SemanticSectionProps> = ({
+  children,
+  className = '',
   id,
   ariaLabel,
-  role 
+  role
 }) => (
-  <aside 
+  <aside
     id={id}
     className={className}
     aria-label={ariaLabel}
@@ -82,16 +82,16 @@ interface HeadingProps {
   id?: string;
 }
 
-export const Heading: React.FC<HeadingProps> = ({ 
-  children, 
-  level, 
-  className = '', 
-  id 
+export const Heading: React.FC<HeadingProps> = ({
+  children,
+  level,
+  className = '',
+  id
 }) => {
   const Tag = `h${level}` as keyof JSX.IntrinsicElements;
-  
+
   return (
-    <Tag 
+    <Tag
       id={id}
       className={className}
     >
@@ -108,17 +108,17 @@ interface ListProps {
   ordered?: boolean;
 }
 
-export const List: React.FC<ListProps> = ({ 
-  children, 
-  className = '', 
+export const List: React.FC<ListProps> = ({
+  children,
+  className = '',
   id,
   ariaLabel,
-  ordered = false 
+  ordered = false
 }) => {
   const Tag = ordered ? 'ol' : 'ul';
-  
+
   return (
-    <Tag 
+    <Tag
       id={id}
       className={className}
       aria-label={ariaLabel}
@@ -133,9 +133,9 @@ interface ListItemProps {
   className?: string;
 }
 
-export const ListItem: React.FC<ListItemProps> = ({ 
-  children, 
-  className = '' 
+export const ListItem: React.FC<ListItemProps> = ({
+  children,
+  className = ''
 }) => (
   <li className={className}>
     {children}
@@ -149,11 +149,11 @@ interface FigureProps {
   id?: string;
 }
 
-export const Figure: React.FC<FigureProps> = ({ 
-  children, 
-  caption, 
-  className = '', 
-  id 
+export const Figure: React.FC<FigureProps> = ({
+  children,
+  caption,
+  className = '',
+  id
 }) => (
   <figure id={id} className={className}>
     {children}

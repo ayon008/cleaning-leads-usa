@@ -1,7 +1,7 @@
 "use client";
 
 import Script from 'next/script';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 interface ScriptLoaderProps {
   src: string;
@@ -51,7 +51,7 @@ export const CriticalScripts: React.FC = () => {
         strategy="afterInteractive"
         id="google-analytics"
       />
-      
+
       {/* Google Tag Manager */}
       <ScriptLoader
         src="https://www.googletagmanager.com/gtm.js?id=GTM_ID"
@@ -72,7 +72,7 @@ export const LazyScripts: React.FC = () => {
         strategy="lazyOnload"
         id="facebook-pixel"
       />
-      
+
       {/* LinkedIn Insight Tag */}
       <ScriptLoader
         src="https://snap.licdn.com/li.lms-analytics/insight.min.js"

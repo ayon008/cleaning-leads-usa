@@ -7,7 +7,7 @@ import Link from "next/link";
 import moment from "moment";
 import Pagination from "../Shared/Pagination/Pagination";
 import { SearchProps } from "../page";
-import placeholderImage from "@/../public/istockphoto-1980276924-612x612.jpg";
+import placeholderImage from "@/../public/blog-placeholder-image.jpg";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

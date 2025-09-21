@@ -107,7 +107,7 @@ html {
 
 .ourDo {
   background-repeat: no-repeat;
-  background-image: url('../../public/slider-a-01.jpg');
+  background-image: url('../../public/janitorial-leads-hero-banner.jpg');
   background-size: cover;
   background-attachment: fixed;
 }
@@ -134,7 +134,7 @@ html {
     right: 0;
     bottom: 0;
     left: 50%;
-    background-image: url('../../public/img-n-01.jpg');
+    background-image: url('../../public/about-cleaning-leads-usa.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     z-index: -1;

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React, { ReactNode } from "react";
-import image from "@/../public/professional-cleaning-services.jpg";
+import image from "@/../public/professional-cleaning-services-team.jpg";
 import PrimaryBtn from "../Button/PrimaryBtn";
 import Link from "next/link";
 

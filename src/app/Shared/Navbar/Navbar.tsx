@@ -1,10 +1,10 @@
 "use client";
-import facebook from "@/../public/2023_Facebook_icon.svg.png";
-import whatasapp from "@/../public/WhatsApp.svg.webp";
+import facebook from "@/../public/facebook-icon.png";
+import whatasapp from "@/../public/whatsapp-icon.webp";
 import { Headphones, Mail, MapPin, Phone, ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
-import logo from "../../../../public/Blue_And_White_Cleaning_Services_Logo-removebg-preview.png";
+import logo from "../../../../public/cleaning-leads-usa-logo.png";
 import Link from "next/link";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -21,7 +21,7 @@ export const Logo = ({ containerClass }: { containerClass?: string }) => {
           <Image
             src={logo}
             priority
-            alt="Company logo - Cleaning Leads USA"
+            alt="Cleaning Leads USA company logo - professional janitorial lead generation services"
             title="Cleaning Leads USA Logo"
             width={70}
             height={70}
@@ -220,7 +220,8 @@ const Navbar = () => {
               <Image
                 src={facebook}
                 className="w-[30px] h-[30px] cursor-pointer"
-                alt="Cleaning Leads USA Facebook Page"
+                alt="Follow Cleaning Leads USA on Facebook for janitorial lead generation updates"
+                loading="lazy"
               />
             </a>
           </div>
@@ -237,8 +238,9 @@ const Navbar = () => {
               <Image
                 src={whatasapp}
                 className="w-[40px] h-[40px] cursor-pointer"
-                alt="Cleaning Leads USA WhatsApp Contact"
+                alt="Chat with Cleaning Leads USA on WhatsApp for commercial cleaning leads"
                 sizes="40px"
+                loading="lazy"
               />
             </a>
           </div>
