@@ -15,11 +15,7 @@ const nextConfig: NextConfig = {
   // Optimize trailing slashes for SEO (false = no trailing slash in URLs)
   trailingSlash: false,
 
-  // Internationalization setup
-  i18n: {
-    locales: ["en", "es", "fr", "de"],
-    defaultLocale: "en",
-  },
+  // Single language application (English only)
 
   // Image optimization
   images: {
@@ -35,12 +31,6 @@ const nextConfig: NextConfig = {
       {
         source: "/(.*)", // Apply to all routes
         headers: [
-          // Content Security Policy (adjust for your needs)
-          {
-            key: "Content-Security-Policy",
-            value:
-              "default-src 'self'; img-src * data:; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; font-src 'self' data:;",
-          },
           // Prevent MIME-type sniffing
           { key: "X-Content-Type-Options", value: "nosniff" },
           // Prevent clickjacking
@@ -49,15 +39,28 @@ const nextConfig: NextConfig = {
           { key: "X-XSS-Protection", value: "1; mode=block" },
           // Control robots/crawlers
           { key: "X-Robots-Tag", value: "index, follow" },
-          // Cache policy (adjust durations for static vs dynamic)
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, must-revalidate, immutable",
-          },
           // Strict transport security
           {
             key: "Strict-Transport-Security",
             value: "max-age=63072000; includeSubDomains; preload",
+          },
+        ],
+      },
+      {
+        source: "/api/(.*)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=3600, s-maxage=3600",
+          },
+        ],
+      },
+      {
+        source: "/_next/static/(.*)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
           },
         ],
       },
@@ -84,7 +87,15 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/sitemap.xml",
-        destination: "/api/sitemap", // API route to generate sitemap dynamically
+        destination: "/api/sitemap", // Main sitemap for static pages
+      },
+      {
+        source: "/sitemap-blogs.xml",
+        destination: "/api/sitemap-blogs", // Blog posts sitemap
+      },
+      {
+        source: "/sitemap-index.xml",
+        destination: "/api/sitemap-index", // Sitemap index
       },
       {
         source: "/robots.txt",

@@ -1,10 +1,8 @@
 "use client";
-import { useGSAP } from "@gsap/react";
+import { useSafeGSAP } from "../../lib/gsap-utils";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useRef } from "react";
-
-gsap.registerPlugin(ScrollTrigger);
 
 type ProgressProps = {
   percent: number;
@@ -30,37 +28,38 @@ const Progress = ({
   const textRef = useRef<HTMLHeadingElement | null>(null);
   const barRef = useRef<HTMLDivElement | null>(null);
 
-  useGSAP(() => {
+  useSafeGSAP((context) => {
     const container = containerRef.current;
     const span = spanRef.current;
     const textElement = textRef.current;
     const bar = barRef.current;
     if (!container || !span || !textElement || !bar) return;
-    const context = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: container,
-          start: "top 80%",
-        },
-      });
 
-      tl.to(span, {
-        left:`${percent}%`,
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: container,
+        start: "top 80%",
+        end: "bottom 20%",
+        toggleActions: "play none none reverse",
+      },
+    });
+
+    tl.to(span, {
+      left: `${percent}%`,
+      duration: 1,
+      opacity: 1,
+      ease: "power2.out",
+    });
+
+    tl.to(
+      bar,
+      {
+        width: `${percent}%`,
         duration: 1,
-        opacity:1,
-      });
-
-      tl.to(
-        bar,
-        {
-          width: `${percent}%`,
-          duration: 1,
-        },
-        0
-      );
-    },container);
-
-    return () => context.revert();
+        ease: "power2.out",
+      },
+      0
+    );
   }, [id, percent]);
 
   return (

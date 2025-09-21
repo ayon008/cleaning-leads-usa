@@ -129,7 +129,7 @@ const Footer = () => {
           <div className="text-white font-semibold">
             <ul className="space-y-4">
               <li>
-                <Link href={"/terms"}>Terms & Condition</Link>
+                <Link href={"/terms-and-conditions"}>Terms & Condition</Link>
               </li>
               <li>
                 <Link href={"/privacy"}>Privacy Policy</Link>
@@ -142,7 +142,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="text-white space-y-4 md:max-w-64 w-full md:col-span-1 col-span-2">
-            <h3 className={`${barlow.className} text-2xl font-semibold`}>
+            <h3 className={`text-xl font-semibold`}>
               Our Newsletter
             </h3>
             <p>

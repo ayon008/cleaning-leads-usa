@@ -4,7 +4,7 @@ import whatasapp from "@/../public/WhatsApp.svg.webp";
 import { Headphones, Mail, MapPin, Phone, ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
-import logo from "@/../public/Blue_and_White_Simple_Cleaning_Services_Logo-removebg-preview-1.avif";
+import logo from "../../../../public/Blue_And_White_Cleaning_Services_Logo-removebg-preview.png";
 import Link from "next/link";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -23,9 +23,9 @@ export const Logo = ({ containerClass }: { containerClass?: string }) => {
             priority
             alt="Company logo - Cleaning Leads USA"
             title="Cleaning Leads USA Logo"
-            width={40}
-            height={40}
-            sizes="40px"
+            width={70}
+            height={70}
+            sizes="100vw"
           />
           <h1 className={`font-semibold text-lg`}>
             Cleaning <br />
@@ -145,7 +145,7 @@ const Navbar = () => {
     if (isOpen) {
       setOpen(false);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathName]);
 
   useEffect(() => {

@@ -13,6 +13,45 @@ import research from "@/../public/research_2082022.png";
 import email from "@/../public/email_2165378.png";
 import branding from "../../../public/advertising_3505054.png";
 import promotion from "../../../public/promotion_18578766.png";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Our Services - Janitorial Lead Generation & Digital Marketing",
+  description: "Discover our comprehensive cleaning business services: pay-per-appointment lead generation, digital marketing, and web development. Get qualified janitorial leads that convert into contracts.",
+  keywords: [
+    "janitorial lead generation services",
+    "commercial cleaning digital marketing",
+    "cleaning business web development",
+    "pay per appointment service",
+    "cleaning contractor marketing",
+    "facility management leads",
+    "B2B cleaning services",
+    "appointment setting for cleaners"
+  ],
+  openGraph: {
+    title: "Our Services - Janitorial Lead Generation & Digital Marketing",
+    description: "Discover our comprehensive cleaning business services: pay-per-appointment lead generation, digital marketing, and web development. Get qualified janitorial leads that convert into contracts.",
+    url: "https://cleaningleadsusa.com/services",
+    type: "website",
+    images: [
+      {
+        url: "/og-services.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Cleaning Leads USA Services - Lead Generation & Digital Marketing",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Services - Janitorial Lead Generation & Digital Marketing",
+    description: "Discover our comprehensive cleaning business services: pay-per-appointment lead generation, digital marketing, and web development.",
+    images: ["/og-services.jpg"],
+  },
+  alternates: {
+    canonical: "https://cleaningleadsusa.com/services",
+  },
+};
 
 const Prospect = ({
   image,

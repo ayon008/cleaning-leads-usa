@@ -4,6 +4,46 @@ import Title from "../Shared/Title/Title";
 import Testimonial from "../Shared/Home/Testimonial";
 import Stats from "../Shared/About/Service";
 import PrimaryBtn from "../Shared/Button/PrimaryBtn";
+import Pricing from "../Shared/Pricing/Pricing";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Cleaning Leads USA - Commercial Cleaning Lead Generation Company",
+  description: "Learn about Cleaning Leads USA, the premier commercial cleaning lead generation company. We help janitorial businesses grow with qualified appointments and proven results. 1000+ appointments generated monthly.",
+  keywords: [
+    "about cleaning leads usa",
+    "commercial cleaning lead generation company",
+    "janitorial business growth",
+    "cleaning company leads",
+    "appointment setting service",
+    "B2B lead generation",
+    "commercial cleaning contractors",
+    "facility management leads"
+  ],
+  openGraph: {
+    title: "About Cleaning Leads USA - Commercial Cleaning Lead Generation Company",
+    description: "Learn about Cleaning Leads USA, the premier commercial cleaning lead generation company. We help janitorial businesses grow with qualified appointments and proven results.",
+    url: "https://cleaningleadsusa.com/about",
+    type: "website",
+    images: [
+      {
+        url: "/og-about.jpg",
+        width: 1200,
+        height: 630,
+        alt: "About Cleaning Leads USA - Commercial Cleaning Lead Generation",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Cleaning Leads USA - Commercial Cleaning Lead Generation Company",
+    description: "Learn about Cleaning Leads USA, the premier commercial cleaning lead generation company. We help janitorial businesses grow with qualified appointments and proven results.",
+    images: ["/og-about.jpg"],
+  },
+  alternates: {
+    canonical: "https://cleaningleadsusa.com/about",
+  },
+};
 
 const page = () => {
   return (
@@ -100,8 +140,11 @@ const page = () => {
           </h2>
         </div>
       </div>
-      <Stats />
-      <div className="container py-20">
+      <div className="mb-10">
+        <Stats />
+      </div>
+      <Pricing />
+      <div className="container md:pb-20 pb-10">
         <div className="md:w-1/2 w-full">
           <p>
             Janitorial Appointments – Powered by CleaningLeadsUSA, we specialize

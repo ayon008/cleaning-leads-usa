@@ -8,6 +8,45 @@ import moment from "moment";
 import Pagination from "../Shared/Pagination/Pagination";
 import { SearchProps } from "../page";
 import placeholderImage from "@/../public/istockphoto-1980276924-612x612.jpg";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Cleaning Industry Blog - Tips, News & Business Growth",
+  description: "Read our latest blog posts about the cleaning industry, janitorial business growth, commercial cleaning tips, and industry news. Expert insights to help your cleaning business succeed.",
+  keywords: [
+    "cleaning industry blog",
+    "janitorial business tips",
+    "commercial cleaning news",
+    "cleaning business growth",
+    "facility management blog",
+    "cleaning industry insights",
+    "janitorial services blog",
+    "cleaning contractor advice"
+  ],
+  openGraph: {
+    title: "Cleaning Industry Blog - Tips, News & Business Growth",
+    description: "Read our latest blog posts about the cleaning industry, janitorial business growth, commercial cleaning tips, and industry news. Expert insights to help your cleaning business succeed.",
+    url: "https://cleaningleadsusa.com/blogs",
+    type: "website",
+    images: [
+      {
+        url: "/og-blog.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Cleaning Leads USA Blog - Industry Tips & News",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cleaning Industry Blog - Tips, News & Business Growth",
+    description: "Read our latest blog posts about the cleaning industry, janitorial business growth, commercial cleaning tips, and industry news.",
+    images: ["/og-blog.jpg"],
+  },
+  alternates: {
+    canonical: "https://cleaningleadsusa.com/blogs",
+  },
+};
 
 const WP_API_URL = process.env.NEXT_PUBLIC_WP_API_URL;
 

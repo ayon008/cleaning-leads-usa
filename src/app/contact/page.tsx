@@ -7,6 +7,46 @@ import whatasapp from "@/../public/WhatsApp.svg.webp";
 import Image from "next/image";
 import Form from "../Shared/form/Form";
 import PrimaryBtn from "../Shared/Button/PrimaryBtn";
+import Pricing from "../Shared/Pricing/Pricing";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact Cleaning Leads USA - Get Your First Appointment for $99",
+  description: "Contact Cleaning Leads USA for qualified commercial cleaning leads and appointments. Get your first appointment for just $99. Call +1-234-450-0123 or email support@cleaningleadsusa.com",
+  keywords: [
+    "contact cleaning leads usa",
+    "commercial cleaning leads contact",
+    "janitorial appointment booking",
+    "cleaning business consultation",
+    "get cleaning leads",
+    "appointment setting contact",
+    "cleaning contractors contact",
+    "B2B lead generation contact"
+  ],
+  openGraph: {
+    title: "Contact Cleaning Leads USA - Get Your First Appointment for $99",
+    description: "Contact Cleaning Leads USA for qualified commercial cleaning leads and appointments. Get your first appointment for just $99.",
+    url: "https://cleaningleadsusa.com/contact",
+    type: "website",
+    images: [
+      {
+        url: "/og-contact.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Contact Cleaning Leads USA - Commercial Cleaning Lead Generation",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Cleaning Leads USA - Get Your First Appointment for $99",
+    description: "Contact Cleaning Leads USA for qualified commercial cleaning leads and appointments. Get your first appointment for just $99.",
+    images: ["/og-contact.jpg"],
+  },
+  alternates: {
+    canonical: "https://cleaningleadsusa.com/contact",
+  },
+};
 
 const page = () => {
   return (
@@ -152,7 +192,8 @@ const page = () => {
             </div>
           </div>
         </div>
-        <div className="container md:py-20 py-10">
+        <Pricing />
+        <div className="container md:pb-20 pb-10">
           <Title
             headline="Contact us to get Commercial Cleaning Leads"
             subHeading="After years of connecting cleaning contractors with small to mid-sized businesses and offices seeking reliable janitorial services, CleaningLeadsUSA has established itself as the leading commercial cleaning lead generation company."
