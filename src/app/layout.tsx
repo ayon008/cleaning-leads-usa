@@ -5,14 +5,19 @@ import Footer from "./Shared/footer/Footer";
 import TopButton from "./Shared/Button/TopButton";
 import { Inter } from "next/font/google";
 import { Suspense } from "react";
-import { CriticalScripts, LazyScripts } from "./Shared/Performance/ScriptLoader";
+import {
+  CriticalScripts,
+  LazyScripts,
+} from "./Shared/Performance/ScriptLoader";
 
 export const metadata: Metadata = {
   title: {
-    default: "Cleaning Leads USA - Professional Janitorial Appointment Services",
-    template: "%s | Cleaning Leads USA"
+    default:
+      "Cleaning Leads USA - Professional Janitorial Appointment Services",
+    template: "%s | Cleaning Leads USA",
   },
-  description: "Get qualified commercial cleaning leads and appointments with Cleaning Leads USA. We connect janitorial businesses with verified decision-makers across the US. Pay only for confirmed appointments that convert.",
+  description:
+    "Get qualified commercial cleaning leads and appointments with Cleaning Leads USA. We connect janitorial businesses with verified decision-makers across the US. Pay only for confirmed appointments that convert.",
   keywords: [
     "commercial cleaning leads",
     "janitorial appointments",
@@ -23,7 +28,7 @@ export const metadata: Metadata = {
     "cleaning contractors",
     "facility management",
     "B2B lead generation",
-    "appointment setting"
+    "appointment setting",
   ],
   authors: [{ name: "Cleaning Leads USA" }],
   creator: "Cleaning Leads USA",
@@ -43,7 +48,8 @@ export const metadata: Metadata = {
     url: "https://cleaningleadsusa.com",
     siteName: "Cleaning Leads USA",
     title: "Cleaning Leads USA - Professional Janitorial Appointment Services",
-    description: "Get qualified commercial cleaning leads and appointments with Cleaning Leads USA. We connect janitorial businesses with verified decision-makers across the US.",
+    description:
+      "Get qualified commercial cleaning leads and appointments with Cleaning Leads USA. We connect janitorial businesses with verified decision-makers across the US.",
     images: [
       {
         url: "/og-image.jpg",
@@ -56,7 +62,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Cleaning Leads USA - Professional Janitorial Appointment Services",
-    description: "Get qualified commercial cleaning leads and appointments with Cleaning Leads USA. We connect janitorial businesses with verified decision-makers across the US.",
+    description:
+      "Get qualified commercial cleaning leads and appointments with Cleaning Leads USA. We connect janitorial businesses with verified decision-makers across the US.",
     images: ["/og-image.jpg"],
     creator: "@cleaningleadsusa",
   },
@@ -92,61 +99,61 @@ export default function RootLayout({
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Cleaning Leads USA",
-    "description": "Professional janitorial appointment services and commercial cleaning lead generation company",
-    "url": "https://cleaningleadsusa.com",
-    "logo": "https://cleaningleadsusa.com/Blue_And_White_Cleaning_Services_Logo-removebg-preview.png",
-    "contactPoint": {
+    name: "Cleaning Leads USA",
+    description:
+      "Professional janitorial appointment services and commercial cleaning lead generation company",
+    url: "https://cleaningleadsusa.com",
+    logo: "https://cleaningleadsusa.com/Blue_And_White_Cleaning_Services_Logo-removebg-preview.png",
+    contactPoint: {
       "@type": "ContactPoint",
-      "telephone": "+1-234-450-0123",
-      "contactType": "customer service",
-      "email": "support@cleaningleadsusa.com",
-      "availableLanguage": ["English"]
+      telephone: "+1-234-450-0123",
+      contactType: "customer service",
+      email: "support@cleaningleadsusa.com",
+      availableLanguage: ["English"],
     },
-    "address": {
+    address: {
       "@type": "PostalAddress",
-      "addressLocality": "New York",
-      "addressRegion": "NY",
-      "addressCountry": "US"
+      addressLocality: "New York",
+      addressRegion: "NY",
+      addressCountry: "US",
     },
-    "sameAs": [
-      "https://www.facebook.com/YourPage",
-      "https://wa.me/1234567890"
-    ],
-    "serviceArea": {
+    sameAs: ["https://www.facebook.com/YourPage", "https://wa.me/1234567890"],
+    serviceArea: {
       "@type": "Country",
-      "name": "United States"
+      name: "United States",
     },
-    "hasOfferCatalog": {
+    hasOfferCatalog: {
       "@type": "OfferCatalog",
-      "name": "Commercial Cleaning Lead Generation Services",
-      "itemListElement": [
+      name: "Commercial Cleaning Lead Generation Services",
+      itemListElement: [
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": "Janitorial Appointment Setting",
-            "description": "Qualified commercial cleaning appointments that convert"
-          }
+            name: "Janitorial Appointment Setting",
+            description:
+              "Qualified commercial cleaning appointments that convert",
+          },
         },
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": "Digital Marketing Services",
-            "description": "SEO, social media, and email marketing for cleaning businesses"
-          }
+            name: "Digital Marketing Services",
+            description:
+              "SEO, social media, and email marketing for cleaning businesses",
+          },
         },
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": "Web Development",
-            "description": "Professional websites for cleaning service companies"
-          }
-        }
-      ]
-    }
+            name: "Web Development",
+            description: "Professional websites for cleaning service companies",
+          },
+        },
+      ],
+    },
   };
 
   return (
@@ -160,13 +167,35 @@ export default function RootLayout({
         <meta name="theme-color" content="#4DAC4D" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
         <link rel="manifest" href="/site.webmanifest" />
+        <CriticalScripts />
       </head>
       <body className={`${inter.className} antialiased`}>
-        <CriticalScripts />
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-MQ6W6VMN"
+            height="0"
+            width="0"
+            style="display:none;visibility:hidden"
+          ></iframe>
+        </noscript>
         <Suspense
           fallback={
             <div className="h-dvh !z-[1000] w-full justify-center flex items-center bg-white">
