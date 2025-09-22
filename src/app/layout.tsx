@@ -193,8 +193,8 @@ export default function RootLayout({
             src="https://www.googletagmanager.com/ns.html?id=GTM-MQ6W6VMN"
             height="0"
             width="0"
-            style="display:none;visibility:hidden"
-          ></iframe>
+            style={{ display: "none", visibility: "hidden" }}
+          />
         </noscript>
         <Suspense
           fallback={
