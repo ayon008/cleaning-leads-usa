@@ -47,7 +47,7 @@ export const CriticalScripts: React.FC = () => {
     <>
       {/* Google Analytics */}
       <ScriptLoader
-        src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+        src="https://www.googletagmanager.com/gtag/js?id=G-Q4NWNWWLYP"
         strategy="afterInteractive"
         id="google-analytics"
       />
