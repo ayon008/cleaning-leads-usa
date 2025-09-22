@@ -1,7 +1,7 @@
 import React from "react";
 import Hero from "../Shared/Banner/Hero";
 import Title from "../Shared/Title/Title";
-import { AlertTriangle } from "lucide-react";
+import { AlertTriangle, MoveRightIcon } from "lucide-react";
 
 const page = () => {
   return (
@@ -141,10 +141,49 @@ const page = () => {
               The details of the information you wish to have erased.
             </li>
           </ul>
+          <p className="mt-4 flex items-start gap-2">
+            <span>
+              <MoveRightIcon />
+            </span>
+            <span>
+              Requests may be denied if erasure conflicts with legal
+              obligations, public interest,
+              <br /> or compliance requirements under GDPR Article 17(3).
+            </span>
+          </p>
+        </div>
+        <div className="mt-10">
+          <h2 className="font-semibold text-2xl">F. Updates to These Terms</h2>
           <p className="mt-4">
-            Requests may be denied if erasure conflicts with legal obligations,
-            public interest,
-            <br /> or compliance requirements under GDPR Article 17(3).
+            We may revise our Terms & Conditions from time to time. Updates will
+            always <br /> be published on <strong>cleaningleadsusa.com.</strong>{" "}
+            By continuing to purchase leads,
+            <br /> you agree to the most recent version.
+          </p>
+        </div>
+        <div className="mt-10">
+          <h2 className="font-semibold text-2xl">G. Legal Framework</h2>
+          <ul className="list-disc flex flex-col gap-4">
+            <li className="ml-10 mt-4">
+              These Terms & Conditions are governed by <strong>U.S. law</strong>
+              .
+            </li>
+            <li className="ml-10">
+              Jurisdiction lies exclusively in{" "}
+              <strong>the State of New York</strong>.
+            </li>
+          </ul>
+        </div>
+        <div className="mt-10">
+          <h2 className="font-semibold text-2xl">H. Final Agreement</h2>
+          <p className="mt-4">
+            By purchasing appointment leads from{" "}
+            <strong>Cleaning Leads USA</strong>,<br /> you acknowledge and
+            accept these Terms & Conditions.
+          </p>
+          <p className="mt-4">
+            We thank you for choosing us to power your growth with <br />
+            <strong>qualified cleaning and janitorial leads</strong>.
           </p>
         </div>
       </div>
