@@ -190,7 +190,7 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased`}>
         <noscript>
           <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-MQ6W6VMN"
+            src="https://www.googletagmanager.com/ns.html?id=GTM-MGW7PNJF"
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }}
