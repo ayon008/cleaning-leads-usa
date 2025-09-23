@@ -28,7 +28,7 @@ const page = () => {
         }
       />
       <div className="container">
-        <div className="flex items-center md:flex-row flex-col md:py-6 py-6 rounded-md md:justify-between bg-amber-300 md:px-10 px-6 md:my-10 gap-6">
+        <div className="flex items-center md:flex-row flex-col md:py-6 py-6 rounded-md md:justify-between bg-amber-300 md:px-10 px-6 my-10 gap-6">
           <div>
             <h1 className="md:text-3xl text-xl md:text-left text-center font-semibold">
               Get your first appointment just at $99
@@ -157,7 +157,9 @@ const page = () => {
               <Form />
             </div>
           </div>
-          <Pricing />
+          <div className="md:mt-0 mt-10">
+            <Pricing />
+          </div>
         </div>
         <section id="Various Leads" className="">
           <div className="container">

@@ -110,7 +110,7 @@ const page = () => {
         <Title containerClass="text-center" headline="FAQ" subHeading="" />
         <Accordion items={faqs} />
       </div>
-      <div className="container">
+      <div className="container md:mb-0 mb-10">
         <div className="flex items-center md:flex-row flex-col md:py-6 py-6 rounded-md md:justify-between bg-amber-300 md:px-10 px-6 md:my-10 gap-6">
           <div>
             <h1 className="md:text-3xl text-xl md:text-left text-center font-semibold">

@@ -12,7 +12,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact Cleaning Leads USA - Get Your First Appointment for $99",
-  description: "Contact Cleaning Leads USA for qualified commercial cleaning leads and appointments. Get your first appointment for just $99. Call +1-234-450-0123 or email support@cleaningleadsusa.com",
+  description:
+    "Contact Cleaning Leads USA for qualified commercial cleaning leads and appointments. Get your first appointment for just $99. Call +1-234-450-0123 or email support@cleaningleadsusa.com",
   keywords: [
     "contact cleaning leads usa",
     "commercial cleaning leads contact",
@@ -21,11 +22,12 @@ export const metadata: Metadata = {
     "get cleaning leads",
     "appointment setting contact",
     "cleaning contractors contact",
-    "B2B lead generation contact"
+    "B2B lead generation contact",
   ],
   openGraph: {
     title: "Contact Cleaning Leads USA - Get Your First Appointment for $99",
-    description: "Contact Cleaning Leads USA for qualified commercial cleaning leads and appointments. Get your first appointment for just $99.",
+    description:
+      "Contact Cleaning Leads USA for qualified commercial cleaning leads and appointments. Get your first appointment for just $99.",
     url: "https://cleaningleadsusa.com/contact",
     type: "website",
     images: [
@@ -40,7 +42,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Contact Cleaning Leads USA - Get Your First Appointment for $99",
-    description: "Contact Cleaning Leads USA for qualified commercial cleaning leads and appointments. Get your first appointment for just $99.",
+    description:
+      "Contact Cleaning Leads USA for qualified commercial cleaning leads and appointments. Get your first appointment for just $99.",
     images: ["/og-contact.jpg"],
   },
   alternates: {
@@ -192,7 +195,9 @@ const page = () => {
             </div>
           </div>
         </div>
-        <Pricing />
+        <div className="md:mt-0 mt-10">
+          <Pricing />
+        </div>
         <div className="container md:pb-20 pb-10">
           <Title
             headline="Contact us to get Commercial Cleaning Leads"

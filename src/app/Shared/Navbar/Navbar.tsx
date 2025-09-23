@@ -165,8 +165,8 @@ const Navbar = () => {
             <Link href={"/support"}>
               <li className="text-sm font-semibold">Support</li>
             </Link>
-            <Link href={"/careers"}>
-              <li className="text-sm font-semibold">Careers</li>
+            <Link href={"/career"}>
+              <li className="text-sm font-semibold">Career</li>
             </Link>
             <Link href={"/faq"}>
               <li className="text-sm font-semibold">Faq&apos;s</li>
