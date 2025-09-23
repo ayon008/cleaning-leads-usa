@@ -85,7 +85,7 @@ const page = () => {
 
           <div>
             <a
-              href="https://wa.me/1234567890"
+              href="https://wa.me/13477985582"
               target="_blank"
               rel="noopener noreferrer"
             >

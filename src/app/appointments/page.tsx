@@ -98,7 +98,7 @@ const page = () => {
                 <div>
                   {/* WhatsApp */}
                   <a
-                    href="https://wa.me/1234567890"
+                    href="https://wa.me/13477985582"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Chat with Cleaning Leads USA on WhatsApp"
