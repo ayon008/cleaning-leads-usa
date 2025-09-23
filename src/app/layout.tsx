@@ -117,7 +117,7 @@ export default function RootLayout({
       addressRegion: "NY",
       addressCountry: "US",
     },
-    sameAs: ["https://www.facebook.com/YourPage", "https://wa.me/1234567890"],
+    sameAs: ["https://www.facebook.com/commercialcleaningleads", "https://wa.me/1234567890"],
     serviceArea: {
       "@type": "Country",
       name: "United States",
