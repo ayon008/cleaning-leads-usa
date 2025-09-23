@@ -1,4 +1,3 @@
-import { barlow, poppins } from "@/app/fonts/Fonts";
 import React from "react";
 import Progress from "../Progress/Progress";
 import PrimaryBtn from "../Button/PrimaryBtn";
@@ -14,11 +13,11 @@ const OurDo = () => {
               <div>
                 <p className="text-secondary font-semibold">WHAT WE DO</p>
                 <h1
-                  className={`text-white ${barlow.className} text-5xl font-bold mt-2 mb-5`}
+                  className={`text-white text-5xl font-bold mt-2 mb-5`}
                 >
                   Complete Cleaning Business Solutions
                 </h1>
-                <p className={`${poppins.className} text-base text-white`}>
+                <p className={`text-base text-white`}>
                   CleaningLeadsUSA provides comprehensive business growth
                   solutions for cleaning companies, from qualified lead
                   generation to professional websites and digital marketing
