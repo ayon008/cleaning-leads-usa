@@ -22,7 +22,8 @@ const Hero = ({
           alt="Commercial cleaning leads banner showcasing professional janitorial services"
           title="Commercial Cleaning Leads – Professional Janitorial Marketing Banner"
           fill
-          priority
+          priority={true}
+          fetchPriority="high"
           className="object-cover"
           sizes="(max-width: 768px) 480px,   /* Mobile: load smaller version */
          (max-width: 1200px) 100vw,  /* Tablet: full width */
