@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="bg-[url('/professional-cleaning-services-clip.jpg')] bg-cover bg-no-repeat md:h-[130vh] md:max-h-[834px] w-full md:mt-20 mt-10 relative md:py-0 py-10"
+      className="bg-[url('/commercial-cleaning-professionals.jpg')] bg-cover bg-no-repeat md:h-[130vh] md:max-h-[834px] w-full md:mt-20 mt-10 relative md:py-0 py-10"
     >
       <div className="inset-0 absolute bg-tertiary opacity-80 z-10"></div>
       <div className="container h-full flex md:flex-row flex-col items-center justify-between md:gap-20 gap-10 relative z-20">
