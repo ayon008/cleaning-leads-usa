@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import React, { useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
+import Swal from "sweetalert2";
 
 type FormValues = {
   name: string;
@@ -45,10 +47,53 @@ const Form = () => {
     }
   }, [setValue]);
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
-    console.log("Form submitted:", data);
-    localStorage.removeItem("homeFormData"); // Save to localStorage
-    reset(data); // Keep the submitted data in the form
+  const onSubmit: SubmitHandler<FormValues> = async (data) => {
+    // Show loader first
+    Swal.fire({
+      title: "Sending...",
+      text: "Please wait while we send your message.",
+      allowOutsideClick: false,
+      didOpen: () => {
+        Swal.showLoading();
+      },
+    });
+
+    try {
+      const response = await fetch("https://commercial-cleaning-usa.vercel.app/api/sendmail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        Swal.fire({
+          icon: "success",
+          title: "Message Sent!",
+          text: "Your lead has been submitted successfully.",
+          timer: 3000,
+          timerProgressBar: true,
+          showConfirmButton: false,
+        });
+        localStorage.removeItem("homeFormData");
+        reset();
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `Error sending message: ${result.error}`,
+        });
+      }
+    } catch (error: any) {
+      Swal.fire({
+        icon: "error",
+        title: "Network Error",
+        text: error.message || "Something went wrong.",
+      });
+    }
   };
 
   return (
