@@ -49,7 +49,7 @@ export const metadata: Metadata = {
       "Get qualified commercial cleaning leads and appointments with Cleaning Leads USA. We connect janitorial businesses with verified decision-makers across the US.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/janitorial-leads-hero-banner.jpg",
         width: 1200,
         height: 630,
         alt: "Cleaning Leads USA - Professional Janitorial Services",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     title: "Cleaning Leads USA - Professional Janitorial Appointment Services",
     description:
       "Get qualified commercial cleaning leads and appointments with Cleaning Leads USA. We connect janitorial businesses with verified decision-makers across the US.",
-    images: ["/og-image.jpg"],
+    images: ["/janitorial-leads-hero-banner.jpg"],
     creator: "@cleaningleadsusa",
   },
   robots: {
@@ -185,17 +185,8 @@ export default function RootLayout({
           href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
-        {/* <CriticalScripts /> */}
       </head>
       <body className={`${inter.className} antialiased`}>
-        {/* <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id="
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          />
-        </noscript> */}
         <Suspense
           fallback={
             <div className="h-dvh !z-[1000] w-full justify-center flex items-center bg-white">
