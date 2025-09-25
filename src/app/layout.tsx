@@ -5,10 +5,7 @@ import Footer from "./Shared/footer/Footer";
 import TopButton from "./Shared/Button/TopButton";
 import { Inter } from "next/font/google";
 import { Suspense } from "react";
-import {
-  CriticalScripts,
-  LazyScripts,
-} from "./Shared/Performance/ScriptLoader";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: {
@@ -117,7 +114,10 @@ export default function RootLayout({
       addressRegion: "NY",
       addressCountry: "US",
     },
-    sameAs: ["https://www.facebook.com/commercialcleaningleads", "https://wa.me/13477985582"],
+    sameAs: [
+      "https://www.facebook.com/commercialcleaningleads",
+      "https://wa.me/13477985582",
+    ],
     serviceArea: {
       "@type": "Country",
       name: "United States",
@@ -185,17 +185,17 @@ export default function RootLayout({
           href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
-        <CriticalScripts />
+        {/* <CriticalScripts /> */}
       </head>
       <body className={`${inter.className} antialiased`}>
-        <noscript>
+        {/* <noscript>
           <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-MGW7PNJF"
+            src="https://www.googletagmanager.com/ns.html?id="
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }}
           />
-        </noscript>
+        </noscript> */}
         <Suspense
           fallback={
             <div className="h-dvh !z-[1000] w-full justify-center flex items-center bg-white">
@@ -210,8 +210,8 @@ export default function RootLayout({
             <Footer />
           </div>
         </Suspense>
-        <LazyScripts />
       </body>
+      <GoogleTagManager gtmId="GTM-MGW7PNJF" />
     </html>
   );
 }
