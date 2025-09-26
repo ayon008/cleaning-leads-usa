@@ -1,5 +1,25 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { MetadataRoute } from 'next'
-export default function sitemap(): MetadataRoute.Sitemap {
+const WP_API_URL = process.env.NEXT_PUBLIC_WP_API_URL;
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+    const res = await fetch(`${WP_API_URL}/posts?per_page=100&_embed`, {
+        // revalidate every 1h
+        next: { revalidate: 3600 },
+    })
+
+    if (!res.ok) {
+        throw new Error("Failed to fetch WordPress posts")
+    }
+
+    const posts = await res.json();
+    const blogUrls = posts.map((post: any) => ({
+        url: `https://commercial-cleaning-usa.vercel.app/blogs/${post.slug}`,
+        lastModified: post.modified || new Date(),
+        changeFrequency: "weekly" as const,
+        priority: 0.7,
+    }))
+
     return [
         {
             url: 'https://commercial-cleaning-usa.vercel.app',
@@ -14,7 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.8,
         },
         {
-            url: 'https://commercial-cleaning-usa.vercel.app/blog',
+            url: 'https://commercial-cleaning-usa.vercel.app/blogs',
             lastModified: new Date(),
             changeFrequency: 'weekly',
             priority: 0.8,
@@ -31,6 +51,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'monthly',
             priority: 0.8,
         },
+        ...blogUrls,
         {
             url: 'https://commercial-cleaning-usa.vercel.app/about',
             lastModified: new Date(),
