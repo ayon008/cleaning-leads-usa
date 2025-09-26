@@ -1,9 +1,10 @@
-"use client"
+import AllContact from "@/app/Shared/admin/AllContact";
 import Title from "@/app/Shared/Title/Title";
 import React from "react";
 
-const Page = () => {
-  
+const page = async () => {
+  const response = await fetch("http://localhost:3000/api/sendinfo");
+  const data = await response.json();
   return (
     <section id="contactInfo">
       <div className="container md:py-20 py-10">
@@ -12,12 +13,12 @@ const Page = () => {
           headline="All the Contacts Info"
           subHeading="React them as soon as possible"
         />
-        <div>
-            
+        <div className="py-10">
+          <AllContact data={data}/>
         </div>
       </div>
     </section>
   );
 };
 
-export default Page;
+export default page;
