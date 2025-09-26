@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-services.jpg",
+        url: "/janitorial-leads-hero-banner.jpg ",
         width: 1200,
         height: 630,
         alt: "Cleaning Leads USA Services - Lead Generation & Digital Marketing",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Our Services - Janitorial Lead Generation & Digital Marketing",
     description: "Discover our comprehensive cleaning business services: pay-per-appointment lead generation, digital marketing, and web development.",
-    images: ["/og-services.jpg"],
+    images: ["/janitorial-leads-hero-banner.jpg "],
   },
   alternates: {
     canonical: "https://cleaningleadsusa.com/services",

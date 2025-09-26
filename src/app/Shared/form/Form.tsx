@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
+import prisma from "@/app/lib/prisma";
 import React, { useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import Swal from "sweetalert2";
@@ -59,17 +60,32 @@ const Form = () => {
     });
 
     try {
-      const response = await fetch("https://commercial-cleaning-usa.vercel.app/api/sendmail", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        "https://commercial-cleaning-usa.vercel.app/api/sendmail",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
       const result = await response.json();
 
-      if (result.success) {
+      const response2 = await fetch(
+        "https://commercial-cleaning-usa.vercel.app/api/sendinfo",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
+      const result2 = await response2.json();
+
+      if (result.success && result2.success) {
         Swal.fire({
           icon: "success",
           title: "Message Sent!",

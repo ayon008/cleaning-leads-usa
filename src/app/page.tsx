@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-home.jpg",
+        url: "/janitorial-leads-hero-banner.jpg ",
         width: 1200,
         height: 630,
         alt: "Cleaning Leads USA - Professional Janitorial Services",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Professional Janitorial Appointment Services | Cleaning Leads USA",
     description: "Get qualified commercial cleaning leads and appointments with Cleaning Leads USA. We connect janitorial businesses with verified decision-makers across the US.",
-    images: ["/og-home.jpg"],
+    images: ["/janitorial-leads-hero-banner.jpg "],
   },
   alternates: {
     canonical: "https://cleaningleadsusa.com",

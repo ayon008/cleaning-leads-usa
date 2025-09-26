@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-contact.jpg",
+        url: "/janitorial-leads-hero-banner.jpg ",
         width: 1200,
         height: 630,
         alt: "Contact Cleaning Leads USA - Commercial Cleaning Lead Generation",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: "Contact Cleaning Leads USA - Get Your First Appointment for $99",
     description:
       "Contact Cleaning Leads USA for qualified commercial cleaning leads and appointments. Get your first appointment for just $99.",
-    images: ["/og-contact.jpg"],
+    images: ["/janitorial-leads-hero-banner.jpg "],
   },
   alternates: {
     canonical: "https://cleaningleadsusa.com/contact",

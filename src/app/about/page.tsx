@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-about.jpg",
+        url: "/janitorial-leads-hero-banner.jpg ",
         width: 1200,
         height: 630,
         alt: "About Cleaning Leads USA - Commercial Cleaning Lead Generation",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "About Cleaning Leads USA - Commercial Cleaning Lead Generation Company",
     description: "Learn about Cleaning Leads USA, the premier commercial cleaning lead generation company. We help janitorial businesses grow with qualified appointments and proven results.",
-    images: ["/og-about.jpg"],
+    images: ["/janitorial-leads-hero-banner.jpg "],
   },
   alternates: {
     canonical: "https://cleaningleadsusa.com/about",

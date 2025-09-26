@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-blog.jpg",
+        url: "/janitorial-leads-hero-banner.jpg ",
         width: 1200,
         height: 630,
         alt: "Cleaning Leads USA Blog - Industry Tips & News",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Cleaning Industry Blog - Tips, News & Business Growth",
     description: "Read our latest blog posts about the cleaning industry, janitorial business growth, commercial cleaning tips, and industry news.",
-    images: ["/og-blog.jpg"],
+    images: ["/janitorial-leads-hero-banner.jpg "],
   },
   alternates: {
     canonical: "https://cleaningleadsusa.com/blogs",
