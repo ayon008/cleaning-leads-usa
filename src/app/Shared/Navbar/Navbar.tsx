@@ -56,29 +56,80 @@ const Navbar = () => {
 
   const mblNavRef = useRef<HTMLUListElement | null>(null);
 
-  useGSAP(() => {
-    if (!ref.current || !ctaRef.current) return;
-    const t1 = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#nav-part",
-        start: "top top",
-        end: "max",
-        pin: true,
-        pinSpacing: false,
-        toggleActions: "play none none reverse",
-      },
-    });
+  useEffect(() => {
+    let tl: gsap.core.Timeline | null = null;
 
-    t1.to(ref.current, {
-      duration: 0.5,
-      ease: "power1.inOut",
-      backgroundColor: "#4DAC4D",
-      boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.4)",
-    });
-    t1.to(ctaRef.current, {
-      duration: 0,
-      borderRadius: "0px",
-    });
+    // Guard: ref must exist and be visible (hidden on small screens via `hidden lg:block`)
+    const init = () => {
+      if (!ref.current || !ctaRef.current) return;
+
+      // If element is hidden (display: none) do not initialize — will initialize on resize when visible
+      const style = window.getComputedStyle(ref.current);
+      if (style.display === "none" || style.visibility === "hidden") return;
+
+      // Create timeline with scrollTrigger using the element ref (avoid ID selector which may collide)
+      tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ref.current, // use the DOM node directly
+          start: "top top",
+          end: "max",
+          pin: true,
+          pinSpacing: true, // keep spacing so layout doesn't collapse when pinned
+          pinType: "fixed", // prefer "fixed" to avoid transform issues (use "transform" if needed)
+          anticipatePin: 1, // smoother pin transitions
+          toggleActions: "play none none reverse",
+          invalidateOnRefresh: true, // re-evaluate values on refresh
+        },
+      });
+
+      // Animation: keep same transforms/effects as before
+      tl.to(ref.current, {
+        duration: 0.5,
+        ease: "power1.inOut",
+        backgroundColor: "#4DAC4D",
+        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.4)",
+      });
+      tl.to(ctaRef.current, {
+        duration: 0,
+        borderRadius: "0px",
+      });
+    };
+
+    // Initialize now (if visible)
+    init();
+
+    // Ensure ScrollTrigger recalculates when the page loads, on resize, or when fonts/images change layout
+    const onResize = () => {
+      // If nothing initialized yet, attempt init (handles breakpoint crossing where nav becomes visible)
+      if (!tl) init();
+      // Always refresh ScrollTrigger so pin calculations are accurate
+      ScrollTrigger.refresh(true);
+    };
+
+    // Refresh on load as images/next/image can change layout after initial mount
+    window.addEventListener("load", onResize);
+    window.addEventListener("resize", onResize);
+
+    // Also refresh when route/pathname changes (Nav might re-render)
+    // (the file already uses pathName elsewhere; add listener or use effect dependency where appropriate)
+    // Here we return cleanup which will be invoked on pathname changes if component re-renders/unmounts.
+
+    return () => {
+      // cleanup timeline and associated ScrollTrigger
+      if (tl) {
+        try {
+          tl.scrollTrigger && tl.scrollTrigger.kill();
+        } catch (e) {
+          /* ignore cleanup errors */
+        }
+        tl.kill();
+        tl = null;
+      }
+      window.removeEventListener("load", onResize);
+      window.removeEventListener("resize", onResize);
+      // ensure all ScrollTriggers are refreshed/killed if needed
+      // ScrollTrigger.getAll().forEach(st => st.kill()); // uncomment only if you must force-kill others
+    };
   }, []);
 
   useGSAP(
