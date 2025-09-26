@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
 }
 
 
-export async function GET(req: NextResponse) {
+export async function GET(req: NextRequest) {
     try {
         const contactInfo = await prisma.contactForm.findMany();
         return NextResponse.json(contactInfo)
