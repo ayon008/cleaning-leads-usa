@@ -74,7 +74,7 @@ const Navbar = () => {
           start: "top top",
           end: "max",
           pin: true,
-          pinSpacing: true, // keep spacing so layout doesn't collapse when pinned
+          pinSpacing: false, // keep spacing so layout doesn't collapse when pinned
           pinType: "fixed", // prefer "fixed" to avoid transform issues (use "transform" if needed)
           anticipatePin: 1, // smoother pin transitions
           toggleActions: "play none none reverse",
