@@ -3,7 +3,10 @@ import Title from "@/app/Shared/Title/Title";
 import React from "react";
 
 const page = async () => {
-  const response = await fetch("https://commercial-cleaning-usa.vercel.app/api/sendinfo");
+  const response = await fetch(
+    "https://commercial-cleaning-usa.vercel.app/api/sendinfo",
+    { cache: "no-cache" }
+  );
   const data = await response.json();
   return (
     <section id="contactInfo">
@@ -14,7 +17,7 @@ const page = async () => {
           subHeading="React them as soon as possible"
         />
         <div className="py-10">
-          <AllContact data={data}/>
+          <AllContact data={data} />
         </div>
       </div>
     </section>
