@@ -3,7 +3,7 @@ import Title from "@/app/Shared/Title/Title";
 import React from "react";
 
 const page = async () => {
-  const response = await fetch("http://localhost:3000/api/sendinfo");
+  const response = await fetch("https://commercial-cleaning-usa.vercel.app/api/sendinfo");
   const data = await response.json();
   return (
     <section id="contactInfo">
