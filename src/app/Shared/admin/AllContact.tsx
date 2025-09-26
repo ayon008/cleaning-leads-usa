@@ -1,82 +1,132 @@
 "use client";
-import { ContactForm } from "@prisma/client";
+import type { ContactForm } from "@prisma/client"; // <-- TYPE-ONLY import fixes the error: prevents bundling @prisma/client into the browser bundle
 import React, { useEffect, useState } from "react";
+
 type Credentials = { email?: string; password?: string } | null;
 
 const AllContact = ({ data }: { data: ContactForm[] }) => {
+  // NEXT_PUBLIC_* is available in the browser but must not hold secrets.
   const adminEmail = process.env.NEXT_PUBLIC_ADMIN_EMAIL;
   const adminPassword = process.env.NEXT_PUBLIC_ADMIN_PASSWORD;
+
   const [submitted, setSubmitted] = useState<Credentials>(null);
+
   useEffect(() => {
     try {
-      // Guard: getItem may return null if nothing saved.
       const raw = sessionStorage.getItem("credential");
       if (!raw) {
-        // nothing saved yet
         setSubmitted(null);
         return;
       }
-
-      // Parse only when raw is a string; wrap in try/catch for safety
+      // parse safely
       const parsed = JSON.parse(raw) as Credentials;
       setSubmitted(parsed);
     } catch (err) {
-      // Handle malformed JSON gracefully instead of crashing
-      console.error("Failed to read/parse credential from sessionStorage:", err);
+      console.error(
+        "Failed to read/parse credential from sessionStorage:",
+        err
+      );
       setSubmitted(null);
     }
   }, []);
+
+  // Explicitly handle unauthorized case by returning null (or you can return a message/component)
   if (
-    adminEmail === submitted?.email &&
-    adminPassword === submitted?.password
+    adminEmail !== submitted?.email ||
+    adminPassword !== submitted?.password
   ) {
-    return (
-      <div>
-        <table className="w-full bg-primary border-collapse">
-          <thead>
-            <tr>
-              <th className="px-4 py-2">#</th>
-              <th className="px-4 py-2">Name</th>
-              <th className="px-4 py-2">Email</th>
-              <th className="px-4 py-2">Phone Number</th>
-              <th className="px-4 py-2">Company Name</th>
-              <th className="px-4 py-2">Address</th>
-              <th className="px-4 py-2">ZIP</th>
-              <th className="px-4 py-2">Radius</th>
-              <th className="px-4 py-2">Message</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data?.map((singleData, i) => {
-              const {
-                name,
-                address,
-                companyName,
-                email,
-                message,
-                phoneNumber,
-                radius,
-                zip,
-              } = singleData;
-              return (
-                <tr key={i} className="text-center">
-                  <td className="px-4 py-2">{i + 1}</td>
-                  <td className="px-4 py-2">{name}</td>
-                  <td className="px-4 py-2">{email}</td>
-                  <td className="px-4 py-2">{phoneNumber}</td>
-                  <td className="px-4 py-2">{companyName}</td>
-                  <td className="px-4 py-2">{address}</td>
-                  <td className="px-4 py-2">{zip}</td>
-                  <td className="px-4 py-2">{radius}</td>
-                  <td className="px-4 py-2">{message}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </div>
-    );
+    // Returning null avoids rendering nothing/undefined and avoids potential hydration confusion.
+    return null;
   }
+
+  return (
+    <div>
+      {/* Accessibility: add caption and use scope on headers for screen readers */}
+      <table
+        className="w-full bg-primary border-collapse"
+        role="table"
+        aria-label="All contact submissions"
+      >
+        <caption className="sr-only">
+          All submitted contact form entries
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col" className="px-4 py-2">
+              #
+            </th>
+            <th scope="col" className="px-4 py-2">
+              Name
+            </th>
+            <th scope="col" className="px-4 py-2">
+              Email
+            </th>
+            <th scope="col" className="px-4 py-2">
+              Phone Number
+            </th>
+            <th scope="col" className="px-4 py-2">
+              Company Name
+            </th>
+            <th scope="col" className="px-4 py-2">
+              Address
+            </th>
+            <th scope="col" className="px-4 py-2">
+              ZIP
+            </th>
+            <th scope="col" className="px-4 py-2">
+              Radius
+            </th>
+            <th scope="col" className="px-4 py-2">
+              Message
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {data?.map((singleData, i) => {
+            const {
+              name,
+              address,
+              companyName,
+              email,
+              message,
+              phoneNumber,
+              radius,
+              zip,
+            } = singleData;
+            return (
+              <tr key={i} className="text-center">
+                <td className="px-4 py-2">{i + 1}</td>
+                <td className="px-4 py-2">{name}</td>
+                <td className="px-4 py-2">
+                  <a
+                    href={`mailto:${email}`}
+                    className="text-blue-600 underline"
+                  >
+                    {email}
+                  </a>
+                </td>
+                <td className="px-4 py-2">
+                  {/* phone link for accessibility/keyboard users */}
+                  <a
+                    href={`tel:${phoneNumber}`}
+                    aria-label={`Call ${phoneNumber}`}
+                    className="text-blue-600 underline"
+                  >
+                    {phoneNumber}
+                  </a>
+                </td>
+                <td className="px-4 py-2">{companyName}</td>
+                <td className="px-4 py-2">{address}</td>
+                <td className="px-4 py-2">{zip}</td>
+                <td className="px-4 py-2">{radius}</td>
+                <td className="px-4 py-2">{message}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  );
 };
 
 export default AllContact;
