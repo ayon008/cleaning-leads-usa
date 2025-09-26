@@ -19,7 +19,7 @@ export default function LoginPage() {
     e.preventDefault();
     setSubmitted({ email, password });
     if (email == adminEmail && password == adminPassword) {
-      localStorage.setItem("credential", JSON.stringify({ email, password }));
+      sessionStorage.setItem("credential", JSON.stringify({ email, password }));
       router.push("/admin/contactInfo");
     }
   };

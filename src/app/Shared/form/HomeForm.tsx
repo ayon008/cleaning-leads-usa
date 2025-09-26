@@ -20,9 +20,9 @@ const HomeForm = () => {
   } = useForm<FormValues>();
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    // Save data to localStorage
-    localStorage.setItem("homeFormData", JSON.stringify(data));
-    console.log("Saved to localStorage:", data);
+    // Save data to sessionStorage
+    sessionStorage.setItem("homeFormData", JSON.stringify(data));
+    console.log("Saved to sessionStorage:", data);
     reset(); // Clear the form after submission
     router.push("/contact#contact-form");
   };

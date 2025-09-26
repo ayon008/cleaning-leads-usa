@@ -35,9 +35,9 @@ const Form = () => {
     },
   });
 
-  // Load data from localStorage on mount
+  // Load data from sessionStorage on mount
   useEffect(() => {
-    const storedData = localStorage.getItem("homeFormData");
+    const storedData = sessionStorage.getItem("homeFormData");
     if (storedData) {
       const parsedData: FormValues = JSON.parse(storedData);
       // Set each field value
@@ -87,7 +87,7 @@ const Form = () => {
           timerProgressBar: true,
           showConfirmButton: false,
         });
-        localStorage.removeItem("homeFormData");
+        sessionStorage.removeItem("homeFormData");
         reset();
       } else {
         Swal.fire({

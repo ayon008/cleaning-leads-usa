@@ -10,7 +10,7 @@ const AllContact = ({ data }: { data: ContactForm[] }) => {
   useEffect(() => {
     try {
       // Guard: getItem may return null if nothing saved.
-      const raw = localStorage.getItem("credential");
+      const raw = sessionStorage.getItem("credential");
       if (!raw) {
         // nothing saved yet
         setSubmitted(null);
@@ -22,7 +22,7 @@ const AllContact = ({ data }: { data: ContactForm[] }) => {
       setSubmitted(parsed);
     } catch (err) {
       // Handle malformed JSON gracefully instead of crashing
-      console.error("Failed to read/parse credential from localStorage:", err);
+      console.error("Failed to read/parse credential from sessionStorage:", err);
       setSubmitted(null);
     }
   }, []);
