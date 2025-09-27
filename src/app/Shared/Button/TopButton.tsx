@@ -2,7 +2,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ArrowUp } from "lucide-react";
-import Link from "next/link";
 import React from "react";
 
 const TopButton = () => {
@@ -21,14 +20,22 @@ const TopButton = () => {
       duration: 0.5,
     });
   });
+
+  const scrollToTop = (e: React.MouseEvent) => {
+    e.preventDefault();
+    // smooth scroll to top; does NOT change URL hash
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <Link
+    <button
       type="button"
-      href={"#root-layout"}
+      onClick={scrollToTop}
+      aria-label="Scroll to top"
       className="fixed bottom-20 -right-[100px] opacity-0 bg-secondary p-3 rounded-md z-40 top-button cursor-pointer w-fit"
     >
       <ArrowUp className="text-white" />
-    </Link>
+    </button>
   );
 };
 
