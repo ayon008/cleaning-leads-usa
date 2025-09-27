@@ -25,7 +25,7 @@ const TopButton = () => {
     <Link
       type="button"
       href={"#root-layout"}
-      className="fixed bottom-20 -right-[100px] opacity-0 bg-secondary p-3 rounded-md z-40 top-button cursor-pointer "
+      className="fixed bottom-20 -right-[100px] opacity-0 bg-secondary p-3 rounded-md z-40 top-button cursor-pointer w-fit"
     >
       <ArrowUp className="text-white" />
     </Link>
