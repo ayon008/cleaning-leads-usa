@@ -98,7 +98,7 @@ const Footer = () => {
             <div>
               <p className="text-sm text-white font-semibold">Office Address</p>
               <h2 className={`text-base font-bold text-white`}>
-                Envanto HQ, Australia
+                Long Island City, NY
               </h2>
             </div>
           </div>

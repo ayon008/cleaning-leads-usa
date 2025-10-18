@@ -65,7 +65,7 @@ const page = () => {
               </div>
               <div className="flex items-center gap-4 mt-4">
                 <MapPin />
-                <p className="text-base font-bold">Envanto HQ, Australia</p>
+                <p className="text-base font-bold">Long Island City, NY</p>
               </div>
               <div className="mt-4 flex items-center gap-4">
                 <Mail />

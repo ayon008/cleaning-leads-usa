@@ -242,7 +242,7 @@ const Navbar = () => {
             <p className="text-sm text-gray-500 font-semibold">
               Office Address
             </p>
-            <h2 className={`text-base font-bold`}>Envanto HQ, Australia</h2>
+            <h2 className={`text-base font-bold`}>Long Island City, NY</h2>
           </div>
         </div>
         <div className="flex items-center gap-2 mx-8">
