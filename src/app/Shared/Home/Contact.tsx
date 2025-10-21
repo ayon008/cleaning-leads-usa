@@ -24,8 +24,8 @@ const Contact = () => {
           </p>
           <div className="flex items-center gap-10">
             <a
-              href="tel:+12344500123"
-              aria-label="Call Cleaning Leads USA at +1 (234) 450-0123"
+              href="tel:+13326004766"
+              aria-label="Call Cleaning Leads USA at +1 (332) 600-4766"
               title="Call Cleaning Leads USA"
               className="flex items-center gap-2 bg-secondary py-3 px-4 rounded-4xl w-fit mt-6"
               id="cta"
@@ -34,7 +34,7 @@ const Contact = () => {
               <div>
                 <p className="text-sm text-white font-semibold">Phone Number</p>
                 <p className="text-white text-base font-bold cursor-pointer">
-                  +1 (234) 450-0123
+                  +1 (332) 600-4766
                 </p>
               </div>
             </a>

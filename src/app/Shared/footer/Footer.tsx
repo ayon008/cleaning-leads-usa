@@ -30,6 +30,7 @@ const Footer = () => {
                 href="https://www.facebook.com/commercialcleaningleads"
                 target="_blank"
                 rel="noopener noreferrer"
+                title="Cleaning Leads USA on Facebook"
               >
                 <Image
                   src={facebook}
@@ -47,6 +48,7 @@ const Footer = () => {
                 href="https://wa.me/13477985582"
                 target="_blank"
                 rel="noopener noreferrer"
+                title="Chat with Cleaning Leads USA on WhatsApp"
               >
                 <Image
                   src={whatasapp}
@@ -59,7 +61,7 @@ const Footer = () => {
               </a>
             </div>
             <div>
-              <a href="tel:+1234567890">
+              <a href="tel:+13326004766" title="Call Cleaning Leads USA">
                 <Phone className="cursor-pointer text-white" />
               </a>
             </div>
@@ -69,7 +71,7 @@ const Footer = () => {
             <div>
               <p className="text-sm text-white font-semibold">Phone Number</p>
               <a
-                href="tel:+1234567890"
+                href="tel:+13326004766"
                 aria-label="Call Cleaning Leads USA at +1 (234) 567-890"
                 title="Call Cleaning Leads USA"
                 className="inline-flex items-center justify-center text-white font-bold"
@@ -121,7 +123,7 @@ const Footer = () => {
               {navItems?.map((item, index) => {
                 return (
                   <li key={index} className="text-white py-2 font-semibold">
-                    <Link href={`${item.href}`}>{item.name}</Link>
+                    <Link href={`${item.href}`} title={item.name}>{item.name}</Link>
                   </li>
                 );
               })}

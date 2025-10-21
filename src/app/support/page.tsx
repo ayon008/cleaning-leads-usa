@@ -35,7 +35,7 @@ const page = () => {
             <div className="text-black flex flex-col justify-center items-center">
               <a
                 href="mailto:support@cleaningleadsusa.com"
-                title="Contact Cleaning Leads USA Support"
+                title="Email Cleaning Leads USA Support"
                 className="font-medium mt-4"
               >
                 <h2 className="text-2xl text-center">
@@ -48,9 +48,9 @@ const page = () => {
             <Phone size={"4rem"} className="text-secondary w-fit mx-auto" />
             <div className="text-black flex flex-col justify-center items-center">
               <a
-                href="tel:+1234567890"
-                aria-label="Call Cleaning Leads USA at "
-                title="Contact Cleaning Leads USA Support"
+                href="tel:+13326004766"
+                aria-label="Call Cleaning Leads USA"
+                title="Call Cleaning Leads USA"
                 className="font-medium mt-4"
               >
                 <h2 className="text-2xl text-center">+1 (234) 567-890</h2>
@@ -71,6 +71,7 @@ const page = () => {
               href="https://www.facebook.com/commercialcleaningleads"
               target="_blank"
               rel="noopener noreferrer"
+              title="Cleaning Leads USA on Facebook"
             >
               <Image
                 src={facebook}
@@ -88,6 +89,7 @@ const page = () => {
               href="https://wa.me/13477985582"
               target="_blank"
               rel="noopener noreferrer"
+              title="Chat with Cleaning Leads USA on WhatsApp"
             >
               <Image
                 src={whatasapp}
@@ -100,7 +102,7 @@ const page = () => {
             </a>
           </div>
           <div>
-            <a href="tel:+1234567890">
+            <a href="tel:+13326004766" title="Call Cleaning Leads USA">
               <Phone className="cursor-pointer text-white" />
             </a>
           </div>

@@ -75,9 +75,9 @@ const page = () => {
                 Would you like to speak with our operations manager directly?
               </p>
             </div>
-            <a href="tel:+12344500123">
-              <PrimaryBtn text="Call Now" containerClass="" />
-            </a>
+            <a href="tel:+13326004766" title="Call Cleaning Leads USA">
+                <PrimaryBtn text="Call Now" containerClass="" />
+              </a>
           </div>
           <Title
             containerClass="text-center mt-10"
@@ -92,12 +92,12 @@ const page = () => {
               <div className="flex items-center gap-4 mt-4">
                 <Phone className="" />
                 <a
-                  href="tel:+1234567890"
+                  href="tel:+13326004766"
                   aria-label="Call Cleaning Leads USA at +1 (234) 567-890"
                   title="Call Cleaning Leads USA"
                   className="inline-flex items-center justify-center"
                 >
-                  <p className="text-base font-bold">+1234567890</p>
+                  <p className="text-base font-bold">+13326004766</p>
                 </a>
               </div>
               <div className="flex items-center gap-4 mt-4">
@@ -117,13 +117,13 @@ const page = () => {
               <div className="flex items-center gap-5 mt-4">
                 <div>
                   {/* Facebook */}
-                  <a
-                    href="https://www.facebook.com/commercialcleaningleads"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Visit Cleaning Leads USA on Facebook"
-                    title="Cleaning Leads USA Facebook Page"
-                  >
+                    <a
+                      href="https://www.facebook.com/commercialcleaningleads"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Visit Cleaning Leads USA on Facebook"
+                      title="Cleaning Leads USA on Facebook"
+                    >
                     <Image
                       src={facebook}
                       className="w-[30px] h-[30px] cursor-pointer"
@@ -134,13 +134,13 @@ const page = () => {
 
                 <div>
                   {/* WhatsApp */}
-                  <a
-                    href="https://wa.me/13477985582"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Chat with Cleaning Leads USA on WhatsApp"
-                    title="Chat with Cleaning Leads USA on WhatsApp"
-                  >
+                    <a
+                      href="https://wa.me/13477985582"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Chat with Cleaning Leads USA on WhatsApp"
+                      title="Chat with Cleaning Leads USA on WhatsApp"
+                    >
                     <Image
                       src={whatasapp}
                       className="w-[40px] h-[40px] cursor-pointer"
@@ -151,14 +151,14 @@ const page = () => {
                 </div>
                 <div>
                   {/* Phone */}
-                  <a
-                    href="tel:+1234567890"
-                    aria-label="Call Cleaning Leads USA at +1 (234) 567-890"
-                    title="Call Cleaning Leads USA"
-                    className="inline-flex items-center justify-center"
-                  >
-                    <Phone className="cursor-pointer h-[30px] mt-1 w-auto" />
-                  </a>
+                    <a
+                      href="tel:+13326004766"
+                      aria-label="Call Cleaning Leads USA at +1 (234) 567-890"
+                      title="Call Cleaning Leads USA"
+                      className="inline-flex items-center justify-center"
+                    >
+                      <Phone className="cursor-pointer h-[30px] mt-1 w-auto" />
+                    </a>
                 </div>
               </div>
               <div className="mt-4">

@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const Professional = () => {
   return (
-    <section className="" id="expertise">
+    <section className="" id="expertise" role="region" aria-labelledby="expertise-title" aria-describedby="expertise-desc">
       <div className="container">
         <div className="flex md:flex-row flex-col gap-6">
           <div className="flex-1 -mt-14">
@@ -33,10 +33,10 @@ const Professional = () => {
           <div className="flex-1">
             <div className="pt-10 space-y-6">
               <p className="text-secondary font-semibold">Get Quality</p>
-              <h1 className={`md:text-4xl text-3xl font-semibold`}>
+              <h2 id="expertise-title" className={`md:text-4xl text-3xl font-semibold`}>
                 Commercial Cleaning Leads & Janitorial Appointments
-              </h1>
-              <p className="text-gray-600 md:text-base text-sm">
+              </h2>
+              <p id="expertise-desc" className="text-gray-600 md:text-base text-sm">
                 Give up wasting time on door-to-door sales and cold calling.
                 With the help of our tested lead generation system, you can get
                 in touch with pre-screened commercial cleaning prospects who are
@@ -63,10 +63,11 @@ const Professional = () => {
                   </span>
                 </li>
               </ul>
-              <Link href={'/contact'}>
+              <Link href={'/contact'} title="Contact Cleaning Leads USA">
                 <PrimaryBtn
                   text="Get Leads Now"
                   containerClass="rounded-md w-fit"
+                  ariaLabel="Get leads now"
                 />
               </Link>
             </div>

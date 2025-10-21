@@ -189,17 +189,17 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased`}>
         <Suspense
           fallback={
-            <div className="h-dvh !z-[1000] w-full justify-center flex items-center bg-white">
+            <article className="h-dvh !z-[1000] w-full justify-center flex items-center bg-white">
               <p>Loading...</p>
-            </div>
+            </article>
           }
         >
-          <div className="overflow-x-hidden" id="root-layout">
+          <article className="overflow-x-hidden" id="root-layout">
             <Navbar />
             {children}
             <TopButton />
             <Footer />
-          </div>
+          </article>
         </Suspense>
       </body>
       <GoogleTagManager gtmId="GTM-MGW7PNJF" />
