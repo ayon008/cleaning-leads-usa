@@ -18,7 +18,7 @@ const Banner = () => {
     description: string;
   }) => {
     return (
-      <div className="md:w-64 w-full md:mx-0 mx-auto">
+      <article className="md:w-64 w-full md:mx-0 mx-auto">
         <div
           className={`p-8 bg-white relative z-10 flex-1 card h-52 rounded-md overflow-hidden group`}
         >
@@ -58,7 +58,7 @@ const Banner = () => {
           </span>
         </div>
         <p className="mt-6 text-sm text-gray-500">{description}</p>
-      </div>
+      </article>
     );
   };
 
