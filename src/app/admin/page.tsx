@@ -6,10 +6,7 @@ import { useState } from "react";
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [submitted, setSubmitted] = useState<{
-    email: string;
-    password: string;
-  } | null>(null);
+  // submitted state removed because it was unused; form submission handled via sessionStorage and navigation
 
   const router = useRouter();
   const adminEmail = process.env.NEXT_PUBLIC_ADMIN_EMAIL;
@@ -17,7 +14,6 @@ export default function LoginPage() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted({ email, password });
     if (email == adminEmail && password == adminPassword) {
       sessionStorage.setItem("credential", JSON.stringify({ email, password }));
       router.push("/admin/contactInfo");
@@ -25,7 +21,7 @@ export default function LoginPage() {
   };
 
   return (
-    <main className="flex justify-center items-center min-h-screen bg-gray-50">
+    <main className="flex justify-center items-center min-h-screen bg-gray-50" role="main" itemScope itemType="http://schema.org/WebPage">
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-sm bg-white shadow-md rounded-2xl p-6 space-y-4"

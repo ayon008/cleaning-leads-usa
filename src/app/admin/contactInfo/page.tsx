@@ -9,12 +9,21 @@ const page = async () => {
   );
   const data = await response.json();
   return (
-    <section id="contactInfo">
+    <section
+      id="contactInfo"
+      role="region"
+      aria-labelledby="admin-contacts-head"
+      aria-describedby="admin-contacts-sub"
+      itemScope
+      itemType="http://schema.org/WebPage"
+    >
       <div className="container md:py-20 py-10">
         <Title
           containerClass="text-center"
           headline="All the Contacts Info"
           subHeading="React them as soon as possible"
+          headlineId="admin-contacts-head"
+          subHeadingId="admin-contacts-sub"
         />
         <div className="py-10">
           <AllContact data={data} />

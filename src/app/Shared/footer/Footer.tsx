@@ -6,6 +6,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { Logo } from "../Navbar/Navbar";
 import Link from "next/link";
 import PrimaryBtn from "../Button/PrimaryBtn";
+import EmailSubscription from "../form/EmailSubscription";
 
 const navItems = [
   {
@@ -21,7 +22,13 @@ const navItems = [
 
 const Footer = () => {
   return (
-    <section id="footer">
+    <footer
+      id="footer"
+      role="contentinfo"
+      itemScope
+      itemType="http://schema.org/WPFooter"
+      aria-label="Footer"
+    >
       <div className="bg-[#212121]">
         <div className="grid md:grid-cols-4 grid-cols-1 justify-between items-center container md:py-6 py-10 md:gap-0 gap-10">
           <div className="flex items-center gap-5">
@@ -31,6 +38,8 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Cleaning Leads USA on Facebook"
+                aria-label="Cleaning Leads USA on Facebook"
+                itemProp="sameAs"
               >
                 <Image
                   src={facebook}
@@ -39,6 +48,7 @@ const Footer = () => {
                   height={30}
                   width={30}
                   loading="lazy"
+                  aria-hidden="true"
                 />
               </a>
             </div>
@@ -49,6 +59,8 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Chat with Cleaning Leads USA on WhatsApp"
+                aria-label="Chat with Cleaning Leads USA on WhatsApp"
+                itemProp="sameAs"
               >
                 <Image
                   src={whatasapp}
@@ -57,6 +69,7 @@ const Footer = () => {
                   height={30}
                   width={30}
                   loading="lazy"
+                  aria-hidden="true"
                 />
               </a>
             </div>
@@ -74,7 +87,8 @@ const Footer = () => {
                 href="tel:+13326004766"
                 aria-label="Call Cleaning Leads USA at +1 (332) 600-4766"
                 title="Call Cleaning Leads USA"
-                className="inline-flex items-center justify-center text-white font-bold"
+                className="inline-flex items-center justify-center text-white text-sm font-bold"
+                itemProp="telephone"
               >
                 +1 (332) 600-4766
               </a>
@@ -88,6 +102,8 @@ const Footer = () => {
                 href="mailto:support@cleaningleadsusa.com"
                 title="Contact Cleaning Leads USA Support"
                 className="text-base font-bold"
+                itemProp="email"
+                aria-label="Email Cleaning Leads USA support"
               >
                 <h2 className="text-sm text-white">
                   support@cleaningleadsusa.com
@@ -99,14 +115,23 @@ const Footer = () => {
             <MapPin className="text-secondary" size={"2rem"} />
             <div>
               <p className="text-sm text-white font-semibold">Office Address</p>
-              <h2 className={`text-base font-bold text-white`}>
-                Long Island City, NY
+              <h2
+                className={`text-sm font-bold text-white`}
+                itemProp="address"
+                itemScope
+                itemType="http://schema.org/PostalAddress"
+              >
+                <span itemProp="addressLocality">Long Island City</span>,{" "}
+                <span itemProp="addressRegion">NY</span>
               </h2>
             </div>
           </div>
         </div>
       </div>
-      <div className="bg-[url('/footer-dot-map1.png')] bg-[#252525] bg-no-repeat bg-center w-full">
+      <div
+        className="bg-[url('/footer-dot-map1.png')] bg-[#252525] bg-no-repeat bg-center w-full"
+        aria-hidden="true"
+      >
         <div className="container grid md:grid-cols-4 grid-cols-2 gap-10 items-start justify-between py-10">
           <div className="md:col-span-1 col-span-2">
             <Logo containerClass="text-white" />
@@ -115,7 +140,9 @@ const Footer = () => {
               <p className="text-white text-sm">
                 Our Customer Support is availabe 24/7
               </p>
-              <PrimaryBtn text="Call Us Now" />
+              <a href="tel:+13326004766" title="Call Cleaning Leads USA">
+                <PrimaryBtn text="Call Us Now" containerClass="" />
+              </a>
             </div>
           </div>
           <div>
@@ -123,7 +150,13 @@ const Footer = () => {
               {navItems?.map((item, index) => {
                 return (
                   <li key={index} className="text-white py-2 font-semibold">
-                    <Link href={`${item.href}`} title={item.name}>{item.name}</Link>
+                    <Link
+                      href={`${item.href}`}
+                      title={item.name}
+                      aria-label={`Go to ${item.name} page`}
+                    >
+                      {item.name}
+                    </Link>
                   </li>
                 );
               })}
@@ -132,39 +165,32 @@ const Footer = () => {
           <div className="text-white font-semibold">
             <ul className="space-y-4">
               <li>
-                <Link href={"/terms-and-conditions"}>Terms & Condition</Link>
+                <Link href={"/terms-and-conditions"} title="Terms & Conditions">
+                  Terms & Condition
+                </Link>
               </li>
               <li>
-                <Link href={"/privacy-policy"}>Privacy Policy</Link>
+                <Link href={"/privacy-policy"} title="Privacy Policy">
+                  Privacy Policy
+                </Link>
               </li>
               <li>
-                <Link href={"/web-development-service"}>
+                <Link
+                  href={"/web-development-service"}
+                  title="Web Development Services"
+                >
                   Web Development Services
                 </Link>
               </li>
             </ul>
           </div>
           <div className="text-white space-y-4 md:max-w-64 w-full md:col-span-1 col-span-2">
-            <h3 className={`text-xl font-semibold`}>
-              Our Newsletter
-            </h3>
+            <h3 className={`text-xl font-semibold`}>Our Newsletter</h3>
             <p>
               Subscribe to our newsletter and get updated of our latest cleaning
               opportunities
             </p>
-            <form action="">
-              <input
-                type="email"
-                className="bg-white w-full p-4 text-black rounded-md"
-                placeholder="example@domain.com"
-              />
-              <button
-                type="submit"
-                className="bg-secondary text-lg cursor-pointer hover:bg-tertiary transition-all duration-300 text-white mt-4 rounded-md py-4 px-8"
-              >
-                Submit
-              </button>
-            </form>
+            <EmailSubscription />
           </div>
         </div>
         <hr className="text-white h-[2px] w-full" />
@@ -172,7 +198,7 @@ const Footer = () => {
           Copyright © 2025 Cleaning Leads USA | All Rights Reserved.
         </p>
       </div>
-    </section>
+    </footer>
   );
 };
 

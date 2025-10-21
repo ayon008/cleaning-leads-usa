@@ -12,7 +12,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Cleaning Industry Blog - Tips, News & Business Growth",
-  description: "Read our latest blog posts about the cleaning industry, janitorial business growth, commercial cleaning tips, and industry news. Expert insights to help your cleaning business succeed.",
+  description:
+    "Read our latest blog posts about the cleaning industry, janitorial business growth, commercial cleaning tips, and industry news. Expert insights to help your cleaning business succeed.",
   keywords: [
     "cleaning industry blog",
     "janitorial business tips",
@@ -21,11 +22,12 @@ export const metadata: Metadata = {
     "facility management blog",
     "cleaning industry insights",
     "janitorial services blog",
-    "cleaning contractor advice"
+    "cleaning contractor advice",
   ],
   openGraph: {
     title: "Cleaning Industry Blog - Tips, News & Business Growth",
-    description: "Read our latest blog posts about the cleaning industry, janitorial business growth, commercial cleaning tips, and industry news. Expert insights to help your cleaning business succeed.",
+    description:
+      "Read our latest blog posts about the cleaning industry, janitorial business growth, commercial cleaning tips, and industry news. Expert insights to help your cleaning business succeed.",
     url: "https://cleaningleadsusa.com/blogs",
     type: "website",
     images: [
@@ -40,7 +42,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Cleaning Industry Blog - Tips, News & Business Growth",
-    description: "Read our latest blog posts about the cleaning industry, janitorial business growth, commercial cleaning tips, and industry news.",
+    description:
+      "Read our latest blog posts about the cleaning industry, janitorial business growth, commercial cleaning tips, and industry news.",
     images: ["/janitorial-leads-hero-banner.jpg "],
   },
   alternates: {
@@ -69,32 +72,49 @@ export const BlogCard = ({ data }: { data: any }) => {
   const imageData =
     data?._embedded?.["wp:featuredmedia"]?.[0]?.source_url || placeholderImage;
   return (
-    <article className="border max-w-[345px] mx-auto w-full rounded-md overflow-hidden" itemScope itemType="http://schema.org/BlogPosting">
+    <article
+      className="border max-w-[345px] mx-auto w-full rounded-md overflow-hidden"
+      itemScope
+      itemType="http://schema.org/BlogPosting"
+    >
       <div className="w-[345px] h-[200px] relative">
         <Image
           src={imageData}
           fill
-          alt={data?.title?.rendered || 'Blog image'}
+          alt={data?.title?.rendered || "Blog image"}
           className="object-cover object-top"
           itemProp="image"
         />
       </div>
-      <div className="space-y-2 p-2">
-        <h2 className="text-lg font-medium" itemProp="headline">{data?.title?.rendered}</h2>
+      <div className="space-y-2 p-2 flex-col flex justify-between h-[260px]">
+        <h2 className="text-lg font-medium" itemProp="headline">
+          {data?.title?.rendered}
+        </h2>
         <div className="flex items-center gap-4">
-          <small itemProp="datePublished">{moment(date).format("MMMM Do YYYY")}</small>
+          <small itemProp="datePublished">
+            {moment(date).format("MMMM Do YYYY")}
+          </small>
           <small>
-            By <strong itemProp="author">{data?._embedded?.author?.[0]?.name || null}</strong>
+            By{" "}
+            <strong itemProp="author">
+              {data?._embedded?.author?.[0]?.name || null}
+            </strong>
           </small>
         </div>
-        <p className="text-sm text-gray-600 line-clamp-3" itemProp="articleBody">
+        <p
+          className="text-sm text-gray-600 line-clamp-3"
+          itemProp="articleBody"
+        >
           {data?.content?.rendered
             ?.replace(/<[^>]+>/g, "") // remove HTML tags
             ?.slice(0, 150)}
           ...
         </p>
-        <div>
-          <Link href={`/blogs/${data?.slug}`} title={`Read more: ${data?.title?.rendered}`}>
+        <div className="">
+          <Link
+            href={`/blogs/${data?.slug}`}
+            title={`Read more: ${data?.title?.rendered}`}
+          >
             <PrimaryBtn containerClass="" text="Read More" />
           </Link>
         </div>
@@ -109,7 +129,14 @@ const page = async ({ searchParams }: SearchProps) => {
 
   const { posts, totalPages } = await getPosts(currentPage, 12);
   return (
-    <section id="blog-page">
+    <section
+      id="blog-page"
+      role="region"
+      aria-labelledby="blog-hero-title"
+      aria-describedby="blog-hero-desc"
+      itemScope
+      itemType="http://schema.org/WebPage"
+    >
       <Hero
         title="Read Our Latest Blog"
         headline="Know the hidden knowledge of the Cleaning Industry"

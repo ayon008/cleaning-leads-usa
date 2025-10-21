@@ -252,7 +252,7 @@ const Navbar = () => {
       </div>
       {/* Logo Part */}
       <header
-        className="container items-center justify-between gap-10 py-8 hidden lg:flex"
+        className="container items-center justify-between gap-10 py-5 hidden lg:flex"
         role="banner"
       >
         <div className="flex-1">

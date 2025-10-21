@@ -95,65 +95,49 @@ export default function RootLayout({
 }>) {
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Cleaning Leads USA",
-    description:
-      "Professional janitorial appointment services and commercial cleaning lead generation company",
-    url: "https://cleaningleadsusa.com",
-    logo: "https://cleaningleadsusa.com/cleaning-leads-usa-logo.png",
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: "+1 (332) 600-4766",
-      contactType: "customer service",
-      email: "support@cleaningleadsusa.com",
-      availableLanguage: ["English"],
-    },
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "New York",
-      addressRegion: "NY",
-      addressCountry: "US",
-    },
-    sameAs: [
-      "https://www.facebook.com/cleaningleadsusa",
-      "https://wa.me/13477985582",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://cleaningleadsusa.com#organization",
+        name: "Cleaning Leads USA",
+        description:
+          "Professional janitorial appointment services and commercial cleaning lead generation company",
+        url: "https://cleaningleadsusa.com",
+        logo: "https://cleaningleadsusa.com/cleaning-leads-usa-logo.png",
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: "+1 (332) 600-4766",
+          contactType: "customer service",
+          email: "support@cleaningleadsusa.com",
+          availableLanguage: ["English"]
+        },
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "New York",
+          addressRegion: "NY",
+          addressCountry: "US"
+        },
+        sameAs: [
+          "https://www.facebook.com/cleaningleadsusa",
+          "https://wa.me/13477985582"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://cleaningleadsusa.com#website",
+        name: "Cleaning Leads USA",
+        url: "https://cleaningleadsusa.com",
+        publisher: { "@id": "https://cleaningleadsusa.com#organization" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://cleaningleadsusa.com#homepage",
+        name: "Cleaning Leads USA - Home",
+        url: "https://cleaningleadsusa.com",
+        isPartOf: { "@id": "https://cleaningleadsusa.com#website" },
+        about: { "@id": "https://cleaningleadsusa.com#organization" }
+      }
     ],
-    serviceArea: {
-      "@type": "Country",
-      name: "United States",
-    },
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "Commercial Cleaning Lead Generation Services",
-      itemListElement: [
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Janitorial Appointment Setting",
-            description:
-              "Qualified commercial cleaning appointments that convert",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Digital Marketing Services",
-            description:
-              "SEO, social media, and email marketing for cleaning businesses",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Web Development",
-            description: "Professional websites for cleaning service companies",
-          },
-        },
-      ],
-    },
     potentialAction: {
       "@type": "ContactAction",
       name: "Request a call back",

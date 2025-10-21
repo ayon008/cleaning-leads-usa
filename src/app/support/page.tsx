@@ -8,7 +8,14 @@ import Image from "next/image";
 
 const page = () => {
   return (
-    <section id="support">
+    <section
+      id="support"
+      role="region"
+      aria-labelledby="support-hero-title"
+      aria-describedby="support-hero-desc"
+      itemScope
+      itemType="http://schema.org/ContactPage"
+    >
       <Hero
         headline="Need Help?"
         title="Customer Support at Cleaning Leads USA"
@@ -28,33 +35,36 @@ const page = () => {
               billing, or account questions. Reach us by phone, email, or live
               chat anytime."
           headline="Need Help?"
+          headlineId="support-headline"
+          subHeadingId="support-sub"
         />
         <div className="flex md:flex-row flex-col items-center justify-center gap-10">
           <div className="bg-primary w-fit mt-10 p-6 flex-1">
             <Mail size={"4rem"} className="text-secondary w-fit mx-auto" />
             <div className="text-black flex flex-col justify-center items-center">
-              <a
-                href="mailto:support@cleaningleadsusa.com"
-                title="Email Cleaning Leads USA Support"
-                className="font-medium mt-4"
-              >
-                <h2 className="text-2xl text-center">
-                  support@cleaningleadsusa.com
-                </h2>
-              </a>
+                <a
+                  href="mailto:support@cleaningleadsusa.com"
+                  title="Email Cleaning Leads USA Support"
+                  className="font-medium mt-4"
+                  aria-label="Email Cleaning Leads USA support"
+                >
+                  <h2 className="text-2xl text-center">
+                    support@cleaningleadsusa.com
+                  </h2>
+                </a>
             </div>
           </div>
           <div className="bg-primary w-fit mt-10 p-6 flex-1">
             <Phone size={"4rem"} className="text-secondary w-fit mx-auto" />
             <div className="text-black flex flex-col justify-center items-center">
-              <a
-                href="tel:+13326004766"
-                aria-label="Call Cleaning Leads USA"
-                title="Call Cleaning Leads USA"
-                className="font-medium mt-4"
-              >
-                <h2 className="text-2xl text-center">+1 (332) 600-4766</h2>
-              </a>
+                <a
+                  href="tel:+13326004766"
+                  aria-label="Call Cleaning Leads USA"
+                  title="Call Cleaning Leads USA"
+                  className="font-medium mt-4"
+                >
+                  <h2 className="text-2xl text-center">+1 (332) 600-4766</h2>
+                </a>
             </div>
           </div>
         </div>
