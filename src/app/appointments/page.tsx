@@ -30,9 +30,9 @@ const page = () => {
       <div className="container">
         <div className="flex items-center md:flex-row flex-col md:py-6 py-6 rounded-md md:justify-between bg-amber-300 md:px-10 px-6 my-10 gap-6">
           <div>
-            <h1 className="md:text-3xl text-xl md:text-left text-center font-semibold">
+            <h2 className="md:text-3xl text-xl md:text-left text-center font-semibold">
               Get your first appointment just at $99
-            </h1>
+            </h2>
             <p className="text-base mt-4 md:text-left text-center">
               Would you like to speak with our operations manager directly?
             </p>
@@ -49,9 +49,9 @@ const page = () => {
         <div className="pt-10">
           <div className="flex items-center md:flex-row flex-col justify-between gap-8">
             <div className="md:w-1/2 w-full">
-              <h1 className="text-3xl font-semibold">
+              <h2 className="text-3xl font-semibold">
                 Speak with a Professional Consultant
-              </h1>
+              </h2>
               <div className="flex items-center gap-4 mt-4">
                 <Phone className="" />
                 <a
@@ -125,11 +125,11 @@ const page = () => {
                 </div>
               </div>
               <div className="mt-4">
-                <h1>
+                <h2>
                   Request a Free Consultation. Explain Your Company&apos;s
                   Predicament and Get Professional Advice to Accelerate Your
                   Development.
-                </h1>
+                </h2>
                 <div className="bg-primary space-y-2 w-fit rounded-md p-4 mt-4">
                   <p className="text-2xl font-semibold">
                     Logan Whitman <br />
