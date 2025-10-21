@@ -27,6 +27,7 @@ const Banner = () => {
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 256 208"
             preserveAspectRatio="none"
+            aria-hidden="true"
           >
             <path
               d="M 0,0 
@@ -46,9 +47,13 @@ const Banner = () => {
             <Icon
               size={"3rem"}
               className="text-secondary my-6 group-hover:text-white"
+              aria-hidden="true"
             />
           </div>
-          <span className="text-6xl font-semibold opacity-40 group-hover:opacity-100 text-white text-stroke group-hover:text-secondary duration-150 transition-all z-30 absolute right-6 bottom-6">
+          <span
+            className="text-6xl font-semibold opacity-40 group-hover:opacity-100 text-white text-stroke group-hover:text-secondary duration-150 transition-all z-30 absolute right-6 bottom-6"
+            aria-hidden="true"
+          >
             0{index}
           </span>
         </div>
@@ -58,7 +63,7 @@ const Banner = () => {
   };
 
   return (
-    <section className="bg-primary">
+    <section className="bg-primary" role="region" aria-labelledby="banner-title" aria-describedby="banner-desc">
       <div className="w-full md:h-dvh h-[500px] lg:-mt-8 mt-0" id="banner">
         <div className="w-full h-full relative overflow-hidden">
           <Image
@@ -72,16 +77,16 @@ const Banner = () => {
           />
           <div className="!z-20 pt-8 relative container h-full flex flex-col justify-center">
             <div className={`space-y-5`}>
-              <h1 className="text-white md:text-5xl text-3xl sm:text-4xl md:leading-16 font-extrabold">
+              <h1 id="banner-title" className="text-white md:text-5xl text-3xl sm:text-4xl md:leading-16 font-extrabold">
                 Professional Janitorial Appointments <br /> Thats
                 <span className="text-secondary"> Actually Convert</span>
               </h1>
-              <p className="text-white sm:text-base text-sm font-semibold">
+              <p id="banner-desc" className="text-white sm:text-base text-sm font-semibold">
                 The only reliable source for janitorial jobs is this <br />{" "}
                 stress-free appointment scheduling service for janitors.
               </p>
-              <Link href={"/appointments"}>
-                <PrimaryBtn text="Request Consultation" />
+              <Link href={"/appointments"} title="Request Consultation - Appointments">
+                <PrimaryBtn text="Request Consultation" ariaLabel="Request Consultation" />
               </Link>
             </div>
           </div>
