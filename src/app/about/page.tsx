@@ -47,7 +47,14 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
-    <section id="about">
+    <section
+      id="about"
+      role="region"
+      aria-labelledby="hero-title"
+      aria-describedby="about-subheading"
+      itemScope
+      itemType="http://schema.org/AboutPage"
+    >
       <Hero
         title="About CleaningLeadsUSA"
         headline="Boosting Success in Commercial Cleaning"
@@ -65,6 +72,8 @@ const page = () => {
           containerClass="text-center"
           headline="A Few Things We're Excited to Share"
           subHeading="These are the moments that remind us why we love helping cleaning businesses grow"
+          headlineId="about-headline"
+          subHeadingId="about-subheading"
         />
         <div className="my-10 flex md:flex-row flex-col items-stretch justify-between gap-10">
           <div className="bg-primary p-8 rounded-md flex-1 h-[180px]">
@@ -98,7 +107,7 @@ const page = () => {
             </p>
           </div>
           <a href="tel:+13326004766" title="Call Cleaning Leads USA">
-            <PrimaryBtn text="Call Now" containerClass="" />
+            <PrimaryBtn text="Call Now" containerClass="" ariaLabel="Call Cleaning Leads USA" />
           </a>
         </div>
         <Testimonial />

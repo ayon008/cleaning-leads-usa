@@ -100,10 +100,10 @@ export default function RootLayout({
     description:
       "Professional janitorial appointment services and commercial cleaning lead generation company",
     url: "https://cleaningleadsusa.com",
-    logo: "https://cleaningleadsusa.com/Blue_And_White_Cleaning_Services_Logo-removebg-preview.png",
+    logo: "https://cleaningleadsusa.com/cleaning-leads-usa-logo.png",
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+1-234-450-0123",
+      telephone: "+1 (332) 600-4766",
       contactType: "customer service",
       email: "support@cleaningleadsusa.com",
       availableLanguage: ["English"],
@@ -115,7 +115,7 @@ export default function RootLayout({
       addressCountry: "US",
     },
     sameAs: [
-      "https://www.facebook.com/commercialcleaningleads",
+      "https://www.facebook.com/cleaningleadsusa",
       "https://wa.me/13477985582",
     ],
     serviceArea: {
@@ -154,6 +154,18 @@ export default function RootLayout({
         },
       ],
     },
+    potentialAction: {
+      "@type": "ContactAction",
+      name: "Request a call back",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: "tel:+13326004766",
+        actionPlatform: [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/Phone"
+        ]
+      }
+    }
   };
 
   return (

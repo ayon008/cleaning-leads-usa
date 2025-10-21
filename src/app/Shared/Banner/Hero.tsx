@@ -20,6 +20,9 @@ const Hero = ({
       role="region"
       aria-labelledby="hero-title"
       aria-describedby="hero-desc"
+      itemScope
+      itemType="http://schema.org/WebPageElement"
+      itemProp="mainEntity"
     >
       <div className="h-[500px] w-full relative">
         <div
@@ -30,6 +33,8 @@ const Hero = ({
           src={image}
           alt="Commercial cleaning leads banner showcasing professional janitorial services"
           title="Commercial Cleaning Leads – Professional Janitorial Marketing Banner"
+          // image provides visual context for the hero section
+          itemProp="image"
           fill
           priority={true}
           fetchPriority="high"
@@ -39,13 +44,17 @@ const Hero = ({
          100vw" /* Desktop: full width */
         />
         <div className="relative container z-20 pt-10 h-full flex flex-col justify-center gap-4">
-          <h1 id="hero-title" className="text-white md:text-5xl text-3xl sm:text-4xl md:leading-16 font-extrabold">
+          <h1
+            id="hero-title"
+            className="text-white md:text-5xl text-3xl sm:text-4xl md:leading-16 font-extrabold"
+            itemProp="headline"
+          >
             {title}
           </h1>
-          <p id="hero-headline" className="text-white sm:text-base text-sm font-semibold">
+          <p id="hero-headline" className="text-white sm:text-base text-sm font-semibold" itemProp="alternativeHeadline">
             {headline}
           </p>
-          <p id="hero-desc" className="text-white sm:text-base text-sm font-semibold">{des}</p>
+          <p id="hero-desc" className="text-white sm:text-base text-sm font-semibold" itemProp="description">{des}</p>
           <div>
             <Link href={'/contact#form'} title="Get a quote - contact form">
               <PrimaryBtn

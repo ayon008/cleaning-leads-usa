@@ -69,36 +69,37 @@ export const BlogCard = ({ data }: { data: any }) => {
   const imageData =
     data?._embedded?.["wp:featuredmedia"]?.[0]?.source_url || placeholderImage;
   return (
-    <div className="border max-w-[345px] mx-auto w-full rounded-md overflow-hidden">
+    <article className="border max-w-[345px] mx-auto w-full rounded-md overflow-hidden" itemScope itemType="http://schema.org/BlogPosting">
       <div className="w-[345px] h-[200px] relative">
         <Image
           src={imageData}
           fill
-          alt=""
+          alt={data?.title?.rendered || 'Blog image'}
           className="object-cover object-top"
+          itemProp="image"
         />
       </div>
       <div className="space-y-2 p-2">
-        <h2 className="text-lg font-medium">{data?.title?.rendered}</h2>
+        <h2 className="text-lg font-medium" itemProp="headline">{data?.title?.rendered}</h2>
         <div className="flex items-center gap-4">
-          <small>{moment(date).format("MMMM Do YYYY")}</small>
+          <small itemProp="datePublished">{moment(date).format("MMMM Do YYYY")}</small>
           <small>
-            By <strong>{data?._embedded?.author?.[0]?.name || null}</strong>
+            By <strong itemProp="author">{data?._embedded?.author?.[0]?.name || null}</strong>
           </small>
         </div>
-        <p className="text-sm text-gray-600 line-clamp-3">
+        <p className="text-sm text-gray-600 line-clamp-3" itemProp="articleBody">
           {data?.content?.rendered
             ?.replace(/<[^>]+>/g, "") // remove HTML tags
             ?.slice(0, 150)}
           ...
         </p>
         <div>
-          <Link href={`/blogs/${data?.slug}`}>
+          <Link href={`/blogs/${data?.slug}`} title={`Read more: ${data?.title?.rendered}`}>
             <PrimaryBtn containerClass="" text="Read More" />
           </Link>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 

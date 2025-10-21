@@ -56,7 +56,7 @@ const page = () => {
                 <Phone className="" />
                 <a
                   href="tel:+13326004766"
-                  aria-label="Call Cleaning Leads USA at +1 (234) 567-890"
+                  aria-label="Call Cleaning Leads USA at +1 (332) 600-4766"
                   title="Call Cleaning Leads USA"
                   className="inline-flex items-center justify-center"
                 >
@@ -116,7 +116,7 @@ const page = () => {
                   {/* Phone */}
                   <a
                     href="tel:+13326004766"
-                    aria-label="Call Cleaning Leads USA at +1 (234) 567-890"
+                    aria-label="Call Cleaning Leads USA at +1 (332) 600-4766"
                     title="Call Cleaning Leads USA"
                     className="inline-flex items-center justify-center"
                   >

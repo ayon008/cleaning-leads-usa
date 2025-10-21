@@ -14,33 +14,37 @@ const TestimonialCard = ({
   owner: string;
 }) => {
   return (
-    <div className="bg-primary p-6 rounded space-y-5 w-84">
-      <div className="flex">
+    <article className="bg-primary p-6 rounded space-y-5 w-84" itemScope itemType="http://schema.org/Review">
+      <div className="flex" aria-hidden="true">
         {Array.from({ length: maxStars }, (_, i) => (
           <Star
             key={i}
             className={`w-5 h-5 ${
               i < rating ? "text-yellow-400 fill-current" : "text-gray-300"
             }`}
+            aria-hidden="true"
           />
         ))}
       </div>
-      <em>{review}</em>
-      <p className="text-gray-500 mt-4">{owner}</p>
-    </div>
+      <em itemProp="reviewBody">{review}</em>
+      <p className="text-gray-500 mt-4" itemProp="author">{owner}</p>
+      <meta itemProp="reviewRating" content={String(rating)} />
+    </article>
   );
 };
 
 const Testimonial = () => {
   return (
-    <section id="testimonial" className="md:mt-20 mt-10 mb-10">
+    <section id="testimonial" className="md:mt-20 mt-10 mb-10" role="region" aria-labelledby="testimonial-headline" aria-describedby="testimonial-sub" itemScope itemType="http://schema.org/Review">
       <div className="container">
         <Title
           containerClass="text-center"
           headline="Verified Outcomes from Cleaning Companies"
           subHeading="Cleaning businesses nationwide rely on CleaningLeadsUSA to generate high-quality janitorial leads and fill their schedules. Discover how our verified commercial cleaning leads have helped clients secure more contracts, increase revenue, and achieve sustainable business growth."
+          headlineId="testimonial-headline"
+          subHeadingId="testimonial-sub"
         />
-        <div className="flex flex-wrap gap-4 md:mt-20 mt-10 items-stretch justify-center">
+        <div className="flex flex-wrap gap-4 md:mt-20 mt-10 items-stretch justify-center" aria-labelledby="testimonial-headline" aria-describedby="testimonial-sub">
           <TestimonialCard
             rating={5}
             maxStars={5}

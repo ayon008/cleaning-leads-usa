@@ -65,17 +65,30 @@ const Prospect = ({
   title: string;
 }) => {
   return (
-    <div className="bg-white rounded-md space-y-4 px-4 py-6">
-      <Image src={image} alt={alt || `${title} - Cleaning Leads USA service icon`} className="w-[90px] h-[90px] mx-auto" loading="lazy" />
-      <h1 className="text-center text-2xl font-semibold">{title}</h1>
-      <p className="text-center text-sm">{text}</p>
-    </div>
+    <article className="bg-white rounded-md space-y-4 px-4 py-6" itemScope itemType="http://schema.org/Service">
+      <Image
+        src={image}
+        alt={alt || `${title} - Cleaning Leads USA service icon`}
+        className="w-[90px] h-[90px] mx-auto"
+        loading="lazy"
+        itemProp="image"
+      />
+      <h3 className="text-center text-2xl font-semibold" itemProp="name">{title}</h3>
+      <p className="text-center text-sm" itemProp="description">{text}</p>
+    </article>
   );
 };
 
 const page = () => {
   return (
-    <section id="services">
+    <section
+      id="services"
+      role="region"
+      aria-labelledby="hero-title"
+      aria-describedby="services-commitment-sub"
+      itemScope
+      itemType="http://schema.org/WebPage"
+    >
       <Hero
         title="Our Services"
         headline="Let Our Experts Handle Your Prospect Communications"
@@ -92,6 +105,8 @@ const page = () => {
           containerClass="text-center"
           headline="Our Commitment to Your Growth"
           subHeading="Focus on delivering exceptional cleaning services—let us handle lead generation and appointments."
+          headlineId="services-commitment-head"
+          subHeadingId="services-commitment-sub"
         />
         <div className="mt-10 flex items-stretch justify-center flex-wrap md:gap-10 md:flex-row flex-col gap-6">
           <Card
@@ -112,12 +127,16 @@ const page = () => {
             containerClass="text-center"
             subHeading="At CleaningLeadsUSA, we help you win more business by setting up qualified appointments with decision-makers while you focus on delivering great service. Beyond appointment setting, we also grow your online presence with targeted digital marketing to keep new clients coming in."
             headline="Guaranteed Cleaning Appointments"
+            headlineId="services-guaranteed-head"
+            subHeadingId="services-guaranteed-sub"
           />
           <div className="mt-6">
             <Title
               containerClass="text-center"
               headline="Why will you choose us"
               subHeading=""
+              headlineId="services-why-head"
+              subHeadingId="services-why-sub"
             />
             <div className="grid md:grid-cols-4 gap-4 mt-6">
               <Card
@@ -140,15 +159,15 @@ const page = () => {
           </div>
           <div className="mt-20 flex items-center py-6 rounded-md justify-between bg-amber-300 px-10">
             <div>
-              <h1 className="text-3xl font-semibold">
+              <h2 className="text-3xl font-semibold">
                 Get your first appointment just at $99
-              </h1>
+              </h2>
               <p className="text-base mt-4">
                 Would you like to speak with our operations manager directly?
               </p>
             </div>
             <a href="tel:+13326004766" title="Call Cleaning Leads USA">
-              <PrimaryBtn text="Call Now" containerClass="" />
+              <PrimaryBtn text="Call Now" containerClass="" ariaLabel="Call Cleaning Leads USA" />
             </a>
           </div>
         </div>
@@ -159,6 +178,8 @@ const page = () => {
           containerClass="text-center"
           headline="Complete Marketing Solutions for Janitorial Services"
           subHeading=""
+          headlineId="services-marketing-head"
+          subHeadingId="services-marketing-sub"
         />
         <div className="mt-10 container grid md:grid-cols-4 grid-cols-1 gap-3">
           <Prospect

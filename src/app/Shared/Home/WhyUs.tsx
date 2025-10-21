@@ -13,12 +13,13 @@ import Link from "next/link";
 const WhyUs = () => {
   return (
     <>
-      <section id="get-monthly-cleaning-leads" className="mt-10 mb-10">
+      <section id="get-monthly-cleaning-leads" className="mt-10 mb-10" role="region" aria-labelledby="monthly-headline" itemScope itemType="http://schema.org/WebPageElement">
         <div className="container">
           <Title
             headline="Get Monthly Leads for Office Cleaning to Grow Your Business"
             subHeading=""
             containerClass="text-center"
+            headlineId="monthly-headline"
           />
           <div className="md:mt-20 mt-10 flex items-stretch md:flex-row flex-col justify-between md:gap-10 gap-6">
             <div className="flex-1">
@@ -38,7 +39,7 @@ const WhyUs = () => {
                 cleaning services by guaranteeing appointments with authorized
                 personnel.
               </p>
-              <Link href={'/#pricing'}>
+              <Link href={'/#pricing'} title="See our pricing packages">
                 <PrimaryBtn text="Our Packages" containerClass="mt-8" />
               </Link>
             </div>
@@ -61,12 +62,14 @@ const WhyUs = () => {
         </div>
       </section>
       {/*  */}
-      <section id="contractors" className="md:py-10 md:pb-0 pb-10">
+      <section id="contractors" className="md:py-10 md:pb-0 pb-10" role="region" aria-labelledby="contractors-headline" aria-describedby="contractors-sub" itemScope itemType="http://schema.org/WebPageElement">
         <div className="container">
           <Title
             headline="Creating Leads for Contractors"
             subHeading="Do you need trustworthy leads for commercial construction? In order to help you land more contracts, our CleaningLeadsUSA team links you with verified opportunities in retail establishments, office buildings, and large-scale developments."
             containerClass="text-center"
+            headlineId="contractors-headline"
+            subHeadingId="contractors-sub"
           />
           <div className="mt-10 flex items-center md:flex-row flex-col justify-center md:gap-10 gap-16">
             <div className="space-y-4 text-center flex-1">
@@ -128,17 +131,19 @@ const WhyUs = () => {
           </div>
         </div>
       </section>
-      <section id="choose-us" className="md:py-20 my-20 py-10 bg-primary">
+      <section id="choose-us" className="md:py-20 my-20 py-10 bg-primary" role="region" aria-labelledby="chooseus-headline" aria-describedby="chooseus-sub" itemScope itemType="http://schema.org/Service">
         <div className="container">
           <Title
             containerClass="text-center"
             headline="Why Pick CleaningLeadsUSA for Office Cleaning Leads?"
             subHeading="The most reliable source for consistent, high-quality commercial office cleaning leads and verified janitorial contract opportunities."
+            headlineId="chooseus-headline"
+            subHeadingId="chooseus-sub"
           />
           <div className="md:mt-20 mt-10 flex item-center md:flex-row flex-col justify-between gap-10">
             <div className="space-y-4">
-              <div className="w-fit mx-auto bg-red-500/20 flex items-center justify-center p-5 rounded-full">
-                <DollarSignIcon size={"5rem"} className="text-secondary" />
+              <div className="w-fit mx-auto bg-red-500/20 flex items-center justify-center p-5 rounded-full" aria-hidden="true">
+                <DollarSignIcon size={"5rem"} className="text-secondary" aria-hidden="true" />
               </div>
               <div className="text-center space-y-4 mt-10">
                 <h3 className="text-xl font-semibold">
@@ -153,8 +158,8 @@ const WhyUs = () => {
               </div>
             </div>
             <div className="space-y-4">
-              <div className="w-fit mx-auto bg-red-500/20 flex items-center justify-center p-5 rounded-full">
-                <Rocket size={"5rem"} className="text-secondary" />
+              <div className="w-fit mx-auto bg-red-500/20 flex items-center justify-center p-5 rounded-full" aria-hidden="true">
+                <Rocket size={"5rem"} className="text-secondary" aria-hidden="true" />
               </div>
               <div className="text-center space-y-4 mt-10">
                 <h3 className="text-xl font-semibold">
@@ -169,8 +174,8 @@ const WhyUs = () => {
               </div>
             </div>
             <div className="space-y-4">
-              <div className="w-fit mx-auto bg-red-500/20 flex items-center justify-center p-5 rounded-full">
-                <ThumbsUp size={"5rem"} className="text-secondary" />
+              <div className="w-fit mx-auto bg-red-500/20 flex items-center justify-center p-5 rounded-full" aria-hidden="true">
+                <ThumbsUp size={"5rem"} className="text-secondary" aria-hidden="true" />
               </div>
               <div className="text-center space-y-4 mt-10">
                 <h3 className="text-xl font-semibold">
@@ -237,12 +242,13 @@ const WhyUs = () => {
         </div>
       </section>
 
-      <section id="cleaning-leads" className="mt-10 md:mb-20 mb-10">
+      <section id="cleaning-leads" className="mt-10 md:mb-20 mb-10" role="region" aria-labelledby="cleaningleads-headline" itemScope itemType="http://schema.org/WebPageElement">
         <div className="container">
           <Title
             containerClass="text-center"
             headline="CleaningLeadsUSA Fuels Growth of Your Commercial Cleaning Business"
             subHeading="THE TRUSTED COMMERCIAL CLEANING LEADS PROVIDER"
+            headlineId="cleaningleads-headline"
           />
           <div className="md:mt-20 mt-10 md:flex-row flex-col-reverse flex items-center justify-between gap-10">
             <div className="flex-1">

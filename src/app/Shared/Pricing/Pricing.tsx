@@ -58,28 +58,33 @@ const pricingTiers = [
 
 const Pricing = () => {
   return (
-    <section id="pricing" className="mb-10 md:py-10">
+    <section id="pricing" className="mb-10 md:py-10" role="region" aria-labelledby="pricing-headline" aria-describedby="pricing-sub" itemScope itemType="http://schema.org/OfferCatalog">
       <div className="container">
         <Title
           headline="Exclusive Lead Generation Pricing"
           containerClass="text-center"
           subHeading="Get Qualified Janitorial Appointments & Commercial Cleaning Leads"
+          headlineId="pricing-headline"
+          subHeadingId="pricing-sub"
         />
-        <div className="flex items-stretch md:flex-row flex-col mt-10 md:gap-2 gap-6">
+        <div className="flex items-stretch md:flex-row flex-col mt-10 md:gap-2 gap-6" aria-labelledby="pricing-headline" aria-describedby="pricing-sub">
           {pricingTiers.map((singlePrice) => {
             const { tier, appointments, features } = singlePrice;
             return (
               <div
                 key={appointments}
                 className="p-6 border border-gray-300 rounded-md flex-1"
+                itemScope
+                itemType="http://schema.org/Offer"
               >
                 <div>
                   <h3
                     className={`text-2xl font-semibold tracking-wide`}
+                    itemProp="name"
                   >
                     {tier}
                   </h3>
-                  <p className="text-secondary text-xl mt-2">
+                  <p className="text-secondary text-xl mt-2" itemProp="description">
                     {appointments} appointments
                   </p>
                   <ul className="mt-16">
@@ -89,8 +94,8 @@ const Pricing = () => {
                           key={i}
                           className="mt-2 text-black flex items-center gap-4"
                         >
-                          <span className="text-secondary">{`✓`}</span>
-                          <span>{feature}</span>
+                          <span className="text-secondary" aria-hidden="true">{`✓`}</span>
+                          <span itemProp="itemOffered">{feature}</span>
                         </li>
                       );
                     })}

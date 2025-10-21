@@ -72,11 +72,11 @@ const Footer = () => {
               <p className="text-sm text-white font-semibold">Phone Number</p>
               <a
                 href="tel:+13326004766"
-                aria-label="Call Cleaning Leads USA at +1 (234) 567-890"
+                aria-label="Call Cleaning Leads USA at +1 (332) 600-4766"
                 title="Call Cleaning Leads USA"
                 className="inline-flex items-center justify-center text-white font-bold"
               >
-                +1 (234) 567-890
+                +1 (332) 600-4766
               </a>
             </div>
           </div>

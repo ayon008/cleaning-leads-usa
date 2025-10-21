@@ -53,7 +53,7 @@ const page = () => {
                 title="Call Cleaning Leads USA"
                 className="font-medium mt-4"
               >
-                <h2 className="text-2xl text-center">+1 (234) 567-890</h2>
+                <h2 className="text-2xl text-center">+1 (332) 600-4766</h2>
               </a>
             </div>
           </div>
