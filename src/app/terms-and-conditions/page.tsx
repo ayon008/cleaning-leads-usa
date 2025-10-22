@@ -70,7 +70,7 @@ const page = () => {
           </h2>
           <p className="mt-4">
             We want every client to feel confident about the leads they receive.
-            That's why we allow a <strong>48-hour review window</strong> to flag
+            That&apos;s why we allow a <strong>48-hour review window</strong> to flag
             issues.
             <br /> You may request a review only if
           </p>
@@ -95,7 +95,7 @@ const page = () => {
                   fit your chosen criteria.
                 </li>
                 <li className="ml-10">
-                  If validated, we'll replace or credit that lead.
+                  If validated, we&apos;ll replace or credit that lead.
                 </li>
               </ul>
             </li>
@@ -158,7 +158,7 @@ const page = () => {
               Your full name, address, phone, and email.
             </li>
             <li className="ml-10">
-              Proof of ID (passport, driver's license, etc.).
+              Proof of ID (passport, driver&apos;s license, etc.).
             </li>
             <li className="ml-10">
               Proof of address (utility bill, bank statement, etc.).
