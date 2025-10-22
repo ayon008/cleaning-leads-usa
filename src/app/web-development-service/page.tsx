@@ -139,7 +139,7 @@ const page = () => {
                     id="expertise-title"
                     className={`md:text-4xl text-3xl font-semibold`}
                   >
-                    Websites that tell your cleaning company's story
+                    Websites that tell your cleaning company&apos;s story
                   </h2>
                   <p
                     id="expertise-desc"
