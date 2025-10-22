@@ -114,6 +114,7 @@ export const BlogCard = ({ data }: { data: any }) => {
           <Link
             href={`/blogs/${data?.slug}`}
             title={`Read more: ${data?.title?.rendered}`}
+            itemProp="url"
           >
             <PrimaryBtn containerClass="" text="Read More" />
           </Link>

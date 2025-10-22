@@ -3,9 +3,34 @@ import Hero from "../Shared/Banner/Hero";
 import Title from "../Shared/Title/Title";
 import { AlertTriangle, MoveRightIcon } from "lucide-react";
 
+export const metadata = {
+  title: "Terms & Conditions | Cleaning Leads USA",
+  description: "Review the policies and guidelines for purchasing verified cleaning and janitorial leads from Cleaning Leads USA. Understand our refund policy, data protection, and service terms.",
+  keywords: "cleaning leads terms, janitorial leads policy, lead generation terms and conditions, cleaning services agreement, GDPR compliance",
+  alternates: {
+    canonical: "https://www.cleaningleadsusa.com/terms-and-conditions",
+  },
+  openGraph: {
+    title: "Terms & Conditions | Cleaning Leads USA",
+    description: "Review our terms for purchasing verified cleaning and janitorial leads. Learn about our quality guarantee, refund policy, and data protection practices.",
+    type: "website",
+    url: "https://www.cleaningleadsusa.com/terms-and-conditions",
+    siteName: "Cleaning Leads USA",
+  },
+  twitter: {
+    card: "summary",
+    title: "Terms & Conditions | Cleaning Leads USA",
+    description: "Review our terms for purchasing verified cleaning and janitorial leads. Learn about our quality guarantee and refund policy.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
 const page = () => {
   return (
-    <section id="term-and-condition">
+    <section id="term-and-condition" itemScope itemType="https://schema.org/WebPage">
       <Hero
         title="Terms & Conditions"
         headline="Understand How Our Services Work"
@@ -16,6 +41,7 @@ const page = () => {
           containerClass="text-left"
           headline="Cleaning Leads USA – Terms & Conditions"
           subHeading=""
+          headlineId="terms-heading"
         />
         <p>
           At Cleaning Leads USA, we are committed to delivering reliable,
@@ -23,7 +49,7 @@ const page = () => {
           purchasing our services, you agree to the terms outlined below.
         </p>
         <div className="mt-10">
-          <h2 className="font-semibold text-2xl">A. How Our Agreement Works</h2>
+          <h2 className="font-semibold text-2xl" id="agreement">A. How Our Agreement Works</h2>
           <ul className="list-disc flex flex-col gap-4">
             <li className="ml-10 mt-4">
               When you place an order through{" "}
@@ -39,12 +65,12 @@ const page = () => {
           </ul>
         </div>
         <div className="mt-10">
-          <h2 className="font-semibold text-2xl">
+          <h2 className="font-semibold text-2xl" id="lead-quality">
             B. Your Rights on Lead Quality
           </h2>
           <p className="mt-4">
             We want every client to feel confident about the leads they receive.
-            That’s why we allow a <strong>48-hour review window</strong> to flag
+            That's why we allow a <strong>48-hour review window</strong> to flag
             issues.
             <br /> You may request a review only if
           </p>
@@ -69,21 +95,21 @@ const page = () => {
                   fit your chosen criteria.
                 </li>
                 <li className="ml-10">
-                  If validated, we’ll replace or credit that lead.
+                  If validated, we'll replace or credit that lead.
                 </li>
               </ul>
             </li>
           </ol>
         </div>
-        <p className="mt-6 flex items-center gap-2">
-          <AlertTriangle className="text-amber-500" />
+        <p className="mt-6 flex items-center gap-2" role="note" aria-label="Important notice">
+          <AlertTriangle className="text-amber-500" aria-hidden="true" />
           <span>
             If the details are accurate or the issue is due to your own filters,
             credits will not apply.
           </span>
         </p>
         <div className="mt-10">
-          <h2 className="font-semibold text-2xl">C. Refund & Credit Process</h2>
+          <h2 className="font-semibold text-2xl" id="refunds">C. Refund & Credit Process</h2>
           <ul className="list-disc flex flex-col gap-4">
             <li className="ml-10 mt-4">
               All refunds are processed <strong>as account credits</strong> (no
@@ -99,7 +125,7 @@ const page = () => {
           </ul>
         </div>
         <div className="mt-10">
-          <h2 className="font-semibold text-2xl">
+          <h2 className="font-semibold text-2xl" id="privacy">
             D. Data Protection & Privacy
           </h2>
           <p className="mt-4">
@@ -121,7 +147,7 @@ const page = () => {
           </p>
         </div>
         <div className="mt-10">
-          <h2 className="font-semibold text-2xl">
+          <h2 className="font-semibold text-2xl" id="data-erasure">
             E. How to Request Data Erasure
           </h2>
           <p className="mt-4">
@@ -132,7 +158,7 @@ const page = () => {
               Your full name, address, phone, and email.
             </li>
             <li className="ml-10">
-              Proof of ID (passport, driver’s license, etc.).
+              Proof of ID (passport, driver's license, etc.).
             </li>
             <li className="ml-10">
               Proof of address (utility bill, bank statement, etc.).
@@ -142,7 +168,7 @@ const page = () => {
             </li>
           </ul>
           <p className="mt-4 flex items-start gap-2">
-            <span>
+            <span aria-hidden="true">
               <MoveRightIcon />
             </span>
             <span>
@@ -153,7 +179,7 @@ const page = () => {
           </p>
         </div>
         <div className="mt-10">
-          <h2 className="font-semibold text-2xl">F. Updates to These Terms</h2>
+          <h2 className="font-semibold text-2xl" id="updates">F. Updates to These Terms</h2>
           <p className="mt-4">
             We may revise our Terms & Conditions from time to time. Updates will
             always <br /> be published on <strong>cleaningleadsusa.com.</strong>{" "}
@@ -162,7 +188,7 @@ const page = () => {
           </p>
         </div>
         <div className="mt-10">
-          <h2 className="font-semibold text-2xl">G. Legal Framework</h2>
+          <h2 className="font-semibold text-2xl" id="legal">G. Legal Framework</h2>
           <ul className="list-disc flex flex-col gap-4">
             <li className="ml-10 mt-4">
               These Terms & Conditions are governed by <strong>U.S. law</strong>
@@ -175,7 +201,7 @@ const page = () => {
           </ul>
         </div>
         <div className="mt-10">
-          <h2 className="font-semibold text-2xl">H. Final Agreement</h2>
+          <h2 className="font-semibold text-2xl" id="final-agreement">H. Final Agreement</h2>
           <p className="mt-4">
             By purchasing appointment leads from{" "}
             <strong>Cleaning Leads USA</strong>,<br /> you acknowledge and

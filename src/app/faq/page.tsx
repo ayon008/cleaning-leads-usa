@@ -4,6 +4,35 @@ import Title from "../Shared/Title/Title";
 import Accordion from "../Shared/Accordion/Accordion";
 import PrimaryBtn from "../Shared/Button/PrimaryBtn";
 
+export const metadata = {
+  title: "FAQ - Frequently Asked Questions | Cleaning Leads USA",
+  description:
+    "Find answers to common questions about Cleaning Leads USA's lead generation services, pricing, quality assurance, and how we connect cleaning businesses with qualified commercial clients.",
+  keywords:
+    "cleaning leads FAQ, commercial cleaning leads questions, lead generation pricing, qualified cleaning leads, appointment setting FAQ, cleaning business leads",
+  openGraph: {
+    title: "FAQ - Frequently Asked Questions | Cleaning Leads USA",
+    description:
+      "Get answers about our lead generation services, pricing, quality assurance process, and how we help cleaning businesses grow with verified commercial leads.",
+    type: "website",
+    url: "https://www.cleaningleadsusa.com/faq",
+    siteName: "Cleaning Leads USA",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FAQ - Frequently Asked Questions | Cleaning Leads USA",
+    description:
+      "Find answers to common questions about our cleaning lead generation services, pricing, and quality assurance process.",
+  },
+  alternates: {
+    canonical: "https://www.cleaningleadsusa.com/faq",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
 const faqs = [
   {
     question: "What are qualified leads according to Cleaning Leads USA?",
@@ -107,7 +136,14 @@ const page = () => {
         }
       />
       <div className="container md:pt-20 pt-10">
-        <Title containerClass="text-center" headline="FAQ" subHeading="" />
+        <Title
+          containerClass="text-center"
+          headline="FAQ"
+          subHeading=""
+          headlineId="faq-heading"
+          subHeadingId="Frequently Asked Questions Section"
+          aria-label="Frequently Asked Questions Section"
+        />
         <Accordion items={faqs} />
       </div>
       <div className="container md:mb-0 mb-10">
@@ -120,7 +156,12 @@ const page = () => {
               Would you like to speak with our operations manager directly?
             </p>
           </div>
-          <a href="tel:+13326004766" title="Call Cleaning Leads USA">
+          <a
+            href="tel:+13326004766"
+            title="Call Cleaning Leads USA at (332) 600-4766"
+            aria-label="Call Cleaning Leads USA at (332) 600-4766 for commercial cleaning leads"
+            rel="nofollow"
+          >
             <PrimaryBtn text="Call Now" containerClass="" />
           </a>
         </div>

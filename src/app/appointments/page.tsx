@@ -1,4 +1,5 @@
 import React from "react";
+import { Metadata } from "next";
 import Hero from "../Shared/Banner/Hero";
 import Title from "../Shared/Title/Title";
 import PrimaryBtn from "../Shared/Button/PrimaryBtn";
@@ -9,9 +10,63 @@ import facebook from "@/../public/facebook-icon.png";
 import whatasapp from "@/../public/whatsapp-icon.webp";
 import Pricing from "../Shared/Pricing/Pricing";
 
+export const metadata: Metadata = {
+  title: "Book Janitorial Leads Consultation - Cleaning Leads USA",
+  description:
+    "Book a free consultation with our janitorial leads specialists to learn how to generate qualified commercial cleaning appointments and grow your business.",
+  keywords: [
+    "janitorial leads consultation",
+    "book janitorial leads",
+    "commercial cleaning leads appointment",
+    "cleaning leads consultation",
+  ],
+  openGraph: {
+    title: "Book Janitorial Leads Consultation - Cleaning Leads USA",
+    description:
+      "Book a free consultation with our janitorial leads specialists to learn how to generate qualified commercial cleaning appointments.",
+    url: "https://cleaningleadsusa.com/appointments",
+    type: "website",
+    images: [
+      {
+        url: "/janitorial-leads-hero-banner.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Janitorial Leads Consultation - Cleaning Leads USA",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Book Janitorial Leads Consultation - Cleaning Leads USA",
+    description:
+      "Book a free consultation with our janitorial leads specialists to learn how to generate qualified commercial cleaning appointments.",
+    images: ["/janitorial-leads-hero-banner.jpg"],
+  },
+  alternates: {
+    canonical: "https://cleaningleadsusa.com/appointments",
+  },
+};
+
 const page = () => {
+  const ld = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Janitorial Leads Consultation",
+    "url": "https://cleaningleadsusa.com/appointments",
+    "mainEntity": {
+      "@type": "Service",
+      "name": "Janitorial Leads Consultation",
+      "provider": {
+        "@type": "Organization",
+        "name": "Cleaning Leads USA",
+        "url": "https://cleaningleadsusa.com"
+      }
+    }
+  };
+
   return (
-    <section id="appointments">
+    <section id="appointments" itemScope itemType="http://schema.org/WebPage" role="region" aria-labelledby="hero-title" aria-describedby="hero-desc">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
       <Hero
         headline="Talk to a Janitorial Leads Specialist"
         title="Janitorial Leads Consultation"
@@ -28,7 +83,7 @@ const page = () => {
         }
       />
       <div className="container">
-        <div className="flex items-center md:flex-row flex-col md:py-6 py-6 rounded-md md:justify-between bg-amber-300 md:px-10 px-6 my-10 gap-6">
+          <div className="flex items-center md:flex-row flex-col md:py-6 py-6 rounded-md md:justify-between bg-amber-300 md:px-10 px-6 my-10 gap-6" itemScope itemType="http://schema.org/WebPageElement" itemProp="mainEntity">
           <div>
             <h2 className="md:text-3xl text-xl md:text-left text-center font-semibold">
               Get your first appointment just at $99
@@ -37,8 +92,8 @@ const page = () => {
               Would you like to speak with our operations manager directly?
             </p>
           </div>
-            <a href="tel:+13326004766" title="Call Cleaning Leads USA">
-              <PrimaryBtn text="Call Now" containerClass="" />
+            <a href="tel:+13326004766" title="Call Cleaning Leads USA" itemProp="telephone" aria-label="Call Cleaning Leads USA">
+              <PrimaryBtn text="Call Now" containerClass="" ariaLabel="Call Cleaning Leads USA" />
             </a>
         </div>
         <Title
@@ -53,7 +108,7 @@ const page = () => {
                 Speak with a Professional Consultant
               </h2>
               <div className="flex items-center gap-4 mt-4">
-                <Phone className="" />
+                <Phone className="" aria-hidden="true" />
                 <a
                   href="tel:+13326004766"
                   aria-label="Call Cleaning Leads USA at +1 (332) 600-4766"
@@ -68,11 +123,12 @@ const page = () => {
                 <p className="text-base font-bold">Long Island City, NY</p>
               </div>
               <div className="mt-4 flex items-center gap-4">
-                <Mail />
+                <Mail aria-hidden="true" />
                   <a
                     href="mailto:support@cleaningleadsusa.com"
                     title="Contact Cleaning Leads USA Support"
                     className="text-base font-bold"
+                    itemProp="email"
                   >
                     <h2 className="text-base">support@cleaningleadsusa.com</h2>
                   </a>
@@ -91,6 +147,7 @@ const page = () => {
                       src={facebook}
                       className="w-[30px] h-[30px] cursor-pointer"
                       alt="Cleaning Leads USA Facebook Page"
+                      aria-hidden="true"
                     />
                   </a>
                 </div>
@@ -109,6 +166,7 @@ const page = () => {
                       className="w-[40px] h-[40px] cursor-pointer"
                       alt="Cleaning Leads USA WhatsApp Contact"
                       sizes="40px"
+                      aria-hidden="true"
                     />
                   </a>
                 </div>
@@ -130,27 +188,6 @@ const page = () => {
                   Predicament and Get Professional Advice to Accelerate Your
                   Development.
                 </h2>
-                <div className="bg-primary space-y-2 w-fit rounded-md p-4 mt-4">
-                  <p className="text-2xl font-semibold">
-                    Logan Whitman <br />
-                    <small className="text-sm font-medium">
-                      Senior Business Consultant
-                    </small>
-                  </p>
-                  <a
-                    href="mailto:support@cleaningleadsusa.com"
-                    title="Contact Cleaning Leads USA Support"
-                    className="text-base font-bold"
-                  >
-                    <h2 className="text-base">logan@cleaningleadsusa.com</h2>
-                  </a>
-                  <button
-                    type="button"
-                    className="bg-[#0072B1] px-3 py-1 rounded-md cursor-pointer mt-4 text-white"
-                  >
-                    Get Me on LinkedIn
-                  </button>
-                </div>
               </div>
             </div>
             <div className="md:w-1/2 w-full">

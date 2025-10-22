@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/admin/',
         },
-        sitemap: 'https://commercial-cleaning-usa.vercel.app/sitemap.xml',
+        sitemap: 'https://cleaningleadsusa.com/sitemap.xml',
     }
 }

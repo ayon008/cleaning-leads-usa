@@ -80,6 +80,22 @@ const Prospect = ({
 };
 
 const page = () => {
+  const ld = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Our Services - Cleaning Leads USA",
+    "url": "https://cleaningleadsusa.com/services",
+    "mainEntity": {
+      "@type": "Service",
+      "name": "Janitorial Lead Generation Services",
+      "provider": {
+        "@type": "Organization",
+        "name": "Cleaning Leads USA",
+        "url": "https://cleaningleadsusa.com"
+      }
+    }
+  };
+
   return (
     <section
       id="services"
@@ -89,6 +105,7 @@ const page = () => {
       itemScope
       itemType="http://schema.org/WebPage"
     >
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
       <Hero
         title="Our Services"
         headline="Let Our Experts Handle Your Prospect Communications"
@@ -157,7 +174,7 @@ const page = () => {
               />
             </div>
           </div>
-          <div className="mt-20 flex items-center py-6 rounded-md justify-between bg-amber-300 px-10">
+          <div className="mt-20 flex items-center py-6 rounded-md justify-between bg-amber-300 px-10" itemScope itemType="http://schema.org/WebPageElement" itemProp="mainEntity">
             <div>
               <h2 className="text-3xl font-semibold">
                 Get your first appointment just at $99
@@ -166,7 +183,7 @@ const page = () => {
                 Would you like to speak with our operations manager directly?
               </p>
             </div>
-            <a href="tel:+13326004766" title="Call Cleaning Leads USA">
+            <a href="tel:+13326004766" title="Call Cleaning Leads USA" itemProp="telephone" aria-label="Call Cleaning Leads USA">
               <PrimaryBtn text="Call Now" containerClass="" ariaLabel="Call Cleaning Leads USA" />
             </a>
           </div>

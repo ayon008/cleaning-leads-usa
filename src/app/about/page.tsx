@@ -46,6 +46,19 @@ export const metadata: Metadata = {
 };
 
 const page = () => {
+  const aboutLd = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Cleaning Leads USA",
+    "url": "https://cleaningleadsusa.com/about",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Cleaning Leads USA",
+      "url": "https://cleaningleadsusa.com",
+      "sameAs": []
+    }
+  };
+
   return (
     <section
       id="about"
@@ -55,6 +68,7 @@ const page = () => {
       itemScope
       itemType="http://schema.org/AboutPage"
     >
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutLd) }} />
       <Hero
         title="About CleaningLeadsUSA"
         headline="Boosting Success in Commercial Cleaning"
@@ -97,7 +111,7 @@ const page = () => {
             </div>
           </div>
         </div>
-        <div className="flex items-center md:flex-row flex-col md:py-6 py-6 rounded-md md:justify-between bg-amber-300 md:px-10 px-6 md:my-10 gap-6">
+          <div className="flex items-center md:flex-row flex-col md:py-6 py-6 rounded-md md:justify-between bg-amber-300 md:px-10 px-6 md:my-10 gap-6" itemScope itemType="http://schema.org/WebPageElement" itemProp="mainEntity">
           <div>
             <h2 className="md:text-3xl text-xl md:text-left text-center font-semibold">
               Get your first appointment just at $99
@@ -106,7 +120,7 @@ const page = () => {
               Would you like to speak with our operations manager directly?
             </p>
           </div>
-          <a href="tel:+13326004766" title="Call Cleaning Leads USA">
+            <a href="tel:+13326004766" title="Call Cleaning Leads USA" itemProp="telephone" aria-label="Call Cleaning Leads USA">
             <PrimaryBtn text="Call Now" containerClass="" ariaLabel="Call Cleaning Leads USA" />
           </a>
         </div>

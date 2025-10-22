@@ -228,11 +228,6 @@ const Navbar = () => {
         <div className="flex items-center justify-between container !pl-8 bg-primary nav-top rounded-tl-[50px] rounded-bl-[50px]">
           <ul className={`flex items-center gap-8`}>
             <li className="text-sm font-semibold">
-              <Link href={"/support"} title="Support page">
-                Support
-              </Link>
-            </li>
-            <li className="text-sm font-semibold">
               <Link href={"/career"} title="Career opportunities">
                 Career
               </Link>

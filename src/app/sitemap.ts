@@ -14,7 +14,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     const posts = await res.json();
     const blogUrls = posts.map((post: any) => ({
-        url: `https://commercial-cleaning-usa.vercel.app/blogs/${post.slug}`,
+        url: `https://cleaningleadsusa.com/blogs/${post.slug}`,
         lastModified: post.modified || new Date(),
         changeFrequency: "weekly" as const,
         priority: 0.7,
@@ -22,74 +22,74 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     return [
         {
-            url: 'https://commercial-cleaning-usa.vercel.app',
+            url: 'https://cleaningleadsusa.com/',
             lastModified: new Date(),
             changeFrequency: 'yearly',
             priority: 1,
         },
         {
-            url: 'https://commercial-cleaning-usa.vercel.app/contact',
+            url: 'https://cleaningleadsusa.com/contact',
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
-            url: 'https://commercial-cleaning-usa.vercel.app/blogs',
+            url: 'https://cleaningleadsusa.com/blogs',
             lastModified: new Date(),
             changeFrequency: 'weekly',
             priority: 0.8,
         },
         {
-            url: 'https://commercial-cleaning-usa.vercel.app/appointments',
+            url: 'https://cleaningleadsusa.com/appointments',
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
-            url: 'https://commercial-cleaning-usa.vercel.app/faq',
+            url: 'https://cleaningleadsusa.com/faq',
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         ...blogUrls,
         {
-            url: 'https://commercial-cleaning-usa.vercel.app/about',
+            url: 'https://cleaningleadsusa.com/about',
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.5,
         },
         {
-            url: 'https://commercial-cleaning-usa.vercel.app/services',
+            url: 'https://cleaningleadsusa.com/services',
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.5,
         },
         {
-            url: 'https://commercial-cleaning-usa.vercel.app/terms-and-conditions',
+            url: 'https://cleaningleadsusa.com/terms-and-conditions',
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.4,
         },
         {
-            url: 'https://commercial-cleaning-usa.vercel.app/privacy-policy',
+            url: 'https://cleaningleadsusa.com/privacy-policy',
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.4,
         },
         {
-            url: 'https://commercial-cleaning-usa.vercel.app/web-development-service',
+            url: 'https://cleaningleadsusa.com/web-development-service',
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.4,
         },
         {
-            url: 'https://commercial-cleaning-usa.vercel.app/support',
+            url: 'https://cleaningleadsusa.com/support',
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.4,
         },
         {
-            url: 'https://commercial-cleaning-usa.vercel.app/career',
+            url: 'https://cleaningleadsusa.com/career',
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.4,

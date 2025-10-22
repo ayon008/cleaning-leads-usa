@@ -12,6 +12,8 @@ interface PageProps {
 }
 
 const WP_API_URL = process.env.NEXT_PUBLIC_WP_API_URL;
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://www.cleaningleadsusa.com";
 
 export async function generateStaticParams() {
   const { posts: data } = await getPosts();
@@ -33,25 +35,48 @@ export async function generateMetadata({ params }: PageProps) {
   const title = post?.yoast_head_json?.title || post?.title?.rendered;
   const description =
     post?.yoast_head_json?.description ||
-    post?.excerpt?.rendered.replace(/<[^>]+>/g, "");
+    post?.excerpt?.rendered
+      .replace(/<[^>]+>/g, "")
+      .trim()
+      .substring(0, 160);
   const image = post?._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
+  const canonicalUrl = `${SITE_URL}/blog/${slug}`;
 
   return {
     title,
     description,
     authors: [{ name: post?._embedded?.author?.[0]?.name || "Unknown Author" }],
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
       title,
       description,
-      url: post?.link,
-      images: image ? [{ url: image }] : undefined,
+      url: canonicalUrl,
+      siteName: "Cleaning Leads USA",
+      images: image
+        ? [
+            {
+              url: image,
+              width: 1200,
+              height: 630,
+              alt: title,
+            },
+          ]
+        : undefined,
       type: "article",
+      publishedTime: post?.date,
+      modifiedTime: post?.modified,
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
       images: image ? [image] : undefined,
+    },
+    robots: {
+      index: true,
+      follow: true,
     },
   };
 }
@@ -65,19 +90,34 @@ const BlogPage = async ({ params }: PageProps) => {
   const author = post._embedded?.author?.[0]?.name || "Unknown Author";
 
   return (
-    <article className="container py-24">
-      <h1 className="text-3xl text-center font-bold mb-2">
+    <article
+      className="container py-24"
+      itemScope
+      itemType="https://schema.org/BlogPosting"
+    >
+      <h1 className="text-3xl text-center font-bold mb-2" itemProp="headline">
         {post.title.rendered}
       </h1>
 
       <div className="text-sm text-gray-500 mb-4 text-center">
-        By <strong>{author}</strong> |{" "}
-        {moment(post.date).format("MMMM Do YYYY")}
+        By{" "}
+        <strong
+          itemProp="author"
+          itemScope
+          itemType="https://schema.org/Person"
+        >
+          <span itemProp="name">{author}</span>
+        </strong>{" "}
+        |{" "}
+        <time dateTime={post.date} itemProp="datePublished">
+          {moment(post.date).format("MMMM Do YYYY")}
+        </time>
       </div>
 
       <div
         className="prose prose-lg"
         dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+        itemProp="articleBody"
       ></div>
     </article>
   );

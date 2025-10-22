@@ -59,7 +59,7 @@ const Form = () => {
     });
 
     try {
-      const response = await fetch("https://commercial-cleaning-usa.vercel.app/api/sendmail", {
+      const response = await fetch("https://cleaningleadsusa.com/api/sendmail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -69,7 +69,7 @@ const Form = () => {
 
       const result = await response.json();
 
-      const response2 = await fetch("https://commercial-cleaning-usa.vercel.app/api/sendinfo", {
+      const response2 = await fetch("https://cleaningleadsusa.com/api/sendinfo", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

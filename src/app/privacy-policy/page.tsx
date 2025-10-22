@@ -1,9 +1,34 @@
 import Hero from "../Shared/Banner/Hero";
 import Title from "../Shared/Title/Title";
 
+export const metadata = {
+  title: "Privacy Policy | Cleaning Leads USA",
+  description: "Learn how Cleaning Leads USA collects, uses, and protects your personal information. We are committed to data security and transparency in our lead generation services.",
+  keywords: "privacy policy, data protection, cleaning leads privacy, GDPR compliance, personal information security, lead generation privacy",
+  alternates: {
+    canonical: "https://www.cleaningleadsusa.com/privacy-policy",
+  },
+  openGraph: {
+    title: "Privacy Policy | Cleaning Leads USA",
+    description: "Understand how we collect, use, and protect your personal information. Your privacy and data security are our top priorities.",
+    type: "website",
+    url: "https://www.cleaningleadsusa.com/privacy-policy",
+    siteName: "Cleaning Leads USA",
+  },
+  twitter: {
+    card: "summary",
+    title: "Privacy Policy | Cleaning Leads USA",
+    description: "Learn how we protect your personal information and maintain data security while providing quality cleaning leads.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
 const Page = () => {
   return (
-    <section id="privacy-policy">
+    <section id="privacy-policy" itemScope itemType="https://schema.org/WebPage">
       <Hero
         headline="Our Commitment to Transparency"
         title="Privacy Policy"
@@ -23,10 +48,11 @@ const Page = () => {
           subHeading=" At Cleaning Leads USA, protecting your privacy is a top priority. This
         policy explains what information we collect, how we use it, and the
         measures we take to safeguard your data when you use our services."
+          headlineId="privacy-policy-heading"
         />
         <div>
           <div className="mt-10">
-            <h2 className="font-semibold text-2xl">
+            <h2 className="font-semibold text-2xl" id="information-collection">
               1. Information We Collect
             </h2>
             <p className="mt-4">We only collect personal details when you:</p>
@@ -59,7 +85,7 @@ const Page = () => {
             </p>
           </div>
           <div className="mt-10">
-            <h2 className="font-semibold text-2xl">
+            <h2 className="font-semibold text-2xl" id="information-usage">
               2. How We Use Your Information
             </h2>
             <p className="mt-4">Your information helps us to:</p>
@@ -96,7 +122,7 @@ const Page = () => {
             </p>
           </div>
           <div className="mt-10">
-            <h2 className="font-semibold text-2xl">
+            <h2 className="font-semibold text-2xl" id="data-security">
               3. Safeguarding Your Data
             </h2>
             <p className="mt-4">
@@ -116,7 +142,7 @@ const Page = () => {
             </ul>
           </div>
           <div className="mt-10">
-            <h2 className="font-semibold text-2xl">4. Cookies & Tracking</h2>
+            <h2 className="font-semibold text-2xl" id="cookies">4. Cookies & Tracking</h2>
             <p className="mt-4">Yes, we use cookies</p>
             <p className="mt-4">Cookies help us:</p>
             <ul className="list-disc flex flex-col gap-4">
@@ -135,7 +161,7 @@ const Page = () => {
             </p>
           </div>
           <div className="mt-10">
-            <h2 className="font-semibold text-2xl">
+            <h2 className="font-semibold text-2xl" id="third-party-sharing">
               5. Sharing Information with Third Parties
             </h2>
             <p className="mt-4">
@@ -159,7 +185,7 @@ const Page = () => {
             </p>
           </div>
           <div className="mt-10">
-            <h2 className="font-semibold text-2xl">6. Third-Party Links</h2>
+            <h2 className="font-semibold text-2xl" id="third-party-links">6. Third-Party Links</h2>
             <p className="mt-4">
               Our website may include links to third-party services or partner
               sites. These external <br /> platforms have their own independent
@@ -169,7 +195,7 @@ const Page = () => {
             </p>
           </div>
           <div className="mt-10">
-            <h2 className="font-semibold text-2xl">7. Online Privacy Scope</h2>
+            <h2 className="font-semibold text-2xl" id="online-scope">7. Online Privacy Scope</h2>
             <p className="mt-4">
               This privacy policy applies strictly to information collected via
               <strong> cleaningleadsusa.com</strong>. <br /> It does not extend
@@ -182,7 +208,7 @@ const Page = () => {
             </p>
           </div>
           <div className="mt-10">
-            <h2 className="font-semibold text-2xl">8. Consent</h2>
+            <h2 className="font-semibold text-2xl" id="consent">8. Consent</h2>
             <p className="mt-4">
               By using our site, you agree to the terms of this Privacy Policy.
               For any concerns, <br /> please contact our office at: <br />{" "}
@@ -192,7 +218,7 @@ const Page = () => {
             </p>
           </div>
           <div className="mt-10">
-            <h2 className="font-semibold text-2xl">9. Policy Updates</h2>
+            <h2 className="font-semibold text-2xl" id="policy-updates">9. Policy Updates</h2>
             <p className="mt-4">
               We may update this Privacy Policy from time to time. All revisions
               will be posted <br /> on <strong>cleaningleadsusa.com</strong>, and
