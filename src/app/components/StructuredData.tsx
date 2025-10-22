@@ -1,4 +1,4 @@
-import Script from "next/script";
+import React from "react";
 
 /**
  * StructuredData
@@ -56,9 +56,12 @@ export default function StructuredData() {
     "@graph": [ORG, REVIEW]
   };
 
+  // Render server-side inline JSON-LD so it appears in initial HTML response
   return (
-    <Script id="structured-data" type="application/ld+json" strategy="afterInteractive">
-      {JSON.stringify(jsonLd)}
-    </Script>
+    <script
+      key="structured-data"
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
   );
 }

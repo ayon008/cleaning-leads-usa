@@ -98,8 +98,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Structured data injected via component (keeps head cleaner and easier to validate) */}
-        <StructuredData />
         <meta name="theme-color" content="#4DAC4D" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -123,6 +121,11 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body className={`${inter.className} antialiased`}>
+        {/* Render JSON-LD in the body so it's included as literal server HTML
+            (Next.js may not inline raw <script> tags in the head during RSC
+            serialization). Placing it in the body ensures crawlers and audits
+            detect the Organization schema. */}
+        <StructuredData />
         <Suspense
           fallback={
             <article className="h-dvh !z-[1000] w-full justify-center flex items-center bg-white">

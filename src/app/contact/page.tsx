@@ -52,30 +52,16 @@ export const metadata: Metadata = {
 };
 
 const page = () => {
+  const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cleaningleadsusa.com";
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Contact Cleaning Leads USA",
-    "url": "https://www.cleaningleadsusa.com/contact",
+    "url": `${SITE_URL}/contact`,
     "mainEntity": {
       "@type": "Organization",
-      "name": "Cleaning Leads USA",
-      "url": "https://cleaningleadsusa.com",
-      "telephone": "+13326004766",
-      "email": "support@cleaningleadsusa.com",
-      "sameAs": [
-        "https://www.facebook.com/commercialcleaningleads",
-        "https://wa.me/13477985582"
-      ],
-      "contactPoint": [
-        {
-          "@type": "ContactPoint",
-          "telephone": "+13326004766",
-          "contactType": "customer service",
-          "areaServed": "US",
-          "availableLanguage": "English"
-        }
-      ]
+      "@id": `${SITE_URL}#organization`
     },
     "potentialAction": {
       "@type": "ContactAction",

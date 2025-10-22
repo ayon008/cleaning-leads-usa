@@ -48,18 +48,19 @@ export const metadata: Metadata = {
 };
 
 const page = () => {
+  const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cleaningleadsusa.com";
+
   const ld = {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Janitorial Leads Consultation",
-    "url": "https://www.cleaningleadsusa.com/appointments",
+    "url": `${SITE_URL}/appointments`,
     "mainEntity": {
       "@type": "Service",
       "name": "Janitorial Leads Consultation",
       "provider": {
         "@type": "Organization",
-        "name": "Cleaning Leads USA",
-        "url": "https://cleaningleadsusa.com"
+        "@id": `${SITE_URL}#organization`
       }
     }
   };

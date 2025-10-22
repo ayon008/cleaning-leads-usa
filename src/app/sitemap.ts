@@ -16,78 +16,84 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         }
     }
 
-    const blogUrls = posts.map((post: any) => ({
-        url: `${SITE_URL}/blogs/${post.slug}`,
-        lastModified: post.modified || new Date(),
-        changeFrequency: "weekly" as const,
-        priority: 0.7,
-    }))
+    const blogUrls = posts.map((post: any) => {
+        // Normalize post.modified/post.date into an ISO date string (YYYY-MM-DD)
+        const raw = post.modified || post.date || new Date().toISOString();
+        const d = new Date(raw);
+        const isoDate = isNaN(d.getTime()) ? new Date().toISOString().split('T')[0] : d.toISOString().split('T')[0];
+        return {
+            url: `${SITE_URL}/blogs/${post.slug}`,
+            lastModified: isoDate,
+            changeFrequency: "weekly" as const,
+            priority: 0.7,
+        }
+    })
 
     return [
         {
             url: `${SITE_URL}/`,
-            lastModified: new Date(),
+            lastModified: new Date().toISOString().split('T')[0],
             changeFrequency: 'yearly',
             priority: 1,
         },
         {
             url: `${SITE_URL}/contact`,
-            lastModified: new Date(),
+            lastModified: new Date().toISOString().split('T')[0],
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: `${SITE_URL}/blogs`,
-            lastModified: new Date(),
+            lastModified: new Date().toISOString().split('T')[0],
             changeFrequency: 'weekly',
             priority: 0.8,
         },
         {
             url: `${SITE_URL}/appointments`,
-            lastModified: new Date(),
+            lastModified: new Date().toISOString().split('T')[0],
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: 'https://www.cleaningleadsusa.com/faq',
-            lastModified: new Date(),
+            lastModified: new Date().toISOString().split('T')[0],
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         ...blogUrls,
         {
             url: `${SITE_URL}/about`,
-            lastModified: new Date(),
+            lastModified: new Date().toISOString().split('T')[0],
             changeFrequency: 'monthly',
             priority: 0.5,
         },
         {
             url: `${SITE_URL}/services`,
-            lastModified: new Date(),
+            lastModified: new Date().toISOString().split('T')[0],
             changeFrequency: 'monthly',
             priority: 0.5,
         },
         {
             url: `${SITE_URL}/terms-and-conditions`,
-            lastModified: new Date(),
+            lastModified: new Date().toISOString().split('T')[0],
             changeFrequency: 'monthly',
             priority: 0.4,
         },
         {
             url: `${SITE_URL}/privacy-policy`,
-            lastModified: new Date(),
+            lastModified: new Date().toISOString().split('T')[0],
             changeFrequency: 'monthly',
             priority: 0.4,
         },
         {
             url: `${SITE_URL}/web-development-service`,
-            lastModified: new Date(),
+            lastModified: new Date().toISOString().split('T')[0],
             changeFrequency: 'monthly',
             priority: 0.4,
         },
         {
             url: `${SITE_URL}/career`,
-            lastModified: new Date(),
+            lastModified: new Date().toISOString().split('T')[0],
             changeFrequency: 'monthly',
             priority: 0.4,
         },

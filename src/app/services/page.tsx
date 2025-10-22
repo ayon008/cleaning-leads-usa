@@ -80,18 +80,19 @@ const Prospect = ({
 };
 
 const page = () => {
+  const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cleaningleadsusa.com";
+
   const ld = {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Our Services - Cleaning Leads USA",
-    "url": "https://www.cleaningleadsusa.com/services",
+    "url": `${SITE_URL}/services`,
     "mainEntity": {
       "@type": "Service",
       "name": "Janitorial Lead Generation Services",
       "provider": {
         "@type": "Organization",
-        "name": "Cleaning Leads USA",
-        "url": "https://cleaningleadsusa.com"
+        "@id": `${SITE_URL}#organization`
       }
     }
   };

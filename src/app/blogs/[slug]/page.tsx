@@ -109,7 +109,7 @@ const BlogPage = async ({ params }: PageProps) => {
             },
             publisher: {
               "@type": "Organization",
-              name: "Cleaning Leads USA",
+              "@id": `${SITE_URL}#organization`,
               logo: {
                 "@type": "ImageObject",
                 url: `${SITE_URL}/cleaning-leads-usa-logo.png`,
