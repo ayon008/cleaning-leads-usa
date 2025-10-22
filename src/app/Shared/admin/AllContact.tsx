@@ -1,5 +1,6 @@
 "use client";
-import type { ContactForm } from "@prisma/client"; // <-- TYPE-ONLY import fixes the error: prevents bundling @prisma/client into the browser bundle
+import { ContactForm } from "@prisma/client";
+// <-- TYPE-ONLY import fixes the error: prevents bundling @prisma/client into the browser bundle
 import React, { useEffect, useState } from "react";
 
 type Credentials = { email?: string; password?: string } | null;
