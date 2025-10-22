@@ -73,7 +73,7 @@ const TestimonialCard = ({
 
 const Testimonial = () => {
   return (
-    <section id="testimonial" className="md:mt-20 mt-10 mb-10" role="region" aria-labelledby="testimonial-headline" aria-describedby="testimonial-sub" itemScope itemType="http://schema.org/Review">
+    <section id="testimonial" className="md:mt-20 mt-10 mb-10" role="region" aria-labelledby="testimonial-headline" aria-describedby="testimonial-sub">
       <div className="container">
         <Title
           containerClass="text-center"
