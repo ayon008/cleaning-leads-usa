@@ -83,12 +83,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             priority: 0.4,
         },
         {
-            url: 'https://cleaningleadsusa.com/support',
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.4,
-        },
-        {
             url: 'https://cleaningleadsusa.com/career',
             lastModified: new Date(),
             changeFrequency: 'monthly',
