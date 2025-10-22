@@ -121,7 +121,7 @@ async rewrites() {
 
 ### Environment Variables
 ```env
-NEXT_PUBLIC_WP_API_URL=https://your-wordpress-site.com/wp-json/wp/v2
+NEXT_PUBLIC_WP_API_URL=https://cleaning-leads-usa.rf.gd/wp-json/wp/v2
 ```
 
 ### WordPress API Requirements

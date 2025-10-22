@@ -6,6 +6,7 @@ import TopButton from "./Shared/Button/TopButton";
 import { Inter } from "next/font/google";
 import { Suspense } from "react";
 import { GoogleTagManager } from "@next/third-parties/google";
+import StructuredData from "./components/StructuredData";
 
 export const metadata: Metadata = {
   title: {
@@ -35,14 +36,15 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://cleaningleadsusa.com"),
+  // Use canonical metadata base with WWW host for consistent canonical URLs
+  metadataBase: new URL("https://www.cleaningleadsusa.com"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://cleaningleadsusa.com",
+    url: "https://www.cleaningleadsusa.com",
     siteName: "Cleaning Leads USA",
     title: "Cleaning Leads USA - Professional Janitorial Appointment Services",
     description:
@@ -93,77 +95,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cleaningleadsusa.com";
-
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": `${SITE_URL}#organization`,
-        name: "Cleaning Leads USA",
-        description:
-          "Professional janitorial appointment services and commercial cleaning lead generation company",
-        url: SITE_URL,
-        logo: {
-          "@type": "ImageObject",
-          url: `${SITE_URL}/cleaning-leads-usa-logo.png`
-        },
-        contactPoint: {
-          "@type": "ContactPoint",
-          telephone: "+1-332-600-4766",
-          contactType: "customer service",
-          email: "support@cleaningleadsusa.com",
-          availableLanguage: ["English"]
-        },
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: "New York",
-          addressRegion: "NY",
-          addressCountry: "US"
-        },
-        sameAs: [
-          "https://www.facebook.com/cleaningleadsusa",
-          "https://wa.me/13477985582"
-        ]
-      },
-      {
-        "@type": "WebSite",
-        "@id": `${SITE_URL}#website`,
-        name: "Cleaning Leads USA",
-        url: SITE_URL,
-        publisher: { "@id": `${SITE_URL}#organization` },
-        potentialAction: {
-          "@type": "ContactAction",
-          name: "Request a call back",
-          target: {
-            "@type": "EntryPoint",
-            urlTemplate: "tel:+13326004766",
-            actionPlatform: [
-              "http://schema.org/DesktopWebPlatform",
-              "http://schema.org/Phone"
-            ]
-          }
-        }
-      },
-      {
-        "@type": "WebPage",
-        "@id": `${SITE_URL}#homepage`,
-        name: "Cleaning Leads USA - Home",
-        url: SITE_URL,
-        isPartOf: { "@id": `${SITE_URL}#website` },
-        about: { "@id": `${SITE_URL}#organization` }
-      }
-    ]
-  };
-
   return (
     <html lang="en">
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
+        {/* Structured data injected via component (keeps head cleaner and easier to validate) */}
+        <StructuredData />
         <meta name="theme-color" content="#4DAC4D" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />

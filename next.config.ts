@@ -70,6 +70,13 @@ const nextConfig: NextConfig = {
   // SEO-friendly redirects
   async redirects() {
     return [
+      // Permanent redirect: non-www -> www (301) to preserve SEO/link equity
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'cleaningleadsusa.com' }],
+        destination: 'https://www.cleaningleadsusa.com/:path*',
+        permanent: true,
+      },
       {
         source: "/old-page",
         destination: "/new-page",

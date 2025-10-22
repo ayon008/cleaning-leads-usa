@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About Cleaning Leads USA - Commercial Cleaning Lead Generation Company",
     description: "Learn about Cleaning Leads USA, the premier commercial cleaning lead generation company. We help janitorial businesses grow with qualified appointments and proven results.",
-    url: "https://www.cleaningleadsusa.com/about",
+  url: "/about",
     type: "website",
     images: [
       {
@@ -40,25 +40,15 @@ export const metadata: Metadata = {
     description: "Learn about Cleaning Leads USA, the premier commercial cleaning lead generation company. We help janitorial businesses grow with qualified appointments and proven results.",
     images: ["/janitorial-leads-hero-banner.jpg "],
   },
+  // Use a relative canonical; `metadataBase` in `app/layout.tsx` sets the
+  // canonical host to https://www.cleaningleadsusa.com so this resolves to
+  // https://www.cleaningleadsusa.com/about at render time.
   alternates: {
-    canonical: "https://www.cleaningleadsusa.com/about",
+    canonical: "/about",
   },
 };
 
 const page = () => {
-  const aboutLd = {
-    "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "name": "About Cleaning Leads USA",
-    "url": "https://www.cleaningleadsusa.com/about",
-    "mainEntity": {
-      "@type": "Organization",
-      "name": "Cleaning Leads USA",
-      "url": "https://cleaningleadsusa.com",
-      "sameAs": []
-    }
-  };
-
   return (
     <section
       id="about"
@@ -68,7 +58,7 @@ const page = () => {
       itemScope
       itemType="http://schema.org/AboutPage"
     >
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutLd) }} />
+  {/* About page JSON-LD removed to avoid duplicate Organization schema. */}
       <Hero
         title="About CleaningLeadsUSA"
         headline="Boosting Success in Commercial Cleaning"
