@@ -2,6 +2,8 @@ import React from "react";
 import Title from "../Title/Title";
 import { Star } from "lucide-react";
 
+const SITE_ORIGIN = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.cleaningleadsusa.com';
+
 const TestimonialCard = ({
   maxStars,
   rating,
@@ -13,6 +15,32 @@ const TestimonialCard = ({
   review: string;
   owner: string;
 }) => {
+  // Build a minimal JSON-LD snippet for each testimonial so validators can
+  // pick up required fields like author (with URL), reviewRating.ratingValue,
+  // and itemReviewed. We generate a stable id based on owner to avoid
+  // duplicate nodes.
+  const safeId = owner.replace(/[^a-z0-9-_]/gi, '-').toLowerCase();
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "@id": `${SITE_ORIGIN || ''}#review-${safeId}`,
+    author: {
+      "@type": "Person",
+      name: owner,
+      url: `${SITE_ORIGIN || ''}/#author-${encodeURIComponent(owner)}`,
+    },
+    reviewBody: review,
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: String(rating),
+    },
+    itemReviewed: {
+      "@type": "Service",
+      name: "Commercial Cleaning Leads",
+    },
+    datePublished: new Date().toISOString(),
+  };
+
   return (
     <article className="bg-primary p-6 rounded space-y-5 w-84" itemScope itemType="http://schema.org/Review">
       <div className="flex" aria-hidden="true">
@@ -27,8 +55,18 @@ const TestimonialCard = ({
         ))}
       </div>
       <em itemProp="reviewBody">{review}</em>
-      <p className="text-gray-500 mt-4" itemProp="author">{owner}</p>
-      <meta itemProp="reviewRating" content={String(rating)} />
+      <p className="text-gray-500 mt-4" itemProp="author" itemScope itemType="https://schema.org/Person">
+        <span itemProp="name">{owner}</span>
+        <meta itemProp="url" content={`${SITE_ORIGIN}/#author-${encodeURIComponent(owner)}`} />
+      </p>
+      <div itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
+        <meta itemProp="ratingValue" content={String(rating)} />
+      </div>
+      {/* Inline JSON-LD for this testimonial */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     </article>
   );
 };

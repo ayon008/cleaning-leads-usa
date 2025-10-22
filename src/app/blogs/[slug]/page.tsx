@@ -87,6 +87,7 @@ const BlogPage = async ({ params }: PageProps) => {
 
   const post = data[0];
   const author = post._embedded?.author?.[0]?.name || "Unknown Author";
+  const authorLink = post._embedded?.author?.[0]?.link || `${SITE_URL}/#author-${encodeURIComponent(author)}`;
   const canonicalUrl = `${SITE_URL}/blogs/${slug}`;
 
   return (
@@ -103,10 +104,14 @@ const BlogPage = async ({ params }: PageProps) => {
             image: post._embedded?.["wp:featuredmedia"]?.[0]?.source_url
               ? [post._embedded["wp:featuredmedia"][0].source_url]
               : undefined,
-            author: {
-              "@type": "Person",
-              name: author,
-            },
+            author: (function() {
+              const authorLink = post._embedded?.author?.[0]?.link;
+              return {
+                "@type": "Person",
+                name: author,
+                url: authorLink || `${SITE_URL}/#author-${encodeURIComponent(author)}`,
+              };
+            })(),
             publisher: {
               "@type": "Organization",
               "@id": `${SITE_URL}#organization`,
@@ -120,8 +125,8 @@ const BlogPage = async ({ params }: PageProps) => {
               "@type": "WebPage",
               "@id": canonicalUrl,
             },
-            datePublished: post.date,
-            dateModified: post.modified || post.date,
+            datePublished: post.date ? new Date(post.date).toISOString() : new Date().toISOString(),
+            dateModified: (post.modified || post.date) ? new Date(post.modified || post.date).toISOString() : new Date().toISOString(),
           }),
         }}
       />
@@ -137,9 +142,10 @@ const BlogPage = async ({ params }: PageProps) => {
           itemType="https://schema.org/Person"
         >
           <span itemProp="name">{author}</span>
+          <meta itemProp="url" content={authorLink} />
         </strong>{" "}
         |{" "}
-        <time dateTime={post.date} itemProp="datePublished">
+        <time dateTime={post.date ? new Date(post.date).toISOString() : new Date().toISOString()} itemProp="datePublished">
           {moment(post.date).format("MMMM Do YYYY")}
         </time>
       </div>

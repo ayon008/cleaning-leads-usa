@@ -30,30 +30,9 @@ export default function StructuredData() {
     ]
   };
 
-  // Example Review snippet for the HomePage; adapt dynamically if you have per-page reviews
-  const REVIEW = {
-    "@type": "Review",
-    author: {
-      "@type": "Person",
-      name: "Verified Customer"
-    },
-    datePublished: new Date().toISOString(),
-    reviewBody: "Excellent service connecting our cleaning business with qualified decision-makers.",
-    reviewRating: {
-      "@type": "Rating",
-      ratingValue: "5",
-      bestRating: "5",
-      worstRating: "1"
-    },
-    itemReviewed: {
-      "@type": "Service",
-      name: "Commercial Cleaning Leads"
-    }
-  };
-
   const jsonLd = {
     "@context": "https://schema.org",
-    "@graph": [ORG, REVIEW]
+    "@graph": [ORG]
   };
 
   // Render server-side inline JSON-LD so it appears in initial HTML response
