@@ -36,7 +36,9 @@ const TestimonialCard = ({
     },
     itemReviewed: {
       "@type": "Service",
+      "@id": `${SITE_ORIGIN}#service-commercial-cleaning-leads`,
       name: "Commercial Cleaning Leads",
+      url: `${SITE_ORIGIN}/services`
     },
     datePublished: new Date().toISOString(),
   };
