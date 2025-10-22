@@ -93,20 +93,25 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cleaningleadsusa.com";
+
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://cleaningleadsusa.com#organization",
+        "@id": `${SITE_URL}#organization`,
         name: "Cleaning Leads USA",
         description:
           "Professional janitorial appointment services and commercial cleaning lead generation company",
-        url: "https://cleaningleadsusa.com",
-        logo: "https://www.cleaningleadsusa.com/cleaning-leads-usa-logo.png",
+        url: SITE_URL,
+        logo: {
+          "@type": "ImageObject",
+          url: `${SITE_URL}/cleaning-leads-usa-logo.png`
+        },
         contactPoint: {
           "@type": "ContactPoint",
-          telephone: "+1 (332) 600-4766",
+          telephone: "+1-332-600-4766",
           contactType: "customer service",
           email: "support@cleaningleadsusa.com",
           availableLanguage: ["English"]
@@ -124,32 +129,32 @@ export default function RootLayout({
       },
       {
         "@type": "WebSite",
-        "@id": "https://cleaningleadsusa.com#website",
+        "@id": `${SITE_URL}#website`,
         name: "Cleaning Leads USA",
-        url: "https://cleaningleadsusa.com",
-        publisher: { "@id": "https://cleaningleadsusa.com#organization" }
+        url: SITE_URL,
+        publisher: { "@id": `${SITE_URL}#organization` },
+        potentialAction: {
+          "@type": "ContactAction",
+          name: "Request a call back",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: "tel:+13326004766",
+            actionPlatform: [
+              "http://schema.org/DesktopWebPlatform",
+              "http://schema.org/Phone"
+            ]
+          }
+        }
       },
       {
         "@type": "WebPage",
-        "@id": "https://cleaningleadsusa.com#homepage",
+        "@id": `${SITE_URL}#homepage`,
         name: "Cleaning Leads USA - Home",
-        url: "https://cleaningleadsusa.com",
-        isPartOf: { "@id": "https://cleaningleadsusa.com#website" },
-        about: { "@id": "https://cleaningleadsusa.com#organization" }
+        url: SITE_URL,
+        isPartOf: { "@id": `${SITE_URL}#website` },
+        about: { "@id": `${SITE_URL}#organization` }
       }
-    ],
-    potentialAction: {
-      "@type": "ContactAction",
-      name: "Request a call back",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: "tel:+13326004766",
-        actionPlatform: [
-          "http://schema.org/DesktopWebPlatform",
-          "http://schema.org/Phone"
-        ]
-      }
-    }
+    ]
   };
 
   return (
@@ -159,7 +164,6 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-        <link rel="canonical" href="https://cleaningleadsusa.com" />
         <meta name="theme-color" content="#4DAC4D" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />

@@ -45,9 +45,9 @@ const Progress = ({
       });
 
       tl.to(span, {
-        left:`${percent}%`,
+        left: `${percent - 2}%`,
         duration: 1,
-        opacity:1,
+        opacity: 1,
       });
 
       tl.to(
@@ -58,7 +58,7 @@ const Progress = ({
         },
         0
       );
-    },container);
+    }, container);
 
     return () => context.revert();
   }, [id, percent]);

@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: PageProps) {
       .trim()
       .substring(0, 160);
   const image = post?._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
-  const canonicalUrl = `${SITE_URL}/blog/${slug}`;
+  const canonicalUrl = `${SITE_URL}/blogs/${slug}`;
 
   return {
     title,
@@ -84,17 +84,47 @@ export async function generateMetadata({ params }: PageProps) {
 const BlogPage = async ({ params }: PageProps) => {
   const { slug } = await params;
   const data = await getSinglePost(slug);
-  console.log(data);
 
   const post = data[0];
   const author = post._embedded?.author?.[0]?.name || "Unknown Author";
+  const canonicalUrl = `${SITE_URL}/blogs/${slug}`;
 
   return (
-    <article
-      className="container py-24"
-      itemScope
-      itemType="https://schema.org/BlogPosting"
-    >
+    <article className="container py-24">
+      {/* Article JSON-LD for rich results */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: post.title.rendered,
+            description: (post.yoast_head_json?.description || post.excerpt?.rendered || "").replace(/<[^>]+>/g, "").trim().substring(0, 160),
+            image: post._embedded?.["wp:featuredmedia"]?.[0]?.source_url
+              ? [post._embedded["wp:featuredmedia"][0].source_url]
+              : undefined,
+            author: {
+              "@type": "Person",
+              name: author,
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Cleaning Leads USA",
+              logo: {
+                "@type": "ImageObject",
+                url: `${SITE_URL}/cleaning-leads-usa-logo.png`,
+              },
+            },
+            url: canonicalUrl,
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": canonicalUrl,
+            },
+            datePublished: post.date,
+            dateModified: post.modified || post.date,
+          }),
+        }}
+      />
       <h1 className="text-3xl text-center font-bold mb-2" itemProp="headline">
         {post.title.rendered}
       </h1>
@@ -116,7 +146,7 @@ const BlogPage = async ({ params }: PageProps) => {
 
       <div
         className="prose prose-lg"
-        dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+        dangerouslySetInnerHTML={{ __html: post.content.rendered.replace(/<script[^>]*type=["']application\/ld\+json["'][\s\S]*?<\/script>/gi, '') }}
         itemProp="articleBody"
       ></div>
     </article>

@@ -5,8 +5,8 @@ export default function robots(): MetadataRoute.Robots {
         rules: {
             userAgent: '*',
             allow: '/',
-            disallow: '/admin/',
+            disallow: '/admin/'
         },
-        sitemap: 'https://www.cleaningleadsusa.com/sitemap.xml',
+        sitemap: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.cleaningleadsusa.com'}/sitemap.xml`,
     }
 }
