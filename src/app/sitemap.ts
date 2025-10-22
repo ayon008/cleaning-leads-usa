@@ -14,7 +14,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     const posts = await res.json();
     const blogUrls = posts.map((post: any) => ({
-        url: `https://cleaningleadsusa.com/blogs/${post.slug}`,
+        url: `https://www.cleaningleadsusa.com/blogs/${post.slug}`,
         lastModified: post.modified || new Date(),
         changeFrequency: "weekly" as const,
         priority: 0.7,
@@ -22,68 +22,68 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     return [
         {
-            url: 'https://cleaningleadsusa.com/',
+            url: 'https://www.cleaningleadsusa.com/',
             lastModified: new Date(),
             changeFrequency: 'yearly',
             priority: 1,
         },
         {
-            url: 'https://cleaningleadsusa.com/contact',
+            url: 'https://www.cleaningleadsusa.com/contact',
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
-            url: 'https://cleaningleadsusa.com/blogs',
+            url: 'https://www.cleaningleadsusa.com/blogs',
             lastModified: new Date(),
             changeFrequency: 'weekly',
             priority: 0.8,
         },
         {
-            url: 'https://cleaningleadsusa.com/appointments',
+            url: 'https://www.cleaningleadsusa.com/appointments',
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
-            url: 'https://cleaningleadsusa.com/faq',
+            url: 'https://www.cleaningleadsusa.com/faq',
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         ...blogUrls,
         {
-            url: 'https://cleaningleadsusa.com/about',
+            url: 'https://www.cleaningleadsusa.com/about',
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.5,
         },
         {
-            url: 'https://cleaningleadsusa.com/services',
+            url: 'https://www.cleaningleadsusa.com/services',
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.5,
         },
         {
-            url: 'https://cleaningleadsusa.com/terms-and-conditions',
+            url: 'https://www.cleaningleadsusa.com/terms-and-conditions',
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.4,
         },
         {
-            url: 'https://cleaningleadsusa.com/privacy-policy',
+            url: 'https://www.cleaningleadsusa.com/privacy-policy',
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.4,
         },
         {
-            url: 'https://cleaningleadsusa.com/web-development-service',
+            url: 'https://www.cleaningleadsusa.com/web-development-service',
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.4,
         },
         {
-            url: 'https://cleaningleadsusa.com/career',
+            url: 'https://www.cleaningleadsusa.com/career',
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.4,

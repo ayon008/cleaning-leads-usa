@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About Cleaning Leads USA - Commercial Cleaning Lead Generation Company",
     description: "Learn about Cleaning Leads USA, the premier commercial cleaning lead generation company. We help janitorial businesses grow with qualified appointments and proven results.",
-    url: "https://cleaningleadsusa.com/about",
+    url: "https://www.cleaningleadsusa.com/about",
     type: "website",
     images: [
       {
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     images: ["/janitorial-leads-hero-banner.jpg "],
   },
   alternates: {
-    canonical: "https://cleaningleadsusa.com/about",
+    canonical: "https://www.cleaningleadsusa.com/about",
   },
 };
 
@@ -50,7 +50,7 @@ const page = () => {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     "name": "About Cleaning Leads USA",
-    "url": "https://cleaningleadsusa.com/about",
+    "url": "https://www.cleaningleadsusa.com/about",
     "mainEntity": {
       "@type": "Organization",
       "name": "Cleaning Leads USA",

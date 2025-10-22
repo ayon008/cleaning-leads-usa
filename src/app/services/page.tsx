@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Our Services - Janitorial Lead Generation & Digital Marketing",
     description: "Discover our comprehensive cleaning business services: pay-per-appointment lead generation, digital marketing, and web development. Get qualified janitorial leads that convert into contracts.",
-    url: "https://cleaningleadsusa.com/services",
+    url: "https://www.cleaningleadsusa.com/services",
     type: "website",
     images: [
       {
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     images: ["/janitorial-leads-hero-banner.jpg "],
   },
   alternates: {
-    canonical: "https://cleaningleadsusa.com/services",
+    canonical: "https://www.cleaningleadsusa.com/services",
   },
 };
 
@@ -84,7 +84,7 @@ const page = () => {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Our Services - Cleaning Leads USA",
-    "url": "https://cleaningleadsusa.com/services",
+    "url": "https://www.cleaningleadsusa.com/services",
     "mainEntity": {
       "@type": "Service",
       "name": "Janitorial Lead Generation Services",

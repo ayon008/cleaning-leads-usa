@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "Cleaning Industry Blog - Tips, News & Business Growth",
     description:
       "Read our latest blog posts about the cleaning industry, janitorial business growth, commercial cleaning tips, and industry news. Expert insights to help your cleaning business succeed.",
-    url: "https://cleaningleadsusa.com/blogs",
+    url: "https://www.cleaningleadsusa.com/blogs",
     type: "website",
     images: [
       {
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     images: ["/janitorial-leads-hero-banner.jpg "],
   },
   alternates: {
-    canonical: "https://cleaningleadsusa.com/blogs",
+    canonical: "https://www.cleaningleadsusa.com/blogs",
   },
 };
 

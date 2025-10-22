@@ -103,7 +103,7 @@ export default function RootLayout({
         description:
           "Professional janitorial appointment services and commercial cleaning lead generation company",
         url: "https://cleaningleadsusa.com",
-        logo: "https://cleaningleadsusa.com/cleaning-leads-usa-logo.png",
+        logo: "https://www.cleaningleadsusa.com/cleaning-leads-usa-logo.png",
         contactPoint: {
           "@type": "ContactPoint",
           telephone: "+1 (332) 600-4766",
