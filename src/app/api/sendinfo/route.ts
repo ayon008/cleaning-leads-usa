@@ -5,9 +5,9 @@ import { NextRequest, NextResponse } from "next/server";
 export async function POST(req: NextRequest) {
     try {
         const data = await req.json();
-        const insertData = await prisma.contactForm.create({
+        await prisma.contactForm.create({
             data: data
-        })
+        });
         return NextResponse.json(
             { success: true, message: "User created successfully" },
             { status: 201 }
@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
 }
 
 
-export async function GET(req: NextRequest) {
+export async function GET() {
     try {
         const contactInfo = await prisma.contactForm.findMany();
         return NextResponse.json(contactInfo)

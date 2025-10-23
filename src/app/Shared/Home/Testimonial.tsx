@@ -39,6 +39,13 @@ const TestimonialCard = ({
       <div itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
         <meta itemProp="ratingValue" content={String(rating)} />
       </div>
+      {/* Provide itemReviewed as microdata so validators that parse microdata
+          (not JSON-LD) find the required field. Kept hidden to avoid UI
+          changes. */}
+      <div hidden itemProp="itemReviewed" itemScope itemType="https://schema.org/Service" itemID={`${SITE_ORIGIN}#service-commercial-cleaning-leads`}>
+        <meta itemProp="name" content="Commercial Cleaning Leads" />
+        <meta itemProp="url" content={`${SITE_ORIGIN}/services`} />
+      </div>
       {/* Review JSON-LD is emitted server-side from StructuredData.tsx to
           ensure it appears in the prerendered HTML and avoids duplication. */}
     </article>

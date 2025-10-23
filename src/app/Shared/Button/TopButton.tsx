@@ -32,7 +32,9 @@ const TopButton: React.FC = () => {
       if (rafId !== null) return;
       rafId = window.requestAnimationFrame(() => {
         handleScroll();
-        rafId && window.cancelAnimationFrame(rafId);
+        if (rafId) {
+          window.cancelAnimationFrame(rafId);
+        }
         rafId = null;
       });
     };
@@ -63,11 +65,11 @@ const TopButton: React.FC = () => {
       type="button"
       onClick={scrollToTop}
       aria-label="Scroll to top"
-      aria-hidden={!visible}
+  aria-hidden={visible ? "false" : "true"}
       // Make it unfocusable when hidden so keyboard users don't land on it
       tabIndex={visible ? 0 : -1}
       // Positioning same as before; animate with CSS (transition) if desired
-      className={`fixed bottom-20 right-6 z-40 p-3 rounded-md w-fit bg-secondary transition-transform transition-opacity duration-200 ease-in-out
+      className={`fixed bottom-20 right-6 z-40 p-3 rounded-md w-fit bg-secondary transition-all duration-200 ease-in-out
         ${
           visible
             ? "opacity-100 translate-x-0"
