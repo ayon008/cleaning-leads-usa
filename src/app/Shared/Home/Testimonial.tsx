@@ -45,6 +45,10 @@ const TestimonialCard = ({
       <div hidden itemProp="itemReviewed" itemScope itemType="https://schema.org/ProfessionalService" itemID={`${SITE_ORIGIN}#service-commercial-cleaning-leads`}>
         <meta itemProp="name" content="Commercial Cleaning Leads" />
         <meta itemProp="url" content={`${SITE_ORIGIN}/services`} />
+        <div itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
+          <meta itemProp="addressLocality" content="Long Island City" />
+          <meta itemProp="addressRegion" content="NY" />
+        </div>
       </div>
       {/* Review JSON-LD is emitted server-side from StructuredData.tsx to
           ensure it appears in the prerendered HTML and avoids duplication. */}

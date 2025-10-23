@@ -61,6 +61,11 @@ export default function StructuredData() {
             "@id": `${SITE_URL}#service-commercial-cleaning-leads`,
             name: "Commercial Cleaning Leads",
             url: `${SITE_URL}/services`,
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Long Island City",
+              addressRegion: "NY"
+            }
           },
           publisher: { "@type": "Organization", "@id": `${SITE_URL}#organization` },
           datePublished: t.datePublished || new Date().toISOString(),
