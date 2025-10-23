@@ -130,7 +130,9 @@ export default function RootLayout({
               <Script id="ga-init" strategy="afterInteractive">
                 {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}', { send_page_view: false });`}
               </Script>
-              <Analytics />
+              <Suspense fallback={null}>
+                <Analytics />
+              </Suspense>
             </>
           ) : null}
         {/* Render JSON-LD in the body so it's included as literal server HTML
