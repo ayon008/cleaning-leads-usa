@@ -1,5 +1,23 @@
 import React from "react";
 import Hero from "../Shared/Banner/Hero";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Careers at Cleaning Leads USA - Join Our Team",
+  description: "Explore career opportunities at Cleaning Leads USA. Join our team helping commercial cleaning businesses grow through verified leads and appointment-setting services. See current openings and learn about our culture.",
+  keywords: ["cleaning leads careers", "janitorial jobs", "sales jobs cleaning leads", "customer support cleaning leads"],
+  openGraph: {
+    title: "Careers at Cleaning Leads USA - Join Our Team",
+    description: "Explore career opportunities at Cleaning Leads USA. Learn about roles in sales, operations, and customer support that help grow commercial cleaning businesses.",
+    url: "/career",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Careers at Cleaning Leads USA - Join Our Team",
+    description: "Explore career opportunities at Cleaning Leads USA. Learn about roles in sales, operations, and customer support.",
+  },
+};
 
 const Page = () => {
   return (
