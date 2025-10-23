@@ -15,40 +15,8 @@ const TestimonialCard = ({
   review: string;
   owner: string;
 }) => {
-  // Build a minimal JSON-LD snippet for each testimonial so validators can
-  // pick up required fields like author (with URL), reviewRating.ratingValue,
-  // and itemReviewed. We generate a stable id based on owner to avoid
-  // duplicate nodes.
-  const safeId = owner.replace(/[^a-z0-9-_]/gi, '-').toLowerCase();
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Review",
-    "@id": `${SITE_ORIGIN || ''}#review-${safeId}`,
-    url: `${SITE_ORIGIN}/web-development-service#review-${safeId}`,
-    author: {
-      "@type": "Person",
-      name: owner,
-      url: `${SITE_ORIGIN || ''}/#author-${encodeURIComponent(owner)}`,
-    },
-    reviewBody: review,
-    reviewRating: {
-      "@type": "Rating",
-      ratingValue: Number(rating),
-      bestRating: 5,
-      worstRating: 1,
-    },
-    itemReviewed: {
-      "@type": "Service",
-      "@id": `${SITE_ORIGIN}#service-commercial-cleaning-leads`,
-      name: "Commercial Cleaning Leads",
-      url: `${SITE_ORIGIN}/services`
-    },
-    publisher: {
-      "@type": "Organization",
-      "@id": `${SITE_ORIGIN}#organization`
-    },
-    datePublished: new Date().toISOString(),
-  };
+  // No local JSON-LD emitted here; server-side StructuredData.tsx provides
+  // the canonical Review JSON-LD nodes to avoid duplication.
 
   return (
     <article className="bg-primary p-6 rounded space-y-5 w-84" itemScope itemType="http://schema.org/Review">
@@ -71,11 +39,8 @@ const TestimonialCard = ({
       <div itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
         <meta itemProp="ratingValue" content={String(rating)} />
       </div>
-      {/* Inline JSON-LD for this testimonial */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      {/* Review JSON-LD is emitted server-side from StructuredData.tsx to
+          ensure it appears in the prerendered HTML and avoids duplication. */}
     </article>
   );
 };

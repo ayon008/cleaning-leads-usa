@@ -1,4 +1,5 @@
 import React from "react";
+import testimonials from "../Shared/Home/testimonialsData";
 
 /**
  * StructuredData
@@ -32,7 +33,40 @@ export default function StructuredData() {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@graph": [ORG]
+    "@graph": [
+      ORG,
+      // Map testimonials into Review nodes. Keep the shape conservative so
+      // Google recognizes ratingValue as a number and publisher references
+      // the organization @id.
+      ...testimonials.map((t, i) => {
+        const safeId = (t.owner || `testimonial-${i}`).replace(/[^a-z0-9-_]/gi, "-").toLowerCase();
+        return {
+          "@type": "Review",
+          "@id": `${SITE_URL}#review-${safeId}`,
+          url: `${SITE_URL}/#review-${safeId}`,
+          author: {
+            "@type": "Person",
+            name: t.owner,
+            url: `${SITE_URL}/#author-${encodeURIComponent(t.owner)}`,
+          },
+          reviewBody: t.review,
+          reviewRating: {
+            "@type": "Rating",
+            ratingValue: Number(t.rating),
+            bestRating: 5,
+            worstRating: 1,
+          },
+          itemReviewed: {
+            "@type": "Service",
+            "@id": `${SITE_URL}#service-commercial-cleaning-leads`,
+            name: "Commercial Cleaning Leads",
+            url: `${SITE_URL}/services`,
+          },
+          publisher: { "@type": "Organization", "@id": `${SITE_URL}#organization` },
+          datePublished: t.datePublished || new Date().toISOString(),
+        };
+      }),
+    ]
   };
 
   // Render server-side inline JSON-LD so it appears in initial HTML response
