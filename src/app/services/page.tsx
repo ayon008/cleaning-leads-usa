@@ -17,7 +17,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Our Services - Janitorial Lead Generation & Digital Marketing",
-  description: "Discover our comprehensive cleaning business services: pay-per-appointment lead generation, digital marketing, and web development. Get qualified janitorial leads that convert into contracts.",
+  description:
+    "Discover our comprehensive cleaning business services: pay-per-appointment lead generation, digital marketing, and web development. Get qualified janitorial leads that convert into contracts.",
   keywords: [
     "janitorial lead generation services",
     "commercial cleaning digital marketing",
@@ -26,11 +27,12 @@ export const metadata: Metadata = {
     "cleaning contractor marketing",
     "facility management leads",
     "B2B cleaning services",
-    "appointment setting for cleaners"
+    "appointment setting for cleaners",
   ],
   openGraph: {
     title: "Our Services - Janitorial Lead Generation & Digital Marketing",
-    description: "Discover our comprehensive cleaning business services: pay-per-appointment lead generation, digital marketing, and web development. Get qualified janitorial leads that convert into contracts.",
+    description:
+      "Discover our comprehensive cleaning business services: pay-per-appointment lead generation, digital marketing, and web development. Get qualified janitorial leads that convert into contracts.",
     url: "https://www.cleaningleadsusa.com/services",
     type: "website",
     images: [
@@ -45,7 +47,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Our Services - Janitorial Lead Generation & Digital Marketing",
-    description: "Discover our comprehensive cleaning business services: pay-per-appointment lead generation, digital marketing, and web development.",
+    description:
+      "Discover our comprehensive cleaning business services: pay-per-appointment lead generation, digital marketing, and web development.",
     images: ["/janitorial-leads-hero-banner.jpg "],
   },
   alternates: {
@@ -65,7 +68,11 @@ const Prospect = ({
   title: string;
 }) => {
   return (
-    <article className="bg-white rounded-md space-y-4 px-4 py-6" itemScope itemType="http://schema.org/Service">
+    <article
+      className="bg-white rounded-md space-y-4 px-4 py-6"
+      itemScope
+      itemType="http://schema.org/Service"
+    >
       <Image
         src={image}
         alt={alt || `${title} - Cleaning Leads USA service icon`}
@@ -73,28 +80,33 @@ const Prospect = ({
         loading="lazy"
         itemProp="image"
       />
-      <h3 className="text-center text-2xl font-semibold" itemProp="name">{title}</h3>
-      <p className="text-center text-sm" itemProp="description">{text}</p>
+      <h3 className="text-center text-2xl font-semibold" itemProp="name">
+        {title}
+      </h3>
+      <p className="text-center text-sm" itemProp="description">
+        {text}
+      </p>
     </article>
   );
 };
 
 const page = () => {
-  const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cleaningleadsusa.com";
+  const SITE_URL =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://www.cleaningleadsusa.com";
 
   const ld = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Our Services - Cleaning Leads USA",
-    "url": `${SITE_URL}/services`,
-    "mainEntity": {
+    name: "Our Services - Cleaning Leads USA",
+    url: `${SITE_URL}/services`,
+    mainEntity: {
       "@type": "Service",
-      "name": "Janitorial Lead Generation Services",
-      "provider": {
+      name: "Janitorial Lead Generation Services",
+      provider: {
         "@type": "Organization",
-        "@id": `${SITE_URL}#organization`
-      }
-    }
+        "@id": `${SITE_URL}#organization`,
+      },
+    },
   };
 
   return (
@@ -106,7 +118,10 @@ const page = () => {
       itemScope
       itemType="http://schema.org/WebPage"
     >
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
+      />
       <Hero
         title="Our Services"
         headline="Let Our Experts Handle Your Prospect Communications"
@@ -141,13 +156,6 @@ const page = () => {
           />
         </div>
         <div className="my-20">
-          <Title
-            containerClass="text-center"
-            subHeading="At CleaningLeadsUSA, we help you win more business by setting up qualified appointments with decision-makers while you focus on delivering great service. Beyond appointment setting, we also grow your online presence with targeted digital marketing to keep new clients coming in."
-            headline="Guaranteed Cleaning Appointments"
-            headlineId="services-guaranteed-head"
-            subHeadingId="services-guaranteed-sub"
-          />
           <div className="mt-6">
             <Title
               containerClass="text-center"
@@ -175,7 +183,12 @@ const page = () => {
               />
             </div>
           </div>
-          <div className="mt-20 flex items-center py-6 rounded-md justify-between bg-amber-300 px-10" itemScope itemType="http://schema.org/WebPageElement" itemProp="mainEntity">
+          <div
+            className="mt-20 flex items-center py-6 rounded-md justify-between bg-amber-300 px-10"
+            itemScope
+            itemType="http://schema.org/WebPageElement"
+            itemProp="mainEntity"
+          >
             <div>
               <h2 className="text-3xl font-semibold">
                 Get your first appointment just at $99
@@ -184,8 +197,17 @@ const page = () => {
                 Would you like to speak with our operations manager directly?
               </p>
             </div>
-            <a href="tel:+13326004766" title="Call Cleaning Leads USA" itemProp="telephone" aria-label="Call Cleaning Leads USA">
-              <PrimaryBtn text="Call Now" containerClass="" ariaLabel="Call Cleaning Leads USA" />
+            <a
+              href="tel:+13326004766"
+              title="Call Cleaning Leads USA"
+              itemProp="telephone"
+              aria-label="Call Cleaning Leads USA"
+            >
+              <PrimaryBtn
+                text="Call Now"
+                containerClass=""
+                ariaLabel="Call Cleaning Leads USA"
+              />
             </a>
           </div>
         </div>
