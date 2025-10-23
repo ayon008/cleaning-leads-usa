@@ -42,7 +42,7 @@ const TestimonialCard = ({
       {/* Provide itemReviewed as microdata so validators that parse microdata
           (not JSON-LD) find the required field. Kept hidden to avoid UI
           changes. */}
-      <div hidden itemProp="itemReviewed" itemScope itemType="https://schema.org/Service" itemID={`${SITE_ORIGIN}#service-commercial-cleaning-leads`}>
+      <div hidden itemProp="itemReviewed" itemScope itemType="https://schema.org/ProfessionalService" itemID={`${SITE_ORIGIN}#service-commercial-cleaning-leads`}>
         <meta itemProp="name" content="Commercial Cleaning Leads" />
         <meta itemProp="url" content={`${SITE_ORIGIN}/services`} />
       </div>

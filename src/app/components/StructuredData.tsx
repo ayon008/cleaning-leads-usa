@@ -57,7 +57,7 @@ export default function StructuredData() {
             worstRating: 1,
           },
           itemReviewed: {
-            "@type": "Service",
+            "@type": "ProfessionalService",
             "@id": `${SITE_URL}#service-commercial-cleaning-leads`,
             name: "Commercial Cleaning Leads",
             url: `${SITE_URL}/services`,
