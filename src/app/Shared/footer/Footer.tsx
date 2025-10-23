@@ -129,7 +129,7 @@ const Footer = () => {
         </div>
       </div>
       <div
-        className="bg-[url('/footer-dot-map1.png')] bg-[#252525] bg-no-repeat bg-center w-full"
+        className="bg-[url('/footer-dot-map1.png')] bg-[#252525] bg-no-repeat bg-cover lg:bg-contain bg-center w-full"
         aria-hidden="true"
       >
         <div className="container grid md:grid-cols-4 grid-cols-2 gap-10 items-start justify-between py-10">

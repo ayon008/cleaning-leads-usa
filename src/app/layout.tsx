@@ -5,7 +5,8 @@ import Footer from "./Shared/footer/Footer";
 import TopButton from "./Shared/Button/TopButton";
 import { Inter } from "next/font/google";
 import { Suspense } from "react";
-import { GoogleTagManager } from "@next/third-parties/google";
+import Script from "next/script";
+import Analytics from "./Shared/Analytics";
 import StructuredData from "./components/StructuredData";
 
 export const metadata: Metadata = {
@@ -87,6 +88,7 @@ const inter = Inter({
   display: "swap", // prevents FOIT (flash of invisible text)
 });
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -118,6 +120,19 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body className={`${inter.className} antialiased`}>
+          {/* Google Analytics 4 - load after interactive for performance */}
+          {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ? (
+            <>
+              <Script
+                src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
+                strategy="afterInteractive"
+              />
+              <Script id="ga-init" strategy="afterInteractive">
+                {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}', { send_page_view: false });`}
+              </Script>
+              <Analytics />
+            </>
+          ) : null}
         {/* Render JSON-LD in the body so it's included as literal server HTML
             (Next.js may not inline raw <script> tags in the head during RSC
             serialization). Placing it in the body ensures crawlers and audits
@@ -138,7 +153,6 @@ export default function RootLayout({
           </article>
         </Suspense>
       </body>
-      <GoogleTagManager gtmId="GTM-MGW7PNJF" />
     </html>
   );
 }
