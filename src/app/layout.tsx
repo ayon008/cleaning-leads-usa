@@ -38,9 +38,6 @@ export const metadata: Metadata = {
   },
   // Use canonical metadata base with WWW host for consistent canonical URLs
   metadataBase: new URL("https://www.cleaningleadsusa.com"),
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     type: "website",
     locale: "en_US",

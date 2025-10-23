@@ -51,6 +51,9 @@ export const metadata = {
       "Grow your cleaning company with professional websites, SEO, and email marketing designed to drive real results.",
     images: ["/web-development-for-cleaning-companies.jpg"],
   },
+  alternates: {
+    canonical: "https://www.cleaningleadsusa.com/web-development-service",
+  },
 };
 
 const ServiceCard = ({
