@@ -36,7 +36,6 @@ export const pageview = (url: string) => {
     if (typeof window === "undefined") return;
     if (!window.gtag) return;
     try {
-        console.log('ayon');
         window.gtag("config", id, {
             page_path: url,
         });

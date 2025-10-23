@@ -8,6 +8,7 @@ import { Suspense } from "react";
 import Script from "next/script";
 import Analytics from "./Shared/Analytics";
 import StructuredData from "./components/StructuredData";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: {
@@ -88,7 +89,6 @@ const inter = Inter({
   display: "swap", // prevents FOIT (flash of invisible text)
 });
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -96,6 +96,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleTagManager gtmId="GTM-MQ6W6VMN" />
       <head>
         <meta name="theme-color" content="#4DAC4D" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -120,21 +121,21 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body className={`${inter.className} antialiased`}>
-          {/* Google Analytics 4 - load after interactive for performance */}
-          {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ? (
-            <>
-              <Script
-                src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
-                strategy="afterInteractive"
-              />
-              <Script id="ga-init" strategy="afterInteractive">
-                {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}', { send_page_view: false });`}
-              </Script>
-              <Suspense fallback={null}>
-                <Analytics />
-              </Suspense>
-            </>
-          ) : null}
+        {/* Google Analytics 4 - load after interactive for performance */}
+        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ? (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga-init" strategy="afterInteractive">
+              {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}', { send_page_view: false });`}
+            </Script>
+            <Suspense fallback={null}>
+              <Analytics />
+            </Suspense>
+          </>
+        ) : null}
         {/* Render JSON-LD in the body so it's included as literal server HTML
             (Next.js may not inline raw <script> tags in the head during RSC
             serialization). Placing it in the body ensures crawlers and audits

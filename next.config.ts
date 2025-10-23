@@ -10,7 +10,10 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
 
   // Enable SWC compiler minification for smaller/faster builds
-  swcMinify: true,
+  // `swcMinify` was removed: Next manages SWC minification internally and the
+  // typed NextConfig in newer Next versions no longer accepts this key. If
+  // you need to control minification, configure it via build tooling or the
+  // hosting platform. (Removed to satisfy NextConfig type.)
 
   // Optimize trailing slashes for SEO (false = no trailing slash in URLs)
   trailingSlash: false,
