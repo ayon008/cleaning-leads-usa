@@ -24,6 +24,7 @@ const TestimonialCard = ({
     "@context": "https://schema.org",
     "@type": "Review",
     "@id": `${SITE_ORIGIN || ''}#review-${safeId}`,
+    url: `${SITE_ORIGIN}/web-development-service#review-${safeId}`,
     author: {
       "@type": "Person",
       name: owner,
@@ -32,13 +33,19 @@ const TestimonialCard = ({
     reviewBody: review,
     reviewRating: {
       "@type": "Rating",
-      ratingValue: String(rating),
+      ratingValue: Number(rating),
+      bestRating: 5,
+      worstRating: 1,
     },
     itemReviewed: {
       "@type": "Service",
       "@id": `${SITE_ORIGIN}#service-commercial-cleaning-leads`,
       name: "Commercial Cleaning Leads",
       url: `${SITE_ORIGIN}/services`
+    },
+    publisher: {
+      "@type": "Organization",
+      "@id": `${SITE_ORIGIN}#organization`
     },
     datePublished: new Date().toISOString(),
   };
