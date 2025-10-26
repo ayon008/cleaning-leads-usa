@@ -20,15 +20,37 @@ try {
   }
 
   const files = fs.readdirSync(clientDir);
-  const hasEngine = files.some((f) => f.startsWith('query-engine')) || files.some((f) => f.startsWith('prisma-fmt'));
+  // Look for multiple types of possible generated artifacts:
+  // - legacy query-engine binaries (query-engine*)
+  // - prisma-fmt (used by some engine types)
+  // - Node-API compiled modules (.node)
+  const hasQueryEngine = files.some((f) => f.startsWith('query-engine'));
+  const hasPrismaFmt = files.some((f) => f.startsWith('prisma-fmt'));
+  const hasNodeModules = files.some((f) => f.endsWith('.node') || f === 'index.node');
 
-  if (!hasEngine) {
-    // Provide helpful diagnostic output
-    console.error('Prisma client folder contents:\n', files.join('\n'));
-    fail('No Prisma query engine binary found in the generated client. Ensure `prisma generate` ran and downloaded the engines for your platform.');
+  if (hasQueryEngine || hasPrismaFmt || hasNodeModules) {
+    console.log('✅ Prisma query engine or Node-API artifact found in', clientDir);
+    process.exit(0);
   }
 
-  console.log('✅ Prisma query engine found in', clientDir);
+  // Nothing matched — print detailed diagnostics to help debug in CI logs
+  console.error('\nPrisma client folder exists but no engine artifacts were detected.\n');
+  console.error('Node version:', process.version);
+  try {
+    const detailed = files.map((f) => {
+      try {
+        const s = fs.statSync(path.join(clientDir, f));
+        return `${f} — ${s.size} bytes — mtime: ${s.mtime.toISOString()}`;
+      } catch (e) {
+        return `${f} — (stat failed)`;
+      }
+    });
+    console.error('Prisma client folder contents:\n', detailed.join('\n'));
+  } catch {
+    console.error('Failed to stat files in client folder');
+  }
+
+  fail('No Prisma query engine binary or Node-API artifact found in the generated client. Ensure `prisma generate` ran and downloaded the engines for your platform.');
   process.exit(0);
 } catch (err) {
   fail('Error while checking Prisma engines: ' + String(err));
