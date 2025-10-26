@@ -6,13 +6,13 @@ export const metadata = {
   description: "Learn how Cleaning Leads USA collects, uses, and protects your personal information. We are committed to data security and transparency in our lead generation services.",
   keywords: "privacy policy, data protection, cleaning leads privacy, GDPR compliance, personal information security, lead generation privacy",
   alternates: {
-    canonical: "https://cleaningleadsusa.com/privacy-policy",
+    canonical: "https://www.cleaningleadsusa.com/privacy-policy",
   },
   openGraph: {
     title: "Privacy Policy | Cleaning Leads USA",
     description: "Understand how we collect, use, and protect your personal information. Your privacy and data security are our top priorities.",
     type: "website",
-    url: "https://cleaningleadsusa.com/privacy-policy",
+    url: "https://www.cleaningleadsusa.com/privacy-policy",
     siteName: "Cleaning Leads USA",
   },
   twitter: {

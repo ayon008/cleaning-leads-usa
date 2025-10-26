@@ -2,7 +2,7 @@ import React from "react";
 import Title from "../Title/Title";
 import { Star } from "lucide-react";
 
-const SITE_ORIGIN = process.env.NEXT_PUBLIC_SITE_URL || 'https://cleaningleadsusa.com';
+const SITE_ORIGIN = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.cleaningleadsusa.com';
 
 const TestimonialCard = ({
   maxStars,

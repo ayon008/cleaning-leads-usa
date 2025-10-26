@@ -4,7 +4,7 @@ import React from "react";
 
 const page = async () => {
   const response = await fetch(
-    "https://cleaningleadsusa.com/api/sendinfo",
+    "https://www.cleaningleadsusa.com/api/sendinfo",
     { cache: "no-cache" }
   );
   const data = await response.json();

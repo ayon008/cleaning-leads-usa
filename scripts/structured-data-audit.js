@@ -9,7 +9,7 @@ This is a light-weight validator — for full validation use Google's Rich Resul
 const fetch = require('node-fetch');
 const { JSDOM } = require('jsdom');
 
-const SITE = process.env.SITE_URL || 'https://cleaningleadsusa.com';
+const SITE = process.env.SITE_URL || 'https://www.cleaningleadsusa.com';
 
 const PAGES = [
   '/',

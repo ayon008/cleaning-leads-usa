@@ -59,7 +59,7 @@ const Form = () => {
     });
 
     try {
-      const response = await fetch("https://cleaningleadsusa.com/api/sendmail", {
+      const response = await fetch("https://www.cleaningleadsusa.com/api/sendmail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -69,7 +69,7 @@ const Form = () => {
 
       const result = await response.json();
 
-      const response2 = await fetch("https://cleaningleadsusa.com/api/sendinfo", {
+      const response2 = await fetch("https://www.cleaningleadsusa.com/api/sendinfo", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -79,7 +79,7 @@ const Form = () => {
       const result2 = await response2.json();
       const { email, name } = data;
       // await sendEmail("contact", email, { name });
-      await fetch("https://cleaningleadsusa.com/api/notifyUser", {
+      await fetch("https://www.cleaningleadsusa.com/api/notifyUser", {
         method: "POST",
         headers: {},
         body: JSON.stringify({ email, name }),
