@@ -1,14 +1,11 @@
 generator client {
   provider      = "prisma-client-js"
-  // Include common binary targets used by various serverless and container
-  // environments (Vercel, AWS Lambda, etc.). Keep `native` for local dev.
-  binaryTargets = [
-    "native",
-    "rhel-openssl-3.0.x",
-    "debian-openssl-1.1.x",
-    "linux-musl"
-  ]
-  engineType    = "binary"
+  // Use the Node-API (library) engine for better compatibility on serverless
+  // hosts (Vercel, Lambda). The library engine avoids shipping platform
+  // specific query-engine binaries which are a common source of deploy-time
+  // validation errors. If you prefer binaries, re-add binaryTargets and set
+  // engineType = "binary" instead.
+  engineType = "library"
 }
 
 datasource db {
