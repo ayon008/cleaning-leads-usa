@@ -10,7 +10,7 @@ Prereqs
 
 Environment
 - Copy `.env.example` to your environment settings and set the real values in the hosting UI. Key variables:
-  - NEXT_PUBLIC_SITE_URL — should be `https://www.cleaningleadsusa.com`
+  - NEXT_PUBLIC_SITE_URL — should be `https://cleaningleadsusa.com`
   - NEXT_PUBLIC_WP_API_URL — WordPress API if used for blog content
 
 Build & Deploy (Vercel)
@@ -28,7 +28,7 @@ Redirects
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'cleaningleadsusa.com' }],
-        destination: 'https://www.cleaningleadsusa.com/:path*',
+        destination: 'https://cleaningleadsusa.com/:path*',
         permanent: true,
       },
       ...
@@ -36,10 +36,10 @@ Redirects
   }
 
 Verification checklist after deploy
-1. Page source: open https://www.cleaningleadsusa.com/about (View Source) and confirm there is a server-rendered <link rel="canonical" href="https://www.cleaningleadsusa.com/about" /> in the head.
+1. Page source: open https://cleaningleadsusa.com/about (View Source) and confirm there is a server-rendered <link rel="canonical" href="https://cleaningleadsusa.com/about" /> in the head.
 2. Structured data: run Rich Results Test on key pages (home + sample blog) — Organization and Article/Review schema should pass.
-3. Redirects: request https://cleaningleadsusa.com/ and confirm the browser receives a 301 redirect to https://www.cleaningleadsusa.com/.
-4. Search Console: verify site property for https://www.cleaningleadsusa.com and submit sitemap if needed.
+3. Redirects: request https://cleaningleadsusa.com/ and confirm the browser receives a 301 redirect to https://cleaningleadsusa.com/.
+4. Search Console: verify site property for https://cleaningleadsusa.com and submit sitemap if needed.
 
 Rollback
 - If something breaks, you can rollback via Vercel's deployment history to the prior working deployment.

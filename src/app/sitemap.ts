@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { MetadataRoute } from 'next'
 const WP_API_URL = process.env.NEXT_PUBLIC_WP_API_URL;
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.cleaningleadsusa.com';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://cleaningleadsusa.com';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     let posts: any[] = [];
@@ -55,7 +55,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             priority: 0.8,
         },
         {
-            url: 'https://www.cleaningleadsusa.com/faq',
+            url: 'https://cleaningleadsusa.com/faq',
             lastModified: new Date().toISOString().split('T')[0],
             changeFrequency: 'monthly',
             priority: 0.8,

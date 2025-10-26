@@ -34,11 +34,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Professional Janitorial Appointment Services | Cleaning Leads USA",
     description: "Get qualified commercial cleaning leads and appointments with Cleaning Leads USA. We connect janitorial businesses with verified decision-makers across the US.",
-    url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.cleaningleadsusa.com",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://cleaningleadsusa.com",
     type: "website",
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.cleaningleadsusa.com'}/janitorial-leads-hero-banner.jpg`,
+        url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://cleaningleadsusa.com'}/janitorial-leads-hero-banner.jpg`,
         width: 1200,
         height: 630,
         alt: "Cleaning Leads USA - Professional Janitorial Services",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     images: ["/janitorial-leads-hero-banner.jpg "],
   },
   alternates: {
-    canonical: process.env.NEXT_PUBLIC_SITE_URL || "https://www.cleaningleadsusa.com",
+    canonical: process.env.NEXT_PUBLIC_SITE_URL || "https://cleaningleadsusa.com",
   },
 };
 

@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "Contact Cleaning Leads USA - Get Your First Appointment for $99",
     description:
       "Contact Cleaning Leads USA for qualified commercial cleaning leads and appointments. Get your first appointment for just $99.",
-    url: "https://www.cleaningleadsusa.com/contact",
+    url: "https://cleaningleadsusa.com/contact",
     type: "website",
     images: [
       {
@@ -47,12 +47,12 @@ export const metadata: Metadata = {
     images: ["/janitorial-leads-hero-banner.jpg "],
   },
   alternates: {
-    canonical: "https://www.cleaningleadsusa.com/contact",
+    canonical: "https://cleaningleadsusa.com/contact",
   },
 };
 
 const page = () => {
-  const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cleaningleadsusa.com";
+  const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cleaningleadsusa.com";
 
   const structuredData = {
     "@context": "https://schema.org",

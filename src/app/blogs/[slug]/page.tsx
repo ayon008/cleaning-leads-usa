@@ -13,7 +13,7 @@ interface PageProps {
 
 const WP_API_URL = process.env.NEXT_PUBLIC_WP_API_URL;
 const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://www.cleaningleadsusa.com";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://cleaningleadsusa.com";
 
 export async function generateStaticParams() {
   const { posts: data } = await getPosts();

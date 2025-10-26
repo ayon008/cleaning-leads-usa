@@ -8,13 +8,13 @@ export const metadata = {
   description: "Review the policies and guidelines for purchasing verified cleaning and janitorial leads from Cleaning Leads USA. Understand our refund policy, data protection, and service terms.",
   keywords: "cleaning leads terms, janitorial leads policy, lead generation terms and conditions, cleaning services agreement, GDPR compliance",
   alternates: {
-    canonical: "https://www.cleaningleadsusa.com/terms-and-conditions",
+    canonical: "https://cleaningleadsusa.com/terms-and-conditions",
   },
   openGraph: {
     title: "Terms & Conditions | Cleaning Leads USA",
     description: "Review our terms for purchasing verified cleaning and janitorial leads. Learn about our quality guarantee, refund policy, and data protection practices.",
     type: "website",
-    url: "https://www.cleaningleadsusa.com/terms-and-conditions",
+    url: "https://cleaningleadsusa.com/terms-and-conditions",
     siteName: "Cleaning Leads USA",
   },
   twitter: {
