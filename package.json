@@ -6,6 +6,7 @@
     "dev": "next dev --turbopack",
     "postinstall": "prisma generate",
     "build": "prisma generate && next build --turbopack",
+    "vercel-build": "prisma generate && node ./scripts/check-prisma-engines.js && next build --turbopack",
     "start": "next start",
     "lint": "eslint"
   },

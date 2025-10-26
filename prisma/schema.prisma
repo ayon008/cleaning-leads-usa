@@ -1,6 +1,13 @@
 generator client {
   provider      = "prisma-client-js"
-  binaryTargets = ["native", "rhel-openssl-3.0.x"]
+  // Include common binary targets used by various serverless and container
+  // environments (Vercel, AWS Lambda, etc.). Keep `native` for local dev.
+  binaryTargets = [
+    "native",
+    "rhel-openssl-3.0.x",
+    "debian-openssl-1.1.x",
+    "linux-musl"
+  ]
   engineType    = "binary"
 }
 
