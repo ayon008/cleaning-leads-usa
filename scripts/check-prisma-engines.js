@@ -1,8 +1,12 @@
 #!/usr/bin/env node
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
 // Location where Prisma writes the generated client and engines
+// __dirname is not available in ES module scope; derive it from import.meta.url
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const clientDir = path.resolve(__dirname, '..', 'node_modules', '.prisma', 'client');
 
 function fail(msg) {
