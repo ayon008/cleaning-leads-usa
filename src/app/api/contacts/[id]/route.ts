@@ -1,16 +1,22 @@
-import prisma from "@/app/lib/prisma";
 import { NextRequest } from "next/server";
+import prisma from "@/app/lib/prisma";
 
 export async function DELETE(
     request: NextRequest,
-    { params }: { params: { id: string } }
-) {
+    context: { params: Promise<{ id: string }> }
+): Promise<Response> {
     try {
-        const { id } = await params;
-        console.log('Deleting contact with ID:', id);
+        const { id } = await context.params;
+        console.log("Deleting contact with ID:", id);
 
         if (!id) {
-            throw new Error('Contact ID is required');
+            return new Response(
+                JSON.stringify({ error: "Contact ID is required" }),
+                {
+                    status: 400,
+                    headers: { "Content-Type": "application/json" }
+                }
+            );
         }
 
         const contact = await prisma.contactForm.findUnique({
@@ -22,9 +28,7 @@ export async function DELETE(
                 JSON.stringify({ error: "Contact not found" }),
                 {
                     status: 404,
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
+                    headers: { "Content-Type": "application/json" }
                 }
             );
         }
@@ -33,21 +37,20 @@ export async function DELETE(
             where: { id },
         });
 
-        return new Response(JSON.stringify({ success: true }), {
-            status: 200,
-            headers: {
-                "Content-Type": "application/json",
-            },
-        });
+        return new Response(
+            JSON.stringify({ success: true }),
+            {
+                status: 200,
+                headers: { "Content-Type": "application/json" }
+            }
+        );
     } catch (error) {
         console.error("Error deleting contact:", error);
         return new Response(
             JSON.stringify({ error: "Failed to delete contact" }),
             {
                 status: 500,
-                headers: {
-                    "Content-Type": "application/json",
-                },
+                headers: { "Content-Type": "application/json" }
             }
         );
     }

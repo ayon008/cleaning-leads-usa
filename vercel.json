@@ -3,9 +3,7 @@
   "buildCommand": "npm run vercel-build",
   "devCommand": "npm run dev",
   "installCommand": "npm install",
-  "regions": ["iad1"],
-  "crons": [{
-    "path": "/api/prisma-warmup",
-    "schedule": "*/5 * * * *"
-  }]
+  "regions": [
+    "iad1"
+  ]
 }
