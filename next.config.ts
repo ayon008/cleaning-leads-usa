@@ -1,20 +1,26 @@
 // next.config.js
 import type { NextConfig } from "next";
+import { PrismaPlugin } from "@prisma/nextjs-monorepo-workaround-plugin";
 
 /**
  * Next.js Configuration
  * Optimized for SEO, Performance, and Security
  */
 const nextConfig: NextConfig = {
+
   // Ensure Prisma Client is correctly built and included
   output: 'standalone',
+  // Disable dev indicators in development UI
+  devIndicators: false,
   experimental: {
     // Enable serverActions for forms and mutations
     serverActions: {
       bodySizeLimit: '2mb'
     },
     // Properly bundle Prisma Client for serverless
-    serverComponentsExternalPackages: ['@prisma/client', 'prisma']
+    serverComponentsExternalPackages: ['@prisma/client', 'prisma'],
+    // Allow authentication interrupt behavior for experimental auth APIs
+    authInterrupts: true,
   },
 
   // Enable React strict mode for highlighting potential issues
@@ -128,6 +134,14 @@ const nextConfig: NextConfig = {
   // Compression handled automatically on Vercel/most hosts,
   // but enabling for Node server deployments
   compress: true,
+
+  // Allow injecting webpack plugins (Prisma plugin) during server builds
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      config.plugins = [...config.plugins, new PrismaPlugin()];
+    }
+    return config;
+  },
 };
 
 export default nextConfig;
