@@ -32,7 +32,7 @@ export const metadata = {
       "Web Development, SEO & Email Marketing for Cleaning Companies | Cleaning Leads USA",
     description:
       "We specialize in helping cleaning companies grow online through stunning websites, SEO, and automated email campaigns that convert visitors into loyal clients.",
-    url: "https://www.cleaningleadsusa.com/web-development-service", // update with your actual URL
+    url: "http://localhost:3000/web-development-service", // update with your actual URL
     type: "website",
     images: [
       {
@@ -52,7 +52,7 @@ export const metadata = {
     images: ["/web-development-for-cleaning-companies.jpg"],
   },
   alternates: {
-    canonical: "https://www.cleaningleadsusa.com/web-development-service",
+    canonical: "http://localhost:3000/web-development-service",
   },
 };
 

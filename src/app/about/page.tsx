@@ -41,8 +41,8 @@ export const metadata: Metadata = {
     images: ["/janitorial-leads-hero-banner.jpg "],
   },
   // Use a relative canonical; `metadataBase` in `app/layout.tsx` sets the
-  // canonical host to https://www.cleaningleadsusa.com so this resolves to
-  // https://www.cleaningleadsusa.com/about at render time.
+  // canonical host to http://localhost:3000 so this resolves to
+  // http://localhost:3000/about at render time.
   alternates: {
     canonical: "/about",
   },

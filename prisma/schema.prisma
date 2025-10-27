@@ -1,16 +1,10 @@
 generator client {
-  provider      = "prisma-client-js"
-  // Use the Node-API (library) engine for better compatibility on serverless
-  // hosts (Vercel, Lambda). The library engine avoids shipping platform
-  // specific query-engine binaries which are a common source of deploy-time
-  // validation errors. If you prefer binaries, re-add binaryTargets and set
-  // engineType = "binary" instead.
-  engineType = "library"
+  provider = "prisma-client-js"
 }
 
 datasource db {
   provider = "mongodb"
-  url      = env("DATABASE_URL")
+  url       = env("DATABASE_URL")
 }
 
 model ContactForm {
@@ -23,4 +17,5 @@ model ContactForm {
   zip         String
   radius      String
   message     String
+  createdAt   DateTime @default(now())
 }

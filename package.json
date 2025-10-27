@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "postinstall": "prisma generate",
-    "build": "prisma generate && next build --turbopack",
-    "vercel-build": "prisma generate && node ./scripts/check-prisma-engines.js && next build --turbopack",
+    "build": "next build --turbopack",
+    "vercel-build": "prisma generate && next build --turbopack",
     "start": "next start",
     "lint": "eslint"
   },
@@ -41,5 +41,9 @@
     "eslint-config-next": "15.5.2",
     "tailwindcss": "^4.0.0",
     "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=18.17.0",
+    "npm": ">=9.0.0"
   }
 }

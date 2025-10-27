@@ -106,10 +106,10 @@ async rewrites() {
 ## 🚀 Usage
 
 ### Accessing Sitemaps
-- **Main Sitemap**: `https://www.cleaningleadsusa.com/sitemap.xml`
-- **Blog Sitemap**: `https://www.cleaningleadsusa.com/sitemap-blogs.xml`
-- **Sitemap Index**: `https://www.cleaningleadsusa.com/sitemap-index.xml`
-- **Robots.txt**: `https://www.cleaningleadsusa.com/robots.txt`
+- **Main Sitemap**: `http://localhost:3000/sitemap.xml`
+- **Blog Sitemap**: `http://localhost:3000/sitemap-blogs.xml`
+- **Sitemap Index**: `http://localhost:3000/sitemap-index.xml`
+- **Robots.txt**: `http://localhost:3000/robots.txt`
 
 ### Google Search Console
 1. Submit all sitemaps to Google Search Console

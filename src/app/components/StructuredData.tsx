@@ -13,7 +13,7 @@ import testimonials from "../Shared/Home/testimonialsData";
  * - Keep the organization `url` and `logo` as absolute URLs.
  */
 export default function StructuredData() {
-  const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cleaningleadsusa.com";
+  const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
   const ORG = {
     "@type": "Organization",
     "@id": `${SITE_URL}#organization`,

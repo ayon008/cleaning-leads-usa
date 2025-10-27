@@ -15,7 +15,7 @@ export const metadata = {
     description:
       "Get answers about our lead generation services, pricing, quality assurance process, and how we help cleaning businesses grow with verified commercial leads.",
     type: "website",
-    url: "https://www.cleaningleadsusa.com/faq",
+    url: "http://localhost:3000/faq",
     siteName: "Cleaning Leads USA",
   },
   twitter: {
@@ -25,7 +25,7 @@ export const metadata = {
       "Find answers to common questions about our cleaning lead generation services, pricing, and quality assurance process.",
   },
   alternates: {
-    canonical: "https://www.cleaningleadsusa.com/faq",
+    canonical: "http://localhost:3000/faq",
   },
   robots: {
     index: true,

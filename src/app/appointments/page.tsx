@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: "Book Janitorial Leads Consultation - Cleaning Leads USA",
     description:
       "Book a free consultation with our janitorial leads specialists to learn how to generate qualified commercial cleaning appointments.",
-    url: "https://www.cleaningleadsusa.com/appointments",
+    url: "http://localhost:3000/appointments",
     type: "website",
     images: [
       {
@@ -43,12 +43,12 @@ export const metadata: Metadata = {
     images: ["/janitorial-leads-hero-banner.jpg"],
   },
   alternates: {
-    canonical: "https://www.cleaningleadsusa.com/appointments",
+    canonical: "http://localhost:3000/appointments",
   },
 };
 
 const page = () => {
-  const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cleaningleadsusa.com";
+  const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
   const ld = {
     "@context": "https://schema.org",

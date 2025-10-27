@@ -6,6 +6,17 @@ import type { NextConfig } from "next";
  * Optimized for SEO, Performance, and Security
  */
 const nextConfig: NextConfig = {
+  // Ensure Prisma Client is correctly built and included
+  output: 'standalone',
+  experimental: {
+    // Enable serverActions for forms and mutations
+    serverActions: {
+      bodySizeLimit: '2mb'
+    },
+    // Properly bundle Prisma Client for serverless
+    serverComponentsExternalPackages: ['@prisma/client', 'prisma']
+  },
+
   // Enable React strict mode for highlighting potential issues
   reactStrictMode: true,
 
@@ -77,7 +88,7 @@ const nextConfig: NextConfig = {
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'cleaningleadsusa.com' }],
-        destination: 'https://www.cleaningleadsusa.com/:path*',
+        destination: 'http://localhost:3000/:path*',
         permanent: true,
       },
       {
