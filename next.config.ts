@@ -2,6 +2,7 @@
 import type { NextConfig } from "next";
 import { PrismaPlugin } from "@prisma/nextjs-monorepo-workaround-plugin";
 
+
 /**
  * Next.js Configuration
  * Optimized for SEO, Performance, and Security
@@ -114,7 +115,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/sitemap.xml",
-        destination: "/api/sitemap", // Main sitemap for static pages
+        destination: "/api/sitemap", // Main sitemap for static page
       },
       {
         source: "/sitemap-blogs.xml",
