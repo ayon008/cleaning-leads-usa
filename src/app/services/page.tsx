@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: "Our Services - Janitorial Lead Generation & Digital Marketing",
     description:
       "Discover our comprehensive cleaning business services: pay-per-appointment lead generation, digital marketing, and web development. Get qualified janitorial leads that convert into contracts.",
-    url: "http://localhost:3000/services",
+    url: "https://www.cleaningleadsusa.com/services",
     type: "website",
     images: [
       {
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     images: ["/janitorial-leads-hero-banner.jpg "],
   },
   alternates: {
-    canonical: "http://localhost:3000/services",
+    canonical: "https://www.cleaningleadsusa.com/services",
   },
 };
 
@@ -92,7 +92,7 @@ const Prospect = ({
 
 const page = () => {
   const SITE_URL =
-    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+    process.env.NEXT_PUBLIC_SITE_URL || "https://www.cleaningleadsusa.com";
 
   const ld = {
     "@context": "https://schema.org",

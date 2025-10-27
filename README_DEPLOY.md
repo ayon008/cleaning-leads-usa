@@ -23,7 +23,7 @@ DIRECT_DATABASE_URL="mongodb+srv://..."  # Direct MongoDB connection string
 BREVO_API_KEY="your-brevo-api-key"
 
 # Site Configuration
-NEXT_PUBLIC_SITE_URL="http://localhost:3000"
+NEXT_PUBLIC_SITE_URL="https://www.cleaningleadsusa.com"
 NEXT_PUBLIC_WP_API_URL="your-wordpress-api-url"  # If using WordPress for blog
 ```
 
@@ -79,7 +79,7 @@ SEO Configuration
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'cleaningleadsusa.com' }],
-        destination: 'http://localhost:3000/:path*',
+        destination: 'https://www.cleaningleadsusa.com/:path*',
         permanent: true,
       },
       ...
@@ -87,10 +87,10 @@ SEO Configuration
   }
 
 Verification checklist after deploy
-1. Page source: open http://localhost:3000/about (View Source) and confirm there is a server-rendered <link rel="canonical" href="http://localhost:3000/about" /> in the head.
+1. Page source: open https://www.cleaningleadsusa.com/about (View Source) and confirm there is a server-rendered <link rel="canonical" href="https://www.cleaningleadsusa.com/about" /> in the head.
 2. Structured data: run Rich Results Test on key pages (home + sample blog) — Organization and Article/Review schema should pass.
-3. Redirects: request http://localhost:3000/ and confirm the browser receives a 301 redirect to http://localhost:3000/.
-4. Search Console: verify site property for http://localhost:3000 and submit sitemap if needed.
+3. Redirects: request https://www.cleaningleadsusa.com/ and confirm the browser receives a 301 redirect to https://www.cleaningleadsusa.com/.
+4. Search Console: verify site property for https://www.cleaningleadsusa.com and submit sitemap if needed.
 
 Rollback
 - If something breaks, you can rollback via Vercel's deployment history to the prior working deployment.

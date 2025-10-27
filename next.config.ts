@@ -88,7 +88,7 @@ const nextConfig: NextConfig = {
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'cleaningleadsusa.com' }],
-        destination: 'http://localhost:3000/:path*',
+        destination: 'https://www.cleaningleadsusa.com/:path*',
         permanent: true,
       },
       {

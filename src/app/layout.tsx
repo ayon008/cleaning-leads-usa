@@ -39,11 +39,11 @@ export const metadata: Metadata = {
     telephone: false,
   },
   // Use canonical metadata base with WWW host for consistent canonical URLs
-  metadataBase: new URL("http://localhost:3000"),
+  metadataBase: new URL("https://www.cleaningleadsusa.com"),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "http://localhost:3000",
+    url: "https://www.cleaningleadsusa.com",
     siteName: "Cleaning Leads USA",
     title: "Cleaning Leads USA - Professional Janitorial Appointment Services",
     description:
