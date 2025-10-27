@@ -79,16 +79,16 @@ const Form = () => {
       const result2 = await response2.json();
       const { email, name } = data;
 
-      const notify = await fetch("https://www.cleaningleadsusa.com/api/notifyUser", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, name }),
-      });
-      const result3 = await notify.json();
+      // const notify = await fetch("https://www.cleaningleadsusa.com/api/notifyUser", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify({ email, name }),
+      // });
+      // const result3 = await notify.json();
 
-      if (result.success && result2.success && result3.success) {
+      if (result.success && result2.success) {
         Swal.fire({
           icon: "success",
           title: "Message Sent!",
