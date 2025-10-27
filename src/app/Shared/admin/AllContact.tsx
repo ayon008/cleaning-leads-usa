@@ -1,10 +1,22 @@
 "use client";
-import { ContactForm } from "@prisma/client";
 // <-- TYPE-ONLY import fixes the error: prevents bundling @prisma/client into the browser bundle
 import React, { useEffect, useState } from "react";
 import moment from "moment";
 
 type Credentials = { email?: string; password?: string } | null;
+
+export type ContactForm = {
+  _id: string; // MongoDB _id converted to string
+  name: string;
+  email: string;
+  phoneNumber: string;
+  companyName: string;
+  address: string;
+  zip: string;
+  radius: string;
+  message: string;
+  createdAt: string | Date; // ISO string from MongoDB or Date object
+};
 
 const AllContact = ({ data: initialData }: { data: ContactForm[] }) => {
   // NEXT_PUBLIC_* is available in the browser but must not hold secrets.
@@ -22,11 +34,13 @@ const AllContact = ({ data: initialData }: { data: ContactForm[] }) => {
 
     try {
       setIsDeleting(true);
+      console.log(id);
+      
       const response = await fetch(`/api/contacts/${id}`, {
         method: "DELETE",
         headers: {
-          'Content-Type': 'application/json'
-        }
+          "Content-Type": "application/json",
+        },
       });
 
       if (!response.ok) {
@@ -34,7 +48,7 @@ const AllContact = ({ data: initialData }: { data: ContactForm[] }) => {
       }
 
       // Update local state
-      setData((prevData) => prevData.filter((item) => item.id !== id));
+      setData((prevData) => prevData.filter((item) => item._id !== id));
     } catch (error) {
       console.error("Error deleting contact:", error);
       alert("Failed to delete contact. Please try again.");
@@ -126,8 +140,8 @@ const AllContact = ({ data: initialData }: { data: ContactForm[] }) => {
               phoneNumber,
               radius,
               zip,
-              id,
-            } = singleData;            
+              _id,
+            } = singleData;
             return (
               <tr key={i} className="text-center">
                 <td className="px-4 py-2">{i + 1}</td>
@@ -156,20 +170,21 @@ const AllContact = ({ data: initialData }: { data: ContactForm[] }) => {
                 <td className="px-4 py-2">{radius}</td>
                 <td className="px-4 py-2">{message}</td>
                 <td className="px-4 py-2">
-                  {moment(singleData.createdAt).format('dddd, MMMM Do')}
+                  {moment(singleData.createdAt).format("dddd, MMMM Do")}
                 </td>
                 <td>
                   <div>
                     <button
-                      onClick={() => handleDelete(id)}
+                      onClick={() => handleDelete(_id)}
                       disabled={isDeleting}
                       className={`border border-red-400 text-sm px-4 rounded-md py-2 uppercase 
-                        ${isDeleting 
-                          ? 'opacity-50 cursor-not-allowed' 
-                          : 'cursor-pointer hover:bg-red-400 hover:text-white hover:scale-95'
+                        ${
+                          isDeleting
+                            ? "opacity-50 cursor-not-allowed"
+                            : "cursor-pointer hover:bg-red-400 hover:text-white hover:scale-95"
                         } text-red-500 transition-all duration-150 ease-in-out`}
                     >
-                      {isDeleting ? 'Deleting...' : 'Delete'}
+                      {isDeleting ? "Deleting..." : "Delete"}
                     </button>
                   </div>
                 </td>

@@ -3,11 +3,12 @@ import Title from "@/app/Shared/Title/Title";
 import React from "react";
 
 const page = async () => {
-  const response = await fetch(
-    "https://www.cleaningleadsusa.com/api/sendinfo",
-    { cache: "no-cache" }
-  );
+  const response = await fetch("https://www.cleaningleadsusa.com/api/sendinfo", {
+    cache: "no-cache",
+  });
   const data = await response.json();
+  console.log(data);
+  
   return (
     <section
       id="contactInfo"
