@@ -25,6 +25,9 @@
     "paths": {
       "@/*": [
         "./src/*"
+      ],
+      "@prisma/client": [
+        "./node_modules/@prisma/client"
       ]
     }
   },
@@ -36,7 +39,7 @@
     ".next/dev/types/**/*.ts",
     ".next\\dev/types/**/*.ts",
     ".next\\dev/types/**/*.ts"
-  ],
+, "src/lib/mongoDB.js"  ],
   "exclude": [
     "node_modules"
   ]

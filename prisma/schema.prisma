@@ -1,13 +1,13 @@
 generator client {
   provider      = "prisma-client-js"
   binaryTargets = ["native", "rhel-openssl-3.0.x"]
+  output        = "../src/generated"
 }
 
 datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
 }
-// Prisma
 
 model ContactForm {
   id          String   @id @default(auto()) @map("_id") @db.ObjectId
