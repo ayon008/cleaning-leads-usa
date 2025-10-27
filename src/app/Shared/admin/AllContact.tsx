@@ -127,9 +127,7 @@ const AllContact = ({ data: initialData }: { data: ContactForm[] }) => {
               radius,
               zip,
               id,
-            } = singleData;
-            console.log(singleData);
-            
+            } = singleData;            
             return (
               <tr key={i} className="text-center">
                 <td className="px-4 py-2">{i + 1}</td>
