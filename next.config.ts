@@ -1,7 +1,5 @@
 // next.config.js
 import type { NextConfig } from "next";
-import { PrismaPlugin } from "@prisma/nextjs-monorepo-workaround-plugin";
-
 /**
  * Next.js Configuration
  * Optimized for SEO, Performance, and Security
@@ -138,7 +136,7 @@ const nextConfig: NextConfig = {
   // Allow injecting webpack plugins (Prisma plugin) during server builds
   webpack: (config, { isServer }) => {
     if (isServer) {
-      config.plugins = [...config.plugins, new PrismaPlugin()];
+      config.externals = [...(config.externals || []), '@prisma/client', 'prisma'];
     }
     return config;
   },
