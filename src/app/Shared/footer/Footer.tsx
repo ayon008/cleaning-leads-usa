@@ -34,7 +34,7 @@ const Footer = () => {
           <div className="flex items-center gap-5">
             <div>
               <a
-                href="https://www.facebook.com/commercialcleaningleads"
+                href="https://www.facebook.com/commercialcleaningleads/"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Cleaning Leads USA on Facebook"
