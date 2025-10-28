@@ -2,6 +2,7 @@
 // Note: No Prisma client used in this client component
 import React, { useEffect, useState } from "react";
 import moment from "moment";
+// Using fetch with cache: "no-store" for a no-cache implementation
 
 type Credentials = { email?: string; password?: string } | null;
 
@@ -18,14 +19,35 @@ export type ContactForm = {
   createdAt: string | Date; // ISO string from MongoDB or Date object
 };
 
-const AllContact = ({ data: initialData }: { data?: ContactForm[] }) => {
+const AllContact = () => {
   // NEXT_PUBLIC_* is available in the browser but must not hold secrets.
   const adminEmail = process.env.NEXT_PUBLIC_ADMIN_EMAIL;
   const adminPassword = process.env.NEXT_PUBLIC_ADMIN_PASSWORD;
-
   const [submitted, setSubmitted] = useState<Credentials>(null);
-  const [data, setData] = useState<ContactForm[]>(initialData ?? []);
   const [isDeleting, setIsDeleting] = useState(false);
+
+  const [data, setData] = useState<ContactForm[]>([]);
+
+  // Fetch data with no-cache / no-store so we always get fresh results
+  const fetchData = async () => {
+    try {
+      const res = await fetch("https://www.cleaningleadsusa.com/api/sendinfo", {
+        cache: "no-store",
+      });
+      if (!res.ok) {
+        throw new Error(`Failed to fetch contact list: ${res.status}`);
+      }
+      const json = await res.json();
+      setData(json || []);
+    } catch (err) {
+      console.error("Error fetching contact list:", err);
+      setData([]);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, [isDeleting]);
 
   const handleDelete = async (id: string) => {
     if (!window.confirm("Are you sure you want to delete this contact?")) {
@@ -35,18 +57,22 @@ const AllContact = ({ data: initialData }: { data?: ContactForm[] }) => {
     try {
       setIsDeleting(true);
       console.log(id);
-      
-  const response = await fetch(`/api/contacts/${id}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+
+      const response = await fetch(
+        `https://www.cleaningleadsusa.com/api/contacts/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Failed to delete contact");
       }
-      // Refetch latest data from server (client-side) to keep UI in sync
+
+      // Refresh list after successful delete
       await fetchData();
     } catch (error) {
       console.error("Error deleting contact:", error);
@@ -56,25 +82,6 @@ const AllContact = ({ data: initialData }: { data?: ContactForm[] }) => {
     }
   };
 
-  // Fetch latest data on mount (client-side). This will replace initialData if present.
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  // Client-side fetch to get the latest contact list. Uses no-cache to bypass Next fetch caching.
-  const fetchData = async () => {
-    try {
-      const response = await fetch("https://www.cleaningleadsusa.com/api/sendinfo", {
-        cache: "no-cache",
-      });
-      const data = await response.json();
-      console.log(data);
-      // Expecting the API to return an array of contact items compatible with ContactForm type
-      setData(Array.isArray(data) ? data : []);
-    } catch (err) {
-      console.error("Failed to fetch contacts:", err);
-    }
-  };
   useEffect(() => {
     try {
       const raw = sessionStorage.getItem("credential");

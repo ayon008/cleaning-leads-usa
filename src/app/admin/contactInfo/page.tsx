@@ -3,12 +3,6 @@ import Title from "@/app/Shared/Title/Title";
 import React from "react";
 
 const page = async () => {
-  const response = await fetch("https://www.cleaningleadsusa.com/api/sendinfo", {
-    cache: "no-cache",
-  });
-  const data = await response.json();
-  console.log(data);
-  
   return (
     <section
       id="contactInfo"
@@ -27,7 +21,7 @@ const page = async () => {
           subHeadingId="admin-contacts-sub"
         />
         <div className="py-10">
-          <AllContact data={data} />
+          <AllContact />
         </div>
       </div>
     </section>
