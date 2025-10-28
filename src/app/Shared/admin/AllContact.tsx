@@ -223,7 +223,7 @@ const AllContact = () => {
   const [submitted, setSubmitted] = useState<Credentials>(null);
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("http://localhost:3000/api/sendinfo");
+      const response = await axios.get("https://www.cleaningleadsusa.com/api/sendinfo");
       const data = response.data;
       console.log(data);
       setData(data);
