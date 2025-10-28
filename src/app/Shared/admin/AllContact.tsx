@@ -36,7 +36,7 @@ const AllContact = ({ data: initialData }: { data: ContactForm[] }) => {
       setIsDeleting(true);
       console.log(id);
       
-      const response = await fetch(`/api/contacts/${id}`, {
+      const response = await fetch(`https://www.cleaningleadsusa.com/api/contacts/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
