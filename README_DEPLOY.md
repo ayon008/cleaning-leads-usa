@@ -1,22 +1,19 @@
 Ready to deploy — Cleaning Leads USA
 =================================
 
-This guide contains comprehensive deployment instructions for the Cleaning Leads USA application, including serverless optimization with Prisma Data Proxy and enhanced error logging.
+This guide contains deployment instructions for the Cleaning Leads USA application, including serverless optimizations and enhanced error logging.
 
 Prerequisites
 ------------
 - Node.js 18+ (20.x recommended, specified in package.json)
 - Next.js 13+ (App Router)
 - Vercel account
-- Prisma Data Platform account
-
 Environment Variables
 -------------------
 Set these in your Vercel project settings:
 
 ```bash
 # Database Connections
-DATABASE_URL="prisma://aws.connect.psdb.cloud/your-database-url"  # Data Proxy URL
 DIRECT_DATABASE_URL="mongodb+srv://..."  # Direct MongoDB connection string
 
 # API Keys
@@ -26,14 +23,6 @@ BREVO_API_KEY="your-brevo-api-key"
 NEXT_PUBLIC_SITE_URL="https://www.cleaningleadsusa.com"
 NEXT_PUBLIC_WP_API_URL="your-wordpress-api-url"  # If using WordPress for blog
 ```
-
-Prisma Data Proxy Setup
-----------------------
-1. Visit [Prisma Data Platform](https://cloud.prisma.io)
-2. Create a new project and add your MongoDB database
-3. Copy the Data Proxy URL (starts with `prisma://`)
-4. Set it as `DATABASE_URL` in Vercel
-5. Keep your direct MongoDB URL as `DIRECT_DATABASE_URL`
 
 Deployment Configuration
 ----------------------
@@ -45,11 +34,10 @@ The project includes specific optimizations for serverless deployment:
    - Output Directory: `.next`
    - Node.js Version: 18.x or higher
 
-2. **Prisma Optimizations**
-   - Data Proxy enabled for connection pooling
+2. **Serverless Optimizations**
    - Enhanced error logging with request context
-   - Automatic connection management
-   - Query logging in development
+   - Automatic connection management for serverless deployments
+   - Query logging in development (where applicable)
 
 3. **Vercel Configuration** (`vercel.json`)
    - Region: iad1 (US East)
@@ -59,7 +47,6 @@ The project includes specific optimizations for serverless deployment:
 4. **Error Handling**
    - Structured logging format
    - Request context capture
-   - Detailed Prisma error tracking
    - Production/development modes
 
 Deployment Steps

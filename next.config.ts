@@ -1,6 +1,5 @@
 // next.config.js
 import type { NextConfig } from "next";
-import { PrismaPlugin } from "@prisma/nextjs-monorepo-workaround-plugin";
 
 
 /**
@@ -9,7 +8,7 @@ import { PrismaPlugin } from "@prisma/nextjs-monorepo-workaround-plugin";
  */
 const nextConfig: NextConfig = {
 
-  // Ensure Prisma Client is correctly built and included
+  // Ensure server-side clients are correctly built and included
   output: 'standalone',
   // Disable dev indicators in development UI
   devIndicators: false,
@@ -18,8 +17,6 @@ const nextConfig: NextConfig = {
     serverActions: {
       bodySizeLimit: '2mb'
     },
-    // Properly bundle Prisma Client for serverless
-    serverComponentsExternalPackages: ['@prisma/client', 'prisma'],
     // Allow authentication interrupt behavior for experimental auth APIs
     authInterrupts: true,
   },
@@ -136,13 +133,7 @@ const nextConfig: NextConfig = {
   // but enabling for Node server deployments
   compress: true,
 
-  // Allow injecting webpack plugins (Prisma plugin) during server builds
-  webpack: (config, { isServer }) => {
-    if (isServer) {
-      config.plugins = [...config.plugins, new PrismaPlugin()];
-    }
-    return config;
-  },
+  // No custom webpack plugin injection needed
 };
 
 export default nextConfig;

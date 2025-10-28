@@ -1,8 +1,2 @@
-declare module '@prisma/nextjs-monorepo-workaround-plugin' {
-  // Minimal typings for the PrismaPlugin used in next.config.ts
-  export class PrismaPlugin {
-    constructor(...args: unknown[]);
-    apply(...args: unknown[]): void;
-  }
-  export default PrismaPlugin;
-}
+// Removed: previously provided typings for Prisma plugin. Kept file to avoid TypeScript errors during incremental builds.
+export {};

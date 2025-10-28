@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "postinstall": "prisma generate",
+    
     "build": "next build --turbopack",
-    "vercel-build": "prisma generate && next build --turbopack",
+  "vercel-build": "next build --turbopack",
     "start": "next start",
     "lint": "eslint"
   },
@@ -14,7 +14,7 @@
     "@getbrevo/brevo": "^3.0.1",
     "@gsap/react": "^2.1.2",
     "@next/third-parties": "^16.0.0",
-    "@prisma/nextjs-monorepo-workaround-plugin": "^6.18.0",
+    
     "@tailwindcss/typography": "^0.5.16",
     "gsap": "^3.13.0",
     "jsdom": "^27.0.1",

@@ -1,5 +1,5 @@
 "use client";
-// <-- TYPE-ONLY import fixes the error: prevents bundling @prisma/client into the browser bundle
+// Note: No Prisma client used in this client component
 import React, { useEffect, useState } from "react";
 import moment from "moment";
 
