@@ -18,13 +18,13 @@ export type ContactForm = {
   createdAt: string | Date; // ISO string from MongoDB or Date object
 };
 
-const AllContact = ({ data: initialData }: { data: ContactForm[] }) => {
+const AllContact = ({ data: initialData }: { data?: ContactForm[] }) => {
   // NEXT_PUBLIC_* is available in the browser but must not hold secrets.
   const adminEmail = process.env.NEXT_PUBLIC_ADMIN_EMAIL;
   const adminPassword = process.env.NEXT_PUBLIC_ADMIN_PASSWORD;
 
   const [submitted, setSubmitted] = useState<Credentials>(null);
-  const [data, setData] = useState<ContactForm[]>(initialData);
+  const [data, setData] = useState<ContactForm[]>(initialData ?? []);
   const [isDeleting, setIsDeleting] = useState(false);
 
   const handleDelete = async (id: string) => {
@@ -36,7 +36,7 @@ const AllContact = ({ data: initialData }: { data: ContactForm[] }) => {
       setIsDeleting(true);
       console.log(id);
       
-      const response = await fetch(`https://www.cleaningleadsusa.com/api/contacts/${id}`, {
+  const response = await fetch(`/api/contacts/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -46,9 +46,8 @@ const AllContact = ({ data: initialData }: { data: ContactForm[] }) => {
       if (!response.ok) {
         throw new Error("Failed to delete contact");
       }
-
-      // Update local state
-      setData((prevData) => prevData.filter((item) => item._id !== id));
+      // Refetch latest data from server (client-side) to keep UI in sync
+      await fetchData();
     } catch (error) {
       console.error("Error deleting contact:", error);
       alert("Failed to delete contact. Please try again.");
@@ -57,6 +56,25 @@ const AllContact = ({ data: initialData }: { data: ContactForm[] }) => {
     }
   };
 
+  // Fetch latest data on mount (client-side). This will replace initialData if present.
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  // Client-side fetch to get the latest contact list. Uses no-cache to bypass Next fetch caching.
+  const fetchData = async () => {
+    try {
+      const response = await fetch("https://www.cleaningleadsusa.com/api/sendinfo", {
+        cache: "no-cache",
+      });
+      const data = await response.json();
+      console.log(data);
+      // Expecting the API to return an array of contact items compatible with ContactForm type
+      setData(Array.isArray(data) ? data : []);
+    } catch (err) {
+      console.error("Failed to fetch contacts:", err);
+    }
+  };
   useEffect(() => {
     try {
       const raw = sessionStorage.getItem("credential");
